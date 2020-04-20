@@ -1,0 +1,21 @@
+@import "colors";
+    
+.ht_card {
+    box-shadow: 6px 6px 16px #d1cdc788, -6px -6px 16px #fff8;
+    background: $background-main;
+    border-radius: 5px;
+    color: $text-color;
+    border: none;
+
+    .card-header, .card-footer {
+        border: none;
+    }
+
+    .card-header {
+        background: linear-gradient(to bottom, rgba(231, 231, 231, 0.637) 80%, rgba(231, 231, 231, 0));
+    }
+
+    .card-footer {
+        background: linear-gradient(to top, rgba(231, 231, 231, 0.637) 80%, rgba(231, 231, 231, 0));
+    }
+}

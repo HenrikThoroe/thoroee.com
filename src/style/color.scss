@@ -1,0 +1,21 @@
+:root {
+    --dark-mode: false;
+    --background-main: #efeeee;
+    --background-secondary: rgb(12, 29, 50);
+    --background-ternary: rgb(37, 89, 153);
+    --text-main: #000;
+    --text-secondary: #efeeee;
+    --shadow-primary: #d1cdc788;
+    --shadow-secondary: #fff8;
+
+    @media (prefers-color-scheme: dark) {
+        --dark-mode: true;
+        --background-main: #292929;
+        --text-main: #fff;
+        --background-secondary: rgb(31, 31, 31);
+        --text-secondary: #efeeee;
+        --background-ternary: rgb(48, 48, 48);
+        --shadow-primary: #10101088;
+        --shadow-secondary: rgba(107, 107, 107, 0.133);
+    }
+}

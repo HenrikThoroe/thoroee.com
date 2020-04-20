@@ -1,0 +1,14 @@
+@import 'color';
+@import "canvas";
+
+.bt_app {
+    @extend .bt_canvas;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: none;
+    margin: none;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
