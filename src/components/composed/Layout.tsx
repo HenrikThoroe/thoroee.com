@@ -1,5 +1,5 @@
-import React, { ReactNode, useState, useRef } from "react";
-import "../style/app.scss"
+import React, { ReactNode, useRef } from "react";
+import "../style/content.map.scss"
 
 interface Props {
     children: [ReactNode, ReactNode, ReactNode]
@@ -16,7 +16,9 @@ export default function Layout(props: Props) {
         <div className="bt_app">
             { props.children[0] }
             <div ref={ref} className="bt_site-wrapper" onScroll={update}>
-                { props.children[1] }
+                <div style={{ display: "block", width: "100%" }}>
+                    { props.children[1] }
+                </div>
 
                 <div className="bt_content">
                     { props.children[2] }

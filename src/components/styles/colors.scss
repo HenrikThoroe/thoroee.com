@@ -1,9 +1,0 @@
-@import "theme";
-
-$background-main: #efeeee;
-$text-color: #000;
-
-@if $dark-mode == true {
-    $background-main: #292929;
-    $text-color: #fff;
-}

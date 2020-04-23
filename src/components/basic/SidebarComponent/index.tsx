@@ -6,7 +6,7 @@ interface Props {
     children: ReactNode
 }
 
-export default function Sidebar(props: Props) {
+export default function SidebarComponent(props: Props) {
     return (
         <div className={`bt_sidebar ${props.hidden ? "hidden" : ""}`}>
             { props.children }

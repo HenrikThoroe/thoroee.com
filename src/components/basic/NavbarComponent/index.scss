@@ -4,12 +4,13 @@
 .bt_navigation {
     $transition-delay: .3s;
 
-    background: var(--background-ternary);
+    background: linear-gradient(to right, var(--background-secondary), var(--background-ternary) 30%);
     color: var(--text-secondary) !important;
     padding: 1rem;
-    position: sticky;
+    position: fixed;
+    top: 0px;
+    width: 100%;
     max-width: 100vw;
-    top: 0;
     z-index: 1000000;
     transition: background .2s linear;
 

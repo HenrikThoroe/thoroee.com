@@ -1,4 +1,4 @@
-import "./style/content.map.scss"
+import "./content.map.scss"
 
 export default {
     card: "bt_card",
