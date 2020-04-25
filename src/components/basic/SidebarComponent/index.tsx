@@ -1,5 +1,6 @@
 import React, { useRef, ReactNode } from "react"
 import './index.scss'
+import classNames from "classnames"
 
 interface Props {
     hidden?: boolean
@@ -8,7 +9,7 @@ interface Props {
 
 export default function SidebarComponent(props: Props) {
     return (
-        <div className={`bt_sidebar ${props.hidden ? "hidden" : ""}`}>
+        <div className={classNames({ sidebar: true })}>
             { props.children }
         </div>
     )

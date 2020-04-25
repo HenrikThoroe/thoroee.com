@@ -34,7 +34,7 @@ export default function Dropdown(props: Props) {
 
     return (
         <div className="bt_sidebar-dropdown">
-            <Action trailing={<Icon name={icon}/>} callback={handleClick}>{ props.label }</Action>
+            <Action callback={handleClick}>{ props.label }</Action>
 
             <div className="bt_sidebar-dropdown-content bt_close" ref={content}>
                 { props.children }

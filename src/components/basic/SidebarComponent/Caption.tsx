@@ -1,3 +1,3 @@
 import textBuilder from "../../builder/textBuilder";
 
-export default textBuilder("bt_sidebar-caption")
+export default textBuilder("caption")

@@ -1,3 +1,12 @@
 import containerBuilder from '../../builder/containerBuilder'
+import classNames from 'classnames'
+import { ReactNode } from 'react'
 
-export default containerBuilder("bt_sidebar-group")
+interface Props {
+    collapsed?: boolean
+    children: ReactNode[]
+}
+
+export default function Group(props: Props) {
+    return containerBuilder(classNames({group: true, collapsed: props.collapsed === true}))(props)
+}

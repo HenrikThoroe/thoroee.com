@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Layout from "../composed/Layout"
+import Layout from "../basic/Layout"
 import SidebarComponent from "../basic/SidebarComponent"
 import Header from "../basic/SidebarComponent/Header"
 import Title from "../basic/SidebarComponent/Title"
@@ -26,10 +26,11 @@ export default function Page(props: Props) {
     const [scrollPosition, setScrollPosition] = useState(0)
 
     return (
-        <Layout onScroll={setScrollPosition}>
-            <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={changeSidebar} />
-            <NavbarComponent closed={!sidebarCollapsed} onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} transparent={scrollPosition <= 10}/>
-            <Home />
+        <Layout>
+            <Sidebar collapsed={false} onSidebarToggle={() => {}} />
+            <div></div>
+            <div>
+            </div>
         </Layout>
     )
 }
