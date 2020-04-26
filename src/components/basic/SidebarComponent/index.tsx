@@ -9,7 +9,7 @@ interface Props {
 
 export default function SidebarComponent(props: Props) {
     return (
-        <div className={classNames({ sidebar: true })}>
+        <div className={classNames({ sidebar: true, hidden: props.hidden })}>
             { props.children }
         </div>
     )

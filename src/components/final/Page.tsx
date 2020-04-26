@@ -13,6 +13,7 @@ import Footnote from "../basic/SidebarComponent/Footnote"
 import NavbarComponent from "../basic/NavbarComponent"
 import Sidebar from "./Sidebar"
 import Home from "./Home"
+import Navbar from "./Navigation"
 
 export interface Props {
 }
@@ -26,9 +27,9 @@ export default function Page(props: Props) {
     const [scrollPosition, setScrollPosition] = useState(0)
 
     return (
-        <Layout>
-            <Sidebar collapsed={false} onSidebarToggle={() => {}} />
-            <div></div>
+        <Layout hideSidebar={sidebarCollapsed}>
+            <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
+            <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
             <div>
             </div>
         </Layout>

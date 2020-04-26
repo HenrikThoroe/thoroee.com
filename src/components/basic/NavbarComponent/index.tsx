@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import Toggle from './Toggle'
+import React, { useState, ReactNode } from 'react'
 import "./index.scss"
+import classNames from 'classnames'
 
 interface Props {
-    closed?: boolean
-    onToggleSidebar: () => void
-    transparent?: boolean
+    children: ReactNode[] | ReactNode
 }
 
 export default function NavbarComponent(props: Props) {
     return (
-        <div className={`bt_navigation ${props.transparent ? "top" : ""}`}>
-            <Toggle onClick={props.onToggleSidebar} closed={props.closed} />
+        <div className={classNames({ navigation: true })}>
+            { props.children }
         </div>
     )
 }

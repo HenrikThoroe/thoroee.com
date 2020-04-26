@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import classNames from "classnames";
 import "./index.scss"
 
@@ -18,6 +18,8 @@ export interface Props {
 
 export default function Button(props: Props) {
     let content: ReactNode
+    const buttonRef = useRef<HTMLButtonElement>(null)
+    let timeout: NodeJS.Timeout
 
     switch (props.style) {
         case "inline":
@@ -29,8 +31,29 @@ export default function Button(props: Props) {
             break
     }
 
+    const handleClick = (event: React.MouseEvent) => {
+        const button = buttonRef.current
+
+        if (button && props.style !== "inline") {
+            const delay = 400
+            const rect = button.getBoundingClientRect()
+            const x = Math.floor(event.clientX - rect.left)
+            const y = Math.floor(event.clientY - rect.top)
+
+            button.style.setProperty("--x", `${x}`)
+            button.style.setProperty("--y", `${y}`)
+            button.style.setProperty("--r", `${Math.max(rect.width, rect.height) * 2}`)
+            button.style.setProperty("--d", `${delay}`)
+            button.classList.add("ripple")
+
+            timeout = setTimeout(() => button?.classList.remove("ripple"), delay)
+        }
+
+        props.onClick?.call(null)
+    }
+
     return (
-        <button className={classNames({ button: true, inline: props.style === "inline", flat: props.flat })} onClick={props.onClick}>
+        <button ref={buttonRef} className={classNames({ button: true, inline: props.style === "inline", flat: props.flat, search: props.style === "search" })} onClick={handleClick}>
             { content }
         </button>
     )
