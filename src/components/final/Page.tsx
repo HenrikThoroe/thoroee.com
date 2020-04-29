@@ -26,8 +26,7 @@ export default function Page(props: Props) {
         <Layout hideSidebar={sidebarCollapsed}>
             <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
             <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
-            <div>
-            </div>
+            <Home />
         </Layout>
     )
 }
