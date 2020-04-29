@@ -1,5 +1,5 @@
-@use 'sass:math' as m;
 @import '../../../assets/color.scss';
+@import "../../../assets/breakpoints.scss";
 
 
 .sidebar {
@@ -55,6 +55,8 @@
             border-radius: 4px 0px 0px 4px;
             transition: box-shadow .2s linear, padding-left .2s linear;
             position: relative;
+            
+            -webkit-tap-highlight-color: #0000;
 
             .text {
                 position: relative;
@@ -85,7 +87,7 @@
                 padding-left: 4%;
             }
 
-            &:active {
+            &:active, &.btnActive {
                 box-shadow: inset 1px 1px 3px var(--shadow-primary-color), inset -1px -1px 3px var(--shadow-secondary-color);
             }
 
@@ -149,13 +151,78 @@
 
             .group-header > *:last-child {
                 opacity: 1;
-                transition: opacity .2s ease-in;
+                transition: opacity .2s linear;
             }
 
             &:not(.collapsed) .group-header > *:last-child {
                 opacity: 0;
-                transition: opacity .2s ease-in;
+                transition: opacity .2s linear;
             }
         }
     }
+}
+
+@media screen and (max-width: $mobile) {
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 0px;
+        border-radius: 30px 30px 0px 0px;
+        height: 100%;
+        box-shadow: 0px -1px 4px var(--shadow-primary-color);
+
+        .header {
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+        }
+
+        .body {
+            max-width: 90%;
+            width: unquote($string: "min(70%, 20rem)");
+            padding: 0px;
+            margin: 0px;
+
+            & > * {
+                width: 100%;
+            }
+
+            .action {
+                border-radius: 4px;
+                user-select: none;
+
+                &:hover {
+                    box-shadow: none;
+                    padding: 1rem 0px;
+                }
+
+                &:active, &.btnActive {
+                    transition-duration: .1s;
+                    padding-left: 4%;
+                    box-shadow: inset 1px 1px 3px var(--shadow-primary-color), inset -1px -1px 3px var(--shadow-secondary-color);
+                }
+            }
+
+            .group {
+                border-radius: 4px;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                width: calc(100% - 2rem);
+
+                .group-header {
+                    width: 100%;
+                }
+
+                & > *:not(:first-child) {
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+
 }

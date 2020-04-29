@@ -13,6 +13,7 @@ export interface Props {
     label?: string
     flat?: boolean
     style: ButtonType
+    size?: "small" | "default" | "large"
     onClick?: () => any
 }
 
@@ -52,8 +53,28 @@ export default function Button(props: Props) {
         props.onClick?.call(null)
     }
 
+    const handleTouchStart = (e: React.TouchEvent) => {
+        e.preventDefault()
+        buttonRef.current?.classList.add("btnActive")
+    }
+
+    const handleTouchEnd = () => {
+        buttonRef.current?.classList.remove("btnActive")
+    }
+
     return (
-        <button ref={buttonRef} className={classNames({ button: true, inline: props.style === "inline", flat: props.flat, search: props.style === "search" })} onClick={handleClick}>
+        <button 
+            ref={buttonRef} 
+            className={classNames({ 
+                button: true, 
+                inline: props.style === "inline", 
+                flat: props.flat, 
+                search: props.style === "search",
+                large: props.size === "large",
+                small: props.size === "small"})} 
+            onClick={handleClick}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}>
             { content }
         </button>
     )

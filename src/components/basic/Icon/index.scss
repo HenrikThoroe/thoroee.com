@@ -1,0 +1,67 @@
+@import "../../../assets/color.scss";
+
+.iconContainer {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: .4rem;
+        
+    .icon {
+        position: relative;
+        fill: var(--text-primary);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.loadingIcon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    div {
+        border-radius: 10px;
+        background-color: var(--text-primary);
+        display: inline-block;
+        box-sizing: border-box;
+        padding: unquote($string: "min(10%, 2rem)");
+    }
+
+    div:nth-of-type(1) {
+        animation: bounceAnimation 1s linear 0s infinite;
+    }
+
+    div:nth-of-type(2) {
+        animation: bounceAnimation 1s linear .25s infinite;
+    }
+
+    div:nth-of-type(3) {
+        animation: bounceAnimation 1s linear .5s infinite;
+    }
+
+}
+
+@keyframes bounceAnimation {
+    from {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(.6, .6);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+  
+

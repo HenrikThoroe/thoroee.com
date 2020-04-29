@@ -1,4 +1,5 @@
 @import "../../../assets/color.scss";
+@import "../../../assets/breakpoints.scss";
 
 .navigation {
     position: relative;
@@ -77,78 +78,17 @@
     }
 }
 
-// .bt_navigation {
-//     $transition-delay: .3s;
-
-//     background: linear-gradient(to right, var(--background-secondary), var(--background-ternary) 30%);
-//     color: var(--text-secondary) !important;
-//     padding: 1rem;
-//     position: fixed;
-//     top: 0px;
-//     width: 100%;
-//     max-width: 100vw;
-//     z-index: 1000000;
-//     transition: background .2s linear;
-
-//     &.top {
-//         background: transparent;
-//     }
-
-//     .bt_navigation-sidebar-toggle {
-//         width: calc(1.5rem * 1.5);
-//         height: 1.5rem;
-//         cursor: pointer;
-//         position: relative;
-
-//         .bt_navigation-sidebar-toggle-el {
-//             display: block;
-//             position: absolute;
-//             width: 100%;
-//             height: 10%;
-//             background: #a3a3a3;
-//             border-radius: 3px;
-//             opacity: 1;
-//             left: 0;
-
-//             transition: transform $transition-delay linear, top $transition-delay linear;
-
-//             &:nth-of-type(2) {
-//                 top: 45%;
-//                 transition: opacity $transition-delay linear, left $transition-delay linear;
-//             }
-
-//             &:nth-of-type(3) {
-//                 top: 90%;
-//             }
-//         }
-
-//         &:hover .bt_navigation-sidebar-toggle-el {
-//             background: #fff;
-//         }
-
-//         &.sidebar-close {
-//             .bt_navigation-sidebar-toggle-el {
-//                 &:nth-of-type(1) {
-//                     top: 40%;
-//                     transform: rotate(135deg);
-//                 }
+@media screen and (max-width: $mobile) {
+    .navigation {
+        .controls {
+            .group {
+                display: flex;
+                flex-direction: row;
     
-//                 &:nth-of-type(2) {
-//                     opacity: 0;
-//                     left: -100%;
-//                 }
-    
-//                 &:nth-of-type(3) {
-//                     top: 40%;
-//                     transform: rotate(-135deg);
-//                 }
-//             }
-//         }
-//     }
-
-//     @media (prefers-color-scheme: light) {
-//         &.top .bt_navigation-sidebar-toggle:hover .bt_navigation-sidebar-toggle-el {
-//             background: #000;
-//         }
-//     }
-// }
+                & > *:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
+}

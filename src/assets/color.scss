@@ -23,3 +23,29 @@
     --highlight-positive: #2AC940;
     --highlight: rgb(47, 64, 223);
 }
+
+:root.darkMode {
+    // Background 
+    --background-primary: #121212;
+    --background-accent: #323232;
+
+    // Typography
+    --text-primary: rgb(255, 255, 255, 87%);
+    --text-accent: rgb(255, 255, 255, 87%);
+    --text-silent: rgb(121, 121, 121);
+
+    // Input
+    --input-bg-primary: #505050;
+    --input-bg-search: #334436;
+    --input-bg-user: rgb(255, 255, 255, 87%);
+    --input-text-primary: rgb(255, 255, 255, 87%);
+    --input-text-user: rgb(255, 255, 255, 87%);
+
+    // Shadow
+    --shadow-primary-color: #12121288;
+    --shadow-secondary-color: #50505088;
+
+    // Other
+    --highlight-positive: #2AC940;
+    --highlight: rgb(56, 76, 255);
+}

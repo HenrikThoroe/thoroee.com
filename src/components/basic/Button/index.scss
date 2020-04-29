@@ -12,11 +12,16 @@
     padding: 0px;
     margin: 0px;
     cursor: pointer;
+    user-select: none;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: normal;
     text-transform: uppercase;
+
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: #0000;
     
     &.inline {
         width: 32px;
@@ -38,9 +43,23 @@
 
         transition: box-shadow .2s linear;
 
-        &:active {
+        &:active, &.btnActive {
             box-shadow: inset 1px 1px 3px var(--shadow-primary-color), inset -1px -1px 3px var(--shadow-secondary-color);
         }
+    
+        &.large {
+            padding: .2rem;
+            width: calc(32px + .4rem);
+            height: calc(32px + .4rem);
+            min-width: calc(32px + .4rem);
+            min-height: calc(32px + .4rem);
+            max-width: calc(32px + .4rem);
+            max-height: calc(32px + .4rem);
+        }
+    }
+
+    &.flat {
+        box-shadow: none;
     }
 
     &:not(.inline) {
@@ -53,7 +72,7 @@
         position: relative;
         transition: box-shadow .2s linear;
 
-        &:active {
+        &:active, &.btnActive {
             box-shadow: none;
         }
 
@@ -89,7 +108,7 @@
     }
 
     &.search {
-        background: var(--highlight-positive);
+        background: var(--input-bg-search);
         color: #fff;
         padding-right: 2rem;
         padding-left: 2rem;

@@ -14,17 +14,13 @@ import NavbarComponent from "../basic/NavbarComponent"
 import Sidebar from "./Sidebar"
 import Home from "./Home"
 import Navbar from "./Navigation"
+import currentBreakpoint from "../../utils/currentBreakpoint"
 
 export interface Props {
 }
 
 export default function Page(props: Props) {
-    const shouldCollapseSidebar = () => {
-        const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-        return vw < (20 * 16 * 3) // Three times the width of the sidebar (20rem * 3)
-    }
-    const [sidebarCollapsed, changeSidebar] = useState(shouldCollapseSidebar())
-    const [scrollPosition, setScrollPosition] = useState(0)
+    const [sidebarCollapsed, changeSidebar] = useState(currentBreakpoint() !== "desktop")
 
     return (
         <Layout hideSidebar={sidebarCollapsed}>
