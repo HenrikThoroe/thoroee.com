@@ -19,7 +19,10 @@
     font-weight: normal;
     text-transform: uppercase;
 
-    box-sizing: border-box;
+    // box-sizing: content-box;
+    // height: 1rem;
+
+    text-align: left;
 
     -webkit-tap-highlight-color: #0000;
     
@@ -65,12 +68,37 @@
     &:not(.inline) {
         color: var(--input-text-primary);
         background: var(--input-bg-primary);
-        padding: .4rem 1rem;
+        padding: .5rem 1rem;
         border-radius: 4px;
         box-shadow: 2px 2px 4px var(--shadow-primary-color), -1px -1px 2px var(--shadow-secondary-color);
         overflow: hidden;
         position: relative;
         transition: box-shadow .2s linear;
+
+        & > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            max-height: 100%;
+            position: relative;
+
+            .iconContainer {
+                padding: 0px;
+                margin-right: .5rem;
+            }
+
+            .icon {
+                height: 1rem;
+                width: 1rem;
+                display: inline-block;
+            }
+
+            span {
+                display: inline-block;
+            }
+        }
 
         &:active, &.btnActive {
             box-shadow: none;

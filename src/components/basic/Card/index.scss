@@ -1,0 +1,40 @@
+@import "../../../assets/color.scss";
+
+.card {
+    background: var(--background-accent);
+    border-radius: 5px;
+    width: auto;
+    box-shadow: 2px 2px 4px var(--shadow-primary-color), -2px -2px 2px var(--shadow-secondary-color);
+    padding: 1.5rem 1rem;
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+
+    .title {
+        font-size: 1.4rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--text-silent);
+        margin: .5rem 0px 0px 0px;
+        padding: 0px;
+    }
+
+    .section {
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: stretch;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        & > *:not(:last-child) {
+            margin-bottom: .7rem;
+        }
+    }
+}

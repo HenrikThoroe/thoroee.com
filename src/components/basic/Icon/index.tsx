@@ -5,6 +5,7 @@ export type IconName = "research" | "language" | "moon" | "sun"
 
 export interface Props {
     name: IconName
+    color?: "text" | "input"
 }
 
 export default function Icon(props: Props): JSX.Element {
@@ -20,6 +21,7 @@ export default function Icon(props: Props): JSX.Element {
             const svg = xml.getElementsByTagName("svg")[0]
 
             svg?.classList.add("icon")
+            svg?.classList.add(props.color === "input" ? "inputColor" : "textColor")
             svg?.setAttribute("fill", "#f00")
 
             console.log(text, xml, svg)

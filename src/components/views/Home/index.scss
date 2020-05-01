@@ -1,0 +1,73 @@
+.helloworld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+
+    & > * {
+        width: unquote($string: "min(100%, 50rem)");
+    }
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--text-primary);
+
+    .projectHeading {
+        margin: 1rem 3rem;
+        padding: 0px 3rem 0px 3rem;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 2rem;
+        background: var(--background-primary);
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+        align-items: center;
+        overflow: hidden;
+
+        &::after, &::before {
+            content: "";
+
+            position: relative;
+            display: inline-block;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+        }
+
+        &::after {
+            width: 100%;
+            margin-left: 1rem;
+        }
+
+        &::before {
+            margin-right: 1rem;
+            width: 10%;
+        }
+    }
+
+    .projectCards {
+        padding: 2rem;
+        box-sizing: border-box;
+
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        margin-left: auto;
+        margin-right: auto;
+    
+        & > * {
+            margin: 1rem;
+        }
+    }
+}
