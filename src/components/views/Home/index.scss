@@ -1,8 +1,18 @@
+@import "../../../assets/breakpoints.scss";
+@import "../../../assets/color.scss";
+
+.home {
+    padding: 0px 0px 5rem 0px;
+    scroll-snap-type: y mandatory;
+}
+
 .helloworld {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    min-height: var(--content-height);
+    box-sizing: border-box;
+    scroll-snap-align: start;
 
     & > * {
         width: unquote($string: "min(100%, 50rem)");
@@ -10,6 +20,7 @@
 }
 
 .project {
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -20,7 +31,7 @@
 
     .projectHeading {
         margin: 1rem 3rem;
-        padding: 0px 3rem 0px 3rem;
+        padding: 0px 1rem;
         position: relative;
         box-sizing: border-box;
         width: 100%;
@@ -57,7 +68,7 @@
         padding: 2rem;
         box-sizing: border-box;
 
-        display: inline-flex;
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -67,7 +78,54 @@
         margin-right: auto;
     
         & > * {
+            scroll-snap-align: center;
             margin: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 52rem) {
+    .project {
+        overflow: hidden;
+        padding-bottom: 2rem;
+
+        .projectHeading {
+            margin-bottom: 0px;
+        }
+
+        .projectCards {
+            overflow: scroll;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+
+            & > * {
+                flex-shrink: 0;
+                pointer-events: none;
+                opacity: .5;
+                transform: scale(0.8);
+                z-index: 50;
+                scroll-snap-align: center;
+                margin: 0rem -.5rem;
+                transition: transform .2s linear, opacity .2s linear;
+
+                &.shown {
+                    opacity: 1;
+                    transform: scale(1);
+                    z-index: 100;
+                    pointer-events: all;
+                }
+            }
+
+            &::after {
+                content: "";
+                display: inline-block;
+                min-width: 2rem;
+                min-height: 1px;
+
+            }
         }
     }
 }

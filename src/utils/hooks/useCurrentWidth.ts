@@ -15,7 +15,7 @@ export default function useCurrentWitdh(): number {
     return () => {
       window.removeEventListener('resize', resizeListener)
     }
-  }, [])
+  }, [width])
 
   return width
 }

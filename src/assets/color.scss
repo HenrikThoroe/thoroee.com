@@ -1,16 +1,16 @@
 :root {
     // Background 
-    --background-primary: #F4F9FF;
+    --background-primary: #eceff4;
     --background-accent: #fff;
 
     // Typography
-    --text-primary: #000;
-    --text-accent: #000;
+    --text-primary: #3b4253;
+    --text-accent: #3b4253;
     --text-silent: rgb(121, 121, 121);
 
     // Input
-    --input-bg-primary: #3F3B58;
-    --input-bg-search: #2AC940;
+    --input-bg-primary: #4c566b;
+    --input-bg-search: #a2bf8a;
     --input-bg-user: #fff;
     --input-text-primary: #fff;
     --input-text-user: #000;
@@ -20,7 +20,7 @@
     --shadow-secondary-color: #E8E8E8;
 
     // Other
-    --highlight-positive: #2AC940;
+    --highlight-positive: #a2bf8a;//#2AC940;
     --highlight: rgb(47, 64, 223);
 }
 
@@ -48,4 +48,8 @@
     // Other
     --highlight-positive: #2AC940;
     --highlight: rgb(56, 76, 255);
+}
+
+body {
+    background: var(--background-primary)
 }

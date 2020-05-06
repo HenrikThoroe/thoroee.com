@@ -24,9 +24,6 @@ export default function Icon(props: Props): JSX.Element {
             svg?.classList.add(props.color === "input" ? "inputColor" : "textColor")
             svg?.setAttribute("fill", "#f00")
 
-            console.log(text, xml, svg)
-            console.log(svg?.outerHTML)
-
             if (svg && contentRef.current) {
                 for (const child of Array.from(contentRef.current.childNodes)) {
                     contentRef.current.removeChild(child)

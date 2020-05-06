@@ -33,6 +33,8 @@ export default function Button(props: Props) {
     }
 
     const handleClick = (event: React.MouseEvent) => {
+        event.preventDefault()
+
         const button = buttonRef.current
 
         if (button && props.style !== "inline") {
@@ -58,7 +60,8 @@ export default function Button(props: Props) {
         buttonRef.current?.classList.add("btnActive")
     }
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        // e.preventDefault()
         buttonRef.current?.classList.remove("btnActive")
     }
 
@@ -74,7 +77,11 @@ export default function Button(props: Props) {
                 small: props.size === "small"})} 
             onClick={handleClick}
             onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}>
+            onTouchEnd={handleTouchEnd}
+            onFocus={(e) => {
+                e.preventDefault()
+                e.target?.focus({ preventScroll: true })
+            }}>
             { content }
         </button>
     )
