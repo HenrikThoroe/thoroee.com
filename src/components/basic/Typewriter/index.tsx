@@ -37,7 +37,7 @@ function TypewriterHelper(props: { text: string, animate: boolean, startAnimatio
                 .then(() => props.onAnimationCompleted())
                 .catch(e => console.warn(e))
         }
-    })
+    }, [running])
 
     return (
         <span className={classNames({ active: props.animate && props.startAnimation })}>{ content }</span>

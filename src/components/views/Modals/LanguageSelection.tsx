@@ -1,26 +1,35 @@
 import { useState, useEffect } from "react"
 import Modal from "../../basic/Modal"
 import React from "react"
+import ListSelection from "../../basic/ListSelection"
+import currentBreakpoint from "../../../utils/currentBreakpoint"
+import { useSelector, useDispatch } from "react-redux"
+import RootState from "../../../redux/state"
+import setLanguage from "../../../redux/actions/setLanguage"
+import selectLanguage from "../../../redux/selectors/selectLanguage"
 
-export default function LanguageSelection() {
-    const [show, setShow] = useState(false)
+export interface Props {
+    shown: boolean
+    onHide: () => void
+}
 
-    // useEffect(() => {
-    //     setTimeout(() => setShow(true), 2000)
-    // }, [])
+export default function LanguageSelection(props: Props) {
+    const language = useSelector(selectLanguage)
+    const dispatch = useDispatch()
 
     return (
-        <Modal>
-            <Modal.Header>Hello</Modal.Header>
-            <Modal.Body>World</Modal.Body>
+        <Modal shown={props.shown} onHide={props.onHide} centered={currentBreakpoint() !== "desktop"}>
+            <Modal.Header>Choose your Language</Modal.Header>
+            <Modal.Body>
+                <ListSelection>
+                    <ListSelection.Item selected={language === "english"} onSelect={() => dispatch(setLanguage("english"))}>
+                        English
+                    </ListSelection.Item>
+                    <ListSelection.Item selected={language === "german"} onSelect={() => dispatch(setLanguage("german"))}>
+                        Deutsch
+                    </ListSelection.Item>
+                </ListSelection>
+            </Modal.Body>
         </Modal>
-        // <Modal show={show} onHide={() => setShow(false)} animation={true}>
-        //     <Modal.Header closeButton>
-        //         <Modal.Title>Choose your Language</Modal.Title>
-        //     </Modal.Header>
-        //     <Modal.Body>
-        //         Hello it's me
-        //     </Modal.Body>
-        // </Modal>
     )
 }

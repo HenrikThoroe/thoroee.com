@@ -6,6 +6,9 @@ import Card from "../../basic/Card"
 import Button from "../../basic/Button"
 import Icon from "../../basic/Icon"
 import useCurrentWitdh from "../../../utils/hooks/useCurrentWidth"
+import { useSelector } from "react-redux"
+import RootState from "../../../redux/state"
+import selectLanguage from "../../../redux/selectors/selectLanguage"
 
 function SampleCard() {
     return (
@@ -29,6 +32,8 @@ function SampleCard() {
 }
 
 export default function Home() {
+    const language = useSelector(selectLanguage)
+
     useEffect(() => {
         const box = document.querySelector<HTMLDivElement>(".scrollBox")
         const cards = document.querySelectorAll<HTMLDivElement>(".scrollBox .card")
@@ -63,7 +68,7 @@ export default function Home() {
         <Container className="home">
             <Container padding="1" className="helloworld">
                 <Typewriter>
-                    Hello, World! \n
+                    Hello, World! \n 
                     Lorem ipsum, dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
@@ -73,7 +78,7 @@ export default function Home() {
                 </Typewriter>
             </Container>
             <Container className="project">
-                <h2 className="projectHeading">Projects</h2>
+            <h2 className="projectHeading">Projects</h2>
                 <Container className="projectCards scrollBox">
                     <SampleCard />
                     <SampleCard />

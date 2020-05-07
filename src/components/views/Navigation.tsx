@@ -10,6 +10,7 @@ import useCurrentBreakpoint from '../../utils/hooks/useCurrentBreakpoint'
 import Icon from "../basic/Icon";
 import LanguageSelection from "./Modals/LanguageSelection";
 import Modal from "../basic/Modal";
+import ListSelection from "../basic/ListSelection";
 
 export interface Props {
     open?: boolean
@@ -67,10 +68,7 @@ export default function Navbar(props: Props) {
                 <MobileControls onChooseLanguage={() => setShowLanguagePicker(true)}/> 
             }
 
-            <Modal shown={showLanguagePicker} onHide={() => setShowLanguagePicker(false)} centered>
-                <Modal.Header>Choose you Language</Modal.Header>
-                <Modal.Body>World</Modal.Body>
-            </Modal>
+            <LanguageSelection shown={showLanguagePicker} onHide={() => setShowLanguagePicker(false)}/>
         </NavbarComponent>
     )
 }
