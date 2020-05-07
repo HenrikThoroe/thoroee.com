@@ -4,10 +4,10 @@ import Sidebar from "./Sidebar"
 import Home from "./Home"
 import Navbar from "./Navigation"
 import currentBreakpoint from "../../utils/currentBreakpoint"
+import Modal from "react-bootstrap/Modal"
 
 export interface Props {
 }
-
 export default function Page(props: Props) {
     const [sidebarCollapsed, changeSidebar] = useState(currentBreakpoint() !== "desktop")
 
@@ -21,10 +21,12 @@ export default function Page(props: Props) {
     })
 
     return (
+        <>
         <Layout hideSidebar={sidebarCollapsed}>
             <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
             <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
             <Home />
         </Layout>
+        </>
     )
 }
