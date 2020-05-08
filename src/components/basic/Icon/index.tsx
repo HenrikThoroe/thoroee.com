@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 import "./index.scss"
 
-export type IconName = "research" | "language" | "moon" | "sun"
+export type IconName = "research" | "language" | "moon" | "sun" | "github" | "chevron-left" | "bootstrap" | "person" | "envelop-open"
 
 export interface Props {
     name: IconName
     color?: "text" | "input"
+    className?: string
 }
 
 export default function Icon(props: Props): JSX.Element {
@@ -20,8 +21,12 @@ export default function Icon(props: Props): JSX.Element {
             const xml = parser.parseFromString(text, "text/xml")
             const svg = xml.getElementsByTagName("svg")[0]
 
-            svg?.classList.add("icon")
-            svg?.classList.add(props.color === "input" ? "inputColor" : "textColor")
+            if (props.className) {
+                svg.classList.add(props.className)
+            }
+
+            svg?.classList.add("comp_icon")
+            svg?.classList.add(props.color === "input" ? "comp_inputColor" : "comp_textColor")
             svg?.setAttribute("fill", "#f00")
 
             if (svg && contentRef.current) {
@@ -29,13 +34,13 @@ export default function Icon(props: Props): JSX.Element {
                     contentRef.current.removeChild(child)
                 }
 
-                contentRef.current.classList.replace("loadingIcon", "iconContainer")
+                contentRef.current.classList.replace("comp_loadingIcon", "comp_iconContainer")
                 contentRef.current.appendChild(svg)
             }
         }) 
 
     return (
-        <div className="loadingIcon" ref={contentRef}>
+        <div className="comp_loadingIcon" ref={contentRef}>
             <div />
             <div />
             <div />

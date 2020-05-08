@@ -1,6 +1,6 @@
 @import "../../../assets/color.scss";
 
-.iconContainer {
+.comp_iconContainer {
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -9,21 +9,20 @@
     align-items: center;
     // width: 100%;
     // height: 100%;
-    padding: .4rem;
         
-    .icon {
+    .comp_icon {
         position: relative;
         fill: var(--text-primary);
         width: 100%;
         height: 100%;
     }
 
-    .inputColor {
+    .comp_inputColor {
         fill: var(--input-text-primary);
     }
 }
 
-.loadingIcon {
+.comp_loadingIcon {
     position: relative;
     width: 100%;
     height: 100%;

@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import classNames from "classnames";
 
 interface Props {
-    children: string
-    callback: () => void
+    children: ReactNode
+    callback?: () => void
     leading?: ReactNode
     active?: boolean
 }

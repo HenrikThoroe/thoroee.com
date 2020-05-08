@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, ReactNode } from "react"
 import "./index.scss"
 import classNames from "classnames"
 
@@ -8,7 +8,7 @@ export interface Props {
     style: TextFieldStyle
     placeholder?: string
     default?: string
-    label?: string
+    label?: ReactNode
     inline?: boolean
     flat?: boolean
 }

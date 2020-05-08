@@ -9,6 +9,8 @@ import useCurrentWitdh from "../../../utils/hooks/useCurrentWidth"
 import { useSelector } from "react-redux"
 import RootState from "../../../redux/state"
 import selectLanguage from "../../../redux/selectors/selectLanguage"
+import Translation from "../../basic/Translation"
+import translationKeys from "../../../Localisation/keys"
 
 function SampleCard() {
     return (
@@ -78,7 +80,7 @@ export default function Home() {
                 </Typewriter>
             </Container>
             <Container className="project">
-            <h2 className="projectHeading">Projects</h2>
+                <h2 className="projectHeading">Projects</h2>
                 <Container className="projectCards scrollBox">
                     <SampleCard />
                     <SampleCard />

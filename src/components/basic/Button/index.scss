@@ -84,15 +84,15 @@
             max-height: 100%;
             position: relative;
 
-            .iconContainer {
+            .comp_iconContainer {
                 padding: 0px;
                 margin-right: .5rem;
             }
 
-            .icon {
+            .comp_icon {
                 height: 1rem;
                 width: 1rem;
-                display: inline-block;
+                display: block;
             }
 
             span {

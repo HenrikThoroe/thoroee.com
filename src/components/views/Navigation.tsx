@@ -11,6 +11,11 @@ import Icon from "../basic/Icon";
 import LanguageSelection from "./Modals/LanguageSelection";
 import Modal from "../basic/Modal";
 import ListSelection from "../basic/ListSelection";
+import Translation from "../basic/Translation";
+import translationKeys from "../../Localisation/keys";
+import { useSelector, useDispatch } from "react-redux";
+import selectDarkMode from "../../redux/selectors/selectDarkMode";
+import setDarkMode from "../../redux/actions/setDarkMode";
 
 export interface Props {
     open?: boolean
@@ -23,20 +28,27 @@ interface ControlProps {
 
 function toggleDarkMode() {
     document.documentElement.classList.toggle("darkMode")
+    
 }
 
 function DesktopControls(props: ControlProps) {
+    const darkMode = useSelector(selectDarkMode)
+    const dispatch = useDispatch()
+
+    const handleDarkMode = () => {
+        toggleDarkMode()
+        dispatch(setDarkMode(!darkMode))
+    }
+
     return (
         <Controls>
             <Group>
-                <Button label="Dark" style="primary" onClick={toggleDarkMode}/>
+                <Button label={<Translation for={darkMode ? translationKeys.general.light : translationKeys.general.dark} />} style="primary" onClick={handleDarkMode}/>
                 <Button label="en" style="primary" onClick={props.onChooseLanguage}/>
-                {/* <Button icon={<Icon name="moon" />} style="inline" size="large" onClick={() => {}}/>
-                <Button icon={<Icon name="language" />} style="inline" size="large" onClick={() => {}}/> */}
             </Group>
             <Group>
-                <TextField style="default" label="Search" inline flat />
-                <Button label="Find" style="search" onClick={() => {}}/>
+                <TextField style="default" label={<Translation for={translationKeys.general.search} />} inline flat />
+                <Button label={<Translation for={translationKeys.general.find} />} style="search" onClick={() => {}}/>
             </Group>
         </Controls>
     )

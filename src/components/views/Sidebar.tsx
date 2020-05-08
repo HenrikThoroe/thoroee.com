@@ -6,9 +6,11 @@ import Group from "../basic/SidebarComponent/Group";
 import Caption from "../basic/SidebarComponent/Caption";
 import Action from "../basic/SidebarComponent/Action";
 import Body from "../basic/SidebarComponent/Body";
-import Icon from "../Icon";
+// import Icon from "../Icon";
 import GroupHeader from "../basic/SidebarComponent/GroupHeader";
 import Button from "../basic/Button";
+import { Link } from "react-router-dom";
+import Icon from "../basic/Icon"
 
 export interface Props {
     collapsed: boolean
@@ -26,9 +28,20 @@ export default function Sidebar(props: Props) {
             </Header>
 
             <Body>
-                <Action callback={() => {}} leading={<Icon name="person" width="25px" height="25px"/>}>About Me</Action>
-                <Action callback={() => {}} leading={<Icon name="github" width="25px" height="25px"/>}>GitHub</Action>
-                <Action active callback={() => {}} leading={<Icon name="envelopOpen" width="25px" height="25px"/>}>Feedback</Action>
+                <Link to="/">
+                    <Action leading={<Icon name="person"/>}>
+                        About Me
+                    </Action>
+                </Link>
+
+                <Action callback={() => window.location.href = "https://github.com"} leading={<Icon name="github"/>}>GitHub</Action>
+
+                <Link to="/feedback">
+                    <Action active leading={<Icon name="envelop-open"/>}>
+                        Feedback
+                    </Action>
+                </Link>
+                
                 <Group collapsed={displayedGroup !== "products"}>
                     <GroupHeader>
                         <Caption>Products</Caption>

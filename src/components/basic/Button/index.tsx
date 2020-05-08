@@ -10,7 +10,7 @@ export type ButtonType =
 export interface Props {
     imageButton?: boolean
     icon?: ReactNode
-    label?: string
+    label?: ReactNode
     flat?: boolean
     style: ButtonType
     size?: "small" | "default" | "large"

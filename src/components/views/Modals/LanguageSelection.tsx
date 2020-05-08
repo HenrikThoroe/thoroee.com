@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react"
 import Modal from "../../basic/Modal"
 import React from "react"
 import ListSelection from "../../basic/ListSelection"
 import currentBreakpoint from "../../../utils/currentBreakpoint"
 import { useSelector, useDispatch } from "react-redux"
-import RootState from "../../../redux/state"
 import setLanguage from "../../../redux/actions/setLanguage"
 import selectLanguage from "../../../redux/selectors/selectLanguage"
 

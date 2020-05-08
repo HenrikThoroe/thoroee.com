@@ -5,6 +5,7 @@ import Home from "./Home"
 import Navbar from "./Navigation"
 import currentBreakpoint from "../../utils/currentBreakpoint"
 import Modal from "react-bootstrap/Modal"
+import { Switch, Route } from "react-router-dom"
 
 export interface Props {
 }
@@ -25,7 +26,14 @@ export default function Page(props: Props) {
         <Layout hideSidebar={sidebarCollapsed}>
             <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
             <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
-            <Home />
+            <Switch>
+                <Route path="/feedback">
+                    <h2>Feedback</h2>
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
         </Layout>
         </>
     )
