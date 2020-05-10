@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import Typewriter from "../../basic/Typewriter"
 import Container from "../../basic/Container"
 import "./index.scss"
@@ -11,23 +11,29 @@ import RootState from "../../../redux/state"
 import selectLanguage from "../../../redux/selectors/selectLanguage"
 import Translation from "../../basic/Translation"
 import translationKeys from "../../../Localisation/keys"
+import Game from "../../../game"
 
 function SampleCard() {
     return (
         <Card width="min(90%, 20rem)">
-            <Card.Title>Project</Card.Title>
-            <Card.Subtitle>A Very Fancy Project</Card.Subtitle>
+            <Card.Title>Castle</Card.Title>
+            <Card.Subtitle>macOS Password Manager</Card.Subtitle>
             <Card.Section>
-                Lorem ipsum, dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. 
+                <ul className="keywordsList">
+                    <li>Swift</li>
+                    <li>SwiftUI</li>
+                    <li>iOS</li>
+                    {
+                        Math.random() > 0.5 ?
+                        <li>HTML5</li> :
+                        undefined
+                    }
+                </ul>
             </Card.Section>
             <Card.Section>
-                <Button icon={<Icon color="input" name="sun"/>} label="Buy" style="primary" size="large" />
-                <Button label="GitHub" style="primary" size="large" />
-                <Button label="Learn More" style="primary" size="large" />
+                <Button icon={<Icon color="input" name="heart-fill"/>} label="Buy" style="primary" size="large" />
+                <Button icon={<Icon color="input" name="github"/>} label="GitHub" style="primary" size="large" />
+                <Button icon={<Icon color="input" name="info-circle"/>} label="Learn More" style="primary" size="large" />
             </Card.Section>
         </Card>
     )
@@ -35,6 +41,7 @@ function SampleCard() {
 
 export default function Home() {
     const language = useSelector(selectLanguage)
+    const canvasRef = useRef<HTMLCanvasElement>(null)
 
     useEffect(() => {
         const box = document.querySelector<HTMLDivElement>(".scrollBox")
@@ -66,8 +73,17 @@ export default function Home() {
         }
     }, [])
 
+    useEffect(() => {
+        if (canvasRef.current) {
+            const game = new Game(canvasRef.current)
+        }
+    }, [canvasRef])
+
     return (
         <Container className="home">
+            <Container className="gameContainer">
+                <canvas ref={canvasRef} />
+            </Container>
             <Container padding="1" className="helloworld">
                 <Typewriter>
                     Hello, World! \n 
@@ -80,7 +96,7 @@ export default function Home() {
                 </Typewriter>
             </Container>
             <Container className="project">
-                <h2 className="projectHeading">Projects</h2>
+                <h2 className="projectHeading">My Work</h2>
                 <Container className="projectCards scrollBox">
                     <SampleCard />
                     <SampleCard />

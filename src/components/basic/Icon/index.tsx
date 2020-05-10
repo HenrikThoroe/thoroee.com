@@ -1,7 +1,19 @@
 import React, { useRef } from 'react'
 import "./index.scss"
 
-export type IconName = "research" | "language" | "moon" | "sun" | "github" | "chevron-left" | "bootstrap" | "person" | "envelop-open"
+export type IconName = 
+    "research" | 
+    "language" | 
+    "moon" | 
+    "sun" | 
+    "github" | 
+    "chevron-left" | 
+    "bootstrap" | 
+    "person" | 
+    "envelop-open" |
+    "heart" | 
+    "info-circle" |
+    "heart-fill"
 
 export interface Props {
     name: IconName

@@ -38,6 +38,8 @@
         justify-content: center;
         align-items: center;
 
+        box-sizing: border-box;
+
         color: var(--text-primary);
 
         border-radius: 50%;
@@ -48,6 +50,10 @@
 
         &:active, &.btnActive {
             box-shadow: inset 1px 1px 3px var(--shadow-primary-color), inset -1px -1px 3px var(--shadow-secondary-color);
+        }
+
+        .comp_iconContainer {
+            padding: .3rem;
         }
     
         &.large {
