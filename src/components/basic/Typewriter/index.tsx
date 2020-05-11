@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, ReactNode } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import classNames from "classnames";
 import "./index.scss"
 import sleep from "../../../utils/sleep";

@@ -1,5 +1,4 @@
 import Rect from "../utils/Rect";
-import Vector from "../utils/Vector";
 
 export default function drawCannon(context: CanvasRenderingContext2D, rect: Rect, angle: number, shooting: boolean = false) {
     rect = Rect.from(rect.size.width * 0.6, rect.size.height, rect.minX + rect.size.width * 0.2, rect.minY)

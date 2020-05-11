@@ -1,4 +1,3 @@
-import containerBuilder from '../../builder/containerBuilder'
 import React from 'react'
 
 export interface Props {

@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react"
+import ReactProps from "../../game/utils/ReactProps"
+import classNames from "classnames"
 
-export interface Props<T> {
-    children: T
-}
-
-export default function containerBuilder<T = ReactNode>(className: string) {
-    return (props: Props<T>) => (
-        <div className={className}>{ props.children }</div>
-    )
+export default function containerBuilder(cn: string) { 
+    return (props: ReactProps<HTMLDivElement>) => {
+        const { className, ...other } = props
+        return <div { ...other } className={classNames(cn, className)}>{ props.children }</div>
+    }
 }

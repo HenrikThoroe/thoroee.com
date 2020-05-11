@@ -81,9 +81,9 @@ export default function Home() {
 
     return (
         <Container className="home">
-            <Container className="gameContainer">
+            {/* <Container className="gameContainer">
                 <canvas ref={canvasRef} />
-            </Container>
+            </Container> */}
             <Container padding="1" className="helloworld">
                 <Typewriter>
                     Hello, World! \n 

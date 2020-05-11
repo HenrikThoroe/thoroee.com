@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 function flatJSON(json: any, prefix: string[] = []): Map<string, string> {
     const result = new Map<string, string>()
     const createKey = (name: string) => [...prefix, name].join("-")

@@ -1,9 +1,3 @@
-import React, { ReactNode } from "react";
+import containerBuilder from "../../builder/containerBuilder";
 
-export interface Props {
-    children: ReactNode
-}
-
-export default function Section(props: Props) {
-    return <div className="section">{ props.children }</div>
-}
+export default containerBuilder("section")

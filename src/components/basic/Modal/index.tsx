@@ -1,5 +1,5 @@
 import "./index.scss"
-import React, { ReactNode, useRef, useState, useEffect } from "react"
+import React, { ReactNode, useRef } from "react"
 import Header from "./Header"
 import Body from "./Body"
 import classNames from "classnames"

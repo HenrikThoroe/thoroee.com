@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavbarComponent from "../basic/NavbarComponent";
 import Toggle from "../basic/NavbarComponent/Toggle";
 import Controls from "../basic/NavbarComponent/Controls";
 import Group from "../basic/SidebarComponent/Group";
 import Button from "../basic/Button";
 import TextField from "../basic/TextField";
-import currentBreakpoint from "../../utils/currentBreakpoint";
 import useCurrentBreakpoint from '../../utils/hooks/useCurrentBreakpoint'
 import Icon from "../basic/Icon";
 import LanguageSelection from "./Modals/LanguageSelection";
-import Modal from "../basic/Modal";
-import ListSelection from "../basic/ListSelection";
 import Translation from "../basic/Translation";
 import translationKeys from "../../Localisation/keys";
 import { useSelector, useDispatch } from "react-redux";
@@ -47,7 +44,7 @@ function DesktopControls(props: ControlProps) {
                 <Button label="en" style="primary" onClick={props.onChooseLanguage}/>
             </Group>
             <Group>
-                <TextField style="default" label={<Translation for={translationKeys.general.search} />} inline flat />
+                <TextField inputStyle="default" label={<Translation for={translationKeys.general.search} />} inline flat />
                 <Button label={<Translation for={translationKeys.general.find} />} style="search" onClick={() => {}}/>
             </Group>
         </Controls>

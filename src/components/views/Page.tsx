@@ -6,6 +6,7 @@ import Navbar from "./Navigation"
 import currentBreakpoint from "../../utils/currentBreakpoint"
 import Modal from "react-bootstrap/Modal"
 import { Switch, Route } from "react-router-dom"
+import Feedback from "./Feedback"
 
 export interface Props {
 }
@@ -28,7 +29,7 @@ export default function Page(props: Props) {
             <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
             <Switch>
                 <Route path="/feedback">
-                    <h2>Feedback</h2>
+                    <Feedback />
                 </Route>
                 <Route path="/">
                     <Home />

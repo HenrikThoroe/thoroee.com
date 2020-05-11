@@ -1,4 +1,4 @@
-import React, { useRef, ReactNode } from "react"
+import React, { ReactNode } from "react"
 import './index.scss'
 import classNames from "classnames"
 import Action from "./Action"
