@@ -5,10 +5,11 @@ import ReactProps from "../../../game/utils/ReactProps";
 
 export interface Props extends ReactProps<HTMLDivElement> {
     padding?: "1" | "2" | "3"
+    fill?: boolean
 }
 
 export default function Container(props: Props) {
-    const { className, padding, ...other } = props
+    const { className, padding, fill, ...other } = props
     const paddingClass = 
         padding === "1" ? "p1" : 
         padding === "2" ? "p2" : 
@@ -16,7 +17,7 @@ export default function Container(props: Props) {
         null
 
     return (
-        <div {...other} className={classNames("container", paddingClass, className)}>
+        <div {...other} className={classNames("container", paddingClass, { fill: fill }, className)}>
             { props.children }
         </div>
     )

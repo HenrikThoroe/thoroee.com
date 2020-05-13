@@ -9,7 +9,7 @@ import Body from "../basic/SidebarComponent/Body";
 // import Icon from "../Icon";
 import GroupHeader from "../basic/SidebarComponent/GroupHeader";
 import Button from "../basic/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Icon from "../basic/Icon"
 
 export interface Props {
@@ -19,6 +19,7 @@ export interface Props {
 
 export default function Sidebar(props: Props) {
     const [displayedGroup, changeDisplayedGroup] = useState<"legal" | "products">("products")
+    const location = useLocation()
 
     return (
         <SidebarComponent hidden={props.collapsed}>
@@ -29,7 +30,7 @@ export default function Sidebar(props: Props) {
 
             <Body>
                 <Link to="/">
-                    <Action leading={<Icon name="person"/>}>
+                    <Action active={location.pathname === "/"} leading={<Icon name="person"/>}>
                         About Me
                     </Action>
                 </Link>
@@ -37,7 +38,7 @@ export default function Sidebar(props: Props) {
                 <Action callback={() => window.location.href = "https://github.com"} leading={<Icon name="github"/>}>GitHub</Action>
 
                 <Link to="/feedback">
-                    <Action active leading={<Icon name="envelop-open"/>}>
+                    <Action active={location.pathname === "/feedback"} leading={<Icon name="envelop-open"/>}>
                         Feedback
                     </Action>
                 </Link>

@@ -7,20 +7,22 @@ import currentBreakpoint from "../../utils/currentBreakpoint"
 import Modal from "react-bootstrap/Modal"
 import { Switch, Route } from "react-router-dom"
 import Feedback from "./Feedback"
+import useCurrentHeight from "../../utils/hooks/useCurrentHeight"
 
 export interface Props {
 }
 export default function Page(props: Props) {
     const [sidebarCollapsed, changeSidebar] = useState(currentBreakpoint() !== "desktop")
+    const height = useCurrentHeight()
 
     useEffect(() => {
         const navigation = document.querySelector(".navigation")
 
         if (navigation) {
-            const height = window.innerHeight - navigation.clientHeight
-            document.documentElement.style.setProperty("--content-height", `${height}px`)
+            const contentHeight = height - navigation.clientHeight
+            document.documentElement.style.setProperty("--content-height", `${contentHeight}px`)
         }
-    })
+    }, [height])
 
     return (
         <>

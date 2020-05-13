@@ -12,9 +12,10 @@ export interface Props {
     icon?: ReactNode
     label?: ReactNode
     flat?: boolean
-    style: ButtonType
+    style?: ButtonType
     size?: "small" | "default" | "large"
     onClick?: () => any
+    submit?: boolean
 }
 
 export default function Button(props: Props) {
@@ -22,7 +23,7 @@ export default function Button(props: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null)
     let timeout: NodeJS.Timeout
 
-    switch (props.style) {
+    switch (props.style || "primary") {
         case "inline":
             content = props.icon ? props.icon : props.label
             break
@@ -78,6 +79,7 @@ export default function Button(props: Props) {
             onClick={handleClick}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            type={props.submit ? "submit" : "button"}
             onFocus={(e) => {
                 e.preventDefault()
                 e.target?.focus({ preventScroll: true })
