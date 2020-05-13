@@ -1,5 +1,5 @@
 import React, { useEffect, ReactNode } from "react";
-import ReactProps from "../../../game/utils/ReactProps";
+import ReactProps from "../../../utils/ReactProps";
 import classNames from "classnames";
 import "./stack.scss"
 

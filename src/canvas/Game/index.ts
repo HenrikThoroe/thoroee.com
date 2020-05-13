@@ -1,28 +1,20 @@
 import Balloon from "./GameObject/Balloon"
-import Rect from "./utils/Rect"
-import Vector from "./utils/Vector"
+import Rect from "../utils/Rect"
+import Vector from "../utils/Vector"
 import Cannon from "./GameObject/Cannon"
 import GameObject from "./GameObject"
+import Canvas from ".."
 
-export default class Game {
-
-    private readonly canvas: HTMLCanvasElement
-
-    private readonly context: CanvasRenderingContext2D
+export default class Game extends Canvas {
 
     private lastRender: number = 0
 
     private balloons: Balloon[] = []
 
-    private cannon: Cannon
+    private cannon!: Cannon
 
-    constructor(canvas: HTMLCanvasElement) {
-        this.canvas = canvas
-        this.context = canvas.getContext("2d")!
+    protected setup() {
         this.loop = this.loop.bind(this)
-
-
-        this.fixDpI()
 
         this.cannon = new Cannon(
             this.context, 
@@ -32,20 +24,6 @@ export default class Game {
         )
             
         this.start()
-
-        // window.addEventListener("resize", () => this.fixDpI())
-    }
-
-    private fixDpI() {
-        const dpi = window.devicePixelRatio
-        let styleHeight = +getComputedStyle(this.canvas).getPropertyValue("height").slice(0, -2)
-        let styleWidth = +getComputedStyle(this.canvas).getPropertyValue("width").slice(0, -2)
-        
-        this.canvas.setAttribute('height', `${styleHeight * dpi}`)
-        this.canvas.setAttribute('width', `${styleWidth * dpi}`)
-        this.canvas.style.height = `${styleHeight}px`
-        this.canvas.style.width = `${styleWidth}px`
-        // this.context.transform(1, 0, 0, -1, 0, this.canvas.height)
     }
 
     private get objects(): GameObject<any>[] {

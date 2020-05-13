@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import classNames from "classnames";
 import "./index.scss"
-import ReactProps from "../../../game/utils/ReactProps";
+import ReactProps from "../../../utils/ReactProps";
 
 export interface Props extends ReactProps<HTMLDivElement> {
     padding?: "1" | "2" | "3"

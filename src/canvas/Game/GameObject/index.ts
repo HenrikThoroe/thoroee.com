@@ -1,5 +1,5 @@
-import Vector from "../utils/Vector";
-import Rect from "../utils/Rect";
+import Vector from "../../utils/Vector";
+import Rect from "../../utils/Rect";
 
 export default abstract class GameObject<State> {
 

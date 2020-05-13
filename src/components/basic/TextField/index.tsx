@@ -1,7 +1,7 @@
 import React, { useState, useRef, ReactNode } from "react"
 import "./index.scss"
 import classNames from "classnames"
-import ReactProps from "../../../game/utils/ReactProps"
+import ReactProps from "../../../utils/ReactProps"
 
 export type TextFieldStyle = "default" | "search" | "email"
 

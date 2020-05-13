@@ -11,7 +11,8 @@ import RootState from "../../../redux/state"
 import selectLanguage from "../../../redux/selectors/selectLanguage"
 import Translation from "../../basic/Translation"
 import translationKeys from "../../../Localisation/keys"
-import Game from "../../../game"
+import Canvas from "../../../canvas"
+import Game from "../../../canvas/Game"
 
 function SampleCard() {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import ReactProps from "../../../game/utils/ReactProps";
+import ReactProps from "../../../utils/ReactProps";
 import Stack, { Alignment } from "./Stack";
 
 export interface Props extends ReactProps<HTMLDivElement> {

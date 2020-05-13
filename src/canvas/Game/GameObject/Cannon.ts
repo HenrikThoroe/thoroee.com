@@ -1,5 +1,5 @@
 import GameObject from ".";
-import drawCannon from "../shapes/drawCannon";
+import drawCannon from "../../shapes/drawCannon";
 
 export default class Cannon extends GameObject<{ angle: number, shooting: boolean }> {
 
