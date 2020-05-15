@@ -13,7 +13,8 @@ export default class Game extends Canvas {
 
     private cannon!: Cannon
 
-    protected setup() {
+    constructor(canvas: HTMLCanvasElement) {
+        super(canvas)
         this.loop = this.loop.bind(this)
 
         this.cannon = new Cannon(

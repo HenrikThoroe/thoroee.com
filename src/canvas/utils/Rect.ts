@@ -64,8 +64,8 @@ export default class Rect {
         // TODO: Implement
     }
 
-    contains(other: Point | Rect) {
-        // TODO: Implement
+    contains(other: Point) {
+        return this.minX <= other.x && this.maxX >= other.x && this.minY <= other.y && this.maxY >= other.y
     }
 
 }

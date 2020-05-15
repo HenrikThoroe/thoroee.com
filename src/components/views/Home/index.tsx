@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Typewriter from "../../basic/Typewriter"
 import Container from "../../basic/Container"
 import "./index.scss"
@@ -13,6 +13,11 @@ import Translation from "../../basic/Translation"
 import translationKeys from "../../../Localisation/keys"
 import Canvas from "../../../canvas"
 import Game from "../../../canvas/Game"
+import CV from "../../../canvas/CV"
+import CVEvent from "../../../canvas/CV/CVEvent"
+import Modal from "../../basic/Modal"
+import VStack from "../../basic/Stacks/VStack"
+import HStack from "../../basic/Stacks/HStack"
 
 function SampleCard() {
     return (
@@ -43,6 +48,7 @@ function SampleCard() {
 export default function Home() {
     const language = useSelector(selectLanguage)
     const canvasRef = useRef<HTMLCanvasElement>(null)
+    const [presentedEvent, setPresentedEvent] = useState<CVEvent | null>(null)
 
     useEffect(() => {
         const box = document.querySelector<HTMLDivElement>(".scrollBox")
@@ -76,15 +82,33 @@ export default function Home() {
 
     useEffect(() => {
         if (canvasRef.current) {
-            const game = new Game(canvasRef.current)
+            const game = new CV(canvasRef.current,[
+                    {
+                        date: [new Date(2004, 1, 1), new Date(2015, 1, 1)],
+                        name: "Event 1",
+                        description: "Please don't read this description. Just some dummy text.",
+                        id: 1
+                    },
+                    {
+                        date: [new Date(2009, 1, 1), new Date(2010, 1, 1)],
+                        name: "Event 2",
+                        description: "Please don't read this description. Just some dummy text.",
+                        id: 2
+                    }
+                ], event => {
+                    setPresentedEvent(event)
+                })
+
+            // game.addEvent({
+            //     date: [new Date(2010, 1, 1), new Date(2013, 1, 1)],
+            //     name: "Test",
+            //     description: "Please don't read this description. Just some dummy text."
+            // })
         }
     }, [canvasRef])
 
     return (
         <Container className="home">
-            {/* <Container className="gameContainer">
-                <canvas ref={canvasRef} />
-            </Container> */}
             <Container padding="1" className="helloworld">
                 <Typewriter>
                     Hello, World! \n 
@@ -107,6 +131,38 @@ export default function Home() {
                     <SampleCard />
                 </Container>
             </Container>
+            <Container className="gameContainer">
+                <canvas ref={canvasRef} />
+            </Container>
+            <Modal shown={presentedEvent !== null} onHide={() => setPresentedEvent(null)}>
+                <Modal.Header>{ presentedEvent?.name || "Error"}</Modal.Header>
+                <Modal.Body>
+                    <VStack spacing="2rem">
+                        <VStack spacing=".8rem">
+                            <HStack spacing="10px">
+                                <span>From:</span>
+                                <span>{ presentedEvent?.date[0].toLocaleDateString() || "Error" }</span>
+                            </HStack>
+                            <HStack spacing="10px">
+                                <span>To:</span>
+                                <span>{ presentedEvent?.date[1].toLocaleDateString() || "Error" }</span>
+                            </HStack>
+                        </VStack>
+                        <span>
+                            { presentedEvent?.description || "Error" }
+                        </span>
+                        <VStack spacing=".8rem">
+                            <span>Further Links</span>
+                            <VStack spacing=".2rem">
+                                <span>A Link</span>
+                                <span>A Link</span>
+                                <span>A Link</span>
+                                <span>A Link</span>
+                            </VStack>
+                        </VStack>
+                    </VStack>
+                </Modal.Body>
+            </Modal>
         </Container>
     )
 }

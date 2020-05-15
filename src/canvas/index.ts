@@ -1,3 +1,5 @@
+import Size from "./utils/Size"
+
 export default abstract class Canvas {
 
     protected readonly canvas: HTMLCanvasElement
@@ -9,7 +11,19 @@ export default abstract class Canvas {
         this.context = canvas.getContext("2d")!
 
         this.fixDpI()
-        this.setup()
+    }
+
+    protected set size(size: Size) {
+        const dpi = window.devicePixelRatio
+
+        this.canvas.setAttribute('height', `${size.height}`)
+        this.canvas.setAttribute('width', `${size.width}`)
+        this.canvas.style.height = `${size.height / dpi}px`
+        this.canvas.style.width = `${size.width / dpi}px`
+    }
+
+    protected get dpi(): number {
+        return window.devicePixelRatio
     }
 
     private fixDpI() {
@@ -22,7 +36,5 @@ export default abstract class Canvas {
         this.canvas.style.height = `${styleHeight}px`
         this.canvas.style.width = `${styleWidth}px`
     }
-
-    protected abstract setup(): void
 
 }
