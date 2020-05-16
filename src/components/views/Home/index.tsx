@@ -14,10 +14,12 @@ import translationKeys from "../../../Localisation/keys"
 import Canvas from "../../../canvas"
 import Game from "../../../canvas/Game"
 import CV from "../../../canvas/CV"
-import CVEvent from "../../../canvas/CV/CVEvent"
+import CVEvent from "../../../redux/state/CVEvent"
 import Modal from "../../basic/Modal"
 import VStack from "../../basic/Stacks/VStack"
 import HStack from "../../basic/Stacks/HStack"
+import selectCV from "../../../redux/selectors/selectCV"
+import EventDescription from "../Modals/EventDescription"
 
 function SampleCard() {
     return (
@@ -49,6 +51,7 @@ export default function Home() {
     const language = useSelector(selectLanguage)
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const [presentedEvent, setPresentedEvent] = useState<CVEvent | null>(null)
+    const cvEvents = useSelector(selectCV)
 
     useEffect(() => {
         const box = document.querySelector<HTMLDivElement>(".scrollBox")
@@ -82,28 +85,9 @@ export default function Home() {
 
     useEffect(() => {
         if (canvasRef.current) {
-            const game = new CV(canvasRef.current,[
-                    {
-                        date: [new Date(2004, 1, 1), new Date(2015, 1, 1)],
-                        name: "Event 1",
-                        description: "Please don't read this description. Just some dummy text.",
-                        id: 1
-                    },
-                    {
-                        date: [new Date(2009, 1, 1), new Date(2010, 1, 1)],
-                        name: "Event 2",
-                        description: "Please don't read this description. Just some dummy text.",
-                        id: 2
-                    }
-                ], event => {
-                    setPresentedEvent(event)
-                })
-
-            // game.addEvent({
-            //     date: [new Date(2010, 1, 1), new Date(2013, 1, 1)],
-            //     name: "Test",
-            //     description: "Please don't read this description. Just some dummy text."
-            // })
+            new CV(canvasRef.current, cvEvents, event => {
+                setPresentedEvent(event)
+            })
         }
     }, [canvasRef])
 
@@ -112,12 +96,10 @@ export default function Home() {
             <Container padding="1" className="helloworld">
                 <Typewriter>
                     Hello, World! \n 
-                    Lorem ipsum, dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.
+                    My name is Henrik Thorøe. I am a young but, as far as I can say, experienced student from beautiful northern Germany.
+                    I enjoy learning new stuff all the day, which is why I am so entusiastic about developing.
+                    Today I try to work with as much languages and technologies as possible to gather a wide knowledge base.
+                    I do not write code for the sake of writing code. I write code because I want to express my mind and create stunning stuff.
                 </Typewriter>
             </Container>
             <Container className="project">
@@ -134,35 +116,7 @@ export default function Home() {
             <Container className="gameContainer">
                 <canvas ref={canvasRef} />
             </Container>
-            <Modal shown={presentedEvent !== null} onHide={() => setPresentedEvent(null)}>
-                <Modal.Header>{ presentedEvent?.name || "Error"}</Modal.Header>
-                <Modal.Body>
-                    <VStack spacing="2rem">
-                        <VStack spacing=".8rem">
-                            <HStack spacing="10px">
-                                <span>From:</span>
-                                <span>{ presentedEvent?.date[0].toLocaleDateString() || "Error" }</span>
-                            </HStack>
-                            <HStack spacing="10px">
-                                <span>To:</span>
-                                <span>{ presentedEvent?.date[1].toLocaleDateString() || "Error" }</span>
-                            </HStack>
-                        </VStack>
-                        <span>
-                            { presentedEvent?.description || "Error" }
-                        </span>
-                        <VStack spacing=".8rem">
-                            <span>Further Links</span>
-                            <VStack spacing=".2rem">
-                                <span>A Link</span>
-                                <span>A Link</span>
-                                <span>A Link</span>
-                                <span>A Link</span>
-                            </VStack>
-                        </VStack>
-                    </VStack>
-                </Modal.Body>
-            </Modal>
+            { presentedEvent ? <EventDescription shown onHide={() => setPresentedEvent(null)} event={presentedEvent!} /> : undefined }
         </Container>
     )
 }

@@ -27,3 +27,7 @@ a {
 .fillContentHeight {
     min-height: var(--content-height);
 }
+
+.inlineLink:hover {
+    text-decoration: underline;
+}

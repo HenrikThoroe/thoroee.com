@@ -3,4 +3,5 @@ export default interface CVEvent {
     name: string
     description: string
     id: number
+    resources: string[]
 }

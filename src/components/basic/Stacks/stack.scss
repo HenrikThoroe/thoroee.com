@@ -2,6 +2,11 @@
     display: flex;
     width: 100%;
     height: 100%;
+    
+    & > * {
+        max-width: var(--maxWidth, auto);
+        min-width: var(--minWidth, auto);
+    }
 
     &.row {
         flex-direction: row;

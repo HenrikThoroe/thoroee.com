@@ -3,11 +3,8 @@ import Rect from "../utils/Rect";
 import Size from "../utils/Size";
 import Vector from "../utils/Vector";
 import cpDist from "../utils/controlPointDistanceForCircle";
-import CVEvent from "./CVEvent";
-
-interface CVState {
-    events: CVEvent[]
-}
+import CVEvent from "../../redux/state/CVEvent";
+import moment from "moment"
 
 type DrawStyle = string | CanvasGradient | CanvasPattern
 
@@ -57,7 +54,7 @@ export default class CV extends Canvas {
         this.setup()
     }
 
-    protected setup() {
+    private setup() {
         this.startDate = new Date(2003, 1, 17)
         this.endDate = new Date()
     
@@ -258,6 +255,13 @@ export default class CV extends Canvas {
         return markers
     }
 
+    private isPointEvent(event: CVEvent) {
+        const startMoment = moment(event.date[0])
+        const endMoment = moment(event.date[1])
+
+        return endMoment.diff(startMoment, "months") < 3
+    }
+
     private calculateStyle(direction: "left" | "right", area: Rect, markers: GradientMarker[]): DrawStyle {
         const plainColor = "#6a7491"
         const highlightColor = "#2e3440"//"#d2876d"
@@ -274,6 +278,15 @@ export default class CV extends Canvas {
         }
 
         for (const marker of markers) {
+            const start = marker[0]
+            const end = marker[1]
+            const startMoment = moment(start.event.date[0])
+            const endMoment = moment(end.event.date[1])
+            
+            if (endMoment.diff(startMoment, "months") < 3) {
+                continue
+            }
+
             if (marker[0].position < min) {
                 min = marker[0].position
             }
@@ -281,6 +294,10 @@ export default class CV extends Canvas {
             if (marker[1].position > max) {
                 max = marker[1].position
             }
+        }
+
+        if (min === Infinity || max === -Infinity) {
+            return plainColor
         }
 
         gradient.addColorStop(min, plainColor)
@@ -360,7 +377,7 @@ export default class CV extends Canvas {
             this.clickAreas.push([Rect.from(200, 100, position.x - 100, position.y + area.size.height / 4), marker.event])
         }
 
-        if (marker.type === "end") {
+        if (marker.type === "end" && !this.isPointEvent(marker.event)) {
             this.context.beginPath()
             this.context.lineWidth = 5
             this.context.fillStyle = fillColor
