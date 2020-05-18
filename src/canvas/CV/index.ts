@@ -144,6 +144,13 @@ export default class CV extends Canvas {
         return (x - lb) / (ub - lb)
     }
 
+    private resetShadow() {
+        this.context.shadowBlur = 0
+        this.context.shadowColor = ""
+        this.context.shadowOffsetX = 0
+        this.context.shadowOffsetY = 0
+    }
+
     private drawRow(row: number, area: Rect, direction: "right" | "left", style: DrawStyle) {
         this.context.beginPath()
         this.context.lineWidth = 30
@@ -319,29 +326,34 @@ export default class CV extends Canvas {
 
     private drawEventEndings(marker: Marker, area: Rect, direction: "left" | "right") {
         const strokeColor = "#3b4253"
-        const fillColor = "#d8dee9"
+        const shadowColor = "#3b425388"
+        const fillColor = "#fff"//"#eceff4"//"#d8dee9"
         const textColor = "#4c566b"
         const position = new Vector(
             direction === "right" ? 
                 area.minX + area.size.width * marker.position : 
                 area.maxX - area.size.width * marker.position, 
             area.midY)
+        const badgeArea = Rect.from(200, 100, position.x - 100, position.y + area.size.height / 6)
 
         if (marker.type === "start") {
-            this.context.beginPath()
-            this.context.lineWidth = 5
-            this.context.strokeStyle = strokeColor
-            this.context.moveTo(position.x, position.y)
-            this.context.lineTo(position.x - 100, position.y + area.size.height / 4)
-            this.context.stroke()
+            // Line
+            // this.context.beginPath()
+            // this.context.lineWidth = 5
+            // this.context.strokeStyle = strokeColor
+            // this.context.moveTo(position.x, position.y)
+            // this.context.lineTo(position.x - 100, position.y + area.size.height / 4)
+            // this.context.stroke()
 
-            this.context.beginPath()
-            this.context.lineWidth = 5
-            this.context.strokeStyle = strokeColor
-            this.context.moveTo(position.x, position.y)
-            this.context.lineTo(position.x + 100, position.y + area.size.height / 4)
-            this.context.stroke()
+            // Line
+            // this.context.beginPath()
+            // this.context.lineWidth = 5
+            // this.context.strokeStyle = strokeColor
+            // this.context.moveTo(position.x, position.y)
+            // this.context.lineTo(position.x + 100, position.y + area.size.height / 4)
+            // this.context.stroke()
 
+            // Anchor
             this.context.beginPath()
             this.context.lineWidth = 5
             this.context.fillStyle = fillColor
@@ -350,23 +362,46 @@ export default class CV extends Canvas {
             this.context.fill()
             this.context.stroke()
 
+            // Badge
+            const borderRadius = 10
+            const topLeft = badgeArea.origin
+            const topRight = topLeft.add(new Vector(200, 0))
+            const bottomLeft = topLeft.add(new Vector(0, 100))
+            const bottomRight = bottomLeft.add(new Vector(200, 0))
+
             this.context.beginPath()
             this.context.lineWidth = 5
             this.context.fillStyle = fillColor
-            this.context.strokeStyle = strokeColor
-            this.context.rect(position.x - 100, position.y + area.size.height / 4, 200, 100)
-            this.context.fill()
-            this.context.stroke()
 
+            this.context.moveTo(topLeft.x + borderRadius, topLeft.y)
+            this.context.lineTo(topRight.x - borderRadius, topRight.y)
+            this.context.arc(topRight.x - borderRadius, topRight.y + borderRadius, borderRadius, 1.5 * Math.PI, 0)
+            this.context.lineTo(bottomRight.x, bottomRight.y - borderRadius)
+            this.context.arc(bottomRight.x - borderRadius, bottomRight.y - borderRadius, borderRadius, 0, 0.5 * Math.PI)
+            this.context.lineTo(bottomLeft.x + borderRadius, bottomLeft.y)
+            this.context.arc(bottomLeft.x + borderRadius, bottomLeft.y - borderRadius, borderRadius, 0.5 * Math.PI, Math.PI)
+            this.context.lineTo(topLeft.x, topLeft.y + borderRadius)
+            this.context.arc(topLeft.x + borderRadius, topLeft.y + borderRadius, borderRadius, Math.PI, 1.5 * Math.PI)
+
+            this.context.shadowBlur = 15
+            this.context.shadowColor = shadowColor
+            this.context.shadowOffsetX = 4
+            this.context.shadowOffsetY = 4
+
+            this.context.fill()
+            this.resetShadow()
+
+            // Text
             this.context.beginPath()
             this.context.lineWidth = 5
             this.context.fillStyle = textColor
             this.context.textAlign = "center"
             this.context.font = "32px Arial bold"
-            this.context.fillText(marker.event.name, position.x, position.y + area.size.height / 4 + 50 + 16, 180)
+            this.context.fillText(marker.event.name, position.x, badgeArea.origin.y + badgeArea.size.height / 2 + 16, 180)
             this.context.fill()
             this.context.stroke()
 
+            // Id
             this.context.beginPath()
             this.context.fillStyle = textColor
             this.context.textAlign = "center"
@@ -374,7 +409,7 @@ export default class CV extends Canvas {
             this.context.fillText(marker.event.id.toString(), position.x, position.y + 12)
             this.context.fill()
 
-            this.clickAreas.push([Rect.from(200, 100, position.x - 100, position.y + area.size.height / 4), marker.event])
+            this.clickAreas.push([badgeArea, marker.event])
         }
 
         if (marker.type === "end" && !this.isPointEvent(marker.event)) {

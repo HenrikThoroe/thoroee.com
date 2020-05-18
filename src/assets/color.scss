@@ -2,6 +2,7 @@
     // Background 
     --background-primary: #eceff4;
     --background-accent: #fff;
+    --background-secondary: #d8dee9;
 
     // Typography
     --text-primary: #3b4253;
@@ -22,12 +23,16 @@
     // Other
     --highlight-positive: #a2bf8a;//#2AC940;
     --highlight: rgb(47, 64, 223);
+    --status-active: #77c03b;
+    --status-maintained: rgb(255, 218, 51);
+    --status-abandoned: rgb(255, 64, 64);
 }
 
 :root.darkMode {
     // Background 
     --background-primary: #121212;
     --background-accent: #323232;
+    --background-secondary: #232323;
 
     // Typography
     --text-primary: rgb(255, 255, 255, 87%);
@@ -42,8 +47,8 @@
     --input-text-user: rgb(255, 255, 255, 87%);
 
     // Shadow
-    --shadow-primary-color: #222222;
-    --shadow-secondary-color: #3b3b3b88;
+    --shadow-primary-color: #22222288;
+    --shadow-secondary-color: #3b3b3b44;
 
     // Other
     --highlight-positive: #2AC940;

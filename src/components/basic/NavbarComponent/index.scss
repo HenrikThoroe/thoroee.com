@@ -10,6 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    box-sizing: content-box;
 
     .toggle {
         width: calc(1.5rem * 1.6);

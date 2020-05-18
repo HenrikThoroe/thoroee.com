@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 import "./index.scss"
+import ReactProps from '../../../utils/ReactProps'
+import classNames from 'classnames'
 
 export type IconName = 
     "research" | 
@@ -15,16 +17,16 @@ export type IconName =
     "info-circle" |
     "heart-fill"
 
-export interface Props {
+export interface Props extends ReactProps<HTMLDivElement> {
     name: IconName
     color?: "text" | "input"
-    className?: string
 }
 
 export default function Icon(props: Props): JSX.Element {
+    const { name, color, className, ...other } = props
     const contentRef = useRef<HTMLDivElement>(null)
 
-    fetch(`/icons/${props.name}.svg`) 
+    fetch(`/icons/${name}.svg`) 
         .then(res => { 
             return res.text()
          })
@@ -33,12 +35,12 @@ export default function Icon(props: Props): JSX.Element {
             const xml = parser.parseFromString(text, "text/xml")
             const svg = xml.getElementsByTagName("svg")[0]
 
-            if (props.className) {
-                svg.classList.add(props.className)
-            }
+            // if (className) {
+            //     svg.classList.add(className)
+            // }
 
             svg?.classList.add("comp_icon")
-            svg?.classList.add(props.color === "input" ? "comp_inputColor" : "comp_textColor")
+            svg?.classList.add(color === "input" ? "comp_inputColor" : "comp_textColor")
             svg?.setAttribute("fill", "#f00")
 
             if (svg && contentRef.current) {
@@ -52,7 +54,7 @@ export default function Icon(props: Props): JSX.Element {
         }) 
 
     return (
-        <div className="comp_loadingIcon" ref={contentRef}>
+        <div className={classNames("comp_loadingIcon", className)} ref={contentRef} {...other}>
             <div />
             <div />
             <div />
