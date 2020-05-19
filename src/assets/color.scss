@@ -58,3 +58,43 @@
 body {
     background: var(--background-primary)
 }
+
+@function makeShadow($size: 0, $color: "primary", $defaultSide: true, $inset: false) {
+    $colorID: "var(--shadow-primary-color)";
+    $side: "";
+    $offset: "2px";
+    $blur: "4px";
+    $insetKey: "";
+
+    @if $inset == true {
+        $insetKey: "inset ";
+    }
+
+    @if $color == "secondary" {
+        $colorID: "var(--shadow-secondary-color)";
+    }
+
+    @if $defaultSide == false {
+        $side: "-";
+    }
+
+    @if $size == 1 {
+        $offset: "4px";
+        $blur: "6px";
+    }
+
+    @if $size == -1 {
+        $offset: "1px";
+        $blur: "2px";
+    }
+
+    @return unquote("#{$insetKey}#{$side}#{$offset} #{$side}#{$offset} #{$blur} #{$colorID}");
+}
+
+@function makeDefaultShadow($size: "m", $doubleSided: true) {
+    @if $doubleSided {
+        @return unquote("#{makeShadow($size: $size)}, #{makeShadow($size: $size, $color: "secondary", $defaultSide: false)}")
+    } @else {
+        @return unquote("#{makeShadow($size: $size)}")
+    }
+}

@@ -138,7 +138,7 @@ export default function Home() {
                 </Container>
                 <Container className="gameContainer" padding="1">
                     <Card style={{width: "100%"}}>
-                        <Card.Title>Circulum Vitae</Card.Title>
+                        <Card.Title>Curriculum Vitae</Card.Title>
                         <Card.Section>
                             <canvas ref={canvasRef} />
                         </Card.Section>

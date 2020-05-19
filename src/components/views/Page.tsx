@@ -5,15 +5,23 @@ import Home from "./Home"
 import Navbar from "./Navigation"
 import currentBreakpoint from "../../utils/currentBreakpoint"
 import Modal from "react-bootstrap/Modal"
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, useLocation } from "react-router-dom"
 import Feedback from "./Feedback"
 import useCurrentHeight from "../../utils/hooks/useCurrentHeight"
 
 export interface Props {
 }
+
 export default function Page(props: Props) {
     const [sidebarCollapsed, changeSidebar] = useState(currentBreakpoint() !== "desktop")
     const height = useCurrentHeight()
+    const location = useLocation()
+
+    useEffect(() => {
+        if (currentBreakpoint() !== "desktop") {
+            changeSidebar(true)
+        }
+    }, [location])
 
     useEffect(() => {
         const navigation = document.querySelector(".navigation")
@@ -25,7 +33,6 @@ export default function Page(props: Props) {
     }, [height])
 
     return (
-        <>
         <Layout hideSidebar={sidebarCollapsed}>
             <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
             <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
@@ -38,6 +45,5 @@ export default function Page(props: Props) {
                 </Route>
             </Switch>
         </Layout>
-        </>
     )
 }

@@ -75,6 +75,10 @@
         justify-content: flex-start;
         align-items: center;
         overflow: hidden;
+        letter-spacing: .1rem;
+
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2px var(--text-primary);
 
         &::after, &::before {
             content: "";

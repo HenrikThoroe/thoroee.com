@@ -84,12 +84,12 @@
             }
 
             &:hover {
-                box-shadow: 2px 2px 4px var(--shadow-primary-color), -1px -1px 2px var(--shadow-secondary-color);
+                box-shadow: makeShadow(), makeShadow(-1, "secondary", false);
                 padding-left: 4%;
             }
 
             &:active, &.btnActive {
-                box-shadow: inset 1px 1px 3px var(--shadow-primary-color), inset -1px -1px 3px var(--shadow-secondary-color);
+                box-shadow: makeShadow(-1, $inset: true), makeShadow(-1, "secondary", false, true);
             }
 
             .icon {
@@ -174,6 +174,9 @@
         border-radius: 30px 30px 0px 0px;
         height: 100%;
         box-shadow: 0px -1px 4px var(--shadow-primary-color);
+
+        box-sizing: border-box;
+        min-height: var(--content-height, 80vh);
 
         .header {
             margin-bottom: 3rem;
