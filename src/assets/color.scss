@@ -12,6 +12,8 @@
     // Input
     --input-bg-primary: #4c566b;
     --input-bg-search: #a2bf8a;
+    --input-bg-inline: transparent;
+    --input-bg-inline-active: transparent;
     --input-bg-user: #fff;
     --input-text-primary: #fff;
     --input-text-user: #000;
@@ -19,6 +21,8 @@
     // Shadow
     --shadow-primary-color: #B7B7B7;
     --shadow-secondary-color: #E8E8E8;
+    --shadow-primary-color-f: var(--shadow-primary-color);
+    --shadow-secondary-color-f: var(--shadow-secondary-color);
 
     // Other
     --highlight-positive: #a2bf8a;//#2AC940;
@@ -26,6 +30,7 @@
     --status-active: #77c03b;
     --status-maintained: rgb(255, 218, 51);
     --status-abandoned: rgb(255, 64, 64);
+    --color-error: rgb(255, 64, 64);
 }
 
 :root.darkMode {
@@ -41,26 +46,37 @@
 
     // Input
     --input-bg-primary: #505050;
-    --input-bg-search: #334436;
+    --input-bg-search: rgb(47, 124, 53);
     --input-bg-user: rgb(255, 255, 255, 87%);
+    --input-bg-inline: #505050;
+    --input-bg-inline-active: #121212;
     --input-text-primary: rgb(255, 255, 255, 87%);
     --input-text-user: rgb(255, 255, 255, 87%);
 
     // Shadow
-    --shadow-primary-color: #22222288;
-    --shadow-secondary-color: #3b3b3b44;
+    --shadow-primary-color: transparent;
+    --shadow-secondary-color: transparent;
+    --shadow-primary-color-f: #222222;
+    --shadow-secondary-color-f: #555555;
 
     // Other
     --highlight-positive: #2AC940;
-    --highlight: rgb(56, 76, 255);
+    --highlight: rgb(72, 84, 190);
+    --color-error: rgb(190, 72, 72);
 }
 
 body {
     background: var(--background-primary)
 }
 
-@function makeShadow($size: 0, $color: "primary", $defaultSide: true, $inset: false) {
-    $colorID: "var(--shadow-primary-color)";
+@function makeShadow($size: 0, $color: "primary", $defaultSide: true, $inset: false, $force: false) {
+    $f: "";
+
+    @if $force {
+        $f: "-f";
+    }
+
+    $colorID: "var(--shadow-primary-color#{$f})";
     $side: "";
     $offset: "2px";
     $blur: "4px";
@@ -71,11 +87,21 @@ body {
     }
 
     @if $color == "secondary" {
-        $colorID: "var(--shadow-secondary-color)";
+        $colorID: "var(--shadow-secondary-color#{$f})";
     }
 
     @if $defaultSide == false {
         $side: "-";
+    }
+
+    @if $size == 3 {
+        $offset: "12px";
+        $blur: "20px";
+    }
+
+    @if $size == 2 {
+        $offset: "8px";
+        $blur: "16px";
     }
 
     @if $size == 1 {
@@ -91,10 +117,10 @@ body {
     @return unquote("#{$insetKey}#{$side}#{$offset} #{$side}#{$offset} #{$blur} #{$colorID}");
 }
 
-@function makeDefaultShadow($size: "m", $doubleSided: true) {
+@function makeDefaultShadow($size: 0, $doubleSided: true) {
     @if $doubleSided {
-        @return unquote("#{makeShadow($size: $size)}, #{makeShadow($size: $size, $color: "secondary", $defaultSide: false)}")
+        @return unquote("#{makeShadow($size)}, #{makeShadow($size, "secondary", false)}")
     } @else {
-        @return unquote("#{makeShadow($size: $size)}")
+        @return unquote("#{makeShadow($size)}")
     }
 }

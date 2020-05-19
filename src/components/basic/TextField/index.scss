@@ -114,7 +114,7 @@
     }
 
     &.invalid::after {
-        background: red;
+        background: var(--color-error);
     }
 
     &:focus-within::after {

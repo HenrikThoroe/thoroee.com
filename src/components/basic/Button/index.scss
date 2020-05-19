@@ -46,12 +46,12 @@
 
         border-radius: 50%;
         background: transparent;
-        box-shadow: makeShadow(-1), makeShadow(-1, "secondary", false);
+        box-shadow: makeShadow(0, $force: true), makeShadow(-1, "secondary", false, $force: true);
 
         transition: box-shadow .2s linear;
 
         &:active, &.btnActive {
-            box-shadow: makeShadow(-1, $inset: true), makeShadow(-1, "secondary", false, true);
+            box-shadow: makeShadow(0, $inset: true, $force: true), makeShadow(-1, "secondary", false, true, $force: true);
         }
 
         .comp_iconContainer {
@@ -78,7 +78,7 @@
         background: var(--input-bg-primary);
         padding: .5rem 1rem;
         border-radius: 4px;
-        box-shadow: makeShadow(), makeShadow(-1, "secondary", false);
+        box-shadow: makeShadow(0), makeShadow(0, "secondary", false);
         overflow: hidden;
         position: relative;
         transition: box-shadow .2s linear;
