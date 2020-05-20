@@ -10,12 +10,12 @@ interface Props {
 
 export default function Action(props: Props) {
     const handleTouchStart = (e: React.TouchEvent) => {
-        e.preventDefault()
+        // e.preventDefault()
         e.currentTarget?.classList.add("btnActive")
     }
 
     const handleTouchEnd = (e: React.TouchEvent) => {
-        e.preventDefault()
+        // e.preventDefault()
         e.currentTarget?.classList.remove("btnActive")
     }
 

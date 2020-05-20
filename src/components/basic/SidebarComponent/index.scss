@@ -10,6 +10,10 @@
     background: var(--background-accent);
     z-index: 10000;
     margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
 
     .header {
         font-size: 2rem;
@@ -20,6 +24,7 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        width: 100%;
 
         .header-icon {
             height: 2rem;
@@ -29,11 +34,11 @@
     }
 
     .body {
-        width: 80%;
+        width: 100%;
         padding: 2rem 0px 3rem 20%;
         position: relative;
         display: inline-block;
-        box-sizing: content-box;
+        // box-sizing: border-box;
 
         * {
             width: 100%;
@@ -56,8 +61,6 @@
             border-radius: 4px 0px 0px 4px;
             transition: box-shadow .2s linear, padding-left .2s linear;
             position: relative;
-            
-            -webkit-tap-highlight-color: #0000;
 
             .text {
                 position: relative;
@@ -181,6 +184,9 @@
         .header {
             margin-bottom: 3rem;
             margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .body {
@@ -216,7 +222,7 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                width: calc(100% - 2rem);
+                width: 100%;
 
                 .group-header {
                     width: 100%;
