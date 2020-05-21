@@ -11,6 +11,8 @@ import GroupHeader from "../basic/SidebarComponent/GroupHeader";
 import Button from "../basic/Button";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "../basic/Icon"
+import { useSelector } from "react-redux";
+import selectDarkMode from "../../redux/selectors/selectDarkMode";
 
 export interface Props {
     collapsed: boolean
@@ -20,11 +22,12 @@ export interface Props {
 export default function Sidebar(props: Props) {
     const [displayedGroup, changeDisplayedGroup] = useState<"legal" | "products">("products")
     const location = useLocation()
+    const darkMode = useSelector(selectDarkMode)
 
     return (
         <SidebarComponent hidden={props.collapsed}>
             <Header>
-                <Icon name="bootstrap" className="header-icon"/>
+                <Icon name={darkMode ? "logo-dark" : "logo"} className="header-icon" />
                 <Title>Thorøe</Title> 
             </Header>
 
@@ -35,7 +38,7 @@ export default function Sidebar(props: Props) {
                     </Action>
                 </Link>
 
-                <Action callback={() => window.location.href = "https://github.com"} leading={<Icon name="github"/>}>GitHub</Action>
+                <Action callback={() => window.open("https://github.com", "_blank")} leading={<Icon name="github"/>}>GitHub</Action>
 
                 <Link to="/feedback">
                     <Action active={location.pathname === "/feedback"} leading={<Icon name="envelop-open"/>}>
@@ -55,8 +58,8 @@ export default function Sidebar(props: Props) {
                         <Caption>Legal</Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("legal")} />
                     </GroupHeader>
-                    <Action callback={() => {}}>Data Protection</Action>
-                    <Action callback={() => {}}>Legal Disclosure</Action>
+                    <Action callback={() => {}} leading={<Icon name="textfile"/>}>Data Protection</Action>
+                    <Action callback={() => {}} leading={<Icon name="textfile"/>}>Legal Disclosure</Action>
                 </Group>
             </Body>
         </SidebarComponent>
