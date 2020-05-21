@@ -3,49 +3,65 @@ import React, { useEffect, useState, ReactNode, useRef } from "react";
 import classNames from "classnames";
 import "./index.scss"
 
-type BoxType = "WaveIn"
+type BoxType = "WaveIn" | "Wave"
 
-export interface Props extends ReactProps<SVGSVGElement> {
-    type?: BoxType
+export interface Props extends ReactProps<HTMLDivElement> {
+    type: BoxType
+    fill: string
 }
 
-interface BoxProps extends ReactProps<SVGSVGElement> {
-    w: number
-    h: number
+interface SVGProps {
+    fill: string
 }
 
 export default function FluidBox(props: Props) {
-    const { type, children, ...other } = props
-    const [height, setHeight] = useState(900)
-    const wrapper = useRef<HTMLDivElement>(null)
+    const { type, children, fill, style, ...other } = props
+    const bgStyle = {
+        ...style,
+        backgroundColor: fill
+    }
 
-    useEffect(() => {
-        if (wrapper.current) {
-            const rect = wrapper.current.getBoundingClientRect()
-            setHeight(rect.height)
-        }
-    }, [])
-
-    const wrap = (comp: ReactNode) => (
-        <div ref={wrapper} className="content-wrapper">
+    const wrapTop= (comp: ReactNode) => (
+        <div className="content-wrapper">
             { comp }
-            { children }
+            <div style={bgStyle} {...other}>
+                { children }
+            </div>
+        </div>
+    )
+
+    const wrap= (top: ReactNode, bottom: ReactNode) => (
+        <div className="content-wrapper">
+            { top }
+            <div style={bgStyle} {...other}>
+                { children }
+            </div>
+            { bottom }
         </div>
     )
 
     switch (type) {
+        case "Wave":
+            return wrap(<WaveIn fill={fill}/>, <WaveOut fill={fill} />)
         case "WaveIn":
         default:
-            return wrap(<WaveIn w={600} h={height} {...other} />)
+            return wrapTop(<WaveIn fill={fill} />)
     }
 }
 
-function WaveIn(props: BoxProps) {
-    const { w, h, className, ...other } = props
+function WaveIn(props: SVGProps) {
     return (
-        <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" className={classNames("bg-svg", className)} {...other}>
-            <path d={`M${w} 41.5V${h}H0V31.5C0 31.5 25 9 116 1.50001C207 -5.99999 351.959 52.6671 430 55.5C528.917 59.0908 ${w} 41.5 ${w} 41.5Z`} fill="inherit"/>
+        <svg viewBox="0 0 1000 150" preserveAspectRatio="minXMinY" fill={props.fill} xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0C0 0 202.5 9 314 50.5C425.5 92 490.684 111.564 608.5 118C763.415 126.463 1000 50.5 1000 50.5V150H0V0Z" fill="inherit"/>
         </svg>
+    )
+}
+
+function WaveOut(props: SVGProps) {
+    return (
+        <svg viewBox="0 0 1000 150" fill={props.fill} xmlns="http://www.w3.org/2000/svg">
+            <path d="M1000 150C1000 150 797.5 141 686 99.5C574.5 58 509.316 38.4362 391.5 32C236.585 23.5371 0 99.5 0 99.5V0H1000V150Z" fill="inherit"/>
+        </svg>        
     )
 }
 

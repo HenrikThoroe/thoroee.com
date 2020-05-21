@@ -45,10 +45,6 @@
     }
 }
 
-.projectBackground {
-    fill: var(--background-secondary);
-}
-
 .project {
     min-height: var(--content-height, auto);
     scroll-snap-align: start;
@@ -59,7 +55,7 @@
     box-sizing: border-box;
     width: 100%;
     color: var(--text-primary);
-    padding-top: 5rem;
+    // padding-top: 5rem;
     // margin-bottom: 3rem;
 
     .projectHeading {

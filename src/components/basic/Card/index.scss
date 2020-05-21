@@ -52,6 +52,7 @@
         align-items: flex-start;
 
         * {
+            position: relative;
             height: .3rem;
             background: var(--text-primary);
             border-radius: 5px;

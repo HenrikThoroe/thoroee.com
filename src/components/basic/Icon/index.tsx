@@ -15,7 +15,8 @@ export type IconName =
     "envelop-open" |
     "heart" | 
     "info-circle" |
-    "heart-fill"
+    "heart-fill" | 
+    "textfile"
 
 export interface Props extends ReactProps<HTMLDivElement> {
     name: IconName

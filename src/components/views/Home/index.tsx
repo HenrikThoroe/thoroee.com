@@ -124,7 +124,7 @@ export default function Home() {
                     I do not write code for the sake of writing code. I write code because I want to express my mind and create stunning stuff.
                 </Typewriter>
             </Container>
-            <FluidBox type="WaveIn" className="projectBackground">
+            <FluidBox type="Wave" fill="var(--background-secondary)" className="projectBackground">
                 <Container className="project">
                     <h2 className="projectHeading">My Work</h2>
                     <Container className="projectCards">
