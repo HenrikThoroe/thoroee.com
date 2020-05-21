@@ -137,12 +137,12 @@ export default function Home() {
                     </Container>
                 </Container>
                 <Container className="gameContainer" padding="1">
-                    <Card style={{width: "100%"}}>
+                    {/* <Card style={{width: "100%"}}>
                         <Card.Title>Curriculum Vitae</Card.Title>
                         <Card.Section>
                             <canvas ref={canvasRef} />
                         </Card.Section>
-                    </Card>
+                    </Card> */}
                 </Container>
             </FluidBox>
             { presentedEvent ? <EventDescription shown onHide={() => setPresentedEvent(null)} event={presentedEvent!} /> : undefined }

@@ -80,7 +80,7 @@
         background: var(--input-bg-primary);
         padding: .5rem 1rem;
         border-radius: 4px;
-        box-shadow: makeShadow(0), makeShadow(0, "secondary", false);
+        box-shadow: makeBoxShadow(2);//makeShadow(0), makeShadow(0, "secondary", false);
         overflow: hidden;
         position: relative;
         transition: box-shadow .2s linear;

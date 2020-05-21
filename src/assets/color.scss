@@ -1,8 +1,9 @@
 :root { 
     // Background 
-    --background-primary: #eceff4;
-    --background-accent: #fff;
+    --background-primary: #fff;
+    --background-accent: #e5e9f0;
     --background-secondary: #d8dee9;
+    --background-primary-e1: #fff;
 
     // Typography
     --text-primary: #3b4253;
@@ -38,6 +39,7 @@
     --background-primary: #121212;
     --background-accent: #323232;
     --background-secondary: #232323;
+    --background-primary-e1: #323232;
 
     // Typography
     --text-primary: rgb(255, 255, 255, 87%);
@@ -46,7 +48,7 @@
 
     // Input
     --input-bg-primary: #505050;
-    --input-bg-search: rgb(47, 124, 53);
+    --input-bg-search: #505050;
     --input-bg-user: rgb(255, 255, 255, 87%);
     --input-bg-inline: #505050;
     --input-bg-inline-active: #121212;

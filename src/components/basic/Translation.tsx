@@ -14,8 +14,6 @@ export default function Translation(props: Props) {
     const [text, setText] = useState("Loading...")
     const key = props.for || props.children || ""
 
-    console.log(props)
-
     useEffect(() => {
         translate(key, language)
             .then(translation => setText(translation))

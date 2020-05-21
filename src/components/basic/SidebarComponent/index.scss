@@ -6,8 +6,9 @@
     height: 100%;
     // width: calc(100% - 10rem);
     box-shadow: 2px 0px 4px var(--shadow-primary-color);
+    // border-right: 1px solid var(--text-primary);
     padding: 1rem 0px .5rem 1rem;
-    background: var(--background-accent);
+    background: var(--background-primary-e1);
     z-index: 10000;
     margin: 0px;
     display: flex;
@@ -41,7 +42,7 @@
         // box-sizing: border-box;
 
         * {
-            width: 100%;
+            width: 110%;
         }
 
         .action {
