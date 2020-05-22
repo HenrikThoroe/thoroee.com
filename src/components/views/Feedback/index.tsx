@@ -30,7 +30,7 @@ export default function Feedback() {
                                 <TextField inputStyle="default" placeholder="Message" inline flat required multiline />
                             </VStack>
                             <HStack alignment="spaceBetween" spacing="1rem" verticalAlignment="center">
-                                <div style={{fontSize: ".8rem"}}>
+                                <div className="terms">
                                     <span>By submitting I agree to the </span>
                                     <Link className="inlineLink" to="/">Terms and Conditions</Link>
                                 </div>

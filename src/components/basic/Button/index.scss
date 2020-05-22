@@ -79,28 +79,34 @@
         transition: box-shadow .2s linear;
 
         & > div {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            width: 100%;
-            max-height: 100%;
-            position: relative;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: flex-start;
+            // align-items: center;
+            // width: 100%;
+            // max-height: 100%;
+            // position: relative;
 
             .comp_iconContainer {
+                min-height: 1rem;
+                min-width: 1rem;
+                max-height: 1rem;
+                max-width: 1rem;
                 padding: 0px;
                 margin-right: .5rem;
             }
 
             .comp_icon {
-                height: 1rem;
-                width: 1rem;
+                min-height: 1rem;
+                min-width: 1rem;
+                max-height: 1rem;
+                max-width: 1rem;
                 display: block;
             }
 
-            span {
-                display: inline-block;
-            }
+            // span {
+            //     display: inline-block;
+            // }
         }
 
         &:active, &.btnActive {
