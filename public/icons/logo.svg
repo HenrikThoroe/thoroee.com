@@ -1,12 +1,34 @@
-<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="5" y="499.975" width="700" height="700" rx="100" transform="rotate(-45 5 499.975)" fill="#D8DEE9"/>
-<rect x="171" y="157" width="700" height="700" rx="100" fill="#D8DEE9"/>
-<rect x="575.153" y="343.478" width="64.4491" height="402.022" fill="#3B4253" stroke="black" stroke-width="5"/>
-<rect x="436.255" y="410.837" width="67.3596" height="342.245" transform="rotate(-90 436.255 410.837)" fill="#3B4253" stroke="black" stroke-width="5"/>
-<rect x="576.993" y="420.573" width="16.2809" height="60.7679" transform="rotate(-90 576.993 420.573)" fill="#3B4253"/>
-<rect x="296.488" y="502.191" width="67.3596" height="234.599" transform="rotate(-90 296.488 502.191)" fill="#3B4253" stroke="black" stroke-width="5"/>
-<rect x="470.979" y="267.5" width="64.4491" height="402.022" fill="#3B4253" stroke="black" stroke-width="5"/>
-<rect x="263.5" y="267.5" width="64.4491" height="402.022" fill="#3B4253" stroke="black" stroke-width="5"/>
-<rect x="460.666" y="436.854" width="15.626" height="63.3146" fill="#3B4253"/>
-<rect x="322.636" y="436.854" width="15.626" height="63.3146" fill="#3B4253"/>
+<svg width="641" height="859" viewBox="0 0 641 859" fill="none" stroke-width="20" xmlns="http://www.w3.org/2000/svg">
+<line x1="384.295" y1="850.333" x2="384.295" y2="215.735" stroke="currentColor" stroke-width="inherit"/>
+<line x1="289.435" y1="853.852" x2="289.435" y2="220.427" stroke="currentColor" stroke-width="inherit"/>
+<line x1="248.61" y1="817.488" x2="248.61" y2="226.292" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="95.9775" y2="-4.4435" transform="matrix(0.997057 -0.0766653 0.0990566 0.995082 293.735 857.456)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="60.9048" y2="-4.36962" transform="matrix(0.751132 0.660152 -0.751132 0.660152 247.56 816.92)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="576.264" y2="-4.32678" transform="matrix(0.996368 -0.0851564 0.0892013 0.996014 62.8372 152.199)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="575.063" y2="-4.32678" transform="matrix(0.996368 -0.0851564 0.0892013 0.996014 30.4167 119.741)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="233" y2="-4.32678" transform="matrix(0.996368 -0.0851564 0.0892013 0.996014 62.8372 243.693)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="251" y2="-4.32678" transform="matrix(0.996368 -0.0851564 0.0892013 0.996014 385 216)" stroke="currentColor" stroke-width="inherit"/>
+<line x1="62.1402" y1="241.541" x2="63.341" y2="150.047" stroke="currentColor" stroke-width="inherit"/>
+<line x1="29.7198" y1="209.87" x2="30.9205" y2="114.856" stroke="currentColor" stroke-width="inherit"/>
+<line x1="631.299" y1="194.621" x2="632.5" y2="103.126" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="47.4786" y2="-4.31304" transform="matrix(0.715324 0.698793 -0.715324 0.698793 28.5125 209.87)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="47.4786" y2="-4.31304" transform="matrix(0.715324 0.698793 -0.715324 0.698793 29.7133 119.548)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="47.4786" y2="-4.31304" transform="matrix(0.714838 0.699291 -0.714838 0.699291 598.375 69.109)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="262.642" y2="-4.36962" transform="matrix(0.751132 0.660152 -0.751132 0.660152 51.6785 361.172)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="256.7" y2="-4.36962" transform="matrix(0.751132 0.660152 -0.751132 0.660152 55.2809 269.677)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="140.234" y2="-3.74753" transform="matrix(0.751132 0.660152 0.751132 -0.660152 147.739 259.12)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="95.9775" y2="-4.4435" transform="matrix(0.997057 -0.0766653 0.0990566 0.995082 56.4817 269.997)" stroke="currentColor" stroke-width="inherit"/>
+<line x1="51.3334" y1="646.229" x2="51.3334" y2="230.984" stroke="currentColor" stroke-width="inherit"/>
+<line x1="51.3334" y1="116.029" x2="51.3334" y2="55.0329" stroke="currentColor" stroke-width="inherit"/>
+<line x1="146.193" y1="638.018" x2="146.193" y2="444.472" stroke="currentColor" stroke-width="inherit"/>
+<line x1="146.193" y1="263.828" x2="146.193" y2="235.676" stroke="currentColor" stroke-width="inherit"/>
+<line x1="146.193" y1="108.991" x2="146.193" y2="52.6868" stroke="currentColor" stroke-width="inherit"/>
+<line x1="5.70465" y1="606.347" x2="5.70465" y2="120.721" stroke="currentColor" stroke-width="inherit"/>
+<line x1="5.70465" y1="120.721" x2="5.70465" y2="18.6696" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="95.9775" y2="-4.4435" transform="matrix(0.997057 -0.0766653 0.0990566 0.995082 55.6326 646.549)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="60.9048" y2="-4.36962" transform="matrix(0.751132 0.660152 -0.751132 0.660152 4.84906 605.174)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="95.9775" y2="-4.4435" transform="matrix(0.997057 -0.0766653 0.0990566 0.995082 55.6326 60.045)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="99.6489" y2="-4.4435" transform="matrix(0.997057 -0.0766653 0.0990566 0.995082 5.20087 18.9897)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="60.6097" y2="-4.36962" transform="matrix(0.751132 0.660152 -0.751132 0.660152 8.45142 18.6696)" stroke="currentColor" stroke-width="inherit"/>
+<line y1="-5.5" x2="60.6097" y2="-4.36962" transform="matrix(0.750677 0.66067 -0.750677 0.66067 100.057 11)" stroke="currentColor" stroke-width="inherit"/>
 </svg>

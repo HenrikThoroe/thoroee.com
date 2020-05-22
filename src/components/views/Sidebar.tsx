@@ -6,7 +6,6 @@ import Group from "../basic/SidebarComponent/Group";
 import Caption from "../basic/SidebarComponent/Caption";
 import Action from "../basic/SidebarComponent/Action";
 import Body from "../basic/SidebarComponent/Body";
-// import Icon from "../Icon";
 import GroupHeader from "../basic/SidebarComponent/GroupHeader";
 import Button from "../basic/Button";
 import { Link, useLocation } from "react-router-dom";
@@ -22,12 +21,11 @@ export interface Props {
 export default function Sidebar(props: Props) {
     const [displayedGroup, changeDisplayedGroup] = useState<"legal" | "products">("products")
     const location = useLocation()
-    const darkMode = useSelector(selectDarkMode)
 
     return (
         <SidebarComponent hidden={props.collapsed}>
             <Header>
-                <Icon name={darkMode ? "logo-dark" : "logo"} className="header-icon" />
+                <Icon name="logo" className="header-icon" />
                 <Title>Thorøe</Title> 
             </Header>
 

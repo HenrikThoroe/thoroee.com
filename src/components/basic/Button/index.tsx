@@ -1,6 +1,7 @@
 import React, { ReactNode, useRef } from "react";
 import classNames from "classnames";
 import "./index.scss"
+import HStack from "../Stacks/HStack";
 
 export type ButtonType = 
     "inline" | 
@@ -84,7 +85,10 @@ export default function Button(props: Props) {
                 e.preventDefault()
                 e.target?.focus({ preventScroll: true })
             }}>
-            { content }
+            <HStack verticalAlignment="center" alignment="center" spacing="5px">
+                { props.icon ? props.icon : undefined }
+                { props.label ? props.label : undefined }
+            </HStack>
         </button>
     )
 }

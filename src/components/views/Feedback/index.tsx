@@ -6,6 +6,8 @@ import "./index.scss"
 import VStack from "../../basic/Stacks/VStack";
 import HStack from "../../basic/Stacks/HStack";
 import Button from "../../basic/Button";
+import Icon from "../../basic/Icon";
+import { Link } from "react-router-dom";
 
 export default function Feedback() {
     return (
@@ -27,8 +29,12 @@ export default function Feedback() {
                                 <TextField inputStyle="email" label="Your E-Mail" inline flat required />
                                 <TextField inputStyle="default" placeholder="Message" inline flat required multiline />
                             </VStack>
-                            <HStack alignment="end" spacing="1rem">
-                                <Button label="submit" submit />
+                            <HStack alignment="spaceBetween" spacing="1rem" verticalAlignment="center">
+                                <div style={{fontSize: ".8rem"}}>
+                                    <span>By submitting I agree to the </span>
+                                    <Link className="inlineLink" to="/">Terms and Conditions</Link>
+                                </div>
+                                <Button label="submit" icon={<Icon name="sendmail"/>} submit />
                             </HStack>
                         </VStack>
                     </Card.Section>

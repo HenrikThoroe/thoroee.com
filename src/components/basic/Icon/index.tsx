@@ -18,7 +18,8 @@ export type IconName =
     "heart-fill" | 
     "textfile" |
     "logo" |
-    "logo-dark"
+    "logo-dark" |
+    "sendmail"
 
 export interface Props extends ReactProps<HTMLDivElement> {
     name: IconName

@@ -21,11 +21,13 @@ export default function Stack(props: Props) {
     let customChildren: ReactNode[] = []
 
     if (children instanceof Array) {
-        for (let i = 0; i < children.length; ++i) {
+        const cleaned = children.filter(c => c !== undefined && c !== null)
+
+        for (let i = 0; i < cleaned.length; ++i) {
             if (i > 0) {
-                customChildren.push(<div className="spacer" style={{["--spacing" as any]: spacing}} />, children[i])
+                customChildren.push(<div className="spacer" style={{["--spacing" as any]: spacing}} />, cleaned[i])
             } else {
-                customChildren.push(children[i])
+                customChildren.push(cleaned[i])
             }
         }
     } else {
