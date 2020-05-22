@@ -1,6 +1,15 @@
 @import "../../../assets/breakpoints.scss";
 @import "../../../assets/color.scss";
 
+.centered-headline {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 1rem 5rem 1rem;
+    padding: 0px;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
 .gameContainer {
     box-sizing: border-box;
     width: 100%;
@@ -101,6 +110,7 @@
     .projectCards {
         // padding: 2rem;
         box-sizing: border-box;
+        padding-bottom: 2rem;
 
         display: flex;
         flex-direction: row;
@@ -130,6 +140,12 @@
                 width: auto;
             }
         }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .helloworld {
+        min-height: 85vh;
     }
 }
 

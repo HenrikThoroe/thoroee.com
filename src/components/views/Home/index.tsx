@@ -25,6 +25,7 @@ import StatusIndicator from "../../basic/StatusIndicator"
 import FluidBox from "../../basic/FluidBox"
 import Header from "../../basic/Modal/Header"
 import remToPx from "../../../utils/remToPx"
+import Timeline from "../../basic/Timeline"
 
 function SampleCard() {
     const enableToggle = () => width < remToPx(55)
@@ -51,7 +52,7 @@ function SampleCard() {
                     <VStack spacing="1rem">
                         <StatusIndicator status="active">In Active Development</StatusIndicator>
                         <span>
-                            Castle is a not cloud-based spanassword manager for macOS. It's purpose is simplicity and security. 
+                            Castle is a not cloud-based password manager for macOS. It's purpose is simplicity and security. 
                             The great benefit of cloud-based password managers is their ability to share passwords across devices.
                             Castle does not lack this feature! You can share your passwords simple over your local Wi-Fi.
                             Of course Castle provides many more features like automatic backups and multi-user support. Check it out!
@@ -65,6 +66,24 @@ function SampleCard() {
                 </Card.Section>
             </Card.Body>
         </Card>
+    )
+}
+
+function SampleEvent() {
+    return (
+        <Timeline.Event>
+            <Timeline.DateRange>2013 - 2014</Timeline.DateRange>
+            <Timeline.Title>Lorem Ipsum</Timeline.Title>
+            <Timeline.Subtitle>Lorem ipsum dolor sit amet</Timeline.Subtitle>
+            <Timeline.Body>
+                My name is Henrik Thorøe. I am a young but, as far as I can say, 
+                experienced student from beautiful northern Germany. I enjoy learning 
+                new stuff all the day, which is why I am so entusiastic about developing. 
+                Today I try to work with as much languages and technologies as possible to 
+                gather a wide knowledge base. I do not write code for the sake of writing 
+                code. I write code because I want to express my mind and create stunning stuff.
+            </Timeline.Body>
+        </Timeline.Event>
     )
 }
 
@@ -136,15 +155,29 @@ export default function Home() {
                         <SampleCard />
                     </Container>
                 </Container>
-                <Container className="gameContainer" padding="1">
-                    {/* <Card style={{width: "100%"}}>
+                {/* <Container className="gameContainer" padding="1">
+                    <Card style={{width: "100%"}}>
                         <Card.Title>Curriculum Vitae</Card.Title>
                         <Card.Section>
                             <canvas ref={canvasRef} />
                         </Card.Section>
-                    </Card> */}
-                </Container>
+                    </Card>
+                </Container> */}
             </FluidBox>
+            <Container padding="3">
+                    <h2 className="centered-headline">Curriculum Vitae</h2>
+                    <Timeline>
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                        <SampleEvent />
+                    </Timeline>
+                </Container>
             { presentedEvent ? <EventDescription shown onHide={() => setPresentedEvent(null)} event={presentedEvent!} /> : undefined }
         </Container>
     )

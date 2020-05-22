@@ -33,8 +33,8 @@ function DesktopControls(props: ControlProps) {
     const dispatch = useDispatch()
 
     const handleDarkMode = () => {
-        toggleDarkMode()
         dispatch(setDarkMode(!darkMode))
+        toggleDarkMode()
     }
 
     return (
