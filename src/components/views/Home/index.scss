@@ -55,7 +55,7 @@
 }
 
 .project {
-    min-height: var(--content-height, auto);
+    // min-height: var(--content-height, auto);
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;

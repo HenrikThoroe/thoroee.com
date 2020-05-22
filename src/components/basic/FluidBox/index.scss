@@ -4,4 +4,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+
+    & > *:not(:last-child) {
+        margin-bottom: -2px;
+    }
 }

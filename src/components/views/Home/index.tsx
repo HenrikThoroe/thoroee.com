@@ -26,6 +26,7 @@ import FluidBox from "../../basic/FluidBox"
 import Header from "../../basic/Modal/Header"
 import remToPx from "../../../utils/remToPx"
 import Timeline from "../../basic/Timeline"
+import Headline from "../../basic/Headline"
 
 function SampleCard() {
     const enableToggle = () => width < remToPx(55)
@@ -145,7 +146,7 @@ export default function Home() {
             </Container>
             <FluidBox type="Wave" fill="var(--background-secondary)" className="projectBackground">
                 <Container className="project">
-                    <h2 className="projectHeading">My Work</h2>
+                    <Headline spacing="2rem" type="stroke-left" size="xl" component="h2">My Work</Headline>
                     <Container className="projectCards">
                         <SampleCard />
                         <SampleCard />
@@ -165,7 +166,9 @@ export default function Home() {
                 </Container> */}
             </FluidBox>
             <Container padding="3">
-                    <h2 className="centered-headline">Curriculum Vitae</h2>
+                    <Headline spacing={["2rem", "0px", "5rem", "0px"]} type="centered-light" size="xl" component="h2">
+                        Curriculum Vitae
+                    </Headline>
                     <Timeline>
                         <SampleEvent />
                         <SampleEvent />

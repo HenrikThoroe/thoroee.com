@@ -92,6 +92,10 @@
             text-align: left !important;
             width: 80%;
 
+            .body {
+                align-self: flex-start !important;
+            }
+
             &::before {
                 left: calc(5% - 10px);
             }
