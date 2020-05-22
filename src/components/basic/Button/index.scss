@@ -21,8 +21,6 @@
 
     box-sizing: border-box;
 
-    text-align: left;
-    
     &.inline {
         width: 32px;
         height: 32px;
@@ -69,22 +67,24 @@
     }
 
     &:not(.inline) {
+        // box-sizing: border-box;
         color: var(--input-text-primary);
         background: var(--input-bg-primary);
         padding: .5rem 1rem;
         border-radius: 4px;
         box-shadow: makeBoxShadow(2);//makeShadow(0), makeShadow(0, "secondary", false);
-        overflow: hidden;
+        // overflow: hidden;
         position: relative;
         transition: box-shadow .2s linear;
 
         & > div {
+            box-sizing: border-box;
             // display: flex;
             // flex-direction: row;
             // justify-content: flex-start;
             // align-items: center;
-            // width: 100%;
-            // max-height: 100%;
+            width: 100%;
+            max-height: 100%;
             // position: relative;
 
             .comp_iconContainer {
@@ -104,14 +104,24 @@
                 display: block;
             }
 
-            // span {
-            //     display: inline-block;
-            // }
+            span {
+                display: inline-block;
+            }
         }
 
         &:active, &.btnActive {
             box-shadow: none;
         }
+    }
+
+    .rippleBox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
 
         &:before {
             content: "";

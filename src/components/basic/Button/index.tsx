@@ -22,6 +22,7 @@ export interface Props {
 export default function Button(props: Props) {
     let content: ReactNode
     const buttonRef = useRef<HTMLButtonElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     let timeout: NodeJS.Timeout
 
     switch (props.style || "primary") {
@@ -37,7 +38,7 @@ export default function Button(props: Props) {
     const handleClick = (event: React.MouseEvent) => {
         event.preventDefault()
 
-        const button = buttonRef.current
+        const button = containerRef.current
 
         if (button && props.style !== "inline") {
             const delay = 400
@@ -85,7 +86,9 @@ export default function Button(props: Props) {
                 e.preventDefault()
                 e.target?.focus({ preventScroll: true })
             }}>
-            <HStack verticalAlignment="center" alignment="center" spacing="5px">
+                <div ref={containerRef} className="rippleBox" />
+            {/* {props.style === "primary" ? <div ref={containerRef} className="rippleBox" /> : undefined} */}
+            <HStack verticalAlignment="center" alignment={props.style === "primary" ? "start" : "center"} spacing="5px">
                 { props.icon ? props.icon : undefined }
                 { props.label ? props.label : undefined }
             </HStack>
