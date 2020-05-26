@@ -12,6 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 import Icon from "../basic/Icon"
 import { useSelector } from "react-redux";
 import selectDarkMode from "../../redux/selectors/selectDarkMode";
+import Translation from "../basic/Translation";
 
 export interface Props {
     collapsed: boolean
@@ -32,15 +33,17 @@ export default function Sidebar(props: Props) {
             <Body>
                 <Link to="/">
                     <Action active={location.pathname === "/"} leading={<Icon name="person"/>}>
-                        About Me
+                        <Translation select={lang => lang.links.about.name} />
                     </Action>
                 </Link>
 
-                <Action callback={() => window.open("https://github.com", "_blank")} leading={<Icon name="github"/>}>GitHub</Action>
+                <Action callback={() => window.open("https://github.com", "_blank")} leading={<Icon name="github"/>}>
+                    <Translation select={lang => lang.links.github.name} />
+                </Action>
 
                 <Link to="/feedback">
                     <Action active={location.pathname === "/feedback"} leading={<Icon name="envelop-open"/>}>
-                        Feedback
+                        <Translation select={lang => lang.links.feedback.name} />
                     </Action>
                 </Link>
                 
@@ -49,7 +52,9 @@ export default function Sidebar(props: Props) {
                         <Caption>Products</Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("products")} />
                     </GroupHeader>
-                    <Action callback={() => {}}>Castle</Action>
+                    <Action callback={() => {}}>
+                        <Translation select={lang => lang.links.castle.name} />
+                    </Action>
                 </Group>
                 <Group collapsed={displayedGroup !== "legal"}>
                     <GroupHeader>

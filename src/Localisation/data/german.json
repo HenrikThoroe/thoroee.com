@@ -4,5 +4,23 @@
         "light": "Hell",
         "find": "Finden",
         "search": "Suchen"
+    },
+    "links": {
+        "about": {
+            "href": "/",
+            "name": "Über Mich"
+        },
+        "feedback": {
+            "href": "/feedback",
+            "name": "Feedback"
+        },
+        "github": {
+            "href": "https://github.com",
+            "name": "GitHub"
+        },
+        "castle": {
+            "href": "/castle",
+            "name": "Castle"
+        }
     }
 }
