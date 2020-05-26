@@ -8,10 +8,12 @@
 
     box-sizing: border-box;
 
-    background: var(--background-accent);
+    background: var(--background-primary-e2);
     border-radius: 10px;
 
     position: relative;
+
+    box-shadow: makeBoxShadow(2);
 
     .listItem {
         display: flex;
@@ -43,7 +45,7 @@
         }
 
         &:active {
-            box-shadow: makeDefaultShadow();
+            // box-shadow: makeDefaultShadow();
         }
 
         .selected {
