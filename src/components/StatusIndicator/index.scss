@@ -1,0 +1,29 @@
+@import "../../assets/color.scss";
+
+.status {
+    &:before {
+        content: "";
+
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        width: .8rem;
+        height: .8rem;
+        background: var(--text-silent);
+        vertical-align: center;
+        margin-right: .5rem;
+        margin-left: .4rem;
+    }
+
+    &.statusActive:before {
+        background: var(--status-active);
+    }
+
+    &.statusMaintained:before {
+        background: var(--status-maintained);
+    }
+
+    &.statusAbandoned:before {
+        background: var(--status-abandoned);
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from './components/views/Page'
+import Page from './views/Page'
 
 function App() {
     return <Page />
