@@ -3,24 +3,17 @@ import selectLanguage from "../../redux/selectors/selectLanguage"
 import { useState, useEffect } from "react"
 import React from "react"
 import translate from "../../Localisation/translate"
+import LanguageSet from "../../Localisation/data/LanguageSet"
+import load from "../../Localisation/load"
 
 export interface Props {
-    children?: string
-    for?: string
+    select: (set: LanguageSet) => string
 }
 
 export default function Translation(props: Props) {
     const language = useSelector(selectLanguage)
-    const [text, setText] = useState("Loading...")
-    const key = props.for || props.children || ""
-
-    useEffect(() => {
-        translate(key, language)
-            .then(translation => setText(translation))
-            .catch(e => console.error(e))
-    }, [language])
 
     return (
-        <>{ text }</>
+        <>{ props.select!(load(language)) }</>
     )
 }

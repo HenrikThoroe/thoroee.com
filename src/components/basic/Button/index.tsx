@@ -17,6 +17,7 @@ export interface Props {
     size?: "small" | "default" | "large"
     onClick?: () => any
     submit?: boolean
+    disabled?: boolean
 }
 
 export default function Button(props: Props) {
@@ -37,6 +38,10 @@ export default function Button(props: Props) {
 
     const handleClick = (event: React.MouseEvent) => {
         event.preventDefault()
+
+        if (props.disabled) {
+            return
+        }
 
         const button = containerRef.current
 
@@ -73,6 +78,7 @@ export default function Button(props: Props) {
             ref={buttonRef} 
             className={classNames({ 
                 button: true, 
+                disabled: props.disabled,
                 inline: props.style === "inline", 
                 flat: props.flat, 
                 search: props.style === "search",

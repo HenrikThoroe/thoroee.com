@@ -40,12 +40,12 @@ function DesktopControls(props: ControlProps) {
     return (
         <Controls>
             <Group>
-                <Button label={<Translation for={darkMode ? translationKeys.general.light : translationKeys.general.dark} />} style="primary" onClick={handleDarkMode}/>
+                <Button label={<Translation select={lang => darkMode ? lang.general.light : lang.general.dark} />} style="primary" onClick={handleDarkMode}/>
                 <Button label="en" style="primary" onClick={props.onChooseLanguage}/>
             </Group>
             <Group>
-                <TextField inputStyle="default" label={<Translation for={translationKeys.general.search} />} inline flat />
-                <Button label={<Translation for={translationKeys.general.find} />} style="search" onClick={() => {}}/>
+                <TextField inputStyle="default" label={<Translation select={lang => lang.general.search} />} inline flat />
+                <Button label={<Translation select={lang => lang.general.find} />} style="search" onClick={() => {}}/>
             </Group>
         </Controls>
     )

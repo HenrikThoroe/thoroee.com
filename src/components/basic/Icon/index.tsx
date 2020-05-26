@@ -19,7 +19,9 @@ export type IconName =
     "textfile" |
     "logo" |
     "logo-dark" |
-    "sendmail"
+    "sendmail" |
+    "treasurechest" |
+    "treasurechest-open"
 
 export interface Props extends ReactProps<HTMLDivElement> {
     name: IconName

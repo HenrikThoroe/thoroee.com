@@ -14,10 +14,13 @@ export interface Props extends ReactProps<HTMLDivElement>  {
     flat?: boolean
     required?: boolean
     multiline?: boolean
+    onUpdate?: (content: string) => void
+    inputRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>
+    content?: string
 }
 
 export default function TextField(props: Props) {
-    const { multiline, inputStyle, placeholder, defaultContent, label, inline, flat, required, className, ...other } = props
+    const { inputRef, multiline, onUpdate, inputStyle, placeholder, defaultContent, label, inline, flat, required, className, ...other } = props
     let inputType: string
     const [labelAtTop, setLabelAtTop] = useState(defaultContent !== undefined || placeholder !== undefined)
     const [invalid, setInvalid] = useState(false)
@@ -37,7 +40,9 @@ export default function TextField(props: Props) {
     }
 
     const currentText = () => {
-        if (inputField.current !== null) {
+        if (inputRef?.current) {
+            return inputRef.current.value
+        } else if (inputField.current) {
             return inputField.current.value
         } else {
             return textArea.current!.value
@@ -57,6 +62,8 @@ export default function TextField(props: Props) {
             if (inputStyle === "email" && !/\S+@\S+\.\S+/.test(text)) {
                 setInvalid(true)
             }
+
+            onUpdate?.call(null, text)
         }
     }
 
@@ -66,9 +73,9 @@ export default function TextField(props: Props) {
             {
                 multiline 
                 ? 
-                <textarea ref={textArea} onInput={handleInput} className={classNames("textarea")} placeholder={placeholder} defaultValue={props.defaultContent} required={required}></textarea>
+                <textarea ref={inputRef as any || textArea} onInput={handleInput} className={classNames("textarea")} placeholder={placeholder} defaultValue={props.defaultContent} required={required} value={props.content}></textarea>
                 : 
-                <input ref={inputField} onInput={handleInput} className={classNames({ textField: true })} type={inputType} placeholder={placeholder} defaultValue={props.defaultContent} required={required}></input>
+                <input ref={inputRef as any || inputField} onInput={handleInput} className={classNames({ textField: true })} type={inputType} placeholder={placeholder} defaultValue={props.defaultContent} required={required} value={props.content}></input>
             }
         </div>
     )

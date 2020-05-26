@@ -62,10 +62,6 @@
         }
     }
 
-    &.flat {
-        box-shadow: none;
-    }
-
     &:not(.inline) {
         // box-sizing: border-box;
         color: var(--input-text-primary);
@@ -122,6 +118,7 @@
         left: 0;
         top: 0;
         border-radius: 4px;
+        pointer-events: none;
 
         &:before {
             content: "";
@@ -159,6 +156,15 @@
         color: #fff;
         padding-right: 2rem;
         padding-left: 2rem;
+    }
+
+    &.flat, &.disabled {
+        box-shadow: none;
+    }
+
+    &.disabled {
+        color: var(--text-silent);
+        background-color: var(--input-disabled);
     }
 
 }

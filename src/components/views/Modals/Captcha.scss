@@ -1,0 +1,16 @@
+.icon {
+    height: 7rem;
+    width: 7rem;
+    cursor: pointer;
+    transition: transform 1s ease-in, filter .3s linear;
+
+    &.sent {
+        transform: translate(70vw, -70vw);
+        filter: blur(1px);
+    }
+}
+
+.description {
+    max-width: 20rem;
+    text-align: center;
+}
