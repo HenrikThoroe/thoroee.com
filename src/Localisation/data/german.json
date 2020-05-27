@@ -3,7 +3,8 @@
         "dark": "Dunkel",
         "light": "Hell",
         "find": "Finden",
-        "search": "Suchen"
+        "search": "Suchen",
+        "submit": "Senden"
     },
     "links": {
         "about": {
@@ -21,6 +22,17 @@
         "castle": {
             "href": "/castle",
             "name": "Castle"
+        },
+        "terms": {
+            "href": "/",
+            "name": "Datenschutzrichtline"
         }
+    },
+    "feedback": {
+        "title": "Sag Hallo",
+        "subject": "Betreff",
+        "email": "Deine EMail",
+        "message": "Nachricht",
+        "agree": "Durch das Absenden stimme ich folgendem zu: "
     }
 }

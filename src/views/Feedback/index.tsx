@@ -9,12 +9,17 @@ import Button from "../../components/Button";
 import Icon from "../../components/Icon";
 import { Link } from "react-router-dom";
 import Captcha from "../Modals/Captcha";
+import Translation from "../../components/Translation";
+import translate from "../../localisation/translate";
+import { useSelector } from "react-redux";
+import selectLanguage from "../../redux/selectors/selectLanguage";
 
 export default function Feedback() {
     const [showCaptcha, setShowCaptcha] = useState(false)
     const [subject, setSubject] = useState("")
     const [sender, setSender] = useState("")
     const [message, setMessage] = useState("")
+    const language = useSelector(selectLanguage)
 
     const fetchContent = () => ({ subject, sender, message })
     const filled = () => subject.length > 0 && sender.length > 0 && message.length > 0
@@ -30,21 +35,23 @@ export default function Feedback() {
             <HStack alignment="center" verticalAlignment="center" className="fillContentHeight">
                 <Card>
                     <Card.Title>
-                        Say Hello
+                        <Translation select={lang => lang.feedback.title} />
                     </Card.Title>
                     <Card.Section className="inputGroup">
                         <VStack spacing="3rem">
                             <VStack spacing="1rem">
-                                <TextField content={subject} onUpdate={setSubject} inputStyle="default" label="Subject" inline flat required />
-                                <TextField content={sender} onUpdate={setSender} inputStyle="email" label="Your E-Mail" inline flat required />
-                                <TextField content={message} onUpdate={setMessage} inputStyle="default" placeholder="Message" inline flat required multiline />
+                                <TextField content={subject} onUpdate={setSubject} inputStyle="default" label={<Translation select={lang => lang.feedback.subject} />} inline flat required />
+                                <TextField content={sender} onUpdate={setSender} inputStyle="email" label={<Translation select={lang => lang.feedback.email} />} inline flat required />
+                                <TextField content={message} onUpdate={setMessage} inputStyle="default" placeholder={translate(language, lang => lang.feedback.message)} inline flat required multiline />
                             </VStack>
                             <HStack alignment="spaceBetween" spacing="1rem" verticalAlignment="center">
                                 <div className="terms">
-                                    <span>By submitting I agree to the </span>
-                                    <Link className="inlineLink" to="/">Terms and Conditions</Link>
+                                    <Translation select={lang => lang.feedback.agree} />
+                                    <Link className="inlineLink" to="/">
+                                        <Translation select={lang => lang.links.terms.name} />
+                                    </Link>
                                 </div>
-                                <Button disabled={!filled()} label="submit" icon={<Icon name="sendmail"/>} onClick={() => setShowCaptcha(true)} submit />
+                                <Button disabled={!filled()} label={<Translation select={lang => lang.general.submit} />} icon={<Icon name="sendmail"/>} onClick={() => setShowCaptcha(true)} submit />
                             </HStack>
                         </VStack>
                     </Card.Section>

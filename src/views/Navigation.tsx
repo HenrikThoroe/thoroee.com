@@ -9,7 +9,6 @@ import useCurrentBreakpoint from '../utils/hooks/useCurrentBreakpoint'
 import Icon from "../components/Icon";
 import LanguageSelection from "./Modals/LanguageSelection";
 import Translation from "../components/Translation";
-import translationKeys from "../localisation/keys";
 import { useSelector, useDispatch } from "react-redux";
 import selectDarkMode from "../redux/selectors/selectDarkMode";
 import setDarkMode from "../redux/actions/setDarkMode";

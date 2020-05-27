@@ -3,7 +3,8 @@
         "dark": "Dark",
         "light": "Light",
         "find": "Find",
-        "search": "Search"
+        "search": "Search",
+        "submit": "Submit"
     },
     "links": {
         "about": {
@@ -21,6 +22,17 @@
         "castle": {
             "href": "/castle",
             "name": "Castle"
+        },
+        "terms": {
+            "href": "/",
+            "name": "Terms and Conditions"
         }
+    },
+    "feedback": {
+        "title": "Say Hello",
+        "subject": "Subject",
+        "email": "Your Email",
+        "message": "Message",
+        "agree": "By submitting I agree to the "
     }
 }
