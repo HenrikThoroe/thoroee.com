@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 export interface Props {
-    children: string
+    children: ReactNode
 }
 
 export default function Subtitle(props: Props) {
