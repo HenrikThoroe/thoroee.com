@@ -6,6 +6,7 @@ import FluidBox from "../../components/FluidBox"
 import Timeline from "../../components/Timeline"
 import Headline from "../../components/Headline"
 import Cards from "./Cards"
+import Icon from "../../components/Icon"
 
 function SampleEvent() {
     return (

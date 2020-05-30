@@ -52,9 +52,11 @@ export default function Sidebar(props: Props) {
                         <Caption>Products</Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("products")} />
                     </GroupHeader>
-                    <Action callback={() => {}}>
-                        <Translation select={lang => lang.links.castle.name} />
-                    </Action>
+                    <Link to="/castle">
+                        <Action leading={<Icon name="castle" format="png" />} callback={() => {}}>
+                            <Translation select={lang => lang.links.castle.name} />
+                        </Action>
+                    </Link>
                 </Group>
                 <Group collapsed={displayedGroup !== "legal"}>
                     <GroupHeader>

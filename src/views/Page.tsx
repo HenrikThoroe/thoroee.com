@@ -8,6 +8,7 @@ import Modal from "react-bootstrap/Modal"
 import { Switch, Route, useLocation } from "react-router-dom"
 import Feedback from "./Feedback"
 import useCurrentHeight from "../utils/hooks/useCurrentHeight"
+import Castle from "./Castle"
 
 export interface Props {
 }
@@ -39,6 +40,9 @@ export default function Page(props: Props) {
             <Switch>
                 <Route path="/feedback">
                     <Feedback />
+                </Route>
+                <Route path="/castle">
+                    <Castle />
                 </Route>
                 <Route path="/">
                     <Home />

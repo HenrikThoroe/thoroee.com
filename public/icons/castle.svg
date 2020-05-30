@@ -1,0 +1,19 @@
+<svg width="862" height="862" viewBox="0 0 862 862" fill="none" preserveAspectRatio="xMinYMin" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="9" y="9" width="844" height="844">
+<rect x="374.693" y="34.1945" width="60" height="800" rx="30" transform="rotate(-4.5 374.693 34.1945)" fill="#C4C4C4"/>
+<rect x="623.923" y="14.5798" width="59.9999" height="800" rx="30" transform="rotate(-4.5 623.923 14.5798)" fill="#C4C4C4"/>
+<rect x="115.495" y="54.5939" width="60" height="800" rx="30" transform="rotate(-4.5 115.495 54.5939)" fill="#C4C4C4"/>
+<rect x="34.1946" y="487.307" width="60" height="800" rx="30" transform="rotate(-94.5 34.1946 487.307)" fill="#C4C4C4"/>
+<rect x="14.5798" y="238.077" width="60" height="800" rx="30" transform="rotate(-94.5 14.5798 238.077)" fill="#C4C4C4"/>
+<rect x="54.5939" y="746.505" width="60" height="800" rx="30" transform="rotate(-94.5 54.5939 746.505)" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="0.849487" y="63.6167" width="800" height="800" transform="rotate(-4.5 0.849487 63.6167)" fill="url(#paint0_linear)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="800.85" y1="63.6167" x2="0.849487" y2="863.617" gradientUnits="userSpaceOnUse">
+<stop offset="0.15625" stop-color="#10169E"/>
+<stop offset="1" stop-color="#C21616"/>
+</linearGradient>
+</defs>
+</svg>
