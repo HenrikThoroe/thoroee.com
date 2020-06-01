@@ -53,7 +53,7 @@ export default function Sidebar(props: Props) {
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("products")} />
                     </GroupHeader>
                     <Link to="/castle">
-                        <Action leading={<Icon name="castle" format="png" />} callback={() => {}}>
+                        <Action leading={<Icon name="castle" format="png" />} active={location.pathname === "/castle"} callback={() => {}}>
                             <Translation select={lang => lang.links.castle.name} />
                         </Action>
                     </Link>
