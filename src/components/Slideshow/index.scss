@@ -1,0 +1,39 @@
+@import "../../assets/breakpoints.scss";
+
+.slideshow {
+    position: relative;
+    max-height: 100%;
+
+    .wrapper {
+        .cover {
+            display: block;
+            position: relative;
+            z-index: 2;
+            background: var(--background-primary);
+            height: var(--content-height);
+        }
+    
+        .body {
+            display: block;
+            position: relative;
+            margin-top: -100vh;
+
+            & {
+                height: 200vh;
+                width: 100%;
+                background: linear-gradient(to bottom, #eee, #000);
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .slideshow {
+        .wrapper {
+            .cover {
+                max-height: 100vh;
+            }
+        }
+    }
+}
