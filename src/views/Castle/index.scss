@@ -34,5 +34,17 @@
 @media screen and (max-width: $mobile) {
     .castle-main {
         padding: 5rem 5%;
+
+        .side-image {
+            min-width: 55%;
+            max-width: 55%;
+            margin-left: -6%;
+        }
+    
+        .right-side-image {
+            min-width: 55%;
+            max-width: 55%;
+            margin-right: -6%;
+        }
     }
 }
