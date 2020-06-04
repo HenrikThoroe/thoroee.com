@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import Headline from "../TextContent";
 import TextContent from "../Headline";
 import VisualContent from "./VisualContent";
+import "./index.scss"
 
 interface ChildrenProps {
     children: ReactNode
@@ -38,7 +39,7 @@ ProductPage.VisualContent = VisualContent
 
 export default function ProductPage(props: ChildrenProps) {
     return (
-        <VStack alignment="start" horizontalAlignment="start" spacing="10rem">
+        <VStack className="productPage" alignment="start" horizontalAlignment="start" spacing="10rem">
             { props.children }
         </VStack>
     )
