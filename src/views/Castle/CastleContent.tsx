@@ -8,6 +8,7 @@ import Picture from "../../components/Picture";
 import Container from "../../components/Container";
 import TabView from "../../components/TabView";
 import Transition from "../../components/Transition";
+import Mockup from "../../components/Mockup";
 
 export default function CastleContent() {
     const [selectedTab, setSelectedTab] = useState(0)
@@ -89,12 +90,14 @@ export default function CastleContent() {
 
             <VStack spacing="2rem" alignment="start" horizontalAlignment="start">
                 <Headline type="centered" size="4rem" bold>Every tool to control your data right at your side.</Headline>
-                <Transition>
-                    <Picture 
-                        src={selectedTab === 0 ? "server-mockup.png" : "server-mockup.png"  }
-                        className="hero-image" 
-                    />
-                </Transition>
+                
+                <Mockup>
+                    <Mockup.Window>
+                        <Transition>
+                            <Picture src={selectedTab === 0 ? "server.png" : "web-client.png"  } />
+                        </Transition>
+                    </Mockup.Window>
+                </Mockup>
                 <TabView tabs={tabs} selectedTab={selectedTab} onSelectTab={setSelectedTab}>
                     {
                         selectedTab === 0 ? 

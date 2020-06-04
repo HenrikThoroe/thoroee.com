@@ -1,0 +1,24 @@
+.mockup-container {
+    position: relative;
+
+    .content {
+        position: absolute;
+        max-width: calc(100% - 8.17% * 2);
+        min-width: calc(100% - 8.17% * 2);
+        max-height: calc(88.871% - 9.975%);
+        min-height: calc(88.871% - 9.975%);
+        top: 9.975%;
+        left: 8.17%;
+
+        .window {
+            position: absolute;
+            width: 100%;
+            max-height: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+        }
+    }
+}
