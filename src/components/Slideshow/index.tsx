@@ -32,7 +32,11 @@ export default function Slideshow(props: ReactProps<HTMLDivElement>) {
                 el.current?.removeEventListener("scroll", adjustPosition)
             }
         } else {
-            el.current?.removeEventListener("scroll", adjustPosition)
+            // document.addEventListener("scroll", adjustPosition)
+
+            // return () => {
+            //     document.removeEventListener("scroll", adjustPosition)
+            // }
         }
     }, [el.current, bp])
 

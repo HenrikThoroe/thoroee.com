@@ -1,5 +1,38 @@
+@import "../../assets/breakpoints.scss";
+
 .a {
     background: linear-gradient(to bottom right,#5d80ae, #a2bf8a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
+}
+
+.castle-main {
+    min-height: 100vh;
+    min-width: 100%;
+    padding: 5rem calc((100% - 50rem) / 2);
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    .side-image {
+        min-width: calc(50% + (50vw - 24rem));
+        max-width: calc(50% + (50vw - 24rem));
+        margin-left: calc((50vw - 24rem) * -1);
+    }
+
+    .right-side-image {
+        min-width: calc(50% + (50vw - 24rem));
+        max-width: calc(50% + (50vw - 24rem));
+        margin-right: calc((50vw - 24rem) * -1);
+    }
+
+    .hero-image {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .castle-main {
+        padding: 5rem 5%;
+    }
+}

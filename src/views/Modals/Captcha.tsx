@@ -4,7 +4,7 @@ import Icon from "../../components/Icon";
 import "./Captcha.scss"
 import HStack from "../../components/Stacks/HStack";
 import VStack from "../../components/Stacks/VStack";
-import Text from "../../components/Text"
+import TextContent from "../../components/TextContent"
 import classNames from "classnames";
 import Feedback from "../../model/Feedback";
 import sleep from "../../utils/sleep";
@@ -41,11 +41,11 @@ export default function Captcha(props: Props) {
     const StateText = (props: {state: typeof state}) => {
         switch (props.state) {
             case "waiting":
-                return <Text className="description">Please click the paperplane to finally submit your feedback.</Text>
+                return <TextContent className="description">Please click the paperplane to finally submit your feedback.</TextContent>
             case "sending":
-                return <Text className="description">Your feedback is on the way. Please wait...</Text>
+                return <TextContent className="description">Your feedback is on the way. Please wait...</TextContent>
             case "done":
-                return <Text className="description">Your feedback has been sent. Thank you!</Text>
+                return <TextContent className="description">Your feedback has been sent. Thank you!</TextContent>
         }
     }
 
