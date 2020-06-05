@@ -6,6 +6,7 @@ import ProductPage from "../../components/ProductPage";
 import CastlePresentation from "./CastlePresentation";
 import CastleSharing from "./CastleSharing";
 import CastleFeatures from "./CastleFeatures";
+import Picture from "../../components/Picture";
 
 export default function Castle() {
     return (

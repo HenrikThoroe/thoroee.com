@@ -7,7 +7,7 @@ interface Props extends ReactProps<HTMLDivElement> {
 }
 
 export default function Picture(props: Props) {
-    const { src, onLoad, ...other } = props
+    const { src, ...other } = props
     const [highResLoaded, setHighResLoaded] = useState(false)
 
     const highResStyles: React.CSSProperties = {
@@ -21,16 +21,12 @@ export default function Picture(props: Props) {
     const construct = () => `/images/${src}`
     const handleLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
         setHighResLoaded(true)
-
-        if (onLoad) {
-            onLoad(e)
-        }
     }
 
     return (
         <div style={{position: "relative"}} {...other}>
             <div style={loaderStyle} className="imageLoader" />
-            <img src={construct()} className="highResImage" style={highResStyles} onLoad={handleLoad} />
+            <img  src={construct()} className="highResImage" style={highResStyles} onLoad={handleLoad} />
         </div>
     )
 }

@@ -1,8 +1,26 @@
-import useCurrentWitdh from './useCurrentWidth'
 import currentBreakpoint from "../currentBreakpoint"
+import { useState, useEffect } from 'react'
+import getWindowWidth from '../getWindowWidth'
 
 export default function useCurrentBreakpoint() {
-    let width = useCurrentWitdh()
+    const [bp, setBp] = useState(currentBreakpoint(getWindowWidth()))
 
-    return currentBreakpoint(width)
+    useEffect(() => {
+        const resizeListener = () => {
+            const w = getWindowWidth()
+            const newBp = currentBreakpoint(w)
+    
+            if (newBp !== bp) {
+                setBp(newBp)
+            }
+        }
+
+        window.addEventListener('resize', resizeListener)
+
+        return () => {
+            window.removeEventListener("resize", resizeListener)
+        }
+    }) 
+
+    return bp
 }
