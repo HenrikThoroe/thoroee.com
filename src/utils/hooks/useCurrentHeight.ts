@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import currentBreakpoint from '../currentBreakpoint'
 
 const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 
@@ -7,7 +8,9 @@ export default function useCurrentHeight(): number {
 
   useEffect(() => {
     const resizeListener = () => {
-      setHeight(getHeight())
+        if (currentBreakpoint() === "desktop") {
+            setHeight(getHeight())
+        }
     }
 
     window.addEventListener('resize', resizeListener)
