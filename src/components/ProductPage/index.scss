@@ -1,11 +1,18 @@
 @import "../../assets/breakpoints.scss";
 
 .productPage {
+    --title-size: 3.5rem;
+    --headline-size: 3rem;
+    
     min-height: 100vh;
     min-width: 100%;
-    padding: 5rem calc((100% - 50rem) / 2);
-    overflow-x: hidden;
-    overflow-y: visible;
+
+    .group {
+        min-width: 100%;
+        padding: 5rem calc((100% - 50rem) / 2);
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
 
     .vc {
         .image {
@@ -24,7 +31,17 @@
 
 @media screen and (max-width: $mobile) {
     .productPage {
-        padding: 5rem 5%;
+        --title-size: 2.5rem;
+        --headline-size: 2rem;
+
+        padding: 0px;
+
+        .group {
+            min-width: 100%;
+            padding: 5rem 5%;
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
 
         .vc {
             .image {

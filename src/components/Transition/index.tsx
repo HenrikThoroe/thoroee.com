@@ -4,14 +4,14 @@ import classNames from "classnames";
 import "./index.scss"
 
 export default function Transition(props: { children: ReactNode }) {
-    const [toggle, setToggle] = useState(false)
+    // const [toggle, setToggle] = useState(false)
 
-    useEffect(() => {
-        setToggle(!toggle)
-    }, [props.children])
-
+    // useEffect(() => {
+    //     setToggle(!toggle)
+    // }, [])
+//, toggle ? "toggled" : "toggled-alt"
     return (
-        <div className={classNames("transition", toggle ? "toggled" : "toggled-alt")}>
+        <div className={classNames("transition")}>
             { props.children }
         </div>
     )

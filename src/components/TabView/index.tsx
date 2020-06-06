@@ -7,6 +7,7 @@ import Container from "../Container";
 import classNames from "classnames";
 import "./index.scss"
 import Transition from "../Transition";
+import ScrollView from "../ScrollView";
 
 export interface Props extends ReactProps<HTMLDivElement> {
     tabs: string[]
@@ -27,9 +28,11 @@ export default function TabView(props: Props) {
 
     return (
         <VStack className={classNames("tabview", className)} {...other}>
-            <HStack className="tabbar" alignment="spaceBetween" spacing="1rem">
-                { tabs.map(createItem) }
-            </HStack>
+            <ScrollView direction="x" hideScrollBars>
+                <HStack className="tabbar" alignment="spaceBetween" spacing="2rem">
+                    { tabs.map(createItem) }
+                </HStack>
+            </ScrollView>
             <Container className="tabviewcontent">
                 <Transition>
                     { children }

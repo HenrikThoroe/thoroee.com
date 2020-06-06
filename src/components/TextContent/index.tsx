@@ -5,7 +5,7 @@ import './index.scss'
 
 type Size = "s" | "m" | "l" | "xl" | "xxl" | string
 
-type Type = "stroke" | "stroke-left" | "centered" | "centered-light" | "light"
+type Type = "stroke" | "stroke-left" | "centered" | "centered-light" | "light" | "subtitle"
 
 type Component = 
     "h1" | 

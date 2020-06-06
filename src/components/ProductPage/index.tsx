@@ -10,11 +10,11 @@ interface ChildrenProps {
 }
 
 ProductPage.Title = (p: ChildrenProps) => (
-    <Headline component="h1" type="centered" className="title" size="4rem" bold>{ p.children }</Headline>
+    <Headline component="h1" type="centered" className="title" size="var(--title-size)" bold>{ p.children }</Headline>
 )
 
 ProductPage.Headline = (p: ChildrenProps) => (
-    <Headline component="h2" type="centered" className="headline" size="3rem" bold>{ p.children }</Headline>
+    <Headline component="h2" type="centered" className="headline" size="var(--headline-size)" bold>{ p.children }</Headline>
 )
 
 ProductPage.CaptionHeadline = (p: ChildrenProps) => (
@@ -30,7 +30,7 @@ ProductPage.BodyText = (p: ChildrenProps) => (
 )
 
 ProductPage.Group = (p: ChildrenProps) => (
-    <VStack spacing="2rem">
+    <VStack className="group" spacing="2rem" style={{position: "relative"}}>
         { p.children }
     </VStack>
 )
@@ -39,7 +39,7 @@ ProductPage.VisualContent = VisualContent
 
 export default function ProductPage(props: ChildrenProps) {
     return (
-        <VStack className="productPage" alignment="start" horizontalAlignment="start" spacing="10rem">
+        <VStack className="productPage" alignment="start" horizontalAlignment="start" spacing="0px">
             { props.children }
         </VStack>
     )

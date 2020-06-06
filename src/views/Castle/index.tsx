@@ -1,19 +1,22 @@
 import React from "react";
 import Container from "../../components/Container";
-import Icon from "../../components/Icon";
-import HStack from "../../components/Stacks/HStack";
 import ProductPage from "../../components/ProductPage";
 import CastlePresentation from "./CastlePresentation";
 import CastleSharing from "./CastleSharing";
 import CastleFeatures from "./CastleFeatures";
-import Picture from "../../components/Picture";
+import CastleWelcome from "./CastleWelcome";
+import FluidBox from "../../components/FluidBox";
+import "./index.scss"
 
 export default function Castle() {
     return (
         <Container>
             <ProductPage>
+                <CastleWelcome />
                 <CastlePresentation />
-                <CastleSharing />
+                <FluidBox type="Wave" fill="var(--background-secondary)">
+                    <CastleSharing />
+                </FluidBox>
                 <CastleFeatures />
             </ProductPage>
         </Container>

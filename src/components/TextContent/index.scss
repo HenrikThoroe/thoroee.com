@@ -11,6 +11,10 @@
     color: var(--text-primary);
     margin: var(--spacing);
 
+    &.subtitle {
+        color: var(--text-silent);
+    }
+
     &.bold {
         font-weight: bolder;
     }
