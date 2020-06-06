@@ -3,6 +3,7 @@ import ProductPage from "../../components/ProductPage";
 import VStack from "../../components/Stacks/VStack";
 import Picture from "../../components/Picture";
 import Button from "../../components/Button";
+import Mockup from "../../components/Mockup";
 
 export default function CastleSharing() {
     return (
@@ -13,7 +14,11 @@ export default function CastleSharing() {
                     <ProductPage.CaptionHeadline>Password Server</ProductPage.CaptionHeadline>
                 }
                 image={
-                    <Picture src="server.png" />
+                    <Mockup>
+                        <Mockup.Window>
+                            <Picture src="server.png" />
+                        </Mockup.Window>
+                    </Mockup>
                 } 
                 body={
                     <VStack spacing="1rem">
@@ -23,7 +28,7 @@ export default function CastleSharing() {
                             stay right where you are. No cloud, no third party, 
                             only you and your passwords.
                         </ProductPage.BodyText>
-                        <Button label="Learn More" />
+                        <Button label="Learn More" fitContent />
                     </VStack>
                 }
             />
@@ -44,7 +49,7 @@ export default function CastleSharing() {
                         to access your Castle passwords. The passwords 
                         will not leave the place you are.
                         </ProductPage.BodyText>
-                        <Button label="Let's go" />
+                        <Button label="Let's go" fitContent />
                     </VStack>
                 }
                 floatRight

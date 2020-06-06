@@ -73,6 +73,10 @@
         position: relative;
         transition: box-shadow .2s linear;
 
+        &.shrink {
+            max-width: fit-content;
+        }
+
         & > div {
             box-sizing: border-box;
             // display: flex;

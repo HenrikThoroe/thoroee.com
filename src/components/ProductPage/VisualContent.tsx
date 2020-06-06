@@ -21,6 +21,12 @@ export default function VisualContent(props: Props) {
         </div>
     )
 
+    const Title = () => (
+        <div className={classNames("title", props.floatRight ? "right" : undefined)}>
+            { props.title }
+        </div>
+    )
+
     const Image = () => (
         <div className={classNames("image", props.floatRight ? "right" : undefined)}>
             { props.image }
@@ -39,23 +45,33 @@ export default function VisualContent(props: Props) {
 
     if (props.floatRight) {
         return (
-            <HStack className="vc" spacing="1rem">
-                <VStack spacing="1rem">
-                    { props.title }
-                    <Body />
-                </VStack>
+            <VStack className="vc-alt" spacing="1.5rem">
                 <Image />
-            </HStack>
+                <HStack spacing="3rem" className="info">
+                    <Body />
+                    <Title />
+                </HStack>
+            </VStack>
         )
     } 
 
+    // return (
+    //     <HStack className="vc" spacing="1rem">
+    //         <Image />
+    //         <VStack spacing="1rem">
+    //             <Title />
+    //             <Body />
+    //         </VStack>
+    //     </HStack>
+    // )
+
     return (
-        <HStack className="vc" spacing="1rem">
+        <VStack className="vc-alt" spacing="1.5rem">
             <Image />
-            <VStack spacing="1rem">
-                { props.title }
+            <HStack spacing="3rem" className="info">
+                <Title />
                 <Body />
-            </VStack>
-        </HStack>
+            </HStack>
+        </VStack>
     )
 }

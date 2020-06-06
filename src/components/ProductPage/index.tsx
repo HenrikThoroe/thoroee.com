@@ -18,7 +18,7 @@ ProductPage.Headline = (p: ChildrenProps) => (
 )
 
 ProductPage.CaptionHeadline = (p: ChildrenProps) => (
-    <Headline component="h3" className="headline" size="1.5rem" bold>{ p.children }</Headline>
+    <Headline component="h3" className="headline" size="var(--caption-headline-size)" bold>{ p.children }</Headline>
 )
 
 ProductPage.HeroText = (p: ChildrenProps) => (
@@ -30,7 +30,7 @@ ProductPage.BodyText = (p: ChildrenProps) => (
 )
 
 ProductPage.Group = (p: ChildrenProps) => (
-    <VStack className="group" spacing="2rem" style={{position: "relative"}}>
+    <VStack className="group" spacing="4rem" style={{position: "relative"}}>
         { p.children }
     </VStack>
 )

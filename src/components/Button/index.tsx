@@ -18,6 +18,7 @@ export interface Props {
     onClick?: () => any
     submit?: boolean
     disabled?: boolean
+    fitContent?: boolean
 }
 
 export default function Button(props: Props) {
@@ -77,6 +78,7 @@ export default function Button(props: Props) {
         <button 
             ref={buttonRef} 
             className={classNames({ 
+                shrink: props.fitContent,
                 button: true, 
                 disabled: props.disabled,
                 inline: props.style === "inline", 
