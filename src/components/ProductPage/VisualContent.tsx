@@ -33,7 +33,7 @@ export default function VisualContent(props: Props) {
         </div>
     )
 
-    if (breakpoint === "mobile") {
+    if (breakpoint !== "desktop") {
         return (
             <VStack className="vc" spacing="1rem">
                 <Image />
