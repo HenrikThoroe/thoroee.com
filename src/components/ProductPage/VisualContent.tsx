@@ -36,8 +36,8 @@ export default function VisualContent(props: Props) {
     if (breakpoint === "mobile") {
         return (
             <VStack className="vc" spacing="1rem">
-                { props.title }
                 <Image />
+                <Title />
                 <Body />
             </VStack>
         )
