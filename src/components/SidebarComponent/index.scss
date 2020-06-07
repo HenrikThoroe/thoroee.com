@@ -13,6 +13,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    overflow-x: hidden;
+    // overflow-y: scroll;
 
     .header {
         font-size: 2rem;
