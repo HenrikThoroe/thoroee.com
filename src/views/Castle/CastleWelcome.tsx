@@ -29,9 +29,9 @@ function Small() {
     return (
         <HStack alignment="center" className="hero-wrapper">
             <Container>
-                <HStack className="hero-container" spacing="2rem">
-                    <VStack spacing="1rem">
-                        <HStack spacing="1rem" verticalAlignment="center">
+                <HStack alignment="center" className="hero-container" spacing="2rem">
+                    <VStack spacing="1rem" horizontalAlignment="center">
+                        <HStack spacing="1rem" alignment="center" verticalAlignment="center">
                             <Icon name="castle" className="appIcon" />
                             <Headline size="2rem" component="h2" bold>Castle</Headline>
                         </HStack>
@@ -49,7 +49,7 @@ export default function CastleWelcome() {
     return (
         <Container style={{width: "100%"}}>
             {  
-                bp === "mobile" ? 
+                bp !== "desktop" ? 
                 <Small /> :
                 <Default />
             }

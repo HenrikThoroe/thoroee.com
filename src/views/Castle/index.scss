@@ -66,6 +66,13 @@
 }
 
 @media screen and (max-width: $mobile) {
+    .hero-wrapper {
+        .hero-container {
+            min-width: 90vw;
+            max-width: 90vw;
+        }
+    }
+
     .castle-main {
         padding: 5rem 5%;
 

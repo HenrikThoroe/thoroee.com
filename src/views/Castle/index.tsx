@@ -23,12 +23,12 @@ export default function Castle() {
                     <ProductPage.Headline>
                         Interested?
                     </ProductPage.Headline>
-                    <ProductPage.BodyText>
+                    <ProductPage.HeroText>
                         Do you want to test out Castle?
                         Buy it on the Mac App Store for only $9.99.
-                    </ProductPage.BodyText>
-                    <Button label="Buy on Mac App Store" fitContent />
-                    <Button label="View Data Protection Declaration" fitContent />
+                    </ProductPage.HeroText>
+                    <Button style="comic" label="Buy on Mac App Store" />
+                    <Button style="comic" label="View Data Protection Declaration" />
                 </ProductPage.Group>
             </ProductPage>
         </Container>
