@@ -2,6 +2,7 @@ import React, { ReactNode, useRef } from "react";
 import classNames from "classnames";
 import "./index.scss"
 import HStack from "../Stacks/HStack";
+import { useHistory } from "react-router-dom";
 
 export type ButtonType = 
     "inline" | 
@@ -20,6 +21,7 @@ export interface Props {
     submit?: boolean
     disabled?: boolean
     fitContent?: boolean
+    link?: string
 }
 
 export default function Button(props: Props) {
@@ -27,6 +29,7 @@ export default function Button(props: Props) {
     const buttonRef = useRef<HTMLButtonElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     let timeout: NodeJS.Timeout
+    const history = useHistory()
 
     switch (props.style || "primary") {
         case "inline":
@@ -64,6 +67,10 @@ export default function Button(props: Props) {
         }
 
         props.onClick?.call(null)
+
+        if (props.link) {
+            history.push(props.link)
+        }
     }
 
     const handleTouchStart = (e: React.TouchEvent) => {

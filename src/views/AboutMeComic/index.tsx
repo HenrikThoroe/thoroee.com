@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import VStack from "../../components/Stacks/VStack";
 import HStack from "../../components/Stacks/HStack";
 import Button from "../../components/Button";
-import Headline from "../../components/TextContent";
 import useCurrentBreakpoint from "../../utils/hooks/useCurrentBreakpoint";
 import TextContent from "../../components/Headline";
 import Picture from "../../components/Picture";
-import Container from "../../components/Container";
-import { Link, useHistory } from "react-router-dom";
-import Icon from "../../components/Icon";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import selectDarkMode from "../../redux/selectors/selectDarkMode";
-import setDarkMode from "../../redux/actions/setDarkMode";
+import "./index.scss"
 
 const Text = ({ index = 1 }) => {
     switch (index) {
@@ -40,40 +36,52 @@ const Text = ({ index = 1 }) => {
 export default function AboutMeComic() {
     const bp = useCurrentBreakpoint()
     const [index, setIndex] = useState(1)
-    const history = useHistory()
     const darkMode = useSelector(selectDarkMode)
+
+    const pictureSource = () => `Scene ${index}${darkMode ? " - Dark" : ""}.svg`
 
     const Default = () => (
         <HStack spacing="1rem" style={{ position: "relative", flexGrow: 1, width: "100%" }} verticalAlignment="center" alignment="center">
-            <TextContent size="2rem" style={{fontFamily: "Comic Sans MS", maxWidth: "20rem", flexGrow: 0}}>
+            <TextContent size="2rem" style={{fontFamily: "Open Sans", maxWidth: "20rem", flexGrow: 0}}>
                 <Text index={index} />
             </TextContent>
 
             <HStack alignment="center" style={{flexGrow: 1, position: "relative"}}>
-                <Picture src={`Scene ${index}${darkMode ? " - Dark" : ""}.svg`} style={{ width: "70vmin", minWidth: "70vmin", maxWidth: "70vmin", objectFit: "scale-down" }} />
+                <Picture src={pictureSource()} style={{ width: "70vmin", minWidth: "70vmin", maxWidth: "70vmin", objectFit: "scale-down" }} />
             </HStack>
         </HStack>
     )
 
     const Mobile = () => (
-        <VStack style={{ position: "relative" }}>
-            <TextContent size="1.5rem" style={{fontFamily: "Comic Sans MS"}}>
+        <VStack style={{ position: "relative" }} horizontalAlignment="center" spacing="1rem">
+            <TextContent size="1.2rem" style={{fontFamily: "Open Sans"}}>
                 <Text index={index} />
             </TextContent>
-            <Container style={{ position: "relative" }}>
-                <Picture src={`Scene ${index}.svg`} style={{ width: "100vw" }} />
-            </Container>
+            <Picture src={pictureSource()} style={{ width: "100%" }} />
         </VStack>
     )
 
+    if (bp === "desktop") {
+        return (
+            <VStack alignment="spaceBetween" spacing="1rem" style={{overflow: "hidden", padding: "4rem 2rem"}}>
+                <HStack verticalAlignment="start" spacing="2rem">
+                    <Button style="comic" label="Back to Homepage" link="/" fitContent />
+                    <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} fitContent />
+                    <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9}  fitContent />
+                </HStack>
+                <Default />
+            </VStack>
+        )
+    }
+
     return (
-        <VStack alignment="spaceBetween" spacing="1rem" style={{overflow: "hidden", padding: "4rem 2rem"}}>
-            <HStack verticalAlignment="start" spacing="2rem">
-                <Button style="comic" label="Back to Homepage" onClick={() => history.push("/")} fitContent />
-                <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} fitContent />
-                <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9}  fitContent />
+        <VStack alignment="start" horizontalAlignment="stretch" spacing="2rem" style={{overflow: "hidden", padding: "4rem 2rem"}}>
+            <HStack style={{ minWidth: "100%" }} alignment="start" verticalAlignment="center" spacing="2rem">
+                <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} />
+                <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9} />
             </HStack>
-            { bp === "desktop" ? <Default /> : <Default /> }
+            <Mobile />
+            <Button style="comic" label="Back to Homepage" link="/" />
         </VStack>
     )
 }

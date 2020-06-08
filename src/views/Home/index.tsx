@@ -7,6 +7,11 @@ import Timeline from "../../components/Timeline"
 import Headline from "../../components/Headline"
 import Cards from "./Cards"
 import Icon from "../../components/Icon"
+import AboutMeComic from "../AboutMeComic"
+import TextContent from "../../components/Headline"
+import Button from "../../components/Button"
+import VStack from "../../components/Stacks/VStack"
+import { Link } from "react-router-dom"
 
 function SampleEvent() {
     return (
@@ -29,7 +34,7 @@ function SampleEvent() {
 export default function Home() {
     return (
         <Container className="home">
-            <Container padding="1" className="helloworld">
+            {/* <Container padding="1" className="helloworld">
                 <Typewriter>
                     Hello, World! \n
                     My name is Henrik Thorøe. I am a young but, as far as I can say, experienced student from beautiful northern Germany.
@@ -37,6 +42,18 @@ export default function Home() {
                     Today I try to work with as much languages and technologies as possible to gather a wide knowledge base.
                     I do not write code for the sake of writing code. I write code because I want to express my mind and create stunning stuff.
                 </Typewriter>
+            </Container> */}
+            {/* <AboutMeComic /> */}
+            <Container padding="1" className="helloworld">
+                <VStack spacing="3rem">
+                    <Headline type="centered" size="3rem">Hello, There!</Headline>
+                    <TextContent size="1.5rem">
+                        You are probably here to learn something about me.
+                        If you want to, you can take an interactive journey an learn about my previous life.
+                        Or you can scroll down and have a look at my CV and projects.
+                    </TextContent>
+                    <Button link="/comic" label="Take the Journey" style="comic" />
+                </VStack>
             </Container>
             <FluidBox type="Wave" fill="var(--background-secondary)" className="projectBackground">
                 <Container className="project">
