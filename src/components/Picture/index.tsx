@@ -27,7 +27,7 @@ export default function Picture(props: Props) {
     useEffect(() => {
         setTimeout(() => {
             setBuffer(false)
-        }, 50)
+        }, 100)
     }, [])
 
     return (
