@@ -1,5 +1,5 @@
 import ReactProps from "../../utils/ReactProps";
-import React, { useState } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import "./index.scss"
 
 interface Props extends ReactProps<HTMLDivElement> {
@@ -7,15 +7,16 @@ interface Props extends ReactProps<HTMLDivElement> {
 }
 
 export default function Picture(props: Props) {
-    const { src, ...other } = props
+    const { src, style, ...other } = props
     const [highResLoaded, setHighResLoaded] = useState(false)
+    const [buffer, setBuffer] = useState(true)
 
     const highResStyles: React.CSSProperties = {
-        opacity: highResLoaded ? 1 : 0
+        opacity: highResLoaded || buffer ? 1 : 0
     }
 
     const loaderStyle: React.CSSProperties = {
-        opacity: highResLoaded ? 0 : 1
+        opacity: highResLoaded || buffer ? 0 : 1
     }
 
     const construct = () => `/images/${src}`
@@ -23,8 +24,14 @@ export default function Picture(props: Props) {
         setHighResLoaded(true)
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            setBuffer(false)
+        }, 50)
+    }, [])
+
     return (
-        <div style={{position: "relative"}} {...other}>
+        <div style={{...style, position: "relative"}} {...other}>
             <div style={loaderStyle} className="imageLoader" />
             <img  src={construct()} className="highResImage" style={highResStyles} onLoad={handleLoad} />
         </div>

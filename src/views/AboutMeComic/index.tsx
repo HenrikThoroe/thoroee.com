@@ -44,17 +44,10 @@ export default function AboutMeComic() {
             <TextContent size="2rem" style={{fontFamily: "Comic Sans MS", maxWidth: "20rem", flexGrow: 0}}>
                 <Text index={index} />
             </TextContent>
-            {/* <Container style={{ position: "relative", border: "1px solid red", height: "100%" }}>
-                
-            </Container> */}
 
             <HStack alignment="center" style={{flexGrow: 1, position: "relative"}}>
                 <Picture src={`Scene ${index}.svg`} style={{ width: "70vmin", minWidth: "70vmin", maxWidth: "70vmin", objectFit: "scale-down" }} />
             </HStack>
-            
-            {/* <VStack horizontalAlignment="center" alignment="stretch" style={{border: "3px solid blue", alignSelf: "stretch"}}>
-                <Picture src={`Scene ${index}.svg`} style={{ flexGrow: 1 }} />
-            </VStack> */}
         </HStack>
     )
 
