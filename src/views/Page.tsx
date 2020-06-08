@@ -9,6 +9,7 @@ import { Switch, Route, useLocation } from "react-router-dom"
 import Feedback from "./Feedback"
 import useCurrentHeight from "../utils/hooks/useCurrentHeight"
 import Castle from "./Castle"
+import AboutMeComic from "./AboutMeComic"
 
 export interface Props {
 }
@@ -34,20 +35,27 @@ export default function Page(props: Props) {
     }, [height])
 
     return (
-        <Layout hideSidebar={sidebarCollapsed}>
-            <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
-            <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
-            <Switch>
-                <Route path="/feedback">
-                    <Feedback />
-                </Route>
-                <Route path="/castle">
-                    <Castle />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
-            </Switch>
-        </Layout>
+        <Switch>
+            <Route path="/comic">
+                <AboutMeComic />
+            </Route>
+            <Route path="*">
+                <Layout hideSidebar={sidebarCollapsed}>
+                    <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
+                    <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
+                    <Switch>
+                        <Route path="/feedback">
+                            <Feedback />
+                        </Route>
+                        <Route path="/castle">
+                            <Castle />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                    </Switch>
+                </Layout>
+            </Route>
+        </Switch>
     )
 }

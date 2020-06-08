@@ -79,13 +79,8 @@
 
         & > div {
             box-sizing: border-box;
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: flex-start;
-            // align-items: center;
             width: 100%;
             max-height: 100%;
-            // position: relative;
 
             .comp_iconContainer {
                 min-height: 1rem;
@@ -169,6 +164,47 @@
     &.disabled {
         color: var(--text-silent);
         background-color: var(--input-disabled);
+    }
+
+    &.comic {
+        background: transparent;
+        color: var(--text-primary);
+        font-weight: bolder;
+        font-family: "Comic Sans MS";
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: none;
+        border: 5px solid var(--text-primary);
+        border-radius: 0px;
+        transition: transform .2s linear;
+
+        &:not(.disabled) {
+            &:active, &.btnActive {
+                transform: translateY(-1rem)
+            }
+        }
+
+        &.disabled {
+            color: var(--text-silent);
+            border-color: var(--text-silent);
+        }
+
+        .comp_iconContainer {
+            min-height: 2rem;
+            min-width: 2rem;
+            max-height: 2rem;
+            max-width: 2rem;
+            padding: 0px;
+            margin-right: .5rem;
+        }
+
+        .comp_icon {
+            min-height: 2rem;
+            min-width: 2rem;
+            max-height: 2rem;
+            max-width: 2rem;
+            display: block;
+        }
     }
 
 }

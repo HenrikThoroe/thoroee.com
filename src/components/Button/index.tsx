@@ -6,7 +6,8 @@ import HStack from "../Stacks/HStack";
 export type ButtonType = 
     "inline" | 
     "primary" | 
-    "search"
+    "search" |
+    "comic"
 
 export interface Props {
     imageButton?: boolean
@@ -31,6 +32,7 @@ export default function Button(props: Props) {
         case "inline":
             content = props.icon ? props.icon : props.label
             break
+        case "comic":
         case "search":
         case "primary":
             content = <div>{ props.icon } { props.label ? <span>{ props.label }</span> : undefined}</div>
@@ -46,7 +48,7 @@ export default function Button(props: Props) {
 
         const button = containerRef.current
 
-        if (button && props.style !== "inline") {
+        if (button && props.style !== "inline" && props.style !== "comic") {
             const delay = 400
             const rect = button.getBoundingClientRect()
             const x = Math.floor(event.clientX - rect.left)
@@ -82,6 +84,7 @@ export default function Button(props: Props) {
                 button: true, 
                 disabled: props.disabled,
                 inline: props.style === "inline", 
+                comic: props.style === "comic",
                 flat: props.flat, 
                 search: props.style === "search",
                 large: props.size === "large",
