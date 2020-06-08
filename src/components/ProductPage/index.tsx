@@ -30,7 +30,7 @@ ProductPage.BodyText = (p: ChildrenProps) => (
 )
 
 ProductPage.Group = (p: ChildrenProps) => (
-    <VStack className="group" spacing="4rem" style={{position: "relative"}}>
+    <VStack className="group" horizontalAlignment="stretch" spacing="4rem" style={{position: "relative"}}>
         { p.children }
     </VStack>
 )

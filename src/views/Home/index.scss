@@ -47,10 +47,9 @@
     align-items: center;
     min-height: 94vh;
     box-sizing: border-box;
-    scroll-snap-align: start;
 
     & > * {
-        width: unquote($string: "min(100%, 50rem)");
+       max-width: 50rem;
     }
 }
 

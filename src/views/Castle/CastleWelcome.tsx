@@ -46,9 +46,13 @@ function Small() {
 export default function CastleWelcome() {
     const bp = useCurrentBreakpoint()
 
-    if (bp === "mobile-small") {
-        return <Small />
-    }
-
-    return <Default />
+    return (
+        <Container style={{width: "100%"}}>
+            {  
+                bp === "mobile" ? 
+                <Small /> :
+                <Default />
+            }
+        </Container>
+    )
 }
