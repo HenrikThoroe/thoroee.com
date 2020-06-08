@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import VStack from "../../components/Stacks/VStack";
 import HStack from "../../components/Stacks/HStack";
 import Button from "../../components/Button";
@@ -9,6 +9,9 @@ import Picture from "../../components/Picture";
 import Container from "../../components/Container";
 import { Link, useHistory } from "react-router-dom";
 import Icon from "../../components/Icon";
+import { useSelector, useDispatch } from "react-redux";
+import selectDarkMode from "../../redux/selectors/selectDarkMode";
+import setDarkMode from "../../redux/actions/setDarkMode";
 
 const Text = ({ index = 1 }) => {
     switch (index) {
@@ -17,7 +20,7 @@ const Text = ({ index = 1 }) => {
         case 2:
             return <span>I had my first contact with the world of programming back when I was about 13 years old. I actually managed to turn on some LEDs. #YAY</span>
         case 3:
-            return <span>Later on I built and programmed a self driving modell-car. I certainly were no Tesal engineer these days.</span>
+            return <span>Later on I built and programmed a self driving modell-car. I certainly were no Tesla engineer these days.</span>
         case 4:
             return <span>I took my first real steps in programming on my sister's IPad. You will be surprised how much you can do on one of these things. JavaScript, Swift, Java, Python, ...</span>
         case 5:
@@ -38,6 +41,7 @@ export default function AboutMeComic() {
     const bp = useCurrentBreakpoint()
     const [index, setIndex] = useState(1)
     const history = useHistory()
+    const darkMode = useSelector(selectDarkMode)
 
     const Default = () => (
         <HStack spacing="1rem" style={{ position: "relative", flexGrow: 1, width: "100%" }} verticalAlignment="center" alignment="center">
@@ -46,7 +50,7 @@ export default function AboutMeComic() {
             </TextContent>
 
             <HStack alignment="center" style={{flexGrow: 1, position: "relative"}}>
-                <Picture src={`Scene ${index}.svg`} style={{ width: "70vmin", minWidth: "70vmin", maxWidth: "70vmin", objectFit: "scale-down" }} />
+                <Picture src={`Scene ${index}${darkMode ? " - Dark" : ""}.svg`} style={{ width: "70vmin", minWidth: "70vmin", maxWidth: "70vmin", objectFit: "scale-down" }} />
             </HStack>
         </HStack>
     )
@@ -69,7 +73,7 @@ export default function AboutMeComic() {
                 <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} fitContent />
                 <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9}  fitContent />
             </HStack>
-            { bp === "desktop" ? <Default /> : <Mobile /> }
+            { bp === "desktop" ? <Default /> : <Default /> }
         </VStack>
     )
 }
