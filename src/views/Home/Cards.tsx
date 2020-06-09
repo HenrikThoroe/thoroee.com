@@ -52,19 +52,19 @@ function ProjectCard(props: { name: ReactNode, short: ReactNode, state: ProjectS
                 </Card.Section>
                 <Card.Section>
 
-                    <If data={props.buy}>
+                    <If condition={props.buy}>
                         <Button icon={<Icon color="input" name="heart-fill"/>} link={props.buy} label="Buy" style="primary" size="large" />
                     </If>
 
-                    <If data={props.github}>
+                    <If condition={props.github}>
                         <Button icon={<Icon color="input" name="github"/>} link={props.github} label="GitHub" style="primary" size="large" />
                     </If>
 
-                    <If data={props.download}>
+                    <If condition={props.download}>
                         <Button icon={<Icon color="input" name="download"/>} label="Download" style="primary" size="large" />
                     </If>
 
-                    <If data={props.info}>
+                    <If condition={props.info}>
                         <Button icon={<Icon color="input" name="info-circle"/>} link={props.info} label="Learn More" style="primary" size="large" />
                     </If>
                     

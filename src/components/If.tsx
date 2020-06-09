@@ -2,16 +2,17 @@ import React, { ReactNode } from "react";
 
 interface Props<T> {
     children: ReactNode
-    data: T
-    when?: (arg0: T) => boolean
+    condition?: T
 }
 
 export default function If<T>(props: Props<T>): JSX.Element {
     const shouldRender = () => {
-        if (props.when) {
-            return props.when(props.data)
+        if (props.condition && typeof props.condition === "boolean") {
+            return props.condition === true
+        } else if (props.condition !== undefined) {
+            return props.condition !== null
         } else {
-            return props.data !== undefined && props.data !== null 
+            return false
         }
     }
 
