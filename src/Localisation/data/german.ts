@@ -2,11 +2,12 @@ import { BaseType } from "./english";
 
 const german: BaseType = {
     general: {
-        dark: "Dunkel",
-        light: "Hell",
+        dark: "Dunkles Theme",
+        light: "Helles Theme",
         find: "Finden",
         search: "Suchen",
-        submit: "Senden"
+        submit: "Senden",
+        currentLanguage: "Deutsch"
     },
     links: {
         about: {

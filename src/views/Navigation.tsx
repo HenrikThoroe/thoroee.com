@@ -40,7 +40,7 @@ function DesktopControls(props: ControlProps) {
         <Controls>
             <Group>
                 <Button label={<Translation select={lang => darkMode ? lang.general.light : lang.general.dark} />} style="primary" onClick={handleDarkMode}/>
-                <Button label="en" style="primary" onClick={props.onChooseLanguage}/>
+                <Button label={<Translation select={lang => lang.general.currentLanguage} /> } style="primary" onClick={props.onChooseLanguage}/>
             </Group>
             <Group>
                 <TextField inputStyle="default" label={<Translation select={lang => lang.general.search} />} inline flat />

@@ -2,11 +2,12 @@ export type BaseType = typeof english
 
 const english = {
     general: {
-        dark: "Dark",
-        light: "Light",
+        dark: "Dark Theme",
+        light: "Light Theme",
         find: "Find",
         search: "Search",
-        submit: "Submit"
+        submit: "Submit",
+        currentLanguage: "English"
     },
     links: {
         about: {
