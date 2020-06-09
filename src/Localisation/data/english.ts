@@ -7,7 +7,9 @@ const english = {
         find: "Find",
         search: "Search",
         submit: "Submit",
-        currentLanguage: "English"
+        currentLanguage: "English",
+        letsgo: "Let's Go",
+        learnMore: "Learn More"
     },
     links: {
         about: {
@@ -75,23 +77,43 @@ const english = {
                 title: "Every tool to control your data right at your side.",
                 backups: {
                     title: "Backups",
-                    body: ``
+                    body: 
+                        `Backups are essential to keep your passwords save. Castle provides a dedicated backup feature, 
+                        which allows you to have multiple copies of your password at different locations. Of course 
+                        you can choose the place where you want to save your data freely. You can choose from multiple options 
+                        regarding of how frequently you want your backups to be created. Daily, weekly, monthly, ... 
+                        Everything is possible.`
                 },
                 multiUser: {
                     title: "Multiple Users",
-                    body: ``
+                    body: 
+                        `Sometimes multiple persons are using a single device. For example the "family Mac". In those szenarios 
+                        you would maybe prefer not to share your passwords. Or you just want to keep your work and private 
+                        passwords separated. Anyway Castle's multi user functionality is a powerful tool to manage your passwords.`
                 },
                 menuBar: {
                     title: "Menu Bar Icon",
-                    body: ``
+                    body: 
+                        `Quickly acces your passwords and user names using the menu bar icon. 
+                        When you expand it you will be able to access all of your logins, payment methods and device passwords. 
+                        Also basic actions like creating a new random password, quitting Castle or changing the current 
+                        user are available within the menu bar.`
                 },
                 safari: {
                     title: "Safari Extension",
-                    body: ``
+                    body: 
+                        `Probably most of your logins are related to a website. That is why being able to access your 
+                        passwords straight from Safari is a great benefit to speed up your daily routine. 
+                        You can even create new logins using only the Safari extension. `
                 },
                 overview: {
                     title: "Overview",
-                    body: ``
+                    body: 
+                        `To keep track of the security state of all your logins can be quite an anoying task. 
+                        Fortunately Castle does this job for you. The overview panel provides information like 
+                        your avarage password strength but also more practical information like weak or duplicated passwords. 
+                        If Castle encounters a weak password the related login will be marked so you quickly see 
+                        which passwords should be replaced with stronger ones.`
                 }
             },
             presentation: {

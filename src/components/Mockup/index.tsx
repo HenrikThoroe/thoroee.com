@@ -10,6 +10,8 @@ interface Props extends ReactProps<HTMLDivElement> {
 }
 
 Mockup.Window = containerBuilder("window")
+Mockup.Screen = containerBuilder("screen")
+Mockup.SmallWindow = containerBuilder("window small")
 
 export default function Mockup(props: Props) {
     const { children, className, ...other } = props

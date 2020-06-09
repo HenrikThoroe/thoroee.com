@@ -7,7 +7,9 @@ const german: BaseType = {
         find: "Finden",
         search: "Suchen",
         submit: "Senden",
-        currentLanguage: "Deutsch"
+        currentLanguage: "Deutsch",
+        learnMore: "Erfahre Mehr",
+        letsgo: "Loslegen"
     },
     links: {
         about: {
@@ -73,23 +75,44 @@ const german: BaseType = {
                 title: "Alle Werkzeuge, die du für deine Passwörter brauchst, direkt an deiner Seite.",
                 backups: {
                     title: "Backups",
-                    body: ``
+                    body: 
+                        `Backups sind essentiell, um deine Passwörter nicht zu verlieren. Aus diesem Grund bietet Castle 
+                        ein eigenes Backup Feature. Natürlich kannst du selbst entscheiden, wo deine Passwörter gespeichert 
+                        werden sollen. Du kannst außerdem aus verschiedenen Optionen wählen, die bestimmen, wie häufig deine Backups 
+                        aktualisiert werden sollen. Täglich, wöchentlich, monatlich, ... Alles ist möglich.`
                 },
                 multiUser: {
                     title: "Mehrere Benutzer",
-                    body: ``
+                    body: 
+                        `Manchmal benutzen mehrere Personen einen Mac. Zum Beispiel der "Familien Mac". In diesem Szenario 
+                        könnte es sein, dass du deine persönlichen Passwörter trotzdem nicht gleich mit all den anderen 
+                        Benutzern teilen möchtest. Oder du willst einfach deine beruflichen von deinen privaten Logins trennen. 
+                        In jedem Fall bietet Castle dir mit der Möglichkeit von mehreren Benutzern ein mächtiges Werkzeug, um 
+                        deine Wünsche umzusetzen.`
                 },
                 menuBar: {
                     title: "Menüleistenicon",
-                    body: ``
+                    body: 
+                        `Erreiche einfach und schnell alle deine Passwörter über die Menüleiste. Durch einen Klick steht dir der 
+                        Schnellzugriff auf alle deine Logins, Bezahlmethoden und Gerätepasswörter zur Verfügung. Natürlich 
+                        kannst du auch die grundlegensten Funktionen von Castle steuern. Zum Beispiel kannst du ein neues 
+                        Passwort generieren, Castle beenden oder den Benutzer wechseln.`
                 },
                 safari: {
                     title: "Safari Erweiterung",
-                    body: ``
+                    body: 
+                        `Der Großteil deiner Passwörter ist wahrscheinlich im Internet zuhause. Deswegen ist die Möglichkeit 
+                        deine Passwörter direkt aus Safari zu erreichen ein großer Vorteil. Du kannst sogar neue Accounts direkt 
+                        aus Safari heraus erstellen.`
                 },
                 overview: {
                     title: "Überblick",
-                    body: ``
+                    body: 
+                        `Den Überblick über den Sicherheitsstand deiner Passwörter zu behalten, kann eine sehr 
+                        langweilige Aufgabe sein. Zum Glück übernimmt das Castle für dich. Über das Überblicksfenster 
+                        erfährst du schnell Informationen, wie deine durchschnittliche Passwortstärke, aber auch 
+                        nützlichere Daten, wie schwache oder doppelt benutzte Passwörter. Castle wird dich außerdem auch darüber 
+                        informieren, welche Passwörter zu schwach sind und demnach geändert werden sollten.`
                 }
             },
             presentation: {

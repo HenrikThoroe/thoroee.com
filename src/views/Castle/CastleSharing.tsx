@@ -30,7 +30,7 @@ export default function CastleSharing() {
                         <ProductPage.BodyText>
                             <Translation select={lang => lang.productPages.castle.sharing.passwordServerBody} />
                         </ProductPage.BodyText>
-                        <Button label="Learn More" fitContent />
+                        <Button label={<Translation select={lang => lang.general.learnMore} />} fitContent />
                     </VStack>
                 }
             />
@@ -48,7 +48,7 @@ export default function CastleSharing() {
                         <ProductPage.BodyText>
                             <Translation select={lang => lang.productPages.castle.sharing.webClientBody} /> 
                         </ProductPage.BodyText>
-                        <Button label="Let's go" fitContent />
+                        <Button label={<Translation select={lang => lang.general.letsgo} />} fitContent />
                     </VStack>
                 }
                 floatRight

@@ -33,6 +33,42 @@ export default function CastleFeatures() {
                 return <Translation select={lang => lang.productPages.castle.features.overview.body} /> 
         }
     }
+
+    const getMockup = (index: number) => {
+        switch (index) {
+            case 0:
+                return (
+                    <Mockup.SmallWindow>
+                        <Picture src="backups.png" />
+                    </Mockup.SmallWindow>
+                )
+            case 1:
+                return (
+                    <Mockup.SmallWindow>
+                        <Picture src="multi-user.png" />
+                    </Mockup.SmallWindow>
+                )
+            case 2:
+                return (
+                    <Mockup.Screen>
+                        <Picture src="castle-menu-bar.png" />
+                    </Mockup.Screen>
+                )
+            case 3: 
+                return (
+                    <Mockup.Window>
+                        <Picture src="safari-extension.png" />
+                    </Mockup.Window>
+                )
+            case 4:
+            default: 
+                return (
+                    <Mockup.SmallWindow>
+                        <Picture src="overview.png" />
+                    </Mockup.SmallWindow>
+                )
+        }
+    }
     
     return (
         <ProductPage.Group>
@@ -40,11 +76,7 @@ export default function CastleFeatures() {
                 <Translation select={lang => lang.productPages.castle.features.title} /> 
             </ProductPage.Headline>
             <Mockup>
-                <Mockup.Window>
-                    <Transition>
-                        <Picture src={selectedTab === 0 ? "server.png" : "web-client.png"  } />
-                    </Transition>
-                </Mockup.Window>
+                { getMockup(selectedTab) }
             </Mockup>
             <TabView tabs={tabs} selectedTab={selectedTab} onSelectTab={setSelectedTab}>
                 <ProductPage.BodyText>
