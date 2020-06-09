@@ -66,15 +66,66 @@ export default function Home() {
                         Curriculum Vitae
                     </Headline>
                     <Timeline>
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
-                        <SampleEvent />
+                        <Timeline.Event>
+                            <Timeline.DateRange>January 2003</Timeline.DateRange>
+                            <Timeline.Title>Birth</Timeline.Title>
+                            <Timeline.Subtitle>Hello, World!</Timeline.Subtitle>
+                            <Timeline.Body>
+                                Well, I guess it is self explaining.
+                                PS: I was born in Germany, where I am still living.
+                            </Timeline.Body>
+                        </Timeline.Event>
+                        <Timeline.Event>
+                            <Timeline.DateRange>2009 - 2013</Timeline.DateRange>
+                            <Timeline.Title>Grammar School</Timeline.Title>
+                            {/* <Timeline.Subtitle>Hello, World!</Timeline.Subtitle> */}
+                            <Timeline.Body>
+                                From 2009 until 2013 I attended a small school near the village I have been living.  
+                            </Timeline.Body>
+                        </Timeline.Event>
+                        <Timeline.Event>
+                            <Timeline.DateRange>2013 - 2021</Timeline.DateRange>
+                            <Timeline.Title>High School</Timeline.Title>
+                            <Timeline.Subtitle>It's party time!</Timeline.Subtitle>
+                            <Timeline.Body>
+                                This is what I am stil doing. I am attending the Highschool in Altenhoz. 
+                                It's not a very big one but I like it. My main subject is physic, which is also the 
+                                subject my exams will be about in spring 2021.
+                            </Timeline.Body>
+                        </Timeline.Event>
+                        <Timeline.Event>
+                            <Timeline.DateRange>June 2019</Timeline.DateRange>
+                            <Timeline.Title>Internship at Naymspace</Timeline.Title>
+                            <Timeline.Subtitle>My inspiration for web development.</Timeline.Subtitle>
+                            <Timeline.Body>
+                                In June 2019 I had a short but very nice internship at naymspace.
+                                I enjoied it and discovered my interest in web development and design.
+                                My continous interest in React, TypeScript and all the other web-stuff started 
+                                with this internship.
+                            </Timeline.Body>
+                        </Timeline.Event>
+                        <Timeline.Event>
+                            <Timeline.DateRange>February 2020</Timeline.DateRange>
+                            <Timeline.Title>Internship at Knowit</Timeline.Title>
+                            <Timeline.Subtitle>Conding in Norway</Timeline.Subtitle>
+                            <Timeline.Body>
+                                In February 2020 I had a two week internship at Knowit (wish it would have been more weeks).
+                                It was my first contact with a large company and the daily work of developers.
+                                The fact that it was in Norway (remember: I am from Germany) just made it more 
+                                exiting for me. I setup an internal SwiftUI applications during my two weeks at Knowit just 
+                                in case someone wonders what I was doing there.
+                            </Timeline.Body>
+                        </Timeline.Event>
+                        <Timeline.Event>
+                            <Timeline.DateRange>The Future</Timeline.DateRange>
+                            <Timeline.Title>Hopefully a lot of interesting stuff.</Timeline.Title>
+                            {/* <Timeline.Subtitle>My inspiration for web development.</Timeline.Subtitle> */}
+                            <Timeline.Body>
+                                I hope I can write much more interesting events of my life down here. 
+                                In autumn 2021 I will probably add that I started to study and maybe 
+                                some more exiting internships. 
+                            </Timeline.Body>
+                        </Timeline.Event>
                     </Timeline>
                 </Container>
         </Container>
