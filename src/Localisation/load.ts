@@ -1,5 +1,5 @@
-import english from "./data/english.json"
-import german from "./data/german.json"
+import english from "./data/english"
+import german from "./data/german"
 import Language from "../redux/state/Language"
 import LanguageSet from "./data/LanguageSet"
 

@@ -1,6 +1,3 @@
-import * as english from "./english.json"
-import * as german from "./german.json"
+import { BaseType } from "./english"
 
-type LanguageSet = typeof english | typeof german
-
-export default LanguageSet
+export default BaseType

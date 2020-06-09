@@ -8,6 +8,7 @@ import CastleWelcome from "./CastleWelcome";
 import FluidBox from "../../components/FluidBox";
 import "./index.scss"
 import Button from "../../components/Button";
+import Translation from "../../components/Translation";
 
 export default function Castle() {
     return (
@@ -21,14 +22,13 @@ export default function Castle() {
                 <CastleFeatures />
                 <ProductPage.Group>
                     <ProductPage.Headline>
-                        Interested?
+                        <Translation select={lang => lang.productPages.castle.presentation.title} /> 
                     </ProductPage.Headline>
                     <ProductPage.HeroText>
-                        Do you want to test out Castle?
-                        Buy it on the Mac App Store for only $9.99.
+                        <Translation select={lang => lang.productPages.castle.presentation.text} /> 
                     </ProductPage.HeroText>
-                    <Button style="comic" label="Buy on Mac App Store" />
-                    <Button style="comic" label="View Data Protection Declaration" />
+                    <Button style="comic" label={<Translation select={lang => lang.productPages.castle.presentation.buy} /> } />
+                    <Button style="comic" label={<Translation select={lang => lang.productPages.castle.presentation.viewDataProtection} /> } />
                 </ProductPage.Group>
             </ProductPage>
         </Container>

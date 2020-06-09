@@ -8,6 +8,7 @@ import Headline from "../../components/TextContent";
 import ProductPage from "../../components/ProductPage";
 import Container from "../../components/Container";
 import useCurrentBreakpoint from "../../utils/hooks/useCurrentBreakpoint";
+import Translation from "../../components/Translation";
 
 function Default() {
     return (
@@ -16,8 +17,12 @@ function Default() {
                 <HStack className="hero-container" spacing="2rem">
                     <Icon name="castle" className="appIcon" />
                     <VStack spacing=".5rem">
-                        <Headline size="2rem" component="h2" bold>Castle</Headline>
-                        <Headline size="1.5rem" type="subtitle" component="h2">Password Manager</Headline>
+                        <Headline size="2rem" component="h2" bold>
+                            <Translation select={lang => lang.productPages.castle.welcome.castle} />
+                        </Headline>
+                        <Headline size="1.5rem" type="subtitle" component="h2">
+                            <Translation select={lang => lang.productPages.castle.welcome.passwordManager} />
+                        </Headline>
                     </VStack>
                 </HStack>
             </Container>
@@ -33,9 +38,13 @@ function Small() {
                     <VStack spacing="1rem" horizontalAlignment="center">
                         <HStack spacing="1rem" alignment="center" verticalAlignment="center">
                             <Icon name="castle" className="appIcon" />
-                            <Headline size="2rem" component="h2" bold>Castle</Headline>
+                            <Headline size="2rem" component="h2" bold>
+                                <Translation select={lang => lang.productPages.castle.welcome.castle} />
+                            </Headline>
                         </HStack>
-                        <Headline size="1.5rem" type="subtitle" component="h2">Password Manager</Headline>
+                        <Headline size="1.5rem" type="subtitle" component="h2">
+                            <Translation select={lang => lang.productPages.castle.welcome.passwordManager} />
+                        </Headline>
                     </VStack>
                 </HStack>
             </Container>

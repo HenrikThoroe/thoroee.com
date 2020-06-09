@@ -10,7 +10,7 @@ import Transition from "../Transition";
 import ScrollView from "../ScrollView";
 
 export interface Props extends ReactProps<HTMLDivElement> {
-    tabs: string[]
+    tabs: ReactNode[]
     onSelectTab: (index: number) => void
     selectedTab: number
 }
@@ -18,7 +18,7 @@ export interface Props extends ReactProps<HTMLDivElement> {
 export default function TabView(props: Props) {
     const { tabs, onSelectTab, selectedTab, children, className, ...other } = props
 
-    const createItem = (tab: string, index: number) => (
+    const createItem = (tab: ReactNode, index: number) => (
         <span 
             className={classNames("tabitem", index === selectedTab ? "active" : undefined)} 
             onClick={() => onSelectTab(index)}>
