@@ -41,4 +41,5 @@ a {
 * {
     -webkit-tap-highlight-color: #0000;
     box-sizing: border-box;
+    outline: none;
 }
