@@ -9,7 +9,9 @@ const german: BaseType = {
         submit: "Senden",
         currentLanguage: "Deutsch",
         learnMore: "Erfahre Mehr",
-        letsgo: "Loslegen"
+        letsgo: "Loslegen",
+        buy: "Kaufen",
+        download: "Download"
     },
     links: {
         about: {
@@ -120,6 +122,146 @@ const german: BaseType = {
                 text: "Willst du Castle ausprobieren? Du kannst sie im Mac App Store für gerade mal 9,99€ runterladen.",
                 buy: "Zum Mac App Store",
                 viewDataProtection: "Datenschutzrichtlinie ansehen"
+            }
+        }
+    },
+    home: {
+        welcome: {
+            hello: "Hallo, wie geht's denn so?",
+            hero: 
+                `Du bist wahrscheinlich hier, um etwas über mich zu erfahren. Wenn du willst, kannst du 
+                eine interaktive Reise durch mein bisheriges Leben nehmen. Oder du kannst weiter scrollen und 
+                ein paar meiner Projekte und meinen Lebenslauf sehen.`,
+            button: "Auf die Reise gehen"
+        },
+        projects: {
+            title: "Meine Arbeit",
+            cards: {
+                castle: {
+                    title: "Castle",
+                    subtitle: "macOS Passwort Manager",
+                    status: "Maintained",
+                    body: 
+                        `Castle ist ein nicht Cloud basierter Passwort Manager, der für Einfachheit 
+                        und Sicherheit entwickelt wurde. Der große Vorteil von Cloud basierten Passwort 
+                        Managern ist die Möglichkeit seine Passwörter von all seinen Geräten zu ereichen.
+                        Castle fehlt dieses Feature nicht! Du kannst deine Passwörter einfach über das WLAN teilen.
+                        Natürlich stellt Castle auch viele weitere Features zur Verfügung, wie automatische Backups oder mehrere 
+                        Benutzer. Probier es aus!`
+                },
+                swc1: {
+                    title: "SWC 19/20",
+                    subtitle: "Spiel KI",
+                    status: "Fertig",
+                    body: 
+                        `Dieses Projekt ist eine Spiel KI, die gegen andere KIs antritt, um die "Software Challenge" zu gewinnen. 
+                        Die Challenge wird von der CAU Kiel ausgetragen und ist deutschlandweit. Mein Client ist in 
+                        TypeScript geschrieben und benutzt die meisten gewöhnlichen Algorythmen aus der Spieltheorie.
+                        Uns ja, es war eine blöde Idee TypeScript zu verwenden aus Performancesicht (;`
+                },
+                website: {
+                    title: "thorøe.com",
+                    subtitle: "Portfolio Webseite",
+                    status: "In aktiver Entwicklung",
+                    body: 
+                        `Dieses Projekt siehst du dir gerade an. Die Seite wurde mit React, TypeScript und SCSS erstellt. Sie 
+                        ist nicht nur meine Onlinedarstellung, sondern auch eine große Spielwiese für mich. Ich habe 
+                        sie hauptsächlich geschrieben, um meine React Skills auszubauen.`
+                },
+                quickNote: {
+                    title: "Quick Note",
+                    subtitle: "Notiz App in der Menüleiste",
+                    status: "Fertig",
+                    body: 
+                        `Ein super einfache Notiz App, die in der macOS Menüleiste lebt.
+                        Sie ist eines meiner ersten Projekte, das ich entwickelt habe, um Swift zu lernen.
+                        Lustigerweise benutze ich sie trotzdem noch ziemlich häufig. Vielleicht willst du sie auch 
+                        mal ausprobieren. Den Code und die Binary kannst dir runterladen.`
+                },
+                quickColor: {
+                    title: "Quick Color",
+                    subtitle: "Farbpicker in der Menüleiste",
+                    status: "Fertig",
+                    body: 
+                        `Die Schwester von Quick Note. Es ist eine einfacher Farbpicker in der Menüleiste.
+                        Die App ist sehr hilfreich, wenn man z.B. in VSCode seine macOS Farbpaletten benutzen möchte.`
+                },
+                escapeRoom: {
+                    title: "Escape Room",
+                    subtitle: "Praktikumsprojekt",
+                    status: "Nicht mehr verantwortlich",
+                    body: 
+                        `Leider bin ich mir nicht sicher, ob ich Bilder oder sogar den Code zeigen darf.
+                        Weil ich es vorziehen würde nicht verklagt zu werden, mache ich es lieber nicht.
+                        Ich habe diese App entwickelt, während ich mein Praktikum bei Knowit hatte. 
+                        Sie ist das Gerüst für eine SwiftUI App, die intern verwendet werden soll.`
+                },
+                more: {
+                    title: "Viele Mehr",
+                    subtitle: "Alles andere, was nicht fertig oder nicht groß genug ist.",
+                    status: "In aktiver Entwicklung",
+                    body: 
+                        `In den Jahren, in denen ich schon programmiere habe ich einen ganzen Haufen 
+                        an Projekten gestartet. Hauptsächlich in Swift und TypeScript, aber auch einige 
+                        in Java und C++.`
+                }
+            }
+        },
+        cv: {
+            title: "Lebenslauf",
+            events: {
+                birth: {
+                    date: "Januar 2003",
+                    title: "Geburt",
+                    subtitle: "Hallo, Welt!",
+                    body: 
+                        `Ich glaube das ist relativ selbsterklärend. PS: Ich wurde in Kiel (SH) 
+                        geboren und lebe dort immer noch. `
+                }, 
+                grammarSchool: {
+                    date: "2009 - 2013",
+                    title: "Grundschule",
+                    body: 
+                        `Von 2009 bis 2013 habe ich eine kleine Schule direkt in meinem 
+                        Nachbarort besucht.`
+                }, 
+                highSchool: {
+                    date: "2013 - 2021",
+                    title: "Gymnasium",
+                    subtitle: "It's party time!",
+                    body: 
+                        `Da bin ich immernoch dabei. Ich besuche ein Gymnasium in Altenholz. Mein 
+                        Hauptfach ist Physik, was dementsprechend auch Abiturrelevant für mich ist. Mein Abitur 
+                        werde ich 2021 machen.`
+                },
+                naymspace: {
+                    date: "Juni 2019",
+                    title: "Praktikum bei Naymspace",
+                    subtitle: "Meine Inspiration für Webentwicklung.",
+                    body: 
+                        `Im Juni 2019 hatte ich ein kurzes, aber sehr interesantes Praktikum bei Naymspace.
+                        Durch dieses Praktikum habe ich mein Interesse für Webtechnologien wie TypeScript, React
+                        und alles, was dazu gehört, entdeckt.`
+                },
+                knowit: {
+                    date: "Februar 2020",
+                    title: "Praktikum bei Knowit",
+                    subtitle: "Coden in Norwegen",
+                    body: 
+                        `Im Februar 2020 hatte ich ein zweiwöchiges Praktikum bei Knowit 
+                        (Ich hätte mir gewünscht, es wäre länger). Es war mein erster Kontakt mit einem 
+                        größeren Unternehmen und dem Entwickleralltag. Die Tatsache, dass es in Norwegen war, 
+                        hat es für mich nur noch interessanter gemacht. Ich habe während des Praktikums eine SwiftUI 
+                        App erstellt, nur für den Fall, dass sich jemand fragt, was ich dort gemacht habe.`
+                },
+                future: {
+                    date: "Die Zukunft",
+                    title: "Hoffentlich viele interessante Dinge.",
+                    body: 
+                        `Ich hoffe ich kann noch viel mehr aufregende Dinge über mein Leben hier hin schreiben. 
+                        Im Herbst 2021 werde ich sehr wahrscheinlich hinzufügen, dass ich mein Studium begonnen habe. 
+                        Ich würde mich auch freuen, noch viele Praktika in meinen Lebenslauf schreiben zu können.`
+                }
             }
         }
     }
