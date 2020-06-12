@@ -63,7 +63,9 @@ export default function Sidebar(props: Props) {
                         <Caption>Legal</Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("legal")} />
                     </GroupHeader>
-                    <Action callback={() => {}} leading={<Icon name="textfile"/>}>Data Protection</Action>
+                    <Link to="/dataprotection">
+                        <Action callback={() => {}} leading={<Icon name="textfile"/>}>Data Protection</Action>
+                    </Link>
                     <Action callback={() => {}} leading={<Icon name="textfile"/>}>Legal Disclosure</Action>
                 </Group>
             </Body>

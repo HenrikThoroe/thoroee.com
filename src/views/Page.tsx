@@ -11,6 +11,7 @@ import useCurrentHeight from "../utils/hooks/useCurrentHeight"
 import Castle from "./Castle"
 import AboutMeComic from "./AboutMeComic"
 import DownloadPage from "./DownloadPage"
+import DataProtectionDeclaration from "./DataProtectionDeclaration"
 
 export interface Props {
 }
@@ -45,6 +46,9 @@ export default function Page(props: Props) {
                     <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
                     <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
                     <Switch>
+                        <Route path="/dataprotection">
+                            <DataProtectionDeclaration />
+                        </Route>
                         <Route path="/download/:resource">
                             <DownloadPage />
                         </Route>
