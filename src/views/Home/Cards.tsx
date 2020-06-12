@@ -79,6 +79,7 @@ function ProjectCard(props: { name: ReactNode, short: ReactNode, state: ProjectS
                             label={<Translation select={lang => lang.general.download} />} 
                             style="primary" 
                             size="large" 
+                            link={`/download/${props.download}`}
                         />
                     </If>
 
@@ -136,7 +137,7 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.quickNote.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.quickNote.body}/>}
                 state="Abandoned"
-                download=""
+                download="quickNote"
             /> 
 
             <ProjectCard 
@@ -145,7 +146,7 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.quickColor.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.quickColor.body}/>}
                 state="Abandoned"
-                download=""
+                download="quickColor"
             /> 
 
             <ProjectCard 
