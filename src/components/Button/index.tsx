@@ -43,7 +43,7 @@ export default function Button(props: Props) {
     }
 
     const handleClick = (event: React.MouseEvent) => {
-        event.preventDefault()
+        // event.preventDefault()
 
         if (props.disabled) {
             return

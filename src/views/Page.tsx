@@ -5,11 +5,12 @@ import Home from "./Home"
 import Navbar from "./Navigation"
 import currentBreakpoint from "../utils/currentBreakpoint"
 import Modal from "react-bootstrap/Modal"
-import { Switch, Route, useLocation } from "react-router-dom"
+import { Switch, Route, useLocation, useParams } from "react-router-dom"
 import Feedback from "./Feedback"
 import useCurrentHeight from "../utils/hooks/useCurrentHeight"
 import Castle from "./Castle"
 import AboutMeComic from "./AboutMeComic"
+import DownloadPage from "./DownloadPage"
 
 export interface Props {
 }
@@ -44,6 +45,9 @@ export default function Page(props: Props) {
                     <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
                     <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
                     <Switch>
+                        <Route path="/download/:resource">
+                            <DownloadPage />
+                        </Route>
                         <Route path="/feedback">
                             <Feedback />
                         </Route>

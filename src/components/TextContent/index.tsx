@@ -54,7 +54,7 @@ function translateSize(size: Size) {
         case "s":
             return ".8rem"
         case "m":
-            return "1rem"
+            return "1.2rem"
         case "l":
             return "1.5rem"
         case "xl":
