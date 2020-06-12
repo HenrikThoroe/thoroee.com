@@ -265,6 +265,14 @@ const english = {
                 }
             }
         }
+    },
+    download: {
+        title: "Download Center",
+        message: 
+            `Your download should have started automatically. If not, please click "Download Manually". 
+            You can continue to your previous page whenever you want.`,
+        download: "Download Manually",
+        back: "Back to Last Page"
     }
 }
 

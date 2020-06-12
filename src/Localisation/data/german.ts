@@ -264,6 +264,14 @@ const german: BaseType = {
                 }
             }
         }
+    },
+    download: {
+        title: "Download Center",
+        message: 
+            `Dein Download sollte automatisch gestartet haben. Falls nicht klicke bitte "Manuell Runterladen".
+            Du kannst jederzeit zu deiner vorherigen Seite zurückkehren.`,
+        download: "Manuell runterladen",
+        back: "Zurück zur vorherigen Seite"
     }
 }
 

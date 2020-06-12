@@ -7,20 +7,20 @@ import Button from "../components/Button";
 import Icon from "../components/Icon";
 import { Link, useRouteMatch, useHistory, useParams } from "react-router-dom";
 import If from "../components/If";
+import Translation from "../components/Translation";
 
-type Resource = "serverIcon"
+type Resource = "quickNote" | "quickColor"
 
 export default function DownloadPage() {
     const history = useHistory()
     const { resource } = useParams<{ resource: Resource}>()
     
     const getParams = () => {
-        console.log(resource)
-
         switch (resource) {
-            case "serverIcon":
-                console.log("KNOWN")
-                return { name: "Server.png", location: "/images/server.png" }
+            case "quickNote":
+                return { name: "QuickNote.zip", location: "/images/server.png" }
+            case "quickColor":
+                return { name: "QuickColor.zip", location: "/images/server.png" }
             default:
                 return undefined
         }
@@ -56,19 +56,30 @@ export default function DownloadPage() {
         <Container padding="6rem min(5rem, 5%)">
             <VStack spacing="2rem">
                 <VStack spacing=".5rem">
-                    <Headline component="h1" size="xxl" bold>Download Center</Headline>
+                    <Headline component="h1" size="xxl" bold>
+                        <Translation select={lang => lang.download.title}/>
+                    </Headline>
                     <Headline component="h2" size="l">{ file?.name || "Unknown Resource" }</Headline>
                 </VStack>
                 <TextContent size="m">
-                    Your download should have started automatically. If not, please click "Download".
-                    You can continue to your previous page whenever you want.
+                    <Translation select={lang => lang.download.message}/>
                 </TextContent>
                 <If condition={file}>
                     <a href={file?.location} download={file?.name} target="_self">
-                        <Button icon={<Icon name="download" />} label="Download Manually" style="primary" fitContent />
+                        <Button 
+                            icon={<Icon name="download" />} 
+                            label={<Translation select={lang => lang.download.download}/>} 
+                            style="primary" 
+                            fitContent 
+                        />
                     </a>
                 </If>
-                <Button label="Back to Last Page" style="primary" onClick={back} fitContent />
+                <Button 
+                    label={<Translation select={lang => lang.download.back}/>} 
+                    style="primary" 
+                    onClick={back} 
+                    fitContent 
+                />
             </VStack>
         </Container>
     )
