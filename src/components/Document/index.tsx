@@ -3,39 +3,42 @@ import React, { ReactNode } from "react";
 import Headline from "../TextContent";
 import Container from "../Container";
 import style from "./index.module.scss"
+import TextContent from "../Headline";
+import VStack from "../Stacks/VStack";
+import HStack from "../Stacks/HStack";
 
 Document.Title = (props: ChildrenProps) => (
-    <Headline component="h1" className={style.title}>
+    <Headline component="h1" size="2.5rem" className={style.title} bold>
         { props.children }
     </Headline>
 )
 
 Document.FirstHeadline = (props: ChildrenProps) => (
-    <Headline component="h2" className={style.firstHeading} bold>
+    <Headline component="h2" size="2.2rem" className={style.firstHeading} bold>
         { props.children }
     </Headline>
 )
 
 Document.SecondHeadline = (props: ChildrenProps) => (
-    <Headline component="h3" className={style.secondHeading} bold>
+    <Headline component="h3" size="1.8rem" className={style.secondHeading} bold>
         { props.children }
     </Headline>
 )
 
 Document.ThirdHeadline = (props: ChildrenProps) => (
-    <Headline component="h4" className={style.thirdHeading}>
+    <Headline component="h4" size="1.8rem" className={style.thirdHeading}>
         { props.children }
     </Headline>
 )
 
 Document.Paragraph = (props: ChildrenProps) => (
-    <Headline component="span" className={style.paragraph}>
+    <Headline component="span" size="1.2rem" className={style.paragraph}>
         { props.children }
     </Headline>
 )
 
 Document.Important = (props: ChildrenProps) => (
-    <Headline component="h1" className={style.important} bold>
+    <Headline component="h1" size="1.2rem" className={style.important} bold>
         { props.children }
     </Headline>
 )
@@ -48,28 +51,38 @@ Document.List = (props: ChildrenProps) => (
 
 Document.ListItem = (props: ChildrenProps) => (
     <li className={style.listItem}>
-        { props.children }
+        <TextContent size="1.2rem">
+            { props.children }
+        </TextContent>
     </li>
 )
 
 Document.AssociativeList = (props: ChildrenProps) => (
-    <table className={style.associativeList}>
+    <VStack className={style.associativeList}>
         { props.children }
-    </table>
+    </VStack>
 )
 
-Document.AssociativeListItem = (props: { key: ReactNode, value: ReactNode }) => (
-    <tr className={style.associativeListItem}>
-        <td className={style.associativeListItemKey}>{ props.key }</td>
-        <td className={style.associativeListItemValue}>{ props.value }</td>
-    </tr>
+Document.AssociativeListItem = (props: { name: ReactNode, value: ReactNode }) => (
+    <HStack className={style.associativeListItem}>
+        <TextContent className={style.associativeListItemKey} size="1.2rem" bold>{ props.name }</TextContent>
+        <TextContent className={style.associativeListItemValue} size="1.2rem">{ props.value }</TextContent>
+    </HStack>
 )
 
 Document.Section = (props: ChildrenProps) => (
     <Container padding="2rem 0px">
-        { props.children }
+        <VStack spacing=".2rem">
+            { props.children }
+        </VStack>
     </Container>
 )
+
+Document.FreeStanding = (props: ChildrenProps) => (
+    <Container padding="1rem .5rem">
+        { props.children }
+    </Container>
+) 
 
 export default function Document(props: ChildrenProps) {
     return (
