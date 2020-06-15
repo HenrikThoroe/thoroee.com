@@ -273,6 +273,284 @@ const english = {
             You can continue to your previous page whenever you want.`,
         download: "Download Manually",
         back: "Back to Last Page"
+    },
+    dataProtection: {
+        title: "Data Protection Declaration",
+        atAGlance: {
+            title: "1. Privacy at a glance",
+            sec1: {
+                t: "General Information",
+                b: 
+                    `The following notes provide a simple overview of what happens to your personal 
+                    information when you visit my website. Personal data is any data that personally 
+                    identifies you. Detailed information on the subject of data protection can be 
+                    found in my privacy policy listed under this text.`
+            },
+            sec2: {
+                t: "Data collection on my website",
+                h1: "Who is responsible for the data collection on this website?",
+                b1: 
+                    `The data processing on this website is carried out by the website operator. Its contact 
+                    details can be found in the imprint of this website.`,
+                h2: "How do I collect your data?",
+                b2: 
+                    `Your data will be collected on the one hand, that you tell me this. This may be e.g. 
+                    to trade data that you enter in a contact form. Other data will be collected 
+                    automatically when visiting the website through my IT systems. These are above 
+                    all technical data (for example Internet browser, operating system or time of 
+                    the page call). The collection of this information occurs automatically 
+                    as soon as you enter my website.`,
+                h3: "What do I use your data for?",
+                b3: 
+                    `Part of the data is collected to ensure a flawless provision of the website. 
+                    Other data can be used to analyze your user behavior.`,
+                h4: "What rights do you have regarding your data?",
+                b4: 
+                    `At any time you have the right to obtain free information about the origin, 
+                    recipient and purpose of your stored personal data. You also have a right to 
+                    request the correction, blocking or deletion of this data. For this purpose 
+                    as well as for further questions about data protection you can contact me at 
+                    any time at the address given in the imprint. Furthermore, you have a right of 
+                    appeal to the competent supervisory authority. In addition, you have the right to 
+                    request the restriction of the processing of your personal data in certain circumstances. 
+                    Details can be found in the privacy policy under "Right to restriction of processing".`
+            }
+        },
+        information: {
+            title: "2. General information and mandatory information",
+            sec1: {
+                t: "Data protection",
+                b1: 
+                    `The operator of these pages takes the protection of your personal data very seriously. 
+                    I treat your personal data confidentially and in accordance with the statutory data 
+                    protection regulations and this privacy policy. If you use this website, various 
+                    personal data will be collected. Personal information is information that personally 
+                    identifies you. This privacy policy explains what information I collect and what I use 
+                    it for. It also explains how and for what purpose this happens. I point out that data 
+                    transmission over the Internet (for example, when communicating via e-mail) may be vulnerable. 
+                    A complete protection of the data from access by third parties is not possible.`
+            },
+            sec2: {
+                t: "Note to the responsible body",
+                b1: 
+                    `The responsible body for data processing on this website is:`,
+                l1: {
+                    i1: "Henrik Thorøe",
+                    i2: "Strandstraße 10",
+                    i3: "24229 Schwedeneck",
+                    i4: "Germany",
+                    i5: "info (-at-) thoroee.com (Note: Replace ' (-at-) ' with @; no whitespaces)"
+                },
+                b2: 
+                    `The responsible body is the natural or legal person who decides, alone or 
+                    together with others, about the purposes and means of processing of 
+                    personal data (eg names, e-mail addresses, etc.).`
+            },
+            sec3: {
+                t: "Revocation of your consent to data processing",
+                b1: 
+                    `Many data processing operations are only possible with your express consent. 
+                    You can revoke an already given consent at any time. For this an informal 
+                    message by e-mail to me is enough. The legality of the data processing 
+                    carried out until the revocation remains unaffected by the revocation.`
+            },
+            sec4: {
+                t: "Right to object to data collection in special cases and direct mail (Article 21 GDPR)",
+                b1: 
+                    `If the data processing on the basis of Art. 6 para. 1 lit. e or f GDPA, you have the right 
+                    at any time to object to the processing of your personal data for reasons that arise 
+                    from your particular situation; this also applies to profiling based on these provisions. 
+                    The respective legal basis on which the processing is based can be found in this Privacy 
+                    Policy. If you file an objection, I will no longer process your personal data, unless I 
+                    can establish compelling legitimate grounds for processing that outweigh your interests, 
+                    rights and freedoms or the processing is for the purpose of enforcing, pursuing or defending 
+                    legal claims ( Objection according to Art. 21 Abs. 1 GDPA). If your personal data are processed 
+                    to operate direct mail, you have the right to object at any time to the processing of personal 
+                    data for the purpose of such advertising; this also applies to profiling insofar as it is 
+                    associated with such direct mail. If you object, your personal data will then no longer be 
+                    used for the purpose of direct advertising (objection under Art. 21 (2) GDPR).`
+            },
+            sec5: {
+                t: "Right of appeal to the competent supervisory authority",
+                b1: 
+                    `You have the right to have data that I automatically process on the basis of your 
+                    consent or in fulfillment of a contract, in itself or to a third party in a standard, 
+                    machine-readable format. If you require the direct transfer of the data to another 
+                    person in charge, this will only be done to the extent technically feasible.`
+            },
+            sec6: {
+                t: "Right to data portability",
+                b1: 
+                    `You have the right to have data that we process on the basis of your consent or in 
+                    fulfillment of a contract, in itself or to a third party in a standard, machine-readable 
+                    format. If you require the direct transfer of the data to another person in charge, this 
+                    will only be done to the extent technically feasible.`
+            },
+            sec7: {
+                t: "SSL or TLS encryption",
+                b1: 
+                    `This site uses, for security reasons and to protect the transmission of confidential content, 
+                    such as orders or requests that you send to me as a site operator, an SSL or. TLS encryption. 
+                    An encrypted connection is indicated by the browser's address bar changing from "http: //" to 
+                    "https: //" and the lock icon in your browser bar. If SSL or TLS encryption is enabled, the 
+                    data you submit to me can not be read by third parties.`
+            },
+            sec8: {
+                t: "Information, blocking, deletion and correction",
+                b1: 
+                    `Within the scope of the applicable legal provisions, you have the right at any time to provide 
+                    free information about your stored personal data, their origin and recipient and the purpose 
+                    of the data processing and, if necessary, a right to correct, block or delete this data. 
+                    For this purpose as well as for further questions on the subject of personal data, you 
+                    can always contact me at the address.`
+            },
+            sec9: {
+                t: "Right to restriction of processing",
+                b1: 
+                    `You have the right to request the restriction of the processing of your personal data. 
+                    You can contact me at any time at the address given in the imprint. The right to 
+                    restrict processing exists in the following`,
+                l1: {
+                    i1: 
+                        `If you deny the accuracy of your personal information I hold, it usually takes me 
+                        time to verify it. For the duration of the audit you have the right to request the 
+                        restriction of the processing of your personal data.`,
+                    i2: 
+                        `If the processing of your personal data is unlawful, you may request the restriction of 
+                        data processing instead of deletion.`,
+                    i3: 
+                        `If I no longer need your personal information, but you need it to exercise, defend 
+                        or assert a claim, you have the right to request that your personal information be 
+                        restricted instead of being deleted.`,
+                    i4: 
+                        `If you have filed an objection pursuant to Art. 21 (1) GDPR, a balance must be made 
+                        between your interests and my interests. As long as it is not clear whose interests 
+                        prevail, you have the right to demand the restriction of the processing of your personal data.`
+                },
+                b2: 
+                    `If you have restricted the processing of your personal data, these data may only be 
+                    used with your consent or for the purpose of asserting, exercising or defending 
+                    legal claims or protecting the rights of another natural or legal person or for 
+                    important public interest the European Union or a Member State.`
+            }
+        },
+        dataCollection: {
+            title: "3. Data collection on my website",
+            sec1: {
+                t: "Cookies",
+                b1: 
+                    `The internet pages partly use so-called cookies. Cookies do not harm your computer and do 
+                    not contain viruses. Cookies are used to make my offer more user-friendly, effective and 
+                    secure. Cookies are small text files that are stored on your computer and stored by your 
+                    browser. Some of the cookies I use are so-called "session cookies". They are automatically 
+                    deleted after your visit. Other cookies remain stored on your device until you delete them. 
+                    These cookies allow me to recognize your browser the next time you visit. You can set your 
+                    browser so that you are informed about the setting of cookies and cookies only in individual 
+                    cases allow, the acceptance of cookies for certain cases or generally exclude and activate 
+                    the automatic deletion of cookies when closing the browser. Disabling cookies may limit the 
+                    functionality of this website. Cookies required to carry out the electronic communication 
+                    process or to provide certain functions desired by you (eg shopping cart function) are 
+                    processed on the basis of Art. 6 para. 1 lit. f GDPA saved. The website operator has a 
+                    legitimate interest in the storage of cookies for the technically correct and optimized 
+                    provision of its services. If other cookies (such as cookies for analyzing your browsing 
+                        behavior) are stored, they will be treated separately in this privacy declaration.`
+            },
+            sec2: {
+                t: "Server-Log-Files",
+                b1: 
+                    `The provider of the pages automatically collects and stores information in so-called server log 
+                    files, which your browser automatically transmits to me. These are:`,
+                l1: {
+                    i1: "Browser type and browser version",
+                    i2: "Used operating system",
+                    i3: "Referrer URL",
+                    i4: "Host name of the accessing computer",
+                    i5: "Time of the server request",
+                    i6: "IP address"
+                },
+                b2: 
+                    `There is no merge of this data with other data sources. The collection of this data is based 
+                    on Art. 6 para. 1 lit. f DSGVO. The website operator has a legitimate interest in the 
+                    technically error-free presentation and the optimization of its website - for this purpose, 
+                    the server log files must be recorded.`
+            },
+            sec3: {
+                t: "Contact form",
+                b1: 
+                    `If you send me inquiries via the contact form, your details from the inquiry form, 
+                    including the contact details you provided there, will be stored with me for 
+                    the purpose of processing the request and in case of follow-up questions. I will 
+                    not share this information without your consent. The processing of the data entered 
+                    into the contact form takes place exclusively on the basis of your consent (Art. 6 (1) 
+                    lit. DSGVO). You can revoke this consent at any time. For this an informal message by 
+                    e-mail to me is enough. The legality of the data processing operations carried out until 
+                    the revocation remains unaffected by the revocation. The information you provide in the 
+                    contact form will remain with me until you ask me to delete it, revoke your consent to 
+                    storage, or delete the data storage purpose (for example, after your request has been processed). 
+                    Mandatory statutory provisions - especially retention periods - remain unaffected.`
+            },
+            sec4: {
+                t: "Inquiry by e-mail, telephone or fax",
+                b1:
+                    `If you contact me by e-mail, telephone or fax, your request will be stored and processed 
+                    by me for the purpose of processing your request, including any resulting personal data 
+                    (name, request). I will not share this information without your consent. The processing of 
+                    this data is based on Art. 6 para. 1 lit. b DSGVO, if your request is related to the performance 
+                    of a contract or is required to carry out pre-contractual action. In all other cases, the processing 
+                    is based on your consent (Article 6 (1) f DSGVO) and / or on our legitimate interests (Article 6 (1) 
+                    (f) GDPR), since I have a legitimate interest in the effective Processing of the requests addressed 
+                    to me. The data you send to me via contact requests will remain with me until you ask me to delete 
+                    them, revoke your consent to their storage or the purpose for data storage ceases to apply (eg after 
+                    completion of your request). Mandatory statutory provisions - in particular statutory retention 
+                    periods - remain unaffected.`
+            }
+        },
+        analysis: {
+            title: "4. Analysis tools and advertising",
+            sec1: {
+                t: "1&1 Web Analytics",
+                b1:
+                    `This website uses the analytics services provided by 1&1-Webanalytics. Provider 
+                    is the 1&1 Internet SE, Elgendorfer Straße 57, D - 56410 Montabaur. In the context 
+                    of the analyzes with 1&1 u. a. Visitor traffic and behavior (eg, number of pageviews, 
+                    duration of a website visit, bounce rates), traffic sources (that is, which page 
+                    visitors come from), visitor locations, and technical data (browser and operating 
+                    system versions). For this purpose 1&1 stores in particular the following data:`,
+                l1: {
+                    i1: "Referrer (previously visited website)",
+                    i2: "Requested website or file",
+                    i3: "Browser type and browser version",
+                    i4: "Used operating system",
+                    i5: "Used device type",
+                    i6: "Time of access",
+                    i7: "IP address in anonymous form (used only to determine the location of access)"
+                },
+                b2: 
+                    `According to 1&1, the data collection is completely anonymised so that it can not be traced 
+                    back to individual persons. Cookies are not stored by 1&1 Webanalytics. The storage and analysis 
+                    of the data is based on Art. 6 para. 1 lit. f DSGVO. The website operator has a legitimate interest 
+                    in the statistical analysis of user behavior in order to optimize both its website and its advertising. 
+                    Further information on data collection and processing by 1&1-Webanalytics can be found on the following 
+                    links:`,
+                l2: {
+                    i1: "https://hosting.1und1.de/hilfe/online-marketing/",
+                    i2: "https://hosting.1und1.de/hilfe/datenschutz/datenverarbeitung-von-webseitenbesuchern-ihres-company-name-produktes/webanalytics/",
+                    i3: "https://hosting.1und1.de/terms-gtc/terms-privacy/"
+                }
+            }
+        },
+        settings: {
+            title: "Settings",
+            cookies: {
+                enable: "Enable Cookies",
+                disable: "Disable Cookies"
+            }
+        },
+        remarks: {
+            title: "Remarks",
+            k1: "Source",
+            v1: "e-recht24.de"
+        }
     }
 }
 
