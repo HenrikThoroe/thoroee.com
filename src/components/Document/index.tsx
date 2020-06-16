@@ -58,7 +58,7 @@ Document.ListItem = (props: ChildrenProps) => (
 )
 
 Document.AssociativeList = (props: ChildrenProps) => (
-    <VStack className={style.associativeList}>
+    <VStack className={style.associativeList} >
         { props.children }
     </VStack>
 )
