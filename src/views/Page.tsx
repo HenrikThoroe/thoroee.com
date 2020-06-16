@@ -42,11 +42,15 @@ export default function Page(props: Props) {
             <Route path="/comic">
                 <AboutMeComic />
             </Route>
+
             <Route path="*">
                 <Layout hideSidebar={sidebarCollapsed}>
                     <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
                     <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
                     <Switch>
+                        <Route path="/products/castle">
+                            <Castle />
+                        </Route>
                         <Route path="/legaldisclosure">
                             <LegalDisclosure />
                         </Route>
@@ -58,9 +62,6 @@ export default function Page(props: Props) {
                         </Route>
                         <Route path="/feedback">
                             <Feedback />
-                        </Route>
-                        <Route path="/castle">
-                            <Castle />
                         </Route>
                         <Route path="/">
                             <Home />
