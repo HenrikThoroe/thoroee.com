@@ -24,7 +24,6 @@ interface ControlProps {
 
 function toggleDarkMode() {
     document.documentElement.classList.toggle("darkMode")
-    
 }
 
 function DesktopControls(props: ControlProps) {
