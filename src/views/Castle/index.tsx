@@ -9,6 +9,7 @@ import FluidBox from "../../components/FluidBox";
 import "./index.scss"
 import Button from "../../components/Button";
 import Translation from "../../components/Translation";
+import redirect from "../../utils/redirect";
 
 export default function Castle() {
     return (
@@ -27,8 +28,16 @@ export default function Castle() {
                     <ProductPage.HeroText>
                         <Translation select={lang => lang.productPages.castle.presentation.text} /> 
                     </ProductPage.HeroText>
-                    <Button style="comic" label={<Translation select={lang => lang.productPages.castle.presentation.buy} /> } />
-                    <Button style="comic" label={<Translation select={lang => lang.productPages.castle.presentation.viewDataProtection} /> } />
+                    <Button 
+                        style="comic" 
+                        label={<Translation select={lang => lang.productPages.castle.presentation.buy} /> }  
+                        onClick={() => redirect("https://apps.apple.com/de/app/castle-password-manager/id1474114435?l=en&mt=12")}
+                    />
+                    <Button 
+                        style="comic" 
+                        label={<Translation select={lang => lang.productPages.castle.presentation.viewDataProtection} /> } 
+                        link="/products/castle/dataprotection"
+                    />
                 </ProductPage.Group>
             </ProductPage>
         </Container>

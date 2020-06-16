@@ -629,6 +629,80 @@ const german: BaseType = {
                 v: "Sämtliche rechtliche Hinweise auf dieser Seite beziehen ausschließlich auf das deutsche Recht."
             }
         }
+    },
+    castleDataProtection: {
+        title: "Datenschutzerklärung",
+        h1: "Anbieter von Castle",
+        l1: {
+            i1: "Henrik Thorøe",
+            i2: "Strandstraße 10",
+            i3: "24229 Schwedeneck",
+            i4: "Deutschland (Schleswig-Holstein)"
+        },
+        h2: "Kontakt",
+        l2: {
+            i1: {
+                k: "E-Mail",
+                v: "info (-at-) thoroee.com (Anmerkung: ersetze ' (-at-) ' mit @; keine Leerzeichen)"
+            },
+            i2: {
+                k: "Internet",
+                v: "thoroee.com"
+            }
+        },
+        h3: "Welche Daten werden von Castle verarbeitet?",
+        b3: 
+            `Sämtliche Daten, auf die Castle Zugriff hat, werden nur lokal auf dem Computer, auf dem Castle läuft, 
+            oder auf vom Benuzter geschwünschten externen Speicherorten verarbeitet und verschlüsselt gespeichert. 
+            Castle hat Zugriff auf alle Informationen, die vom Benutzer eingegeben werden. Dazu zählen Name, 
+            Nachname, Passwörter, Kreditkarteninformationen, Dateien, Bankkontoinformationen und E-Mail Adressen. 
+            Die Weitergabe dieser Informationen an dritte ist nicht vorgesehen. Die Eingabe dieser Daten geschieht 
+            nur unter Einwilligung des Benutzers und unter keinen Umständen unbemerkt.`,
+        h4: "Wie können diese Daten gelöscht werden?",
+        b4: 
+            `Um alle Daten zu löschen, muss der gewünschte Account unter Einstellungen gelöscht werden. 
+            Um sämtliche Datenreste zu entfernen, müssen auch noch sämtliche Backups unter Enstellungen -> 
+            Backups gelöscht werden. Ich, als Anbieter von Castle, habe keinen Zugriff auf ihre persönlichen 
+            Daten und kann diese dementsprechend auch nicht löschen.`,
+        h5: "Wozu werden diese Daten erhoben?",
+        b5: 
+            `Da Castle ein Passwortmanager ist, ist es unumgänglich, dass Daten wie Passwörter erfragt werden. 
+            Personenbezogene Daten, wie Name oder Vorname, sind erforderlich, um den Service von mehreren Konten 
+            in einer App anbieten zu können. Alle erhobenen Daten dienen ihrer Benutzererfahrung und werden nicht 
+            komerziell verwendet. Auch ist es unmöglich für den Anbieter der App ihre Daten einzusehen oder zu 
+            verarbeiten, da sie nur auf ihrem Computer oder von ihnen ausgewählten Backup Speicherorten verfügbar sind.`,
+        h6: "Was passiert mit diesen Daten?",
+        b6: 
+            `Sämtliche Daten, die Castle zur Verfügung stehen, werden lokal oder auf vom Benuzter ausgewählten 
+            Speicherorten gespeichert. Die Verschlüsselung geschieht mit zufälligen oder vom Benutzer angegeben 
+            Passwörtern mithilfe des AES256 Algorhythmus. Eine Weitergabe dieser Daten an Dritte ist nicht vorgesehen
+            und wiederspricht Castles Grundsätzen der Datensicherheit. Die Passwörter, die zur Verschlüsselung 
+            notwendig sind, werden in dem von Apple Inc. bereitgestellten 'Schlüsselbund' gespeichert und dort 
+            mihilfe des Administratorpassworts verschlüsselt. Die Verantwortliche Person hinter Castle übernimmt 
+            keine Verantwortung für etwaigen persönlichen oder komerziellen Schaden, falls Apples 'Schlüsselbund' 
+            Sicherheitslücken aufweisen sollte. Bitte haben sie Verständnis, dass der 'Schlüsselbund' und Castle 
+            nicht von der selben Person entwickelt wurden und der Anbieter von Castle somit keinen Einfluss auf 
+            den 'Schlüsselbund' hat.`,
+        h7: "Wer hat Zugriff auf meine Daten?",
+        b7: 
+            `Zugriff auf ihre Daten haben ausschließlich sie und Personen, die Zugriff auf ihren Account bei Castle haben. 
+            Dazu zählen lediglich Personen, die ihr Passwort kennen. Dies schließt sämtliche Personen aus, denen sie 
+            ihr Passwort nicht weitergegeben haben und die nicht auf andersartige Weise an ihr Passwort gekommen sind. 
+            Falls sie ihr Passwort an Fremde und / oder Kriminelle weitergeben sollten oder ihr Passwort von Dritten 
+            geklaut oder erraten werden sollte, übernimmt der Anbieter von Castle keine Verantwortung für entstandenen 
+            persönlichen oder finanziellen Schaden, da kein technisches Versagen vorlag. Sollten Daten durch technisches 
+            oder menschliches Versagen gestohlen werden, übernimmt der Anbieter von Castle keine juristische Verantwortung 
+            für entstandenen persönlichen oder finanziellen Schaden.`,
+        h8: "Wie sicher sind meine Daten?",
+        b8: 
+            `Es ist die oberste Priorität von Castle ihre Daten zu schützen. Um die größtmögliche Sicherheit ihrer 
+            Daten zu erreichen, benutzt Castle Techniken wie AES256. Allerdings sind keine elektronischen 
+            Datenspeicherungsprozesse oder Datenverarbeitungsprozesse zu 100% sicher. Auch hat Castle keinen 
+            Einfluss auf die Sicherheit ihrer Passwörter in Apples 'Schlüsselbund', der von Apple als sicher 
+            Speicherort für Benutzerdaten angegeben wird. Auch kann Castle nicht garantieren, dass sie ein sicheres 
+            Passwort zur Verschlüsselung angeben und dieses nicht an Kriminelle weitergeben. Bitte haben sie Verständnis, 
+            dass der Anbieter von Castle aus den angeführten Gründen keine juristische Verantwortung für die Sicherheit 
+            ihrer persönlichen Daten übernimmt.`,
     }
 }
 

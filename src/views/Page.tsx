@@ -13,6 +13,7 @@ import AboutMeComic from "./AboutMeComic"
 import DownloadPage from "./DownloadPage"
 import DataProtectionDeclaration from "./DataProtectionDeclaration"
 import LegalDisclosure from "./LegalDisclosure"
+import CastleDataProtection from "./Castle/CastleDataProtection"
 
 export interface Props {
 }
@@ -49,7 +50,15 @@ export default function Page(props: Props) {
                     <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
                     <Switch>
                         <Route path="/products/castle">
-                            <Castle />
+                            <Switch>
+                                <Route path="/products/castle/dataprotection">
+                                    <CastleDataProtection />
+                                </Route>
+                                <Route path="*">
+                                    <Castle />
+                                </Route>
+                            </Switch>
+                            
                         </Route>
                         <Route path="/legaldisclosure">
                             <LegalDisclosure />

@@ -616,6 +616,72 @@ const english = {
                 v: "All legal notices on this site are based solely on German law."
             }
         }
+    },
+    castleDataProtection: {
+        title: "Data Protection Declaration",
+        h1: "Provider of Castle",
+        l1: {
+            i1: "Henrik Thorøe",
+            i2: "Strandstraße 10",
+            i3: "24229 Schwedeneck",
+            i4: "Germany (Schleswig-Holstein)"
+        },
+        h2: "Contact",
+        l2: {
+            i1: {
+                k: "E-Mail",
+                v: "info (-at-) thoroee.com (Note: Replace ' (-at-) ' with @; no whitespaces)"
+            },
+            i2: {
+                k: "Internet",
+                v: "thoroee.com"
+            }
+        },
+        h3: "Which data is processed and stored by Castle?",
+        b3: 
+            `All information accessible by Castle is stored and processed locally on your computer or on 
+            locations selected by the user. Castle has access to all information enterd by the user. That 
+            includes name, forename, passwords, credit card information, files, bank account information 
+            and e-mail addresses. A transfer of personal information to a third party is not intended. 
+            Collecting of the information happens only with consent of the user and never unnoticed.`,
+        h4: "How to delete my personal information?",
+        b4: 
+            `To delete all user data you have to delete the requested user in 'Preferences'. To delete all 
+            left fragments of your personal data you have to delete all backups too. You can find the backup 
+            locations in 'Preferences' -> 'Backups'.`,
+        h5: "What is this data for?",
+        b5: 
+            `Because Castle is a password manager it is necessary to ask for information like passwords or usernames. 
+            Personal data like name or forename is necessary to provide the multiple-user service. All data is collected 
+            to provide the best possible user experience and is never used for comercial purposes like advertisement. It 
+            is also impossible for the provider of Castle to access your data because it is stored locally on your computer 
+            or on a backup location selected by the user.`,
+        h6: "How is this information used?",
+        b6: 
+            `All data that is accessible for Castle is stored and evaluated locally on your computer. 
+            The AES256 algorythm is used to decrypt the data using random or user selected passwords stored 
+            in Apples 'Keychain' service. A transfer of this data to a third party is not intended and 
+            contradicts Castle's principles of data security. All passwords which are required to encrypt 
+            your data are stored in the the 'Keychain' service provided by Apple. The provider of Castle 
+            does not take responsibility for any comercial or private damage if Apple's 'Keychain' may 
+            have security gaps. Please understand that the 'Keychain' and Castle are not provided and 
+            developed by the same person or organisation. The provider of Castle does not have any 
+            influence on the developing of the 'Keychain'.`,
+        h7: "Who has access to my data?",
+        b7: 
+            `Only you and persons who have access to your Castle account have access to your personal data. 
+            To access your account your self choosen masterpassword is required. This fact excludes all 
+            persons you did not pass your password and did not have stolen your password. If a stranger 
+            and / or criminal should have stolen or guessed your password Castle does not take any responsibility 
+            for possible comercial or private damage.`,
+        h8: "How secure is my data?",
+        b8: 
+            `Castle's first priority is to secure your data. To provide the best possible security Castle uses 
+            techniques like AES256. However, every electronic storage or processing technic is not 100% secure. 
+            Castle has also no influence to Apple's 'Keychain', which is declared as secure place for user data 
+            by Apple. Castle cannot guarantee that the masterpassword of the user is secure and not passed to 
+            criminals. Please understand that the provider of Castle does not take any responsibility for 
+            possible comercial or private damage if your data gets compromised.`,
     }
 }
 
