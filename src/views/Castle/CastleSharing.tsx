@@ -48,7 +48,7 @@ export default function CastleSharing() {
                         <ProductPage.BodyText>
                             <Translation select={lang => lang.productPages.castle.sharing.webClientBody} /> 
                         </ProductPage.BodyText>
-                        <Button label={<Translation select={lang => lang.general.letsgo} />} fitContent />
+                        <Button label={<Translation select={lang => lang.general.letsgo} />} link="/castle" fitContent />
                     </VStack>
                 }
                 floatRight

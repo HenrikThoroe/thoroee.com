@@ -26,7 +26,7 @@ ProductPage.HeroText = (p: ChildrenProps) => (
 )
 
 ProductPage.BodyText = (p: ChildrenProps) => (
-    <TextContent component="span" className="body-text" size="1.1rem">{ p.children }</TextContent>
+    <TextContent component="span" className="body-text" size="1.2rem">{ p.children }</TextContent>
 )
 
 ProductPage.Group = (p: ChildrenProps) => (
