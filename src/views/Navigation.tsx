@@ -42,10 +42,10 @@ function DesktopControls(props: ControlProps) {
                 <Button label={<Translation select={lang => darkMode ? lang.general.light : lang.general.dark} />} style="primary" onClick={handleDarkMode}/>
                 <Button label={<Translation select={lang => lang.general.currentLanguage} /> } style="primary" onClick={props.onChooseLanguage}/>
             </Group>
-            <Group>
+            {/* <Group>
                 <TextField inputStyle="default" label={<Translation select={lang => lang.general.search} />} inline flat />
                 <Button label={<Translation select={lang => lang.general.find} />} style="search" onClick={() => {}}/>
-            </Group>
+            </Group> */}
         </Controls>
     )
 }
@@ -56,7 +56,7 @@ function MobileControls(props: ControlProps) {
             <Group>
                 <Button icon={<Icon name="sun" />} style="inline" size="large" onClick={toggleDarkMode}/>
                 <Button icon={<Icon name="language" />} style="inline" size="large" onClick={props.onChooseLanguage}/>
-                <Button icon={<Icon name="research" />} style="inline" size="large" onClick={() => {}}/>
+                {/* <Button icon={<Icon name="research" />} style="inline" size="large" onClick={() => {}}/> */}
             </Group>
         </Controls>
     )
