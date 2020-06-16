@@ -561,6 +561,74 @@ const german: BaseType = {
             k1: "Quelle",
             v1: "e-recht24.de"
         }
+    },
+    legalDisclosure: {
+        title: "Impressum",
+        h1: "Angaben gemäß §5 TMG",
+        l1: {
+            i1: "Henrik Thorøe",
+            i2: "Strandstraße 10",
+            i3: "24229 Schwedeneck",
+            i4: "Deutschland"
+        },
+        h2: "Verantwortlicher für den Inhalt",
+        l2: {
+            i1: "Henrik Thorøe",
+            i2: "Strandstraße 10",
+            i3: "24229 Schwedeneck",
+            i4: "Deutschland"
+        },
+        h3: "Kontakt",
+        l3: {
+            i1: {
+                k: "E-Mail",
+                v: "info (-at-) thoroee.com (Anmerkung: ersetze ' (-at-) ' mit @; keine Leerzeichen)"
+            },
+            i2: {
+                k: "Internet",
+                v: "thoroee.com"
+            }
+        },
+        h4: "Haftung für Inhalte",
+        b4: 
+            `Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
+            allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch 
+            nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
+            Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur 
+            Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben 
+            hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis 
+            einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen 
+            werden wir diese Inhalte umgehend entfernen.`,
+        h5: "Haftung für Links",
+        b5: 
+            `Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. 
+            Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der 
+            verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. 
+            Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. 
+            Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente 
+            inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung 
+            nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.`,
+        h6: "Urheberrecht",
+        b6: 
+            `Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
+            Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb 
+            der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. 
+            Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch 
+            gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte 
+            Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf 
+            eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden
+            von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.`,
+        h7: "Anmerkungen",
+        l7: {
+            i1: {
+                k: "Quelle",
+                v: "e-recht24.de"
+            },
+            i2: {
+                k: "Rechtliche Hinweise",
+                v: "Sämtliche rechtliche Hinweise auf dieser Seite beziehen ausschließlich auf das deutsche Recht."
+            }
+        }
     }
 }
 

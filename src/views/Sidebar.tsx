@@ -66,7 +66,9 @@ export default function Sidebar(props: Props) {
                     <Link to="/dataprotection">
                         <Action active={location.pathname === "/dataprotection"} callback={() => {}} leading={<Icon name="textfile"/>}>Data Protection</Action>
                     </Link>
-                    <Action callback={() => {}} leading={<Icon name="textfile"/>}>Legal Disclosure</Action>
+                    <Link to="legaldisclosure">
+                        <Action callback={() => {}} leading={<Icon name="textfile"/>} active={location.pathname === "/legaldisclosure"}>Legal Disclosure</Action>
+                    </Link>
                 </Group>
             </Body>
         </SidebarComponent>
