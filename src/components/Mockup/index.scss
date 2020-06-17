@@ -1,17 +1,41 @@
 .mockup-container {
     position: relative;
 
+    &.macbookPro {
+        .content {
+            max-width: calc(100% - 8.17% * 2);
+            min-width: calc(100% - 8.17% * 2);
+            max-height: calc(88.871% - 9.975%);
+            min-height: calc(88.871% - 9.975%);
+            top: 9.975%;
+            left: 8.17%;
+
+            .window {
+                padding: 5%;
+            }
+        }
+    }
+
+    &.monitor {
+        .content {
+            max-width: calc(100% - 5.198% * 2);
+            min-width: calc(100% - 5.198% * 2);
+            max-height: calc(72.5% - 6.683%);
+            min-height: calc(72.5% - 6.683%);
+            top: 6.683%;
+            left: 5.198%;
+
+            .window {
+                padding: 15%;
+            }
+        }
+    }
+
     .content {
         position: absolute;
-        max-width: calc(100% - 8.17% * 2);
-        min-width: calc(100% - 8.17% * 2);
-        max-height: calc(88.871% - 9.975%);
-        min-height: calc(88.871% - 9.975%);
-        top: 9.975%;
-        left: 8.17%;
 
         .window {
-            overflow: hidden;
+            overflow: visible;
             position: absolute;
             width: 100%;
             max-height: 100%;
@@ -19,7 +43,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 5%;
             object-fit: contain;
 
             &.small {
@@ -37,7 +60,6 @@
             justify-content: start;
             align-items: start;
             padding: 0px;
-
         }
     }
 }

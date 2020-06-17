@@ -41,7 +41,11 @@ export default function CastleSharing() {
                     </ProductPage.CaptionHeadline>
                 }
                 image={
-                    <Picture src="web-client.png" />
+                    <Mockup type="monitor">
+                        <Mockup.Window>
+                            <Picture src="web-client.png" />
+                        </Mockup.Window>
+                    </Mockup>
                 } 
                 body={
                     <VStack spacing="1rem">
