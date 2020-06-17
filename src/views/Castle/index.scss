@@ -1,11 +1,11 @@
 @import "../../assets/breakpoints.scss";
 @import "../../assets/color.scss";
 
-.a {
-    background: linear-gradient(to bottom right,#5d80ae, #a2bf8a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+// .a {
+//     background: linear-gradient(to bottom right,#5d80ae, #a2bf8a);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
 
 // .bgImage {
 //     // position: absolute;
@@ -17,7 +17,7 @@
 //     overflow: hidden;
 // }
 .hero-wrapper {
-    padding: 5rem 0px 0px 0px;
+    padding: 0rem 0px 0px 0px;
 
     .hero-container {
         min-width: 40vw;

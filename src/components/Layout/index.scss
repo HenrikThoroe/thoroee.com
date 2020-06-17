@@ -204,9 +204,12 @@
 
         .main {
             overflow: visible;
+            max-height: fit-content;
+            min-height: fit-content;
 
             & > *:first-child {
-                position: fixed;
+                position: sticky;
+                top: 0;
                 z-index: 9999;
             }
 
