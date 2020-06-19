@@ -13,6 +13,7 @@ import successAnimation from "../../assets/animations/success.json"
 import spinnerAnimation from "../../assets/animations/spinner.json"
 import If from "../../components/If";
 import Button from "../../components/Button";
+import Translation from "../../components/Translation";
 
 export interface Props {
     shown?: boolean
@@ -22,7 +23,6 @@ export interface Props {
 }
 
 export default function Captcha(props: Props) {
-    const [clicked, setClicked] = useState(false)
     const [state, setState] = useState<"input" | "fail" | "success">("input")
     const [answer, setAnswer] = useState("")
     const [invalid, setInvalid] = useState(false)
@@ -59,7 +59,7 @@ export default function Captcha(props: Props) {
     }
 
     const handleConfirm = () => {
-        if (createCaptcha() === "6") {
+        if (createCaptcha() === "6" && !invalid) {
             setState("success")
             send()
         } else {
@@ -116,11 +116,15 @@ export default function Captcha(props: Props) {
 
     return (
         <Modal style={{maxWidth: "min(90vw, 30rem)"}} shown={props.shown} onHide={handleHide} centered>
-            <Modal.Header>Just Another Captcha</Modal.Header>
+            <Modal.Header>
+                <Translation select={lang => lang.captcha.title} />
+            </Modal.Header>
             <Modal.Body>
                 <If condition={state === "input"}>
                     <VStack spacing="1rem">
-                        <TextContent>Please enter the result of 4 + 2 into the circle.</TextContent>
+                        <TextContent>
+                            <Translation select={lang => lang.captcha.input.message} />
+                        </TextContent>
                         <HStack alignment="center" spacing="2rem">
                             <input 
                                 type="text" 
@@ -142,27 +146,39 @@ export default function Captcha(props: Props) {
                             />
                         </HStack>
                         <HStack alignment="end">
-                            <Button label="That's It" onClick={handleConfirm} fitContent />
+                            <Button 
+                                label={<Translation select={lang => lang.captcha.input.button} />} 
+                                onClick={handleConfirm} 
+                                fitContent 
+                            />
                         </HStack>
                     </VStack>
                 </If>
                 <If condition={state === "fail"}>
                     <VStack spacing="1rem">
                         <TextContent>
-                            Oh! It seems that is not the correct answer. Please remember to not enter anything into the wrong shapes.
+                            <Translation select={lang => lang.captcha.fail.message} />
                         </TextContent>
                         <HStack alignment="end">
-                            <Button label="Retry" onClick={reset} fitContent />
+                            <Button 
+                                label={<Translation select={lang => lang.captcha.fail.button} />} 
+                                onClick={reset} 
+                                fitContent
+                            />
                         </HStack>
                     </VStack>
                 </If>
                 <If condition={state === "success"}>
                     <VStack spacing="1rem">
                         <TextContent>
-                            Thank you for your feedback. It's on the way!
+                            <Translation select={lang => lang.captcha.success.message} />
                         </TextContent>
                         <HStack alignment="end">
-                            <Button label="Done" onClick={handleHide} fitContent />
+                            <Button 
+                                label={<Translation select={lang => lang.captcha.success.button} />} 
+                                onClick={handleHide} 
+                                fitContent 
+                            />
                         </HStack>
                     </VStack>
                 </If>

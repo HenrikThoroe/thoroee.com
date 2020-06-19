@@ -42,6 +42,23 @@ const german: BaseType = {
         message: "Nachricht",
         agree: "Durch das Absenden stimme ich folgendem zu: "
     },
+    captcha: {
+        title: "Bist du ein Roboter?",
+        input: {
+            message: "Bitte schreibe das Ergebnis von 4 + 2 in den Kreis.",
+            button: "Das ist es!"
+        },
+        success: {
+            message: "Vielen Dank für dein Feedback. Es ist auf dem Weg!",
+            button: "Fertig"
+        },
+        fail: {
+            message: 
+                `Oh! Es sieht so aus, als wäre dies nicht die richtige Antwort.
+                Bitte denke daran, nur in die richtige Form das Ergebnis zu schreiben.`,
+            button: "Neuer Versuch"
+        }
+    },
     productPages: {
         castle: {
             welcome: {

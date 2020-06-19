@@ -42,6 +42,23 @@ const english = {
         message: "Message",
         agree: "By submitting I agree to the "
     },
+    captcha: {
+        title: "Are you a robot?",
+        input: {
+            message: "Please enter the result of 4 + 2 into the circle.",
+            button: "That's It"
+        },
+        success: {
+            message: "Thank you for your feedback. It's on the way!",
+            button: "Done"
+        },
+        fail: {
+            message: 
+                `Oh! It seems that is not the correct answer. 
+                Please remember to not enter anything into the wrong shapes.`,
+            button: "Retry"
+        }
+    },
     productPages: {
         castle: {
             welcome: {
