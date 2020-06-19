@@ -3,6 +3,7 @@ import classNames from "classnames";
 import "./index.scss"
 import HStack from "../Stacks/HStack";
 import { useHistory } from "react-router-dom";
+import redirect from "../../utils/redirect";
 
 export type ButtonType = 
     "inline" | 
@@ -72,7 +73,11 @@ export default function Button(props: Props) {
         }
 
         if (props.link) {
-            history.push(props.link)
+            if (props.link.startsWith("https://") || props.link.startsWith("http://")) {
+                redirect(props.link)
+            } else {
+                history.push(props.link)
+            }
         }
     }
 

@@ -10,6 +10,7 @@ import Button from "../../components/Button";
 import Icon from "../../components/Icon";
 import If from "../../components/If";
 import Translation from "../../components/Translation";
+import redirect from "../../utils/redirect";
 
 type ProjectState = "InDevelopment" | "Abandoned" | "Maintained"
 
@@ -56,7 +57,7 @@ function ProjectCard(props: { name: ReactNode, short: ReactNode, state: ProjectS
                     <If condition={props.buy}>
                         <Button 
                             icon={<Icon color="input" name="heart-fill"/>} 
-                            link={props.buy} 
+                            onClick={() => redirect(props.github!)}
                             label={<Translation select={lang => lang.general.buy} />} 
                             style="primary" 
                             size="large" 
@@ -66,7 +67,7 @@ function ProjectCard(props: { name: ReactNode, short: ReactNode, state: ProjectS
                     <If condition={props.github}>
                         <Button 
                             icon={<Icon color="input" name="github"/>} 
-                            link={props.github} 
+                            onClick={() => redirect(props.github!)}
                             label="GitHub"
                             style="primary" 
                             size="large" 
@@ -108,8 +109,8 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.castle.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.castle.body}/>}
                 state="Maintained"
-                buy=""
-                info=""
+                buy="https://apps.apple.com/de/app/castle-password-manager/id1474114435?l=en&mt=12"
+                info="/products/castle"
             /> 
 
             <ProjectCard 
@@ -118,7 +119,7 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.website.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.website.body}/>}
                 state="InDevelopment"
-                github=""
+                github="https://github.com/HenrikThoroe/thoroee.com"
             /> 
 
             <ProjectCard 
@@ -127,8 +128,8 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.swc1.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.swc1.body}/>}
                 state="Abandoned"
-                github=""
-                info=""
+                github="https://github.com/HenrikThoroe/swc-common-client"
+                info="https://www.software-challenge.de"
             /> 
 
             <ProjectCard 
@@ -155,7 +156,7 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.escapeRoom.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.escapeRoom.body}/>}
                 state="Abandoned"
-                info=""
+                info="https://www.knowit.eu"
             /> 
 
             <ProjectCard 
