@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 
 interface Props<T> {
     children: ReactNode
@@ -6,19 +6,25 @@ interface Props<T> {
 }
 
 export default function If<T>(props: Props<T>): JSX.Element {
-    const shouldRender = () => {
-        if (props.condition && typeof props.condition === "boolean") {
-            return props.condition === true
-        } else if (props.condition !== undefined) {
-            return props.condition !== null
+    const [display, setDisplay] = useState(false)
+
+    const validateCondition = (condition?: T): boolean => {
+        if (typeof condition === "boolean") {
+            return condition === true
+        } else if (typeof condition === "function") {
+            return validateCondition(condition.call(null))
         } else {
-            return false
+            return condition !== undefined && condition !== null
         }
     }
 
-    if (shouldRender()) {
-        return <>{ props.children }</>
-    }
+    useEffect(() => {
+        setDisplay(validateCondition(props.condition))
+    }, [props.condition])
 
-    return <></>
+    return (
+        <span style={{ display: display ? "inline-block" : "none" }}>
+            { props.children }
+        </span>
+    )
 }   

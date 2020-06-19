@@ -6,11 +6,37 @@
 
     &.sent {
         transform: translate(70vw, -70vw);
-        filter: blur(1px);
+        // filter: blur(1px);
     }
 }
 
 .description {
     max-width: 20rem;
     text-align: center;
+}
+
+.captcha--rInput {
+    appearance: none;
+
+    color: var(--text-primary);
+    border: 3px solid var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0px;
+}
+
+.captcha--cInput {
+    appearance: none;
+
+    color: var(--text-primary);
+    border: 3px solid var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
 }

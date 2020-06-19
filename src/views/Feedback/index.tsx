@@ -47,7 +47,7 @@ export default function Feedback() {
                             <HStack alignment="spaceBetween" spacing="1rem" verticalAlignment="center">
                                 <div className="terms">
                                     <Translation select={lang => lang.feedback.agree} />
-                                    <Link className="inlineLink" to="/">
+                                    <Link className="inlineLink" to="/dataprotection">
                                         <Translation select={lang => lang.links.terms.name} />
                                     </Link>
                                 </div>
