@@ -2,6 +2,7 @@ import React, { useState, useRef, ReactNode } from "react"
 import "./index.scss"
 import classNames from "classnames"
 import ReactProps from "../../utils/ReactProps"
+import isEmail from "../../utils/isEmail"
 
 export type TextFieldStyle = "default" | "search" | "email"
 
@@ -59,7 +60,7 @@ export default function TextField(props: Props) {
                 setInvalid(text.length === 0)
             }
 
-            if (inputStyle === "email" && !/\S+@\S+\.\S+/.test(text)) {
+            if (inputStyle === "email" && !isEmail(text)) {
                 setInvalid(true)
             }
 

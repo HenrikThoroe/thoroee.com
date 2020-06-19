@@ -13,6 +13,7 @@ import Translation from "../../components/Translation";
 import translate from "../../localisation/translate";
 import { useSelector } from "react-redux";
 import selectLanguage from "../../redux/selectors/selectLanguage";
+import isEmail from "../../utils/isEmail";
 
 export default function Feedback() {
     const [showCaptcha, setShowCaptcha] = useState(false)
@@ -22,7 +23,7 @@ export default function Feedback() {
     const language = useSelector(selectLanguage)
 
     const fetchContent = () => ({ subject, sender, message })
-    const filled = () => subject.length > 0 && sender.length > 0 && message.length > 0
+    const filled = () => subject.length > 0 && sender.length > 0 && message.length > 0 && isEmail(sender)
 
     const clearForm = () => {
         setSubject("")

@@ -1,0 +1,1 @@
+export default (str: string) => /\S+@\S+\.\S+/.test(str)
