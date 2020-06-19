@@ -1,4 +1,5 @@
 import Language from "../state/Language";
+import { loadEnableCookies } from "./enableCookies";
 
 const id = "state:language"
 
@@ -13,5 +14,7 @@ export function loadLanguage(): Language {
 }
 
 export function persistLanguage(language: Language) {
-    localStorage.setItem(id, language)
+    if (loadEnableCookies()) {
+        localStorage.setItem(id, language)
+    }
 }

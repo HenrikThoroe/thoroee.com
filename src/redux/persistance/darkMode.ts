@@ -1,3 +1,5 @@
+import { loadEnableCookies } from "./enableCookies"
+
 const id = "state:darkMode"
 
 export function loadDarkMode(): boolean {
@@ -12,5 +14,7 @@ export function loadDarkMode(): boolean {
 }
 
 export function persistDarkMode(dark: boolean) {
-    localStorage.setItem(id, dark ? "true" : "false")
+    if (loadEnableCookies()) {
+        localStorage.setItem(id, dark ? "true" : "false")
+    }
 }
