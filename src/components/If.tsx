@@ -20,7 +20,6 @@ export default function If<T>(props: Props<T>): JSX.Element {
 
     useEffect(() => {
         setDisplay(validateCondition(props.condition))
-        console.log("check condition")
     }, [props.condition])
 
     return (
