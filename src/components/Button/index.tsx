@@ -63,10 +63,13 @@ export default function Button(props: Props) {
             button.style.setProperty("--d", `${delay}`)
             button.classList.add("ripple")
 
-            timeout = setTimeout(() => button?.classList.remove("ripple"), delay)
+            timeout = setTimeout(() => {
+                button?.classList.remove("ripple")
+                props.onClick?.call(null)
+            }, delay)
+        } else {
+            props.onClick?.call(null)
         }
-
-        props.onClick?.call(null)
 
         if (props.link) {
             history.push(props.link)
