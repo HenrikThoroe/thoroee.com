@@ -18,6 +18,7 @@
 .captcha--rInput {
     appearance: none;
 
+    background: transparent;
     color: var(--text-primary);
     border: 3px solid var(--text-primary);
     font-size: 1.2rem;
@@ -31,6 +32,7 @@
 .captcha--cInput {
     appearance: none;
 
+    background: transparent;
     color: var(--text-primary);
     border: 3px solid var(--text-primary);
     font-size: 1.2rem;
