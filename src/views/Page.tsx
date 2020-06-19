@@ -13,6 +13,7 @@ import DownloadPage from "./DownloadPage"
 import DataProtectionDeclaration from "./DataProtectionDeclaration"
 import LegalDisclosure from "./LegalDisclosure"
 import CastleDataProtection from "./Castle/CastleDataProtection"
+import WebClientHelp from "./Castle/WebClientHelp"
 
 export interface Props {
 }
@@ -52,6 +53,9 @@ export default function Page(props: Props) {
                             <Switch>
                                 <Route path="/products/castle/dataprotection">
                                     <CastleDataProtection />
+                                </Route>
+                                <Route path="/products/castle/webclient">
+                                    <WebClientHelp />
                                 </Route>
                                 <Route path="*">
                                     <Castle />

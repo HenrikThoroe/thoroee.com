@@ -720,6 +720,104 @@ const german: BaseType = {
             Passwort zur Verschlüsselung angeben und dieses nicht an Kriminelle weitergeben. Bitte haben sie Verständnis, 
             dass der Anbieter von Castle aus den angeführten Gründen keine juristische Verantwortung für die Sicherheit 
             ihrer persönlichen Daten übernimmt.`,
+    },
+    castleWebClientFaq: {
+        title: "Web Client FAQ",
+        q1: {
+            q: "Was ist der Web-Client?",
+            a: 
+                `Der Web-Client ermöglicht es ihnen, Castle von jedem Gerät aus zu benutzen, das in ihrem 
+                lokelen Netzwerk (WLAN) ist. Vorausgesetz, dass sie ihre Castle Login Daten (Benutzername und Passwort) 
+                kennen und physischen Zugriff auf den Mac haben, auf welchem Castle läuft. Der Mac muss ausserdem mit 
+                dem gleichen Netzwerk (WLAN) wie das Gerät, mit dem sie auf Castle zugreifen wollen, verbunden sein.`
+        },
+        q2: {
+            q: "Warum ist der Web-Client besonders?",
+            a: 
+                `Anders als die meisten Passwort Manager, speichert Castle ihre Daten nur auf ihrem Gerät. 
+                Das macht sie zwar schwer angreifbar, hat aber auch einen großen Nachteil: Sie können nicht 
+                von jedem Gerät über das Internet auf ihre Daten zugreifen. Dieses Problem versucht der 
+                Web-Client so gut es geht zu lösen. Er ist eine Webseite, die mithilfe von JavaScript die 
+                Daten zwischen der Seite und Castle austauscht. Dadurch bleiben ihre Daten immer in ihrem 
+                Netzwerk (sprich bei ihnen Zuhause), aber sie können trotzdem mit jedem Gerät auf ihre Daten 
+                zugreifen. Der Austausch ist natürlich auch verschlüsselt. Und zwar mit ihrem Masterpasswort 
+                und einem PIN Code, der direkt von Castle angezeigt wird. Deshalb muss ein Angreifer, um ihre 
+                Daten stehlen zu können, Castle sehen können. Also direkt vor ihrem Mac sizten. Nicht sehr 
+                wahrscheinlich, oder?`
+        },
+        q3: {
+            q: "How To: Installation",
+            a: {
+                b: 
+                    `Sie müssen den Web Client nicht wirklich installieren. Es handelt sich um eine normale Webseite, 
+                    aber natürlich gibt es ein paar Tricks, um sich das Leben einfacher zu machen:`,
+                l1: {
+                    t: "iOS",
+                    i1: "Öffnen sie die Webseite ( thoroee.com/castle/ )",
+                    i2: "Berühren sie die 'Teilen' Schaltfläche (Unten Mitte)",
+                    i3: `Berühren sie 'Zum Home Screen hinzufügen'`,
+                    i4: "Sie können die Seite jetzt wie eine echte App verwenden!"
+                },
+                l2: {
+                    t: "Die meisten Desktop Betriebssysteme (Windows 10, Linux, macOS, ...)",
+                    i1: "Öffnen sie die Webseite ( thoroee.com/castle/ )",
+                    i2: "Fügen sie die Seite zu ihren Favoriten hinzu."
+                }
+            }
+        },
+        q4: {
+            q: "How To: Mit Castle verbinden",
+            a: {
+                b1: `Um sich mit Castle zu verbinden und ihre Passwörter ansehen zu können, müssen sie ein paar Schritte erledigen:`,
+                l1: {
+                    i1: "Öffnen sie die Webseite ( thoroee.com/castle/ )",
+                    i2: `Geben sie unter 'Hostname' den Namen ihres Macs an (Siehe Castle 'Lokaler Server' tab)`,
+                    i3: "Geben sie unter 'Username' ihren Castle Benutzernamen ein",
+                    i4: "Geben sie unter 'Password' ihr Castle Masterpasswort ein",
+                    i5: 
+                        `Wenn sie sich mit ihrem Browser zum ersten Mal mit Castle verbinden, müssen sie das SSL Zertifikat 
+                        installieren.`,
+                    i6: "Klicken sie die 'Connect' Schaltfläche"
+                },
+                b2: 
+                    `Wenn sie die passenden Werte eingegeben haben, werden sie eine (mobile Geräte) oder mehrere 
+                    Boxen sehen, in die sie den Pin eingeben müssen, der von Castle angezeigt wird. Fertig!`
+            }
+        },
+        q5: {
+            q: "Sicherheit",
+            a: 
+                `Die Sicherheit ihrer Daten wird durch interne Algorhythmen sichergestellt. Ihre Passwörter 
+                werden verschlüsselt zur Web-Anwendung geschickt. Dafür werden ihr Masterpasswort und der 
+                PIN Code verwendet. Deshalb müsste ein Angreifer nicht nur ihr Masterpasswort kennen, sondern 
+                auch den direkt von Castle angezeigten PIN. Dafür wiederum müsste er direkt vor ihrem Mac sitzen.`
+        },
+        q6: {
+            q: "Was ist ein SSL Zertifikat?",
+            a: 
+                `Castle verwendet aufgrund von Browsereinschränkungen für die Verbindung zwischen der Host-Anwendung 
+                (Castle) und dem Web-Client HTTPS. Obwohl die sichere Verbindung in diesem Fall kein HTTPS voraussetzt, 
+                verhindern moderne Browser die Verbindung mittels HTTP. Dies ist in den meisten Fällen eine sehr gute 
+                Entscheidung, in diesem speziellen aber eigentlich nicht notwendig. Um dieses Problem zu umgehen, setzt 
+                auch Castle auf HTTPS. Dafür benutzt es allerdings ein selbst signiertes Zertifikat. Browser verhindern 
+                auch in diesem Fall den Verbindungsaufbau, da selbst signierte Zertifikate potenziell unsicher sind. 
+                Aus diesem Grund müssen sie eine Seite in ihrem Browser öffen, die von Castle bereit gestellt wird und 
+                selbst signiert ist. Wenn sie bei der sich öffnenden Warnung, dass dies unsicher sei, auf trotzdem öffnen 
+                klicken, sagen sie dem Browser: "Dieses Zertifikat ist OK. Du kannst es akzeptieren".`
+        },
+        q7: {
+            q: "Wenn ich auf 'Connect' klicke, kriege ich eine Fehlermeldung.",
+            a: {
+                b: 
+                    `Dieses Problem kann mehrere Ursachen haben. Versichern sie sich zuerst, dass sie das SSL Zertifikat 
+                    installiert haben. Ansonsten prüfen sie bitte ob sie folgende Werte richtig eingegeben haben:`,
+                l1: {
+                    i1: "Der Gerätename unter 'Hostname'",
+                    i2: "Den Benutzernamen unter 'Username'",
+                    i3: "Das Passwort unter 'Password'"
+                }
+            }
+        }
     }
 }
 

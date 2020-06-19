@@ -699,6 +699,106 @@ const english = {
             by Apple. Castle cannot guarantee that the masterpassword of the user is secure and not passed to 
             criminals. Please understand that the provider of Castle does not take any responsibility for 
             possible comercial or private damage if your data gets compromised.`,
+    },
+    castleWebClientFaq: {
+        title: "Web Client FAQ",
+        q1: {
+            q: "What is the web client?",
+            a: 
+                `The web client allows you to access Castle from any device in your home network (your Wi-Fi). 
+                Prerequisite is that you know your master-password and have Castle running on a Mac. The Mac 
+                has to connect to the same Wi-Fi as the device you want to use for the web client. Using the 
+                web client you can access your passwords from another Mac, a Windows PC, your iPhone or Android 
+                device and so on. And that only by purchasing one copy of Castle which runs on your Mac.`
+        },
+        q2: {
+            q: "Why is the web client special?",
+            a: 
+                `Other than most password managers Castle is running locally on your device. So your passwords are 
+                stored only locally on your device too! That makes your password less vulnerable. But this method 
+                has also one big disadvantage: You can not access your passwords from anywhere. They stuck on your 
+                device. This problem is solved by the Castle Web Client. The name of this service might be mistaken 
+                because it is no real "web" client. It is a webpage that downloads your password over the local network 
+                (Wi-Fi) using JavaScript. So your data never leaves your network! While the data is exchanged between 
+                the web application and Castle it is encrypted with your password and a pin displayed by Castle. That 
+                means an attacker has to see your Mac and know your master-password! Not very likely!`
+        },
+        q3: {
+            q: "How To: Installation",
+            a: {
+                b: 
+                    `You do not really install the web client. You can handle it just like a normal webpage. 
+                    But of course there are some tricks to make your life easier:`,
+                l1: {
+                    t: "iOS",
+                    i1: "Open the webpage ( thoroee.com/castle/ )",
+                    i2: "Touch the share button (bottom center)",
+                    i3: `Touch "Add to Home Screen"`,
+                    i4: "You can use it like a native app!"
+                },
+                l2: {
+                    t: "Most Desktop OS (Windows 10, Linux, macOS, ...)",
+                    i1: "Open the webpage ( thoroee.com/castle/ )",
+                    i2: "Add the page to your favourites or create a desktop shortcut"
+                }
+            }
+        },
+        q4: {
+            q: "How To: Connect with Castle",
+            a: {
+                b1: `To connect against Castle and view your passwords in the browser you have to do some steps:`,
+                l1: {
+                    i1: "Open the webpage ( thoroee.com/castle/ )",
+                    i2: `Enter the hostname which is displayed by Castle in the 'Local Server' tab`,
+                    i3: "Enter your Castle username",
+                    i4: "Enter your Castle master-password",
+                    i5: 
+                        `If you are using your browser (Safari, Chrome Firefox, ...) the first time to 
+                        connet with Castle you need to install the SSL certificate`,
+                    i6: "Press the 'Connect' button"
+                },
+                b2: 
+                    `If you entered correct values and installed the SSL certificate you will see a box 
+                    (mobile) or multiple boxes (desktop). You have to enter the PIN code which is also 
+                    displayed by Castle in the 'Local Server' tab. You are done!`
+            }
+        },
+        q5: {
+            q: "Security",
+            a: 
+                `The security of your passwords is ensured by custom algorithms. Your passwords are sent to the web client 
+                encrypted with your master-password and the PIN code. That is why an attacker has to know your master-password 
+                and the PIN code which is displayed by Castle and not sent as plain text in any situation. That causes 
+                that an attacker has to see your Mac in order to know the PIN and get your passwords (assuming he knows 
+                    your master-password).`
+        },
+        q6: {
+            q: "What is the SSL certificate?",
+            a: 
+                `The connection between the web client and Castle is using HTTPS because of browser restrictions. 
+                Even though the data exchange between Castle and the client requires no HTTPS all modern 
+                browser interdict an, in their mind, insecure HTTP connection. In most cases, it is a good 
+                decision to prevent an insecure HTTP connection but in this special use case, it is unnecessary. 
+                To bypass this problem Castle uses HTTPS with a self-signed certificate. This allows Castle to use 
+                HTTPS. But again most browsers do not want self-signed certificates because of security reasons. 
+                That is why you have to open a page served by Castle which is signed with the self-signed certificate. 
+                When you do this you say the browser "Please accept this certificate. It is secure". After you have 
+                done so the web client will be able to connect against Castle.`
+        },
+        q7: {
+            q: "If I press 'Connect' I get an error message.",
+            a: {
+                b: 
+                    `This problem could have multiple reasons. A common one is that you do not have installed the 
+                    SSL certificate. To install the certificate press 'Install SSL Certificate'. Another reason 
+                    could be that you`,
+                l1: {
+                    i1: "Did not enter the hostname correctly",
+                    i2: "Did not enter the username correctly",
+                    i3: "Did not enter the password correctly"
+                }
+            }
+        }
     }
 }
 
