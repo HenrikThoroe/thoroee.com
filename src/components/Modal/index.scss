@@ -68,7 +68,7 @@
         border-radius: 8px;
         padding: 1rem;
         color: var(--text-primary);
-        min-width: unquote($string: "min(25rem, 80vw)");
+        width: 25rem;
         max-width: 80vw;
 
         .header {
