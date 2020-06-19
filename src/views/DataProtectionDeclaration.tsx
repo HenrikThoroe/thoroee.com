@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Translation from "../components/Translation";
 import { useSelector, useDispatch } from "react-redux";
 import selectEnableCookies from "../redux/selectors/selectEnableCookies";
+import setEnableCookies from "../redux/actions/setEnableCookies";
 
 function AtAGlance() {
     return (
@@ -330,7 +331,7 @@ function Settings() {
                         <Translation select={lang => lang.dataProtection.settings.cookies.enable} />
                     } 
                     onClick={() => {
-                        // dispatch(setEN)s
+                        dispatch(setEnableCookies(!enableCookies))
                     }}
                     fitContent 
                 />
