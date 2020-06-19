@@ -5,10 +5,10 @@ export interface SetEnableCookiesAction {
     payload: boolean
 }
 
-const setSetEnableCookies = (allowed: boolean): SetEnableCookiesAction => ({
+const setEnableCookies = (allowed: boolean): SetEnableCookiesAction => ({
     type: SET_ENABLECOOKIES,
     payload: allowed
 })
 
-export default setSetEnableCookies
+export default setEnableCookies
 

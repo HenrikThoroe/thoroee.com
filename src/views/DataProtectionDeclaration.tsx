@@ -2,6 +2,8 @@ import Document from "../components/Document";
 import React from "react";
 import Button from "../components/Button";
 import Translation from "../components/Translation";
+import { useSelector, useDispatch } from "react-redux";
+import selectEnableCookies from "../redux/selectors/selectEnableCookies";
 
 function AtAGlance() {
     return (
@@ -312,13 +314,26 @@ function Analysis() {
 }
 
 function Settings() {
+    const enableCookies = useSelector(selectEnableCookies)
+    const dispatch = useDispatch()
+
     return (
         <Document.Section>
             <Document.FirstHeadline>
                 <Translation select={lang => lang.dataProtection.settings.title} />
             </Document.FirstHeadline>
             <Document.FreeStanding>
-                <Button label={<Translation select={lang => lang.dataProtection.settings.cookies.disable} />} fitContent />
+                <Button 
+                    label={
+                        enableCookies ?
+                        <Translation select={lang => lang.dataProtection.settings.cookies.disable} /> :
+                        <Translation select={lang => lang.dataProtection.settings.cookies.enable} />
+                    } 
+                    onClick={() => {
+                        // dispatch(setEN)s
+                    }}
+                    fitContent 
+                />
             </Document.FreeStanding>
         </Document.Section>
     )
