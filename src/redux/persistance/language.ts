@@ -10,6 +10,10 @@ export function loadLanguage(): Language {
         return data
     } 
 
+    if (navigator.language.toLowerCase().startsWith("de")) {
+        return "german"
+    }
+
     return "english"
 }
 
