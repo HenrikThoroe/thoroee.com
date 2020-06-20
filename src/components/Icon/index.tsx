@@ -23,7 +23,8 @@ export type IconName =
     "treasurechest" |
     "treasurechest-open" |
     "castle" |
-    "download"
+    "download" |
+    "cookie"
 
 export interface Props extends ReactProps<HTMLDivElement> {
     name: IconName

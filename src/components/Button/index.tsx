@@ -9,7 +9,8 @@ export type ButtonType =
     "inline" | 
     "primary" | 
     "search" |
-    "comic"
+    "comic" |
+    "text"
 
 export interface Props {
     imageButton?: boolean
@@ -36,6 +37,9 @@ export default function Button(props: Props) {
         case "inline":
             content = props.icon ? props.icon : props.label
             break
+        case "text":
+            content = props.label
+            break
         case "comic":
         case "search":
         case "primary":
@@ -52,7 +56,7 @@ export default function Button(props: Props) {
 
         const button = containerRef.current
 
-        if (button && props.style !== "inline" && props.style !== "comic") {
+        if (button && props.style !== "inline" && props.style !== "comic" && props.style !== "text") {
             const delay = 400
             const rect = button.getBoundingClientRect()
             const x = Math.floor(event.clientX - rect.left)
@@ -100,6 +104,7 @@ export default function Button(props: Props) {
                 disabled: props.disabled,
                 inline: props.style === "inline", 
                 comic: props.style === "comic",
+                text: props.style === "text",
                 flat: props.flat, 
                 search: props.style === "search",
                 large: props.size === "large",

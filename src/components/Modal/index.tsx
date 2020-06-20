@@ -12,17 +12,19 @@ export interface Props extends ReactProps<HTMLDivElement> {
     shown?: boolean
     onHide?: () => void 
     centered?: boolean
+    opaque?: boolean
+    requireInteraction?: boolean
 }
 
 export default function Modal(props: Props) {
-    const { shown, onHide, centered, children, className, ...other } = props
+    const { opaque, requireInteraction, shown, onHide, centered, children, className, ...other } = props
     const hidden = () => !(shown || false)
     const modalRef = useRef<HTMLDivElement>(null)
 
     const handleClick = (e: React.MouseEvent) => {
         const modal = modalRef.current
 
-        if (modal && onHide) {
+        if (modal && onHide && requireInteraction !== true) {
             const rect = modal.getBoundingClientRect()
             const verticallyInside = e.clientX >= rect.x && e.clientX <= rect.x + rect.width
             const horizontallyInside = e.clientY >= rect.y && e.clientY <= rect.y + rect.height
@@ -35,8 +37,8 @@ export default function Modal(props: Props) {
 
     return (
         <div className={classNames("modalContainer", { hidden: hidden(), centerContent: props.centered }, className)} onClick={handleClick}>
-            <div className="modal" ref={modalRef} {...other}>
-                <div className="closeWrapper">
+            <div className={classNames("modal", { opaque: opaque })} ref={modalRef} {...other}>
+                <div className="closeWrapper" style={{ display: requireInteraction ? "none" : "block" }}>
                     <div className="closeButton" onClick={onHide}>
                         <div />
                         <div />
