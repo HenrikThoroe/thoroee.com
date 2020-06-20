@@ -2,6 +2,7 @@
 
 ## Description
 This React driven website is my personal portfolio. It's for presenting myself and advertising my products.
+You can view this website on thoroee.com.
 Feel free to look through my code and copy whatever you like to use yourself.
 
 ## Instalation
