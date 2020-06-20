@@ -78,7 +78,7 @@ export default function Icon(props: Props): JSX.Element {
                     }
                 }) 
         }
-    }, [contentRef.current])
+    }, [contentRef.current, name])
 
     return (
         <div className={classNames("comp_loadingIcon", className)} ref={contentRef} {...other}>

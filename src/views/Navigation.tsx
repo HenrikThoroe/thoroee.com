@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavbarComponent from "../components/NavbarComponent";
 import Toggle from "../components/NavbarComponent/Toggle";
 import Controls from "../components/NavbarComponent/Controls";
@@ -50,10 +50,18 @@ function DesktopControls(props: ControlProps) {
 }
 
 function MobileControls(props: ControlProps) {
+    const darkMode = useSelector(selectDarkMode)
+    const dispatch = useDispatch()
+
+    const handleDarkMode = () => {
+        dispatch(setDarkMode(!darkMode))
+        toggleDarkMode()
+    }
+
     return (
         <Controls>
             <Group>
-                <Button icon={<Icon name="sun" />} style="inline" size="large" onClick={toggleDarkMode}/>
+                <Button icon={<Icon name={darkMode ? "sun" : "moon"} />} style="inline" size="large" onClick={handleDarkMode}/>
                 <Button icon={<Icon name="language" />} style="inline" size="large" onClick={props.onChooseLanguage}/>
                 {/* <Button icon={<Icon name="research" />} style="inline" size="large" onClick={() => {}}/> */}
             </Group>
