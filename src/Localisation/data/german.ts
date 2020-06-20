@@ -818,6 +818,14 @@ const german: BaseType = {
                 }
             }
         }
+    },
+    cookieMessage: {
+        title: "Diese Seite verwendet Cookies",
+        message: 
+            `Bitte erlaube die Benutzung von diesen Süßigkeiten. Sie erlauben der Seite, 
+            sich an deine Sprache und dein Theme zu erinnern. Sie tracken dich nicht ;)`,
+        allow: "Lecker!",
+        deny: "Nein, ich bin auf Diät."
     }
 }
 

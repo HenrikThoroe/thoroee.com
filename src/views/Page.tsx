@@ -23,6 +23,7 @@ import Headline from "../components/TextContent"
 import TextContent from "../components/Headline"
 import Button from "../components/Button"
 import Icon from "../components/Icon"
+import Translation from "../components/Translation"
 
 export interface Props {
 }
@@ -98,23 +99,21 @@ export default function Page(props: Props) {
                         <VStack spacing="2rem" horizontalAlignment="center">
                             <Icon style={{ maxWidth: "5rem" }} name="cookie" />
                             <Headline size="l" type="centered" bold>
-                                This Site is Using Cookies
+                                <Translation select={lang => lang.cookieMessage.title} />
                             </Headline>
                             <TextContent size="m" type="centered" bold>
-                                Please accept the usage of those sweeties.
-                                They allow this site to remember your language and theme.
-                                They do not track you ;)
+                                <Translation select={lang => lang.cookieMessage.message} />   
                             </TextContent>
                             <VStack spacing=".5rem">
                                 <Button 
-                                    label="Yummy, yes please!"
+                                    label={<Translation select={lang => lang.cookieMessage.allow} />}
                                     onClick={() => {
                                         dispatch(setEnableCookies(true))
                                         setShowCookieMessage(false)
                                     }}
                                 />
                                 <Button 
-                                    label="No, please. I'm on a diet."
+                                    label={<Translation select={lang => lang.cookieMessage.deny} />}
                                     style="text"
                                     onClick={() => {
                                         dispatch(setEnableCookies(false))

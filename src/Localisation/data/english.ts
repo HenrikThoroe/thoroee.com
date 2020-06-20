@@ -799,6 +799,15 @@ const english = {
                 }
             }
         }
+    },
+    cookieMessage: {
+        title: "This Site is Using Cookies",
+        message: 
+            `Please accept the usage of those sweeties.
+            They allow this site to remember your language and theme.
+            They do not track you ;)`,
+        allow: "Yummy!",
+        deny: "Nope. I am on a diet."
     }
 }
 
