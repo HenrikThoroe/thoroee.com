@@ -93,7 +93,7 @@ export default function Page(props: Props) {
                     </Switch>
                 </Layout>
 
-                <Modal shown={showCookieMessage} centered requireInteraction opaque>
+                <Modal shown={showCookieMessage} centered requireInteraction gradient>
                     <Modal.Body>
                         <VStack spacing="2rem" horizontalAlignment="center">
                             <Icon style={{ maxWidth: "5rem" }} name="cookie" />
