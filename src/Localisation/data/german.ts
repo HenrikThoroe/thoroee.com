@@ -13,6 +13,12 @@ const german: BaseType = {
         buy: "Kaufen",
         download: "Download"
     },
+    sidebar: {
+        products: "Produkte",
+        legal: "Rechtliches",
+        dataProtection: "Datenschutz",
+        legalDisclosure: "Impressum"
+    },
     links: {
         about: {
             href: "/",

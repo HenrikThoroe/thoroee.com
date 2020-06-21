@@ -13,6 +13,12 @@ const english = {
         buy: "Buy",
         download: "Download"
     },
+    sidebar: {
+        products: "Products",
+        legal: "Legal",
+        dataProtection: "Data Protection",
+        legalDisclosure: "Legal Disclosure"
+    },
     links: {
         about: {
             href: "/",

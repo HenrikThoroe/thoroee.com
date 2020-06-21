@@ -49,7 +49,9 @@ export default function Sidebar(props: Props) {
                 
                 <Group collapsed={displayedGroup !== "products"}>
                     <GroupHeader>
-                        <Caption>Products</Caption>
+                        <Caption>
+                            <Translation select={lang => lang.sidebar.products} />
+                        </Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("products")} />
                     </GroupHeader>
                     <Link to="/products/castle">
@@ -60,14 +62,20 @@ export default function Sidebar(props: Props) {
                 </Group>
                 <Group collapsed={displayedGroup !== "legal"}>
                     <GroupHeader>
-                        <Caption>Legal</Caption>
+                        <Caption>
+                            <Translation select={lang => lang.sidebar.legal} />
+                        </Caption>
                         <Button style="inline" label="+" onClick={() => changeDisplayedGroup("legal")} />
                     </GroupHeader>
                     <Link to="/dataprotection">
-                        <Action active={location.pathname === "/dataprotection"} callback={() => {}} leading={<Icon name="textfile"/>}>Data Protection</Action>
+                        <Action active={location.pathname === "/dataprotection"} callback={() => {}} leading={<Icon name="textfile"/>}>
+                            <Translation select={lang => lang.sidebar.dataProtection} />
+                        </Action>
                     </Link>
                     <Link to="legaldisclosure">
-                        <Action callback={() => {}} leading={<Icon name="textfile"/>} active={location.pathname === "/legaldisclosure"}>Legal Disclosure</Action>
+                        <Action callback={() => {}} leading={<Icon name="textfile"/>} active={location.pathname === "/legaldisclosure"}>
+                            <Translation select={lang => lang.sidebar.legalDisclosure} />
+                        </Action>
                     </Link>
                 </Group>
             </Body>
