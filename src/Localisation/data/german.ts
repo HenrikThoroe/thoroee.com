@@ -199,7 +199,7 @@ const german: BaseType = {
                         `Ein super einfache Notiz App, die in der macOS Menüleiste lebt.
                         Sie ist eines meiner ersten Projekte, das ich entwickelt habe, um Swift zu lernen.
                         Lustigerweise benutze ich sie trotzdem noch ziemlich häufig. Vielleicht willst du sie auch 
-                        mal ausprobieren. Den Code und die Binary kannst dir runterladen.`
+                        mal ausprobieren. Die Binary kannst du dir runterladen.`
                 },
                 quickColor: {
                     title: "Quick Color",

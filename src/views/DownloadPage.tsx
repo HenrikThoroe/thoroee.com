@@ -18,9 +18,9 @@ export default function DownloadPage() {
     const getParams = () => {
         switch (resource) {
             case "quickNote":
-                return { name: "QuickNote.zip", location: "/images/server.png" }
+                return { name: "QuickNote.zip", location: "/apps/QuickNote.zip" }
             case "quickColor":
-                return { name: "QuickColor.zip", location: "/images/server.png" }
+                return { name: "QuickColor.zip", location: "/apps/QuickColour.zip" }
             default:
                 return undefined
         }

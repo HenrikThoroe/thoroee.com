@@ -201,7 +201,7 @@ const english = {
                         `A dead simple note-taking app which lives in the macOS menu bar. 
                         It's one of my early projects I wrote to learn Swift. But funnily 
                         enough I'm still using it very often. Maybe you want to download 
-                        the app plus source code.`
+                        the app.`
                 },
                 quickColor: {
                     title: "Quick Color",
