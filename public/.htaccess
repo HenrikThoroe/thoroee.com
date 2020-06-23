@@ -3,3 +3,5 @@ RewriteEngine On
 # HTTPS only
 RewriteCond %{SERVER_PORT} !=443
 RewriteRule ^(.*)$ https://www.thoroee.com/ [R=301,L]
+
+ErrorDocument 404 /index.html

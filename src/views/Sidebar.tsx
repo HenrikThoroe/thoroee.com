@@ -13,6 +13,7 @@ import Icon from "../components/Icon"
 import { useSelector } from "react-redux";
 import selectDarkMode from "../redux/selectors/selectDarkMode";
 import Translation from "../components/Translation";
+import redirect from "../utils/redirect";
 
 export interface Props {
     collapsed: boolean
@@ -37,7 +38,7 @@ export default function Sidebar(props: Props) {
                     </Action>
                 </Link>
 
-                <Action callback={() => window.open("https://github.com", "_blank")} leading={<Icon name="github"/>}>
+                <Action callback={() => redirect("https://github.com/HenrikThoroe")} leading={<Icon name="github"/>}>
                     <Translation select={lang => lang.links.github.name} />
                 </Action>
 
