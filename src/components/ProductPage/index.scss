@@ -1,0 +1,86 @@
+@import "../../assets/breakpoints.scss";
+
+.productPage {
+    --title-size: 3.5rem;
+    --headline-size: 3rem;
+    --caption-headline-size: 2.8rem;
+    
+    min-height: 100vh;
+    min-width: 100%;
+
+    .group {
+        min-width: 100%;
+        padding: 5rem calc((100% - 50rem) / 2);
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .vc {
+        .image {
+            $width: calc(50% + (50vw - 26rem));
+            min-width: $width;
+            max-width: $width;
+            margin-left: calc((50vw - 26rem) * -1);
+
+            &.right {
+                margin-left: 0px;
+                margin-right: calc((50vw - 26rem) * -1);
+            }
+        }
+    }
+
+    .vc-alt {
+        position: relative;
+
+        .info {
+            width: 100%;
+
+            .body {
+                max-width: 80%;
+            }
+
+            .title {
+                max-width: 20rem;
+                // min-width: 10rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .productPage {
+        --title-size: 2.5rem;
+        --headline-size: 2rem;
+        --caption-headline-size: 1.8rem;
+
+        padding: 0px;
+
+        .group {
+            min-width: 100%;
+            padding: 5rem 5%;
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+
+        .vc {
+            .image {
+                min-width: 100%;
+                max-width: 100%;
+                margin-left: 0px;
+    
+                &.right {
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+
+            .body {
+                max-width: 30rem;
+
+                &.right {
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+}

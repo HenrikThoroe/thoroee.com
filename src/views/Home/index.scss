@@ -1,0 +1,199 @@
+@import "../../assets/breakpoints.scss";
+@import "../../assets/color.scss";
+
+.centered-headline {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 1rem 5rem 1rem;
+    padding: 0px;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.gameContainer {
+    box-sizing: border-box;
+    width: 100%;
+    // min-height: var(--content-height);
+    // height: calc(var(--content-height));
+    // max-height: var(--content-height);
+    // border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // display: inline-block;
+    position: relative;
+    border: none;
+
+    canvas {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        // border: 1px solid red;
+    }
+}
+
+.home {
+    width: 100%;
+    position: relative;
+    // padding: 0px 0px 5rem 0px;
+    // scroll-snap-type: y mandatory;
+}
+
+.helloworld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 94vh;
+    box-sizing: border-box;
+
+    & > * {
+       max-width: 50rem;
+    }
+}
+
+.project {
+    // min-height: var(--content-height, auto);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--text-primary);
+    // padding-top: 5rem;
+    // margin-bottom: 3rem;
+
+    .projectHeading {
+        margin: 1rem 3rem;
+        padding: 0px 1rem;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 2rem;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        letter-spacing: .1rem;
+
+        // -webkit-text-fill-color: transparent;
+        // -webkit-text-stroke: 2px var(--text-primary);
+
+        &::after, &::before {
+            content: "";
+
+            position: relative;
+            display: inline-block;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+        }
+
+        &::after {
+            margin-right: 1px;
+            margin-left: 1rem;
+            flex-grow: 1;
+        }
+
+        &::before {
+            margin-right: 1rem;
+            width: 10%;
+        }
+    }
+
+    .projectCards {
+        // padding: 2rem;
+        box-sizing: border-box;
+        padding-bottom: 2rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        margin-left: auto;
+        margin-right: auto;
+    
+        .projectCard {
+            margin: 1rem;
+            width: 25rem;
+        }
+    }
+}
+
+@media screen and (max-width: 55rem) {
+    .project {
+        .projectCards {
+            width: 100%;
+            flex-direction: column;
+            justify-content: start;
+            align-items: stretch;
+    
+            .projectCard {
+                width: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .helloworld {
+        margin: 5rem 0px;
+        // margin-bottom: 5rem;
+        min-height: 0px;//85vh;
+        // border: 1px solid red;
+    }
+}
+
+// @media screen and (max-width: 52rem) {
+//     .project {
+//         overflow: hidden;
+//         padding-bottom: 2rem;
+
+//         .projectHeading {
+//             margin-bottom: 0px;
+//         }
+
+//         .projectCards {
+//             overflow: scroll;
+//             flex-wrap: nowrap;
+//             justify-content: flex-start;
+//             align-items: center;
+//             width: 100%;
+//             box-sizing: border-box;
+//             // scroll-snap-type: y;
+
+//             & > * {
+//                 flex-shrink: 0;
+//                 pointer-events: none;
+//                 opacity: .5;
+//                 transform: scale(0.8);
+//                 z-index: 50;
+//                 scroll-snap-align: center; 
+//                 margin: 0rem -.5rem;
+//                 transition: transform .2s linear, opacity .2s linear;
+
+//                 &.shown {
+//                     opacity: 1;
+//                     transform: scale(1);
+//                     z-index: 100;
+//                     pointer-events: all;
+//                 }
+//             }
+
+//             &::after {
+//                 content: "";
+//                 display: inline-block;
+//                 min-width: 2rem;
+//                 min-height: 1px;
+
+//             }
+//         }
+//     }
+// }

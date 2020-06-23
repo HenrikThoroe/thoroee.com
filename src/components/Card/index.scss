@@ -1,0 +1,114 @@
+@import "../../assets/color.scss";
+
+.card {
+    background: var(--background-primary-e1);
+    border-radius: 5px;
+    width: auto;
+    box-shadow: makeBoxShadow(3);
+    padding: 1.5rem 1rem;
+    color: var(--text-primary);
+
+    &:not(.expanded) {
+        .body {
+            display: none;
+        }
+    }
+
+    &.expanded {
+        .expandButton {
+            * {
+                &:nth-child(1) {
+                    width: 100%;
+                    transform: rotate(45deg);
+                    top: 40%;
+                }
+    
+                &:nth-child(2) {
+                    width: 0px;
+                }
+    
+                &:nth-child(3) {
+                    width: 100%;
+                    transform: rotate(-45deg);
+                    top: -40%;
+                }
+            }
+        }
+    }
+
+    .expandButton {
+        height: 1.8rem;
+        width: calc(1.8rem * 1.5);
+        margin-left: 1rem;
+        transform-origin: center;
+        transition: transform .2s linear;
+        cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        * {
+            position: relative;
+            height: .3rem;
+            background: var(--text-primary);
+            border-radius: 5px;
+            transition: transform .2s linear, width .2s linear, top .2s linear;
+            top: 0%;
+
+            &:nth-child(1) {
+                width: 60%;
+            }
+
+            &:nth-child(2) {
+                width: 80%;
+            }
+
+            &:nth-child(3) {
+                width: 100%;
+            }
+        }
+    }
+
+    &:not(.enableToggle) {
+        .expandButton {
+            display: none;
+        }
+    }
+
+    .title {
+        font-size: 1.4rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--text-silent);
+        margin: .5rem 0px 0px 0px;
+        padding: 0px;
+    }
+
+    .body {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: stretch;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        & > *:not(:last-child) {
+            margin-bottom: .7rem;
+        }
+    }
+}

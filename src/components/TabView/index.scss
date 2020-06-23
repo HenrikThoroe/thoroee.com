@@ -1,0 +1,61 @@
+.tabview .tabbar {
+    --stroke-color: #ccc;
+}
+
+:root.darkMode .tabview .tabbar {
+    --stroke-color: rgb(105, 105, 105);
+}
+
+.tabview {
+    .tabbar {
+        padding: .2rem 1rem .5rem;
+        overflow-y: visible;
+        overflow-x: scroll !important;
+        scroll-snap-type: mandatory y;
+        position: relative;
+        // max-width: max-content;
+        min-width: max-content;
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            display: inline-block;
+            bottom: 0px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: var(--stroke-color);
+            z-index: 0;
+            border-radius: 1px;
+        }
+
+        .tabitem {
+            position: relative;
+            color: var(--text-primary);
+            cursor: pointer;
+            scroll-snap-align: start;
+            overflow: visible;
+            z-index: 1;
+            line-break: auto;
+            
+            &.active::after {
+                content: "";
+
+                position: absolute;
+                display: inline-block;
+                bottom: -.5rem;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background: var(--text-primary);
+                z-index: 10;
+                border-radius: 1px;
+            }
+        }
+    }
+
+    .tabviewcontent {
+        padding-top: 1rem;
+    }
+}

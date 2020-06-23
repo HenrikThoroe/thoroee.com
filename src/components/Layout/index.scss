@@ -1,0 +1,246 @@
+@import "../../assets/color.scss";
+@import "../../assets/breakpoints.scss";
+
+.mainLayout {
+    $td-long: .5s;
+    $td-short: .5s;
+
+    position: relative;
+    background: var(--background-primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    .layout-sidebar-wrapper {
+        position: sticky;
+        top: 0px;
+        min-width: 20rem;
+        max-width: 20rem;
+        max-height: 100vh;
+
+        z-index: 102;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
+
+        transition: transform $td-long linear, opacity $td-long linear;
+    }
+
+    .layout-content-wrapper {
+        position: relative;
+        z-index: 100;
+    }
+
+    .layout-navbar-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 101;
+    }
+
+    .layout-body {
+        will-change: margin-left;
+        transition: margin-left $td-short linear;
+    }
+
+    &.hideSidebar {
+        .layout-body {
+            transition-duration: $td-long;
+            margin-left: -20rem;
+        }
+
+        .layout-sidebar-wrapper {
+            transition-duration: $td-short;
+            opacity: 0;
+            transform: translate(-20rem);
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) { 
+    .mainLayout {
+        .layout-sidebar-wrapper {
+            position: fixed;
+
+            top: 5rem;
+            bottom: 0px;
+            left: 0px;
+            min-width: 100vw;
+            max-width: 100vw;
+
+            transition: top 1s ease-in, opacity .5s linear;
+        }
+
+        .layout-content-wrapper::after {
+            content: "";
+
+            pointer-events: none;
+            position: fixed;
+            background: var(--background-accent);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity .8s linear;
+        }
+
+        &.hideSidebar {
+            .layout-body {
+                margin-left: 0rem;
+
+                .layout-content-wrapper::after {
+                    opacity: 0;
+                }
+            }
+    
+            .layout-sidebar-wrapper {
+                opacity: 0;
+                top: 101vh;
+                transform: none;
+            }
+        }
+    }
+}
+
+.site {
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: var(--background-primary);
+    position: relative;
+
+    & > *:first-child {
+        max-width: 20rem;
+        min-width: 20rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        margin-left: 0px;
+
+        transition: margin-left .5s ease-in, box-shadow 1s linear, opacity .5s linear;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
+    }
+
+    .main {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        & > *:first-child {
+            min-height: 3rem;
+        }
+
+        & > *:last-child {
+            overflow: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar { 
+                display: none; 
+            }
+        }
+    }
+
+    &.hideSidebar {
+        justify-content: flex-end;
+
+        & > *:first-child {
+            box-shadow: none;
+            margin-left: -21rem;
+            opacity: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+
+    .site {
+        overflow: visible;
+
+        & > *:first-child {
+            position: fixed;
+            top: 6rem;
+            left: 0px;
+            min-width: 100vw;
+            max-width: 100vw;
+            height: calc(100% - 6rem);
+
+            transition: top .5s ease-in, box-shadow 1s linear, opacity .5s linear;
+        }
+
+        &.hideSidebar {
+            & > *:first-child {
+                box-shadow: none;
+                // margin-bottom: -110vh;
+                margin-left: 0px;
+                opacity: 0;
+                top: 110vh;
+            }
+
+            .main {
+                & > *:last-child {
+                    &::after {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        .main {
+            overflow: visible;
+            max-height: fit-content;
+            min-height: fit-content;
+
+            & > *:first-child {
+                position: sticky;
+                top: 0;
+                z-index: 9999;
+            }
+
+            & > *:last-child {
+                // padding-top: 4rem;
+                overflow: visible;
+
+                &::after {
+                    content: "";
+        
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    z-index: 100;
+                    background: var(--background-accent);
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                    opacity: 1;
+                    transition: opacity .4s linear;
+                }
+            }
+        }
+
+        &:not(.hideSidebar) {
+            .main {
+                & > *:first-child {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+}

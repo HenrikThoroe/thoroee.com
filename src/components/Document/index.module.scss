@@ -1,0 +1,84 @@
+@import "../../assets/breakpoints.scss";
+
+@media screen and (max-width: $mobile) {
+    .document {
+        hyphens: auto;
+    }
+}
+
+.firstHeading {
+    margin: 2.5rem 0px 0rem 0px;
+}
+
+.secondHeading {
+    margin: 2rem 0px 0rem 0px;
+}
+
+.thirdHeading {
+    margin: 2rem 0px 0rem 0px;
+}
+
+.paragraph {
+    margin: .5rem 0px 0rem 0px;
+}
+
+.list {
+    list-style: none;
+    padding: 1rem;
+    max-width: max-content;
+    overflow-x: scroll;
+}
+
+.listItem {
+    padding: 0px 2rem 0px .5rem;
+    position: relative;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    hyphens: none;
+
+    &::before {
+        content: "";
+
+        width: 8px;
+        height: 8px;
+        background-color: var(--text-primary);
+        border-radius: 2px;
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+        border-bottom: 1px dotted var(--text-primary);
+    }
+}
+
+.associativeList {
+    padding: 1rem;
+    max-width: fit-content;
+    line-break: normal;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.associativeListItem {
+    padding-right: 2rem;
+    padding-left: .5rem;
+    
+    &:not(:last-of-type) {
+        border-bottom: 1px dotted var(--text-primary);
+        padding-bottom: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+.associativeListItemKey {
+    margin-right: 1rem;
+    padding-right: 1rem;
+    max-width: 10rem;
+    min-width: 10rem;
+}

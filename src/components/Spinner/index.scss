@@ -1,0 +1,54 @@
+.spinner {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 10px solid transparent;
+    box-sizing: border-box;
+    animation: sweep 1.2s linear alternate infinite, rotate 1s linear infinite, color-circle 2s linear infinite;
+}
+
+@keyframes color-circle {
+    0% {
+        border-color: green;
+    }
+
+    25% {
+        border-color: red;
+    }
+
+    50% {
+        border-color: blue;
+    }
+
+    75% {
+        border-color: yellow;
+    }
+
+    100% {
+        border-color: purple;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sweep {
+    0% {
+        -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 50% 50%, 0% 0%, 0% 0%, 0% 0%);
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 50% 50%, 0% 0%, 0% 0%, 0% 0%);
+    }
+    50% {
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 50% 50%, 100% 0%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 50% 50%, 100% 0%, 100% 0%, 0% 0%);
+    }
+    100% {
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 50% 50%, 100% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 50% 50%, 100% 100%, 100% 0%, 0% 0%);
+    }
+}

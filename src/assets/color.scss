@@ -1,0 +1,156 @@
+:root { 
+    // Background 
+    --background-primary: #fff;
+    --background-accent: #e5e9f0;
+    --background-secondary: #d8dee9;
+    --background-primary-e1: #fff;
+    --background-primary-e2: #fff;
+
+    // Typography
+    --text-primary: #3b4253;
+    --text-accent: #3b4253;
+    --text-silent: rgb(121, 121, 121);
+
+    // Input
+    --input-bg-primary: #4c566b;
+    --input-bg-search: #a2bf8a;
+    --input-bg-inline: transparent;
+    --input-bg-inline-active: transparent;
+    --input-bg-user: #fff;
+    --input-text-primary: #fff;
+    --input-text-user: #000;
+    --input-disabled: #ccc;
+
+    // Shadow
+    --shadow-primary-color: #B7B7B7;
+    --shadow-secondary-color: #E8E8E8;
+    --shadow-primary-color-f: var(--shadow-primary-color);
+    --shadow-secondary-color-f: var(--shadow-secondary-color);
+
+    // Other
+    --highlight-positive: #a2bf8a;//#2AC940;
+    --highlight: rgb(47, 64, 223);
+    --status-active: #77c03b;
+    --status-maintained: rgb(255, 218, 51);
+    --status-abandoned: rgb(255, 64, 64);
+    --color-error: rgb(255, 64, 64);
+}
+
+:root.darkMode {
+    // Background 
+    --background-primary: #121212;
+    --background-accent: #323232;
+    --background-secondary: #232323;
+    --background-primary-e1: #323232;
+    --background-primary-e2: #3b3b3b;
+
+    // Typography
+    --text-primary: rgb(255, 255, 255, 87%);
+    --text-accent: rgb(255, 255, 255, 87%);
+    --text-silent: rgb(121, 121, 121);
+
+    // Input
+    --input-bg-primary: #505050;
+    --input-bg-search: #505050;
+    --input-bg-user: rgb(255, 255, 255, 87%);
+    --input-bg-inline: #505050;
+    --input-bg-inline-active: #121212;
+    --input-text-primary: rgb(255, 255, 255, 87%);
+    --input-text-user: rgb(255, 255, 255, 87%);
+    --input-disabled: rgb(155, 155, 155);
+
+    // Shadow
+    --shadow-primary-color: transparent;
+    --shadow-secondary-color: transparent;
+    --shadow-primary-color-f: #222222;
+    --shadow-secondary-color-f: #555555;
+
+    // Other
+    --highlight-positive: #a2bf8a;
+    --highlight: rgb(72, 84, 190);
+    --color-error: rgb(190, 72, 72);
+}
+
+body {
+    background: var(--background-primary)
+}
+
+@function makeShadow($size: 0, $color: "primary", $defaultSide: true, $inset: false, $force: false) {
+    $f: "";
+
+    @if $force {
+        $f: "-f";
+    }
+
+    $colorID: "var(--shadow-primary-color#{$f})";
+    $side: "";
+    $offset: "2px";
+    $blur: "4px";
+    $insetKey: "";
+
+    @if $inset == true {
+        $insetKey: "inset ";
+    }
+
+    @if $color == "secondary" {
+        $colorID: "var(--shadow-secondary-color#{$f})";
+    }
+
+    @if $defaultSide == false {
+        $side: "-";
+    }
+
+    @if $size == 3 {
+        $offset: "12px";
+        $blur: "20px";
+    }
+
+    @if $size == 2 {
+        $offset: "8px";
+        $blur: "16px";
+    }
+
+    @if $size == 1 {
+        $offset: "4px";
+        $blur: "6px";
+    }
+
+    @if $size == -1 {
+        $offset: "1px";
+        $blur: "2px";
+    }
+
+    @return unquote("#{$insetKey}#{$side}#{$offset} #{$side}#{$offset} #{$blur} #{$colorID}");
+}
+
+@function makeDefaultShadow($size: 0, $doubleSided: true) {
+    @if $doubleSided {
+        @return unquote("#{makeShadow($size)}, #{makeShadow($size, "secondary", false)}");
+    } @else {
+        @return unquote("#{makeShadow($size)}");
+    }
+}
+
+@function makeBoxShadow($elevation) {
+    @if $elevation == 1 {
+        @return 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    } 
+
+    @if $elevation == 2 {
+        @return 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } 
+    
+    @if $elevation == 3 {
+        @return 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    } 
+
+    @if $elevation == 4 {
+        @return 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    } 
+
+    @if $elevation == 5 {
+        @return 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    } 
+
+    @return none;
+}

@@ -1,0 +1,39 @@
+.transition {
+    clip-path: inset(1);
+
+    &.toggled {
+        animation: animate .5s linear;
+    }
+
+    &.toggled-alt {
+        animation: animate2 .5s linear;
+    }
+}
+
+@keyframes animate {
+    from {
+        filter: blur(1px);
+    }
+
+    50% {
+        filter: blur(6px);
+    }
+
+    to {
+        filter: none;
+    }
+}
+
+@keyframes animate2 {
+    from {
+        filter: blur(1px);
+    }
+
+    50% {
+        filter: blur(6px);
+    }
+
+    to {
+        filter: none;
+    }
+}
