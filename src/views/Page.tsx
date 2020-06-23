@@ -62,12 +62,12 @@ export default function Page(props: Props) {
                     <Sidebar collapsed={sidebarCollapsed} onSidebarToggle={() => {}} />
                     <Navbar onToggleSidebar={() => changeSidebar(!sidebarCollapsed)} open={!sidebarCollapsed}/>
                     <Switch>
-                        <Route path="/products/castle">
+                        <Route path={["/products/castle", "/en/products/castle/", "/de/produkte/castle/"]}>
                             <Switch>
-                                <Route path="/products/castle/dataprotection">
+                                <Route path={["/products/castle/dataprotection", "/de/produkte/castle/datenschutz.html", "/en/products/castle/dataprotectiondeclaration.html"]}>
                                     <CastleDataProtection />
                                 </Route>
-                                <Route path="/products/castle/webclient">
+                                <Route path={["/products/castle/webclient", "/en/products/castle/webclient.html", "/de/produkte/castle/webclient.html"]}>
                                     <WebClientHelp />
                                 </Route>
                                 <Route path="*">
