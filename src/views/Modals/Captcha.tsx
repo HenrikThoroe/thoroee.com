@@ -69,20 +69,18 @@ export default function Captcha(props: Props) {
 
     const send = () => {
         const captcha = createCaptcha()
-        const data = new FormData()
+        const data = new URLSearchParams()
 
         data.append("sender", props.form.sender)
         data.append("message", props.form.message)
         data.append("subject", props.form.subject)
-        data.append("captcha", captcha)
-
-        // console.log(props.form, captcha)
+        data.append("captcha", captcha.toString())
 
         fetch("/api/contact.php", {
             method: "POST",
             cache: "no-cache",
             headers: {
-                "Content-Type": "x-www-form-urlencoded"
+                "Content-Type": "application/x-www-form-urlencoded"
             },
             body: data
         })
@@ -92,7 +90,7 @@ export default function Captcha(props: Props) {
             }
         })
         .catch(e => {
-            console.error(e)
+            console.error(e.message)
         })
     }
 
