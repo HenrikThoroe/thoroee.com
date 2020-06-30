@@ -23,7 +23,7 @@ function sendMail() {
 
     if ($captcha != "6") {
         http_response_code(403);
-        echo "Code: 3 [".$captcha."][".$subject."][".$sender."][".$text."]";
+        echo "Code: 3";
         exit;
     }
 
