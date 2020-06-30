@@ -76,17 +76,19 @@ export default function Captcha(props: Props) {
         data.append("subject", props.form.subject)
         data.append("captcha", captcha)
 
+        // console.log(props.form, captcha)
+
         fetch("/api/contact.php", {
             method: "POST",
             cache: "no-cache",
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
+                "Content-Type": "x-www-form-urlencoded"
             },
             body: data
         })
         .then(res => {
             if (!res.ok) {
-                console.error("Failed to submit the form.")
+                console.error("Failed to submit the form.", res.statusText)
             }
         })
         .catch(e => {
