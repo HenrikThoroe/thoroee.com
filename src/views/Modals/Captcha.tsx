@@ -69,12 +69,12 @@ export default function Captcha(props: Props) {
 
     const send = () => {
         const captcha = createCaptcha()
-        const data = new FormData()
+        const data = new URLSearchParams()
 
         data.append("sender", props.form.sender)
         data.append("message", props.form.message)
         data.append("subject", props.form.subject)
-        data.append("captcha", captcha)
+        data.append("captcha", captcha.toString())
 
         fetch("/api/contact.php", {
             method: "POST",
@@ -86,11 +86,11 @@ export default function Captcha(props: Props) {
         })
         .then(res => {
             if (!res.ok) {
-                console.error("Failed to submit the form.")
+                console.error("Failed to submit the form.", res.statusText)
             }
         })
         .catch(e => {
-            console.error(e)
+            console.error(e.message)
         })
     }
 
