@@ -174,6 +174,18 @@ const english = {
                         Of course Castle provides many more features like automatic 
                         backups and multi-user support. Check it out!`
                 },
+                edudocs: {
+                    title: "EduDocs",
+                    subtitle: "Markdown to PDF with LaTeX",
+                    status: "In Active Development",
+                    body: 
+                        `EduDocs is a command-line application that helps me writing documents 
+                        for school and especially for math. It converts Markdown files to PDF 
+                        and, as an extra, renders code sections as LaTeX. Because plain LaTeX 
+                        is difficult to read and write in my opinion, it is possible to use 
+                        functions and macros instead of their LaTeX equivalent. For more Infos 
+                        see the GitHub page.`
+                },
                 swc1: {
                     title: "SWC 19/20",
                     subtitle: "Game AI",
@@ -187,7 +199,7 @@ const english = {
                 website: {
                     title: "thorøe.com",
                     subtitle: "Portfolio Website",
-                    status: "In Active Development",
+                    status: "Maintained",
                     body: 
                         `You are currently viewing it. This site is written using React, 
                         SCSS and TypeScript. The site is not only my online representation 
