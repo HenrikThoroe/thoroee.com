@@ -118,9 +118,19 @@ export default function Cards() {
                 short={<Translation select={lang => lang.home.projects.cards.website.subtitle}/>}
                 stateText={<Translation select={lang => lang.home.projects.cards.website.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.website.body}/>}
-                state="InDevelopment"
+                state="Maintained"
                 github="https://github.com/HenrikThoroe/thoroee.com"
             /> 
+
+            <ProjectCard
+                name={<Translation select={lang => lang.home.projects.cards.edudocs.title} />}
+                short={<Translation select={lang => lang.home.projects.cards.edudocs.subtitle} />}
+                stateText={<Translation select={lang => lang.home.projects.cards.edudocs.status} />}
+                body={<Translation select={lang => lang.home.projects.cards.edudocs.body} />}
+                state="InDevelopment"
+                github="https://github.com/HenrikThoroe/EduDocs"
+                download="edudocs"
+            />
 
             <ProjectCard 
                 name={<Translation select={lang => lang.home.projects.cards.swc1.title}/>}

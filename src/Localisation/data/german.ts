@@ -172,6 +172,16 @@ const german: BaseType = {
                         Natürlich stellt Castle auch viele weitere Features zur Verfügung, wie automatische Backups oder mehrere 
                         Benutzer. Probier es aus!`
                 },
+                edudocs: {
+                    title: "EduDocs",
+                    subtitle: "Markdown zu PDF mit LaTeX",
+                    status: "In aktiver Entwicklung",
+                    body: 
+                        `EduDocs ist eine Command Line App, die mir hilft, Dokumente für die Schule und vor Allem für Mathe zu schreiben.
+                        Die App konvertiert Markdown Dateien zu PDF und, als ein Extra, rendert die Codeblöcke als LaTeX.
+                        Da ich LaTeX als schwierig zu lesen und zu schreiben ansehe, unterstützt EduDocs Funktionen und Macros, die ihre 
+                        LaTeX Äquivalente ersetzen können. Für mehr Infos, siehe GitHub Link.`
+                },
                 swc1: {
                     title: "SWC 19/20",
                     subtitle: "Spiel KI",
@@ -185,7 +195,7 @@ const german: BaseType = {
                 website: {
                     title: "thorøe.com",
                     subtitle: "Portfolio Webseite",
-                    status: "In aktiver Entwicklung",
+                    status: "Maintained",
                     body: 
                         `Dieses Projekt siehst du dir gerade an. Die Seite wurde mit React, TypeScript und SCSS erstellt. Sie 
                         ist nicht nur meine Onlinedarstellung, sondern auch eine große Spielwiese für mich. Ich habe 
@@ -294,7 +304,15 @@ const german: BaseType = {
             `Dein Download sollte automatisch gestartet haben. Falls nicht klicke bitte "Manuell Runterladen".
             Du kannst jederzeit zu deiner vorherigen Seite zurückkehren.`,
         download: "Manuell runterladen",
-        back: "Zurück zur vorherigen Seite"
+        back: "Zurück zur vorherigen Seite",
+        labels: {
+            edudocs: {
+                node: "EduDocs für Node",
+                mac: "EduDocs für Mac",
+                win: "EduDocs für Windows",
+                linux: "EduDocs für Linux"
+            }
+        }
     },
     dataProtection: {
         title: "Datenschutzerklärung",

@@ -12,24 +12,24 @@ import "./index.scss"
 const Text = ({ index = 1 }) => {
     switch (index) {
         case 1:
-            return <span>Hello, World! That's me. I'm a 17 year old student from Germany.</span>
+            return <span>Hello, World! That's me. I'm a 17-year-old student from Germany.</span>
         case 2:
-            return <span>I had my first contact with the world of programming back when I was about 13 years old. I actually managed to turn on some LEDs. #YAY</span>
+            return <span>I had my first contact with the world of programming back when I was about 13 years old. I managed to turn on some LEDs. #YAY</span>
         case 3:
-            return <span>Later on I built and programmed a self driving modell-car. I certainly were no Tesla engineer these days.</span>
+            return <span>Later on, I built and programmed a self-driving model car. I certainly was no Tesla engineer these days.</span>
         case 4:
             return <span>I took my first real steps in programming on my sister's IPad. You will be surprised how much you can do on one of these things. JavaScript, Swift, Java, Python, ...</span>
         case 5:
-            return <span>After a few years my first laptop unlocked more possibilities for me. And YES it MUST has been a MacBook Pro!</span>
+            return <span>After a few years, my first laptop unlocked more possibilities for me. And YES it MUST have been a MacBook Pro!</span>
         case 6:
-            return <span>I started to seriously learn Swift and Xcode and wrote some small and not so small apps. You can even buy my biggest one. It's a very nice password manager.</span>
+            return <span>I started to seriously learn Swift and Xcode and wrote some small and not so small apps. You can even buy my largest one. It's a very nice password manager.</span>
         case 7:
-            return <span>After a very interesting internship at Naymspace (more about it in my CV) I started to learn TypeScript and React. You're seeing the results of my efforts right now.</span>
+            return <span>After a very interesting internship at Naymspace (more about it in my CV), I started to learn TypeScript and React. You're seeing the results of my efforts right now.</span>
         case 8:
-            return <span>The current episode in my life is my highschool graduation. My primary subject is physic and I have to learn much to pass my exam in spring 2021.</span>
+            return <span>The current episode in my life is my high school graduation. My primary subject is physic and I have to learn much to pass my exam in spring 2021.</span>
         case 9:
         default:
-            return <span>Thank's for your interest into my previous life. My next step will be to study something math related. But if you want to hire me for whatever reasons don't hestiate (; Bye</span>
+            return <span>Thank's for your interest in my previous life. My next step will be to study something math-related. But if you want to hire me for whatever reasons don't hesitate (; Bye</span>
     }
 }
 

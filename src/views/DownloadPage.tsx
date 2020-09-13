@@ -1,5 +1,5 @@
 import Container from "../components/Container";
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Headline from "../components/TextContent";
 import VStack from "../components/Stacks/VStack";
 import TextContent from "../components/Headline";
@@ -9,26 +9,46 @@ import { Link, useRouteMatch, useHistory, useParams } from "react-router-dom";
 import If from "../components/If";
 import Translation from "../components/Translation";
 
-type Resource = "quickNote" | "quickColor"
+type Resource = "quickNote" | "quickColor" | "edudocs"
+
+type File = { name: string, label?: ReactNode, location: string }
+
+type ResourcePack = { name: string, files: File[] }
 
 export default function DownloadPage() {
     const history = useHistory()
     const { resource } = useParams<{ resource: Resource}>()
     
-    const getParams = () => {
+    const getParams = (): ResourcePack | undefined => {
         switch (resource) {
             case "quickNote":
-                return { name: "QuickNote.zip", location: "/apps/QuickNote.zip" }
+                return {
+                    name: "Quick Note",
+                    files: [{ name: "QuickNote.zip", location: "/apps/QuickNote.zip" }]
+                }
             case "quickColor":
-                return { name: "QuickColor.zip", location: "/apps/QuickColour.zip" }
+                return {
+                    name: "Quick Color",
+                    files: [{ name: "QuickColor.zip", location: "/apps/QuickColour.zip" }]
+                }
+            case "edudocs":
+                return {
+                    name: "EduDocs",
+                    files: [
+                        { name: "edudocs.js", label: <Translation select={lang => lang.download.labels.edudocs.node} />, location: "/apps/edudocs/node/edudocs.js" },
+                        { name: "edudocs.exe", label: <Translation select={lang => lang.download.labels.edudocs.win} />, location: "/apps/edudocs/win/edudocs.exe" },
+                        { name: "edudocs", label: <Translation select={lang => lang.download.labels.edudocs.mac} />, location: "/apps/edudocs/mac/edudocs" },
+                        { name: "edudocs", label: <Translation select={lang => lang.download.labels.edudocs.linux} />, location: "/apps/edudocs/linux/edudocs" }
+                    ]
+                }
             default:
                 return undefined
         }
     }
 
-    const [file, setFile] = useState(() => getParams())
+    const [resourcePack] = useState<ResourcePack | undefined>(() => getParams())
 
-    const startDownload = () => {
+    const startDownload = (file: File) => {
         if (file === undefined) {
             return
         }
@@ -49,7 +69,9 @@ export default function DownloadPage() {
     }
 
     useEffect(() => {
-        startDownload()
+        if (resourcePack && resourcePack.files.length === 1) {
+            startDownload(resourcePack.files[0])
+        }
     }, [])
 
     return (
@@ -59,20 +81,26 @@ export default function DownloadPage() {
                     <Headline component="h1" size="xxl" bold>
                         <Translation select={lang => lang.download.title}/>
                     </Headline>
-                    <Headline component="h2" size="l">{ file?.name || "Unknown Resource" }</Headline>
+                    <Headline component="h2" size="l">{ resourcePack?.name || "Unknown Resource" }</Headline>
                 </VStack>
                 <TextContent size="m">
                     <Translation select={lang => lang.download.message}/>
                 </TextContent>
-                <If condition={file}>
-                    <a href={file?.location} download={file?.name} target="_self">
-                        <Button 
-                            icon={<Icon name="download" />} 
-                            label={<Translation select={lang => lang.download.download}/>} 
-                            style="primary" 
-                            fitContent 
-                        />
-                    </a>
+                <If condition={resourcePack}>
+                    <VStack spacing=".5rem">
+                        {
+                            resourcePack!.files.map(file => (
+                                <a href={file.location} download={file.name} target="_self">
+                                    <Button 
+                                        icon={<Icon name="download" />} 
+                                        label={file.label || <Translation select={lang => lang.download.download}/>} 
+                                        style="primary" 
+                                        fitContent
+                                    />
+                                </a>
+                            ))
+                        }
+                    </VStack>
                 </If>
                 <Button 
                     label={<Translation select={lang => lang.download.back}/>} 
