@@ -307,7 +307,15 @@ const english = {
             `Your download should have started automatically. If not, please click "Download Manually". 
             You can continue to your previous page whenever you want.`,
         download: "Download Manually",
-        back: "Back to Last Page"
+        back: "Back to Last Page",
+        labels: {
+            edudocs: {
+                node: "EduDocs for Node",
+                mac: "EduDocs for Mac",
+                win: "EduDocs for Windows",
+                linux: "EduDocs for Linux"
+            }
+        }
     },
     dataProtection: {
         title: "Data Protection Declaration",

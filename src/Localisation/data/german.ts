@@ -304,7 +304,15 @@ const german: BaseType = {
             `Dein Download sollte automatisch gestartet haben. Falls nicht klicke bitte "Manuell Runterladen".
             Du kannst jederzeit zu deiner vorherigen Seite zurückkehren.`,
         download: "Manuell runterladen",
-        back: "Zurück zur vorherigen Seite"
+        back: "Zurück zur vorherigen Seite",
+        labels: {
+            edudocs: {
+                node: "EduDocs für Node",
+                mac: "EduDocs für Mac",
+                win: "EduDocs für Windows",
+                linux: "EduDocs für Linux"
+            }
+        }
     },
     dataProtection: {
         title: "Datenschutzerklärung",
