@@ -327,6 +327,15 @@ const english = {
                         exiting for me. I setup an internal SwiftUI applications during my two weeks 
                         at Knowit just in case someone wonders what I was doing there.`
                 },
+                abi: {
+                    date: "June 2020",
+                    title: "High School Graduation",
+                    subtitle: "Let's Get Started",
+                    body: 
+                        `Finally, after 12 years of pain and suffering (jk), I am free. 
+                        I graduated from my german high school with an average of 1.1. 
+                        In Germany that's good as the best, you can get is 1.0.`
+                },
                 future: {
                     date: "The Future",
                     title: "Hopefully a lot of interesting stuff.",

@@ -323,6 +323,14 @@ const german: BaseType = {
                         hat es für mich nur noch interessanter gemacht. Ich habe während des Praktikums eine SwiftUI 
                         App erstellt, nur für den Fall, dass sich jemand fragt, was ich dort gemacht habe.`
                 },
+                abi: {
+                    date: "Juni 2020",
+                    title: "Abitur",
+                    subtitle: "Jetzt geht's los",
+                    body: 
+                        `Endlich, nach 12 Jahren Leid und Schmerz (nur Spaß) bin ich frei. 
+                        Mein Schnitt von 1,1 macht mich da auch nicht besonders traurig.`
+                },
                 future: {
                     date: "Die Zukunft",
                     title: "Hoffentlich viele interessante Dinge.",
