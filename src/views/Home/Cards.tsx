@@ -118,7 +118,7 @@ export default function Cards() {
                 stateText={<Translation select={lang => lang.home.projects.cards.swc2.status}/>}
                 body={<Translation select={lang => lang.home.projects.cards.swc2.body}/>}
                 state="Abandoned"
-                github="https://github.com/HenrikThoroe/thoroee.com"
+                github="https://github.com/HenrikThoroe/SWC-2021"
             /> 
 
             <ProjectCard 
