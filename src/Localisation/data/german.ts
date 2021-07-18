@@ -160,6 +160,42 @@ const german: BaseType = {
         projects: {
             title: "Meine Arbeit",
             cards: {
+                flyde: {
+                    title: "flyde",
+                    subtitle: "The Compiler and Workflow Tool for C++",
+                    status: "My current main project",
+                    body: 
+                        `SWC 20/21 hat gezeigt wie anstrengend der Compilation Prozess für C++ 
+                        sein kann. Da wir in VSCode gearbeitet haben, entschieden wir uns dafür 
+                        g++ direkt zu verwenden. Ohne eine gar nicht mal so kleine Automatisierungs 
+                        Software in Python, wäre es ein ernstes Problem geworden. flyde geht dieses 
+                        Problem in einem modernen Weg an. Nur eine kleine Konfigurationsdatei ist notwendig, 
+                        um ein Projekt multi-threaded, schnell und mit Cache zu kompilieren. Lokale Builds 
+                        werden genau so unterstützt wie dezidierte Build-Server. Benutzer Authentifizierung inklusive. 
+                        Aber das ist noch nicht alles! Workflows und eigene Python Skripte erlauben einfaches und 
+                        schnelles Unit Testing, benchmarken oder Deployment. Alles nur wenige Dateien entfernt.`
+                },
+                swc2: {
+                    title: "SWC 20/21",
+                    subtitle: "Spiele KI in in C++",
+                    status: "Fertig",
+                    body: 
+                        `Ein Projekt, das mich in so vielen Aspekten voran gebracht hat,
+                        dass ich sie nicht mal mehr zählen kann. Es handelt sich um 
+                        eine KI für das Spiel "Blokus". Geschrieben in C++, ist es 
+                        in jeder Zeile optimiert. Das Ziel des Projekt war es das low level 
+                        des Programmierens zu lernen. Und es hat sicherlich nicht in diesem 
+                        Aspekt versagt! SIMD, caching, memory management, und multi-threading 
+                        sind nur ein paar Keywords in diesem Projekt. Auch gab es unglaublich 
+                        viele spannende 'sidequests'. Wie kann man die Berechnung möglicher 
+                        Züge beschleunigen? Wie findet man den besten? Wie kann man 
+                        Branching in der Alpha-Beta Suche minimieren? Und endlich, wie 
+                        kann man ein neuronales Netzwerk ohne Dritt-Libraries 'from scratch' 
+                        in C++ implementieren? Dies sind nur einige Fragen die beantwortet 
+                        werden mussten. Es war eine aufregende Reise! All dies wäre aber nicht 
+                        möglich gewesen ohne die tatkräftige Hilfe von Coronon. Ein Blick auf 
+                        sein GitHub lohnt sich.`
+                },
                 castle: {
                     title: "Castle",
                     subtitle: "macOS Passwort Manager",
