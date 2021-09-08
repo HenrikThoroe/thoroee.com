@@ -104,13 +104,21 @@ export default function Cards() {
     return (
         <Container className="projectCards">
             <ProjectCard 
-                name={<Translation select={lang => lang.home.projects.cards.castle.title}/>}
-                short={<Translation select={lang => lang.home.projects.cards.castle.subtitle}/>}
-                stateText={<Translation select={lang => lang.home.projects.cards.castle.status}/>}
-                body={<Translation select={lang => lang.home.projects.cards.castle.body}/>}
-                state="Maintained"
-                buy="https://apps.apple.com/de/app/castle-password-manager/id1474114435?l=en&mt=12"
-                info="/products/castle"
+                name={<Translation select={lang => lang.home.projects.cards.flyde.title}/>}
+                short={<Translation select={lang => lang.home.projects.cards.flyde.subtitle}/>}
+                stateText={<Translation select={lang => lang.home.projects.cards.flyde.status}/>}
+                body={<Translation select={lang => lang.home.projects.cards.flyde.body}/>}
+                state="InDevelopment"
+                github="https://github.com/Coronon/flyde"
+            /> 
+
+            <ProjectCard 
+                name={<Translation select={lang => lang.home.projects.cards.swc2.title}/>}
+                short={<Translation select={lang => lang.home.projects.cards.swc2.subtitle}/>}
+                stateText={<Translation select={lang => lang.home.projects.cards.swc2.status}/>}
+                body={<Translation select={lang => lang.home.projects.cards.swc2.body}/>}
+                state="Abandoned"
+                github="https://github.com/HenrikThoroe/SWC-2021"
             /> 
 
             <ProjectCard 
@@ -122,12 +130,22 @@ export default function Cards() {
                 github="https://github.com/HenrikThoroe/thoroee.com"
             /> 
 
+            <ProjectCard 
+                name={<Translation select={lang => lang.home.projects.cards.castle.title}/>}
+                short={<Translation select={lang => lang.home.projects.cards.castle.subtitle}/>}
+                stateText={<Translation select={lang => lang.home.projects.cards.castle.status}/>}
+                body={<Translation select={lang => lang.home.projects.cards.castle.body}/>}
+                state="Maintained"
+                buy="https://apps.apple.com/de/app/castle-password-manager/id1474114435?l=en&mt=12"
+                info="/products/castle"
+            /> 
+
             <ProjectCard
                 name={<Translation select={lang => lang.home.projects.cards.edudocs.title} />}
                 short={<Translation select={lang => lang.home.projects.cards.edudocs.subtitle} />}
                 stateText={<Translation select={lang => lang.home.projects.cards.edudocs.status} />}
                 body={<Translation select={lang => lang.home.projects.cards.edudocs.body} />}
-                state="InDevelopment"
+                state="Abandoned"
                 github="https://github.com/HenrikThoroe/EduDocs"
                 download="edudocs"
             />

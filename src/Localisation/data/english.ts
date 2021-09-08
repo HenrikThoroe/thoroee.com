@@ -161,6 +161,42 @@ const english = {
         projects: {
             title: "My Work",
             cards: {
+                flyde: {
+                    title: "flyde",
+                    subtitle: "The Compiler and Workflow Tool for C++ Written in Dart",
+                    status: "My current main project",
+                    body: 
+                        `SWC 20/21 showed me how embarrassing the compilation of C++ projects can be. 
+                        Working in VSCode, we decided to use g++ directly. Without a not-so-small Python 
+                        CLI for compilation, it would have been a real pain. flyde is going for this 
+                        problem in a modern and new way. Only a small config file is required to get 
+                        a multi-threaded, cached, and fast compilation. But the best thing is that 
+                        flyde supports local builds as well as a dedicated build server. User authentication 
+                        is inclusive. But that's not all! You can define workflows and even use Python 
+                        for automation. This way unit tests, benchmarks, and even deployment are 
+                        nothing but one file away.`
+                },
+                swc2: {
+                    title: "SWC 20/21",
+                    subtitle: "Game AI written in C++",
+                    status: "Finished",
+                    body: 
+                        `A project which brought me forward in so many aspects, 
+                        I cannot even count! It's a game-playing AI for a game 
+                        called "Blokus". Written in C++, it's optimized at every 
+                        line of code. The goal of this project was to learn about 
+                        the low level of programming. And it did not fail in 
+                        this aspect. SIMD, caching, memory management, and multi-threading 
+                        are just a few keywords involved in this app. Furthermore, it 
+                        has so many exciting 'sidequests'. How to optimize the 
+                        calculation of possible moves? How to find the best one? 
+                        How to minimize branching in Alpha-Beta search? And finally, 
+                        how to implement a neural network from scratch without any 
+                        libraries in plain C++ using SIMD? Just a few questions which 
+                        had to be answered. It was an exciting journey! All this 
+                        would have not been possible without the very much appreciated 
+                        help of Coronon. Check out his GitHub.`
+                },
                 castle: {
                     title: "Castle",
                     subtitle: "macOS Password Manager",
@@ -177,7 +213,7 @@ const english = {
                 edudocs: {
                     title: "EduDocs",
                     subtitle: "Markdown to PDF with LaTeX",
-                    status: "In Active Development",
+                    status: "Has Been Fun",
                     body: 
                         `EduDocs is a command-line application that helps me writing documents 
                         for school and especially for math. It converts Markdown files to PDF 
@@ -290,6 +326,15 @@ const english = {
                         The fact that it was in Norway (remember: I am from Germany) just made it more 
                         exiting for me. I setup an internal SwiftUI applications during my two weeks 
                         at Knowit just in case someone wonders what I was doing there.`
+                },
+                abi: {
+                    date: "June 2020",
+                    title: "High School Graduation",
+                    subtitle: "Let's Get Started",
+                    body: 
+                        `Finally, after 12 years of pain and suffering (jk), I am free. 
+                        I graduated from my german high school with an average of 1.1. 
+                        In Germany that's good as the best, you can get is 1.0.`
                 },
                 future: {
                     date: "The Future",

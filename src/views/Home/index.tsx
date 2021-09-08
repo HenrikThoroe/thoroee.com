@@ -134,6 +134,21 @@ export default function Home() {
 
                         <Timeline.Event>
                             <Timeline.DateRange>
+                                <Translation select={lang => lang.home.cv.events.abi.date} />
+                            </Timeline.DateRange>
+                            <Timeline.Title>
+                                <Translation select={lang => lang.home.cv.events.abi.title} />
+                            </Timeline.Title>
+                            <Timeline.Subtitle>
+                                <Translation select={lang => lang.home.cv.events.abi.subtitle} />
+                            </Timeline.Subtitle>
+                            <Timeline.Body>
+                                <Translation select={lang => lang.home.cv.events.abi.body} />
+                            </Timeline.Body>
+                        </Timeline.Event>
+
+                        <Timeline.Event>
+                            <Timeline.DateRange>
                                 <Translation select={lang => lang.home.cv.events.future.date} />
                             </Timeline.DateRange>
                             <Timeline.Title>
