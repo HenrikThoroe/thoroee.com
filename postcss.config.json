@@ -1,6 +1,7 @@
 {
   "plugins": [
     "postcss-flexbugs-fixes",
+    "postcss-nested",
     [
       "postcss-preset-env",
       {
