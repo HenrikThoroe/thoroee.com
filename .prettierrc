@@ -3,5 +3,6 @@
   "semi": false,
   "singleQuote": false,
   "useTabs": false,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "printWidth": 100
 }
