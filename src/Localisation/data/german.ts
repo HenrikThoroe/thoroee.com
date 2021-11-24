@@ -324,12 +324,21 @@ const german: BaseType = {
                         App erstellt, nur für den Fall, dass sich jemand fragt, was ich dort gemacht habe.`
                 },
                 abi: {
-                    date: "Juni 2020",
+                    date: "Juni 2021",
                     title: "Abitur",
                     subtitle: "Jetzt geht's los",
                     body: 
                         `Endlich, nach 12 Jahren Leid und Schmerz (nur Spaß) bin ich frei. 
                         Mein Schnitt von 1,1 macht mich da auch nicht besonders traurig.`
+                },
+                university: {
+                    date: "Oktober 2021",
+                    title: "Informatik am KIT",
+                    subtitle: "Aus Leidenschaft wird ein Abschluss",
+                    body: 
+                        `Im Oktober 2021 habe ich endlich mein Informatik Studium am 
+                        KIT begonnen, eine der führenden Universitäten direkt nach London, Paris und München 
+                        in Karlsruhe. Ich bin hochmotiviert mehr über meine favorisierte Wissenschaft zu lernen.`
                 },
                 future: {
                     date: "Die Zukunft",

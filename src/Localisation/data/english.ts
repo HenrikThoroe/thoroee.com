@@ -328,13 +328,22 @@ const english = {
                         at Knowit just in case someone wonders what I was doing there.`
                 },
                 abi: {
-                    date: "June 2020",
+                    date: "June 2021",
                     title: "High School Graduation",
                     subtitle: "Let's Get Started",
                     body: 
                         `Finally, after 12 years of pain and suffering (jk), I am free. 
                         I graduated from my german high school with an average of 1.1. 
                         In Germany that's good as the best, you can get is 1.0.`
+                },
+                university: {
+                    date: "October 2021",
+                    title: "Computer Science at KIT",
+                    subtitle: "Turn Passion into Degree",
+                    body: 
+                        `In October 2021 I started to study Computer Science at the KIT, 
+                        a leading university for Computer Science right after Paris, London, and Munich in Karlsruhe (south-west Germany). 
+                        I'm highly motivated to learn more about my favorite subject in science.`
                 },
                 future: {
                     date: "The Future",
