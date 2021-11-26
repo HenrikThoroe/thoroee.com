@@ -12,7 +12,7 @@ import "./index.scss"
 const Text = ({ index = 1 }) => {
     switch (index) {
         case 1:
-            return <span>Hello, World! That's me. I'm a 17-year-old student from Germany.</span>
+            return <span>Hello, World! That's me. I'm a 19-year-old student from Germany.</span>
         case 2:
             return <span>I had my first contact with the world of programming back when I was about 13 years old. I managed to turn on some LEDs. #YAY</span>
         case 3:
@@ -26,10 +26,12 @@ const Text = ({ index = 1 }) => {
         case 7:
             return <span>After a very interesting internship at Naymspace (more about it in my CV), I started to learn TypeScript and React. You're seeing the results of my efforts right now.</span>
         case 8:
-            return <span>The current episode in my life is my high school graduation. My primary subject is physic and I have to learn much to pass my exam in spring 2021.</span>
+            return <span>In my last couple years of high school, I focused on building up my portfolio and, of course, intensive learning for school. The exams in my main subject physic don't pass by themselves!</span>
         case 9:
+            return <span>After 12 years I finally graduated in spring 2021! There must have been an issue with the printer for the certificates. My grades were pretty good!</span>
+        case 10:
         default:
-            return <span>Thank's for your interest in my previous life. My next step will be to study something math-related. But if you want to hire me for whatever reasons don't hesitate (; Bye</span>
+            return <span>Thanks for taking an interest in my short and boring life story. I left home after school and currently study Computer Science at the KIT, a German university.</span>
     }
 }
 
@@ -67,7 +69,7 @@ export default function AboutMeComic() {
                 <HStack verticalAlignment="start" spacing="2rem">
                     <Button style="comic" label="Back to Homepage" link="/" fitContent />
                     <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} fitContent />
-                    <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9}  fitContent />
+                    <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 10}  fitContent />
                 </HStack>
                 <Default />
             </VStack>
@@ -78,7 +80,7 @@ export default function AboutMeComic() {
         <VStack alignment="start" horizontalAlignment="stretch" spacing="2rem" style={{overflow: "hidden", padding: "4rem 2rem"}}>
             <HStack style={{ minWidth: "100%" }} alignment="start" verticalAlignment="center" spacing="2rem">
                 <Button style="comic" label="Previous" onClick={() => setIndex(index - 1)} disabled={index <= 1} />
-                <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 9} />
+                <Button style="comic" label="Next" onClick={() => setIndex(index + 1)} disabled={index >= 10} />
             </HStack>
             <Mobile />
             <Button style="comic" label="Back to Homepage" link="/" />
