@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  background: var(--bg-highlight);
+  padding: var(--spacing-s);
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid var(--bg-highlight-secondary);
+  position: relative;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.arrow-box > svg {
+  fill: var(--text-primary);
+}
+
+.popover {
+  min-width: 100%;
+  position: absolute;
+  top: calc(100% + var(--spacing-s));
+  left: 0%;
+  cursor: default;
+
+  background: var(--bg-highlight);
+  border-radius: 7px;
+  border: 1px solid var(--bg-highlight-secondary);
+  padding: var(--spacing-s) var(--spacing-m);
+}
+
+.item {
+  cursor: pointer;
+  min-width: 100%;
+  width: max-content;
+}
