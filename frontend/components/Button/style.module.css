@@ -1,0 +1,37 @@
+.button {
+  all: unset;
+  border-radius: 7px;
+  padding: var(--spacing-s) var(--spacing-m);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.contrast .icon {
+  filter: var(--black-to-contrast-filter);
+}
+
+.primary {
+  background: var(--button-bg-primary);
+  border: 1px solid var(--button-border-primary);
+}
+
+.primary:hover {
+  background: var(--button-bg-primary-dimmed);
+}
+
+.primary:active {
+  box-shadow: var(--shadow-inset-e0);
+}
+
+.contrast {
+  background: var(--button-bg-contrast);
+}
+
+.contrast:hover {
+  background: var(--button-bg-contrast-dimmed);
+}
+
+.contrast:active {
+  box-shadow: var(--shadow-inset-e1-contrast);
+}
