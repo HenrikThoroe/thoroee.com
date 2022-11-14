@@ -2,7 +2,7 @@ import { ComponentStory } from "@storybook/react"
 import DropdownButton, { DropdownItem } from "./DropdownButton"
 
 export default {
-  title: "Dropdown",
+  title: "Website/Components/Dropdown",
   component: DropdownButton,
   subcomponents: { DropdownItem },
 }
