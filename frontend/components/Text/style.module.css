@@ -1,0 +1,50 @@
+.text {
+  all: unset;
+  color: var(--text-primary);
+  display: inline-block;
+}
+
+.body,
+.button-primary {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.button-contrast {
+  font-size: 1rem;
+  color: var(--text-contrast);
+}
+
+.banner {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: medium;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.card-hero-title {
+  font-weight: 600;
+  font-size: 2.25rem;
+}
+
+.card-hero-body {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: medium;
+}
