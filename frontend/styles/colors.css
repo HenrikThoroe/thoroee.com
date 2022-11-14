@@ -1,0 +1,65 @@
+:root {
+  /** Background colors */
+
+  /* Color used for the websites main background */
+  --bg-main: linear-gradient(#f8f8f8, #c9c8c8);
+
+  /* Color of the header element when not pinned to the top */
+  --bg-head: hsla(0, 0%, 100%, 0.8);
+
+  /* Color of the header when pinned */
+  --bg-head-pinned: rgba(255, 255, 255, 0);
+
+  /* Color used for elements that are meant for interaction and should stand out */
+  --bg-highlight: #fff;
+
+  /* Color used for borders, etc. that complement highlighted elements  */
+  --bg-highlight-secondary: rgb(210, 210, 210);
+
+  /* Slightly less expressive highlight color */
+  --bg-highlight-dimmed: rgb(245, 245, 245);
+
+  /** Colors related to buttons */
+
+  /* Color of primary buttons */
+  --button-bg-primary: #fff;
+
+  /* Dimmed version for primary buttons. Use for hover effects */
+  --button-bg-primary-dimmed: rgb(245, 245, 245);
+
+  /* Border color of primary buttons */
+  --button-border-primary: rgb(210, 210, 210);
+
+  /* Color for contrast buttons */
+  --button-bg-contrast: #242424;
+
+  /* Dimmed version for contrast buttons. Use for hover effects  */
+  --button-bg-contrast-dimmed: #353535;
+
+  /** Text colors */
+
+  /* Color for text on contrasted background, like constrast variant buttons */
+  --text-contrast: #c5c5c5;
+
+  /* Color for text on most backgrounds */
+  --text-primary: #000;
+
+  /* Less expressive version of the primary color. Can be used on the same background */
+  --text-secondary: #484848;
+
+  /** Accent colors */
+
+  /* Blueish accent color */
+  --accent-blue: rgba(139, 157, 248, 0.25);
+
+  /** Unique and specialized colors */
+
+  /* Color that should be used for CV related timerays */
+  --cv-green: #69946d;
+
+  /** Filters for image recoloring */
+
+  /* Filter to convert black to contrast text color */
+  --black-to-contrast-filter: invert(91%) sepia(0%) saturate(0%)
+    hue-rotate(177deg) brightness(90%) contrast(85%);
+}
