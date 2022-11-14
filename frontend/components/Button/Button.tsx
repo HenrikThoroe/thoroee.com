@@ -30,6 +30,13 @@ interface Props {
   children: string
 }
 
+/**
+ * A `Button` is the standard way to request predefined user
+ * input. Buttons can either be HTML `button`s or links.
+ * A `Button` can choose from different styles for different levels
+ * of priority or to adapt to the stylistic context of the
+ * parent view.
+ */
 export default function Button(props: Props) {
   const { children: name, trailing, variant, action } = props
   const cn = classNames(style.button, variant && style[variant])

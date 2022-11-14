@@ -45,6 +45,11 @@ interface Props {
   children: React.ReactNode | string
 }
 
+/**
+ * A `Text` component displays text which is formatted with
+ * predefined styles. `Text`s can be of any reasonable underlying
+ * HTML type.
+ */
 export default function Text(props: Props) {
   const aligned = () => {
     if (props.alignment === "leading") {
