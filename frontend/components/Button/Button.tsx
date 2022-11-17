@@ -2,6 +2,7 @@ import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import Icon, { IconName, IconVariant } from "../Icon/Icon"
 import HStack from "../Stack/HStack"
 import Text, { TextVariant } from "../Text/Text"
 import style from "./style.module.css"
@@ -23,9 +24,9 @@ interface Props {
   action: (() => void) | string
 
   /**
-   * The URL of a trailing icon for the button.
+   * The name of the trailing icon
    */
-  trailing?: string
+  trailing?: IconName
 
   children: string
 }
@@ -43,6 +44,14 @@ export default function Button(props: Props) {
   const textVariant = `button-${variant ?? "primary"}` as TextVariant
   const text = <Text variant={textVariant}>{name}</Text>
 
+  const buttonVariant = (): IconVariant | undefined => {
+    if (variant === "primary") {
+      return "monotone"
+    }
+
+    return variant
+  }
+
   const withIcon = (name: React.ReactNode) => {
     if (trailing === undefined) {
       return name
@@ -51,9 +60,9 @@ export default function Button(props: Props) {
     return (
       <HStack spacing={12}>
         {name}
-        <Image
-          src={trailing}
-          alt="trailing-icon"
+        <Icon
+          name={trailing}
+          variant={buttonVariant()}
           width={19}
           height={19}
           className={style.icon}

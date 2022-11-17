@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   variant: "primary",
-  trailing: "/share.svg",
+  trailing: "share",
   action: () => {},
   children: "Button",
 }
@@ -19,7 +19,7 @@ Primary.args = {
 export const Contrast = Template.bind({})
 Contrast.args = {
   variant: "contrast",
-  trailing: "/share.svg",
+  trailing: "share",
   action: () => {},
   children: "Contrast",
 }
