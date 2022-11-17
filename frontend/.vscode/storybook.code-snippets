@@ -1,0 +1,10 @@
+{
+  "Create Story Template": {
+    "scope": "typescriptreact",
+    "prefix": "story",
+    "body": [
+      "import { ComponentStory } from \"@storybook/react\"\nimport ${1:Comp} from \"./${1:Comp}\"\n\nexport default {\n  title: \"Website/Components/${1:Comp}\",\n  component: ${1:Comp},\n}\n\nconst Template: ComponentStory<typeof ${1:Comp}> = (args) => <${1:Comp} {...args} />\n\nexport const Primary = Template.bind({})\nPrimary.args = {}"
+    ],
+    "description": "Create a story for a React component"
+  }
+}
