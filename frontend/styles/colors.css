@@ -56,10 +56,4 @@
 
   /* Color that should be used for CV related timerays */
   --cv-green: #69946d;
-
-  /** Filters for image recoloring */
-
-  /* Filter to convert black to contrast text color */
-  --black-to-contrast-filter: invert(91%) sepia(0%) saturate(0%)
-    hue-rotate(177deg) brightness(90%) contrast(85%);
 }
