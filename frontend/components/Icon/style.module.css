@@ -1,0 +1,17 @@
+.monotone.fill,
+.monotone.fill path {
+  fill: var(--text-primary);
+}
+
+.monotone:not(.fill) path {
+  stroke: var(--text-primary);
+}
+
+.contrast.fill,
+.contrast.fill path {
+  fill: var(--text-contrast);
+}
+
+.contrast:not(.fill) path {
+  stroke: var(--text-contrast);
+}
