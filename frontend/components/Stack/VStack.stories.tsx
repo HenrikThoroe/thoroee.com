@@ -2,7 +2,7 @@ import { ComponentStory } from "@storybook/react"
 import VStack from "./VStack"
 
 export default {
-  title: "Website/Components/Stack/VStack",
+  title: "Website/Components/Atoms/Stack/VStack",
   component: VStack,
 }
 

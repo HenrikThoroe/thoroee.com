@@ -2,7 +2,7 @@ import { ComponentStory } from "@storybook/react"
 import HStack from "./HStack"
 
 export default {
-  title: "Website/Components/Stack/HStack",
+  title: "Website/Components/Atoms/Stack/HStack",
   component: HStack,
 }
 

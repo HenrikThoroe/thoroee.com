@@ -10,7 +10,7 @@ vel pretium lectus quam. Congue quisque egestas diam in arcu cursus euismod quis
 laoreet id. Nisl tincidunt eget nullam non nisi est sit amet.`
 
 export default {
-  title: "Website/Components/Text",
+  title: "Website/Components/Atoms/Text",
   component: Text,
 }
 

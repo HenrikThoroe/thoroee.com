@@ -2,7 +2,7 @@ import { ComponentStory } from "@storybook/react"
 import AccentCard from "./AccentCard"
 
 export default {
-  title: "Website/Components/Card/AccentCard",
+  title: "Website/Components/Atoms/Card/AccentCard",
   component: AccentCard,
 }
 

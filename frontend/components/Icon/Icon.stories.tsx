@@ -2,7 +2,7 @@ import { ComponentStory } from "@storybook/react"
 import Icon from "./Icon"
 
 export default {
-  title: "Website/Components/Icon",
+  title: "Website/Components/Atoms/Icon",
   component: Icon,
 }
 

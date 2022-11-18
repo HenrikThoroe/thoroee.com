@@ -4,7 +4,7 @@ import Stack from "./Stack"
 import VStack from "./VStack"
 
 export default {
-  title: "Website/Components/Stack",
+  title: "Website/Components/Atoms/Stack",
   component: Stack,
   subcomponents: { HStack, VStack },
 }

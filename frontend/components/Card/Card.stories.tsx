@@ -3,7 +3,7 @@ import Card from "./Card"
 import AccentCard from "./AccentCard"
 
 export default {
-  title: "Website/Components/Card",
+  title: "Website/Components/Atoms/Card",
   component: Card,
   subcomponents: { AccentCard },
 }
