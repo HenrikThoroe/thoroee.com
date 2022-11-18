@@ -1,0 +1,13 @@
+.card {
+  border-radius: 34px;
+  background: var(--bg-highlight);
+  box-shadow: var(--shadow-e1);
+  display: inline-block;
+  transition: box-shadow linear 0.2s, background linear 0.2s;
+  position: relative;
+}
+
+.hover:hover {
+  box-shadow: var(--shadow-e0);
+  background: var(--bg-highlight-dimmed);
+}
