@@ -1,3 +1,5 @@
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
+
 import "../styles/globals.css"
 import "../styles/colors.css"
 import "../styles/spacing.css"
@@ -11,5 +13,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 }

@@ -1,0 +1,11 @@
+$bp-mobile: 480px;
+$bp-tablet: 800px;
+$bp-laptop: 1024px;
+$bp-desktop: 1200px;
+
+:export {
+  mobile: $bp-mobile;
+  tablet: $bp-tablet;
+  laptop: $bp-laptop;
+  desktop: $bp-desktop;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "thoroee.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook --browsers chromium webkit firefox",
+    "chromatic": "npx chromatic --project-token=239df3bc3368"
   },
   "dependencies": {
     "@next/font": "^13.0.2",
@@ -21,6 +23,7 @@
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "typescript": "4.8.4"
   },
   "devDependencies": {
@@ -31,9 +34,21 @@
     "@storybook/addon-links": "^6.5.13",
     "@storybook/builder-webpack5": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.13",
+    "@storybook/test-runner": "^0.9.0",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/webpack": "^6.5.1",
+    "@types/prismjs": "^1.26.0",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "babel-loader": "^8.3.0",
-    "eslint-plugin-storybook": "^0.6.7"
-  }
+    "chromatic": "^6.11.4",
+    "css-loader": "^6.7.2",
+    "eslint-plugin-storybook": "^0.6.7",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1"
+  },
+  "readme": "README.md",
+  "_id": "frontend@0.1.0"
 }
