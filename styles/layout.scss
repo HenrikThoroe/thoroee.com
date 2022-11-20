@@ -1,0 +1,13 @@
+@import "./dimensions.module.scss";
+
+body {
+  min-height: 100vh;
+  background: var(--bg-main);
+}
+
+main {
+  max-width: $max-content-width;
+  width: 100%;
+  height: auto;
+  padding: 0px 2rem 10rem 2rem;
+}
