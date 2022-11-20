@@ -47,6 +47,9 @@
   /* Less expressive version of the primary color. Can be used on the same background */
   --text-secondary: #484848;
 
+  /* Background color for hero text */
+  --text-hero: linear-gradient(rgba(0, 0, 0, 0.8), rgb(0, 0, 0));
+
   /** Accent colors */
 
   /* Blueish accent color */
