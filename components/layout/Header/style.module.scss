@@ -1,0 +1,62 @@
+@import "../../../styles/dimensions.module.scss";
+
+.main {
+  width: 100%;
+  padding: 1rem 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-head);
+  backdrop-filter: blur(2px);
+  transition: background linear 0.2s;
+  z-index: 1000;
+  overflow: visible;
+}
+
+.main.pinned:not(.open) {
+  background: var(--bg-head-pinned);
+  backdrop-filter: none;
+}
+
+.content {
+  width: 61.5%;
+  max-width: $max-content-width;
+}
+
+.edge {
+  width: css-function(max, 25%, max-content);
+}
+
+.mobile-content {
+  height: 100% !important;
+}
+
+.dropdown {
+  padding: 40px 0px 40px 30px;
+  position: absolute;
+  top: calc(100% + 16px);
+  background: var(--bg-head);
+  backdrop-filter: blur(2px);
+  transition: transform linear 0.2s;
+  z-index: 999;
+  transform-origin: top;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.dropdown:not(.open) {
+  transform: scaleY(0);
+}
+
+.dropdown:not(.open) > * {
+  opacity: 0;
+  transition: none;
+}
+
+.dropdown.open > * {
+  opacity: 1;
+  transition: opacity linear 0.2s;
+  transition-delay: 0.2s;
+}
