@@ -1,3 +1,5 @@
+@import "../../styles/breakpoints.module.scss";
+
 .text {
   all: unset;
   color: var(--text-primary);
@@ -25,8 +27,16 @@
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: medium;
+  font-size: 5.5rem;
+  font-weight: 700;
+  letter-spacing: -3px;
+  background-clip: text;
+  background-image: var(--text-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: transparent;
+  background-size: auto;
+  background-origin: padding-box;
 }
 
 .hero-subtitle {
@@ -47,4 +57,18 @@
 .card-title {
   font-size: 1.25rem;
   font-weight: medium;
+}
+
+@media screen and (max-width: $bp-desktop) {
+  .hero-title {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+}
+
+@media screen and (max-width: $bp-tablet) {
+  .hero-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
 }

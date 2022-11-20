@@ -1,6 +1,6 @@
 import classNames from "classnames"
 import { createElement } from "react"
-import style from "./style.module.css"
+import style from "./style.module.scss"
 
 /**
  * The text variant determines the look of a
