@@ -69,10 +69,12 @@ export default function HeaderDesktop() {
   return (
     <header className={style.main} ref={ref}>
       <HStack alignment="space-between" className={style.content}>
-        <HStack className={style.edge} alignment="leading" spacing="s">
-          <Icon name="logo" width="24" height="24" />
-          <Text variant="banner">THORØE.com</Text>
-        </HStack>
+        <Link href="/">
+          <HStack className={style.edge} alignment="leading" spacing="s">
+            <Icon name="logo" width="24" height="24" />
+            <Text variant="banner">THORØE.com</Text>
+          </HStack>
+        </Link>
         <HStack spacing="xxl">
           <Link href="/journey">
             <Text variant="nav-link">Journey</Text>

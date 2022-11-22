@@ -22,10 +22,12 @@ export default function HeaderMobile() {
     <header className={classNames(style.main, { [style.open]: open })}>
       <VStack className={style["mobile-content"]} grow padding={[0, 30]}>
         <HStack alignment="space-between" grow="horizontal">
-          <HStack spacing="s">
-            <Icon name="logo" width="24" height="24" />
-            <Text variant="banner">THORØE.com</Text>
-          </HStack>
+          <Link href="/">
+            <HStack spacing="s">
+              <Icon name="logo" width="24" height="24" />
+              <Text variant="banner">THORØE.com</Text>
+            </HStack>
+          </Link>
           <MenuButton onClick={setOpen} />
         </HStack>
         <VStack
