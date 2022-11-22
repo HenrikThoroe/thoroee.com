@@ -15,10 +15,17 @@ function parseBreakpoint(bp: Breakpoint): number {
 
 function fetchBreakpoint(): Breakpoint {
   const available: Breakpoint[] = ["desktop", "laptop", "tablet", "mobile"]
-  const width = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0,
-  )
+  let width: number
+
+  try {
+    width = Math.min(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0,
+      screen.width,
+    )
+  } catch {
+    return "mobile"
+  }
 
   for (const bp of available) {
     if (width >= parseBreakpoint(bp)) {
@@ -42,8 +49,12 @@ export default function useBreakpoint() {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize)
+    window.addEventListener("load", handleResize)
+    window.addEventListener("orientationchange", handleResize)
 
     return () => {
+      window.removeEventListener("orientationchange", handleResize)
+      window.removeEventListener("load", handleResize)
       window.removeEventListener("resize", handleResize)
     }
   }, [])
