@@ -32,5 +32,7 @@ export default interface SharedProps {
    */
   width?: number | string
 
+  className?: string
+
   children?: React.ReactNode
 }

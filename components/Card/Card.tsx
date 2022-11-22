@@ -29,7 +29,7 @@ interface Props extends SharedProps {
  * In addition a colorful background can be applied to cards as well.
  */
 export default function Card(props: Props) {
-  const { width, height, highlight, children, hoverEffect } = props
+  const { width, height, highlight, children, hoverEffect, className } = props
 
   const withSize = (style: CSSProperties): CSSProperties => {
     return {
@@ -57,7 +57,9 @@ export default function Card(props: Props) {
 
   return (
     <section
-      className={classNames(style.card, { [style.hover]: hoverEffect })}
+      className={classNames(style.card, className, {
+        [style.hover]: hoverEffect,
+      })}
       style={withHighlight(withSize({}))}
     >
       {children}

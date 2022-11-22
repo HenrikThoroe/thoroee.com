@@ -1,0 +1,15 @@
+.stack {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  position: absolute;
+  width: 90%;
+  height: 98%;
+  overflow: hidden;
+  left: 5%;
+  top: 1%;
+  opacity: 0.2;
+}
