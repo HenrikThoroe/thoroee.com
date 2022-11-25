@@ -1,0 +1,43 @@
+$indicator-radius: 12px;
+$beam-width: 6px;
+
+.container {
+  height: max-content !important;
+}
+
+.event-col {
+  padding: 10rem 0px !important;
+}
+
+.event-container {
+  max-width: 25rem !important;
+}
+
+.beam {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--cv-green) 8rem,
+    var(--cv-green) calc(100% - 8rem),
+    transparent 100%
+  );
+
+  width: $beam-width;
+  min-width: $beam-width;
+  max-width: $beam-width;
+  display: inline-block;
+  align-self: stretch !important;
+  border-radius: $beam-width;
+}
+
+.entry-indicator {
+  width: calc($indicator-radius * 2) !important;
+  height: calc($indicator-radius * 2) !important;
+  min-width: calc($indicator-radius * 2) !important;
+  min-height: calc($indicator-radius * 2) !important;
+  max-width: calc($indicator-radius * 2) !important;
+  max-height: calc($indicator-radius * 2) !important;
+  border-radius: calc($indicator-radius * 2);
+  background: var(--cv-green);
+  transform: translateX(calc(-1 * $indicator-radius - $beam-width / 2));
+}
