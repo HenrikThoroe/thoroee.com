@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import breakpoints from "../styles/breakpoints.module.scss"
+import breakpoints from "../../styles/breakpoints.module.scss"
 
 export type Breakpoint = "mobile" | "tablet" | "laptop" | "desktop"
 
