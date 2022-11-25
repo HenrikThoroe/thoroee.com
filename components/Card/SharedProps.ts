@@ -1,4 +1,4 @@
-import { AccentColors } from "../../lib/color"
+import { AccentColors } from "../../lib/utils/color"
 
 export interface BackgroundHighlight {
   /**

@@ -1,5 +1,5 @@
 import React from "react"
-import { Spacing } from "../../lib/Spacing"
+import { Spacing } from "../../lib/utils/Spacing"
 
 export default interface SharedProps extends React.HTMLProps<any> {
   /**

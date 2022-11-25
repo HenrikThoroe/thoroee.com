@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import { CSSProperties } from "react"
-import { parseAccentColor } from "../../lib/color"
-import pixelize from "../../lib/pixelize"
+import { parseAccentColor } from "../../lib/utils/color"
+import pixelize from "../../lib/utils/pixelize"
 import SharedProps, { BackgroundHighlight } from "./SharedProps"
 import style from "./style.module.css"
 

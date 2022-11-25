@@ -1,6 +1,6 @@
 "use client"
 
-import useBreakpoint from "../../../lib/useBreakpoint"
+import useBreakpoint from "../../../lib/hooks/useBreakpoint"
 import HeaderMobile from "./Header.mobile"
 import HeaderDesktop from "./Header.desktop"
 

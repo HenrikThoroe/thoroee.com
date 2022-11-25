@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import useMousePosition from "../../lib/useMousePosition"
+import useMousePosition from "../../lib/hooks/useMousePosition"
 import Card from "./Card"
 import SharedProps, { BackgroundHighlight } from "./SharedProps"
 

@@ -9,7 +9,7 @@ import DropdownButton, {
 } from "../../DropdownButton/DropdownButton"
 import { useEffect, useRef } from "react"
 import Icon from "../../Icon/Icon"
-import useBreakpoint from "../../../lib/useBreakpoint"
+import useBreakpoint from "../../../lib/hooks/useBreakpoint"
 
 /**
  * The navigation for larger desktop devices.

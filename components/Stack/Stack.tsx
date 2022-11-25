@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import React, { CSSProperties, ReactNode } from "react"
 import { createElement } from "react"
-import { parseSpacing } from "../../lib/Spacing"
+import { parseSpacing } from "../../lib/utils/Spacing"
 import SharedProps from "./SharedProps"
 import style from "./style.module.css"
 

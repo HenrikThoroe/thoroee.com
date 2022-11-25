@@ -1,6 +1,6 @@
 "use client"
 
-import useBreakpoint from "../../../../lib/useBreakpoint"
+import useBreakpoint from "../../../../lib/hooks/useBreakpoint"
 import HStack from "../../../Stack/HStack"
 import VStack from "../../../Stack/VStack"
 import CVCard from "../CVCard/CVCard"
