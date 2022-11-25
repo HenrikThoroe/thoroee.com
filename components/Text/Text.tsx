@@ -17,6 +17,8 @@ export type TextVariant =
   | "card-title"
   | "button-primary"
   | "button-contrast"
+  | "heading"
+  | "body-secondary"
 
 type HTMLTextComponent = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p"
 

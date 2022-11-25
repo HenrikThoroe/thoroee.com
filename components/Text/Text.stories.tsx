@@ -95,3 +95,19 @@ Banner.args = {
   component: "span",
   children: "This is a banner",
 }
+
+export const Heading = Template.bind({})
+Heading.args = {
+  variant: "heading",
+  alignment: "center",
+  component: "span",
+  children: "This is a heading",
+}
+
+export const BodySecondary = Template.bind({})
+BodySecondary.args = {
+  variant: "body-secondary",
+  alignment: "center",
+  component: "span",
+  children: "This is a secondary body text",
+}
