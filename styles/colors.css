@@ -2,7 +2,7 @@
   /** Background colors */
 
   /* Color used for the websites main background */
-  --bg-main: linear-gradient(#f8f8f8, #c9c8c8);
+  --bg-main: linear-gradient(#f8f8f8, #dfdfdf);
 
   /* Color of the header element when not pinned to the top */
   --bg-head: hsla(0, 0%, 100%, 0.8);
