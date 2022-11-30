@@ -1,0 +1,20 @@
+.console {
+  border-radius: 16px;
+  background: var(--console-background);
+}
+
+.row {
+  max-width: 35rem;
+}
+
+.row > * {
+  color: var(--console-text) !important;
+}
+
+.row.input > *:first-child {
+  color: var(--console-highlight-text) !important;
+}
+
+.command {
+  padding-left: 1rem;
+}
