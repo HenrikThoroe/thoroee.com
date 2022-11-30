@@ -1,4 +1,4 @@
-import { config as dotenv, DotenvConfigOptions } from "dotenv"
+import * as dotenv from "dotenv"
 import path from "path"
 
 /**
@@ -9,15 +9,15 @@ import path from "path"
  * @param options Custom options for the loader
  * @returns Output of the loader
  */
-export default function loadenv(options?: DotenvConfigOptions) {
+export default function loadenv(options?: dotenv.DotenvConfigOptions) {
   if (process.env.NODE_ENV === "production") {
-    return dotenv({
+    return dotenv.config({
       ...options,
       path: path.resolve(process.cwd(), ".prod.env"),
     })
   }
 
-  return dotenv({
+  return dotenv.config({
     ...options,
     path: path.resolve(process.cwd(), ".dev.env"),
   })
