@@ -59,4 +59,19 @@
 
   /* Color that should be used for CV related timerays */
   --cv-green: #69946d;
+
+  /* Color that should be used as background for console mockups */
+  --console-background: #101010;
+
+  /* The primary color of text inside a console component */
+  --console-text: #fff;
+
+  /* A secondary color for console text, that is visible different to the primary text */
+  --console-highlight-text: #0ff;
+
+  /* Primary color for text and strokes of a graph component */
+  --graph-primary: #000;
+
+  /* Background color of graph nodes */
+  --graph-node: #fff;
 }
