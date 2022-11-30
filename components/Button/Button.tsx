@@ -40,7 +40,7 @@ interface Props {
  */
 export default function Button(props: Props) {
   const { children: name, trailing, variant, action } = props
-  const cn = classNames(style.button, variant && style[variant])
+  const cn = classNames(style.button, style[variant ?? "primary"])
   const textVariant = `button-${variant ?? "primary"}` as TextVariant
   const text = <Text variant={textVariant}>{name}</Text>
 
