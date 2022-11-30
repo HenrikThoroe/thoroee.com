@@ -27,7 +27,8 @@
   color: var(--text-secondary);
 }
 
-.hero-title {
+.hero-title,
+.hero-heading {
   font-size: 5.5rem;
   font-weight: 700;
   letter-spacing: -3px;
@@ -38,6 +39,11 @@
   background-color: transparent;
   background-size: auto;
   background-origin: padding-box;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  letter-spacing: -2px;
 }
 
 .hero-subtitle {
@@ -59,6 +65,30 @@
 .heading {
   font-size: 1.25rem;
   font-weight: medium;
+}
+
+.code {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.graph-label {
+  font-size: 1.25rem;
+  letter-spacing: -5%;
+  font-weight: bold;
+}
+
+.graph-label-large {
+  font-size: 2rem;
+  letter-spacing: -5%;
+  font-weight: bold;
+}
+
+.graph-label-secondary {
+  font-size: 1.25rem;
+  letter-spacing: -5%;
+  font-weight: normal;
 }
 
 @media screen and (max-width: $bp-desktop) {

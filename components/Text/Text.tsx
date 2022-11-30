@@ -19,6 +19,11 @@ export type TextVariant =
   | "button-contrast"
   | "heading"
   | "body-secondary"
+  | "code"
+  | "hero-heading"
+  | "graph-label"
+  | "graph-label-large"
+  | "graph-label-secondary"
 
 type HTMLTextComponent = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p"
 
@@ -40,6 +45,14 @@ interface Props {
    * @default center
    */
   alignment?: "center" | "leading" | "trailing"
+
+  /**
+   * Optional parameter to override default
+   * text size.
+   *
+   * @note Use with caution. `Text` is designed to be used as-is.
+   */
+  size?: string | number
 
   /**
    * The displayed text or a any component.
@@ -69,6 +82,7 @@ export default function Text(props: Props) {
     children: props.children,
     style: {
       textAlign: aligned(),
+      fontSize: props.size,
     },
     className: classNames(style.text, style[props.variant ?? "body"]),
   })

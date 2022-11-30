@@ -111,3 +111,43 @@ BodySecondary.args = {
   component: "span",
   children: "This is a secondary body text",
 }
+
+export const Code = Template.bind({})
+Code.args = {
+  variant: "code",
+  alignment: "center",
+  component: "span",
+  children: "This is a monospace text",
+}
+
+export const HeroHeading = Template.bind({})
+HeroHeading.args = {
+  variant: "hero-heading",
+  alignment: "center",
+  component: "span",
+  children: "This is a heading used as hero text",
+}
+
+export const GraphLabel = Template.bind({})
+GraphLabel.args = {
+  variant: "graph-label",
+  alignment: "center",
+  component: "span",
+  children: "This is a label inside a graph",
+}
+
+export const GraphLabelLarge = Template.bind({})
+GraphLabelLarge.args = {
+  variant: "graph-label-large",
+  alignment: "center",
+  component: "span",
+  children: "This is a large label inside a graph",
+}
+
+export const GraphLabelSecondary = Template.bind({})
+GraphLabelSecondary.args = {
+  variant: "graph-label-secondary",
+  alignment: "center",
+  component: "span",
+  children: "This is a secondary label inside a graph",
+}
