@@ -55,6 +55,12 @@ interface Props {
   size?: string | number
 
   /**
+   * Additional class name to be used for the
+   * HTML component.
+   */
+  className?: string
+
+  /**
    * The displayed text or a any component.
    */
   children: React.ReactNode | string
@@ -84,6 +90,10 @@ export default function Text(props: Props) {
       textAlign: aligned(),
       fontSize: props.size,
     },
-    className: classNames(style.text, style[props.variant ?? "body"]),
+    className: classNames(
+      style.text,
+      style[props.variant ?? "body"],
+      props.className,
+    ),
   })
 }
