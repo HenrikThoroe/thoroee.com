@@ -5,6 +5,7 @@
   display: inline-block;
   transition: box-shadow linear 0.2s, background linear 0.2s;
   position: relative;
+  overflow: hidden;
 }
 
 .hover:hover {
