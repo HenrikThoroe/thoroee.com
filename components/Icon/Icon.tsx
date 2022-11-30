@@ -3,8 +3,9 @@ import ShareIcon from "./icons/ShareIcon"
 import classNames from "classnames"
 import style from "./style.module.css"
 import GitHubIcon from "./icons/GitHubIcon"
+import AppleIcon from "./icons/AppleIcon"
 
-export type IconName = "share" | "logo" | "github"
+export type IconName = "share" | "logo" | "github" | "apple"
 
 export type IconVariant = "monotone" | "contrast"
 
@@ -22,7 +23,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   name: IconName
 }
 
-const requiresFill: IconName[] = ["logo"]
+const requiresFill: IconName[] = ["logo", "apple", "github"]
 
 /**
  * An `Icon` is a stylized SVG element. Icons
@@ -44,6 +45,8 @@ export default function Icon(props: Props) {
         return <ShareIcon {...props} />
       case "github":
         return <GitHubIcon {...props} />
+      case "apple":
+        return <AppleIcon {...props} />
     }
   }
 
