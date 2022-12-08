@@ -1,0 +1,68 @@
+@import "../../styles/breakpoints.module.scss";
+
+.browser {
+  width: max-content;
+  max-width: 100%;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+
+  &:nth-of-type(1) {
+    background: var(--apple-red);
+  }
+
+  &:nth-of-type(3) {
+    background: var(--apple-yellow);
+  }
+
+  &:nth-of-type(5) {
+    background: var(--apple-green);
+  }
+}
+
+.address {
+  width: 30rem;
+  background: var(--browser-address-background);
+  border-radius: 8px;
+}
+
+.top-bar {
+  background: var(--browser-background);
+  border-radius: 16px 16px 0px 0px;
+}
+
+.content {
+  background: var(--browser-background);
+  width: 100%;
+  border-radius: 0px 0px 16px 16px;
+}
+
+@media screen and (max-width: $bp-tablet) {
+  .left-control,
+  .right-control {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .address {
+    width: 100%;
+    justify-self: stretch;
+    align-self: stretch;
+  }
+
+  .top-bar > *:not(.address) {
+    display: none;
+  }
+
+  .top-bar {
+    width: 100%;
+  }
+
+  .browser {
+    width: 100%;
+  }
+}

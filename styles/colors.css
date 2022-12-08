@@ -69,9 +69,27 @@
   /* A secondary color for console text, that is visible different to the primary text */
   --console-highlight-text: #0ff;
 
-  /* Primary color for text and strokes of a graph component */
-  --graph-primary: #000;
+  /* Background color of cluster nodes */
+  --cluster-background: #577a92;
 
-  /* Background color of graph nodes */
-  --graph-node: #fff;
+  /* Darker version of the cluster node background */
+  --cluser-background-dark: #2a363f;
+
+  /* Contrast color to be used for text on cluster nodes */
+  --cluster-text: #151621;
+
+  /* Apple system red  */
+  --apple-red: #ed6b5d;
+
+  /* Apple system yellow  */
+  --apple-yellow: #f4be50;
+
+  /* Apple system green  */
+  --apple-green: #61c554;
+
+  /* Background of the browser mock  */
+  --browser-background: #fff;
+
+  /* Background of the address bar of the browser  */
+  --browser-address-background: #f1f1f1;
 }
