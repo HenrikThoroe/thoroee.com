@@ -4,8 +4,22 @@ import classNames from "classnames"
 import style from "./style.module.css"
 import GitHubIcon from "./icons/GitHubIcon"
 import AppleIcon from "./icons/AppleIcon"
+import SFAddIcon from "./icons/SFAddIcon"
+import SFShareIcon from "./icons/SFShareIcon"
+import SFChevronLeftIcon from "./icons/SFChevronLeftIcon"
+import SFChevronRightIcon from "./icons/SFChevronRightIcon"
+import SFLockIcon from "./icons/SFLockIcon"
 
-export type IconName = "share" | "logo" | "github" | "apple"
+export type IconName =
+  | "share"
+  | "logo"
+  | "github"
+  | "apple"
+  | "sf-share"
+  | "sf-add"
+  | "sf-chevron-left"
+  | "sf-chevron-right"
+  | "sf-lock"
 
 export type IconVariant = "monotone" | "contrast"
 
@@ -23,7 +37,16 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   name: IconName
 }
 
-const requiresFill: IconName[] = ["logo", "apple", "github"]
+const requiresFill: IconName[] = [
+  "logo",
+  "apple",
+  "github",
+  "sf-chevron-left",
+  "sf-chevron-right",
+  "sf-lock",
+  "sf-add",
+  "sf-share",
+]
 
 /**
  * An `Icon` is a stylized SVG element. Icons
@@ -47,6 +70,16 @@ export default function Icon(props: Props) {
         return <GitHubIcon {...props} />
       case "apple":
         return <AppleIcon {...props} />
+      case "sf-add":
+        return <SFAddIcon {...props} />
+      case "sf-share":
+        return <SFShareIcon {...props} />
+      case "sf-chevron-left":
+        return <SFChevronLeftIcon {...props} />
+      case "sf-chevron-right":
+        return <SFChevronRightIcon {...props} />
+      case "sf-lock":
+        return <SFLockIcon {...props} />
     }
   }
 
