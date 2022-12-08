@@ -20,10 +20,9 @@ export type TextVariant =
   | "heading"
   | "body-secondary"
   | "code"
+  | "code-heading"
   | "hero-heading"
-  | "graph-label"
-  | "graph-label-large"
-  | "graph-label-secondary"
+  | "cluster"
 
 type HTMLTextComponent = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "p"
 

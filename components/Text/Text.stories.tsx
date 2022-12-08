@@ -128,26 +128,18 @@ HeroHeading.args = {
   children: "This is a heading used as hero text",
 }
 
-export const GraphLabel = Template.bind({})
-GraphLabel.args = {
-  variant: "graph-label",
+export const Cluster = Template.bind({})
+Cluster.args = {
+  variant: "cluster",
   alignment: "center",
   component: "span",
-  children: "This is a label inside a graph",
+  children: "This is a label for cluster nodes",
 }
 
-export const GraphLabelLarge = Template.bind({})
-GraphLabelLarge.args = {
-  variant: "graph-label-large",
+export const CodeHeading = Template.bind({})
+CodeHeading.args = {
+  variant: "code-heading",
   alignment: "center",
   component: "span",
-  children: "This is a large label inside a graph",
-}
-
-export const GraphLabelSecondary = Template.bind({})
-GraphLabelSecondary.args = {
-  variant: "graph-label-secondary",
-  alignment: "center",
-  component: "span",
-  children: "This is a secondary label inside a graph",
+  children: "This is a monospace heading",
 }

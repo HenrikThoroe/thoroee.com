@@ -73,22 +73,16 @@
   font-weight: normal;
 }
 
-.graph-label {
-  font-size: 1.25rem;
-  letter-spacing: -5%;
-  font-weight: bold;
-}
-
-.graph-label-large {
-  font-size: 2rem;
-  letter-spacing: -5%;
-  font-weight: bold;
-}
-
-.graph-label-secondary {
-  font-size: 1.25rem;
-  letter-spacing: -5%;
+.code-heading {
+  font-family: monospace;
+  font-size: 3rem;
   font-weight: normal;
+}
+
+.cluster {
+  font-size: 2rem;
+  color: var(--cluster-text);
+  font-weight: bold;
 }
 
 @media screen and (max-width: $bp-desktop) {
@@ -96,11 +90,29 @@
     font-size: 4rem;
     letter-spacing: -2px;
   }
+
+  .hero-heading,
+  .code-heading {
+    font-size: 2.5rem;
+  }
+
+  .card-hero-title {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: $bp-tablet) {
   .hero-title {
     font-size: 3rem;
     letter-spacing: -1px;
+  }
+
+  .hero-heading,
+  .code-heading {
+    font-size: 2rem;
+  }
+
+  .card-hero-title {
+    font-size: 1.5rem;
   }
 }
