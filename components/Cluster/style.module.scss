@@ -1,0 +1,88 @@
+$nodeWidth: 15rem;
+$gap: 2.5rem;
+
+/// Creates a layered non-blurry shadow.
+/// The higher the density, the more shadows will be created.
+@function createShadow($density) {
+  $max: 1rem;
+  $shadow: $max $max 0px var(--cluser-background-dark);
+  $step: calc(1 / $density);
+
+  @for $i from 1 through $density {
+    $offset: calc($i * $step * $max);
+    $shadow: #{$shadow}, $offset $offset 0px var(--cluser-background-dark);
+  }
+
+  @return $shadow;
+}
+
+.cluster {
+  width: 100%;
+
+  justify-content: center;
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(3, max-content);
+}
+
+.cluster-node {
+  width: $nodeWidth;
+  height: $nodeWidth;
+  background: var(--cluster-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.2s linear, box-shadow 0.2s linear;
+
+  &:hover {
+    transform: translate(-1rem, -1rem);
+    box-shadow: createShadow(16);
+  }
+
+  & > .anchor {
+    $distance: 15px;
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--cluster-text);
+    border-radius: 10px;
+
+    &:nth-child(1) {
+      left: $distance;
+      top: $distance;
+    }
+
+    &:nth-child(2) {
+      right: $distance;
+      top: $distance;
+    }
+
+    &:nth-child(3) {
+      left: $distance;
+      bottom: $distance;
+    }
+  }
+}
+
+@media screen and (max-width: calc(3.5 * $nodeWidth + 2 * $gap)) {
+  .cluster {
+    grid-template-columns: repeat(2, max-content);
+
+    & > *:last-child:nth-child(odd) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: calc(2.5 * $nodeWidth + $gap)) {
+  .cluster {
+    grid-template-columns: repeat(1, max-content);
+
+    & > *.priority-low {
+      display: none;
+    }
+  }
+}
