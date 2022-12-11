@@ -1,15 +1,17 @@
 "use client"
 
 import Link from "next/link"
-import HStack from "../../Stack/HStack"
-import style from "./style.module.scss"
-import Text from "../../Text/Text"
+import React, { useEffect, useRef, useState } from "react"
+import { Project } from "../../../collections/generated-types"
+import getProjects from "../../../lib/api/load/getProjects"
+import useBreakpoint from "../../../lib/hooks/useBreakpoint"
 import DropdownButton, {
   DropdownItem,
 } from "../../DropdownButton/DropdownButton"
-import { useEffect, useRef } from "react"
 import Icon from "../../Icon/Icon"
-import useBreakpoint from "../../../lib/hooks/useBreakpoint"
+import HStack from "../../Stack/HStack"
+import Text from "../../Text/Text"
+import style from "./style.module.scss"
 
 /**
  * The navigation for larger desktop devices.
@@ -19,6 +21,7 @@ export default function HeaderDesktop() {
   const ref = useRef<HTMLElement>(null)
   let observer: IntersectionObserver | undefined
   const breakpoint = useBreakpoint()
+  const [projects, setProjects] = useState<Project[]>([])
 
   const setPinState = (el: Element) => {
     const shouldPin = window.scrollY <= 0
@@ -47,18 +50,21 @@ export default function HeaderDesktop() {
     }
   }, [ref])
 
-  // TODO: Fetch projects from backend and forward to given sites on select.
+  useEffect(() => {
+    getProjects().then(setProjects)
+  }, [])
+
   const ProjectButton = (): JSX.Element => {
     if (breakpoint === "desktop") {
       return (
         <DropdownButton
           variant="action"
-          title="Products"
-          onChange={(item: string) => console.log(item)}
+          title="Projects"
+          onChange={(item: Project) => window.open(item.github, "__blank")}
         >
-          <DropdownItem label="Share My WiFi" value="share-my-wifi" />
-          <DropdownItem label="Castle" value="castle" />
-          <DropdownItem label="Flyde" value="flyde" />
+          {projects.map((project) => (
+            <DropdownItem label={project.name} value={project} />
+          ))}
         </DropdownButton>
       )
     }
