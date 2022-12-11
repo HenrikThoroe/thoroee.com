@@ -116,3 +116,9 @@
     font-size: 1.5rem;
   }
 }
+
+@media screen and (max-width: $bp-mobile) {
+  .cluster {
+    font-size: 1.5rem;
+  }
+}

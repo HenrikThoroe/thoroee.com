@@ -1,4 +1,7 @@
+@import "../../styles/breakpoints.module.scss";
+
 $nodeWidth: 15rem;
+$nodeWidthMobile: 10rem;
 $gap: 2.5rem;
 
 /// Creates a layered non-blurry shadow.
@@ -84,5 +87,20 @@ $gap: 2.5rem;
     & > *.priority-low {
       display: none;
     }
+  }
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .cluster {
+    grid-template-columns: repeat(1, max-content);
+
+    & > *.priority-low {
+      display: none;
+    }
+  }
+
+  .cluster-node {
+    width: $nodeWidthMobile;
+    height: $nodeWidthMobile;
   }
 }
