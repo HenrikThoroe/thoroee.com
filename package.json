@@ -5,7 +5,7 @@
   "scripts": {
     "start": "next start",
     "dev": "next dev",
-    "dev:server": "ts-node --project='tsconfig.server.json' ./server/main.ts",
+    "dev:server": "NODE_ENV=development ts-node --project='tsconfig.server.json' ./server/main.ts",
     "build": "next build",
     "build:storybook": "build-storybook",
     "create:types": "payload generate:types",

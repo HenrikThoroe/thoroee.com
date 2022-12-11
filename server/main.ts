@@ -16,8 +16,8 @@ app.get("/", (_, res) => {
   res.redirect("/admin")
 })
 
-app.listen(process.env.PAYLOAD_PORT, async () => {
+app.listen(process.env.API_PORT, async () => {
   console.log(
-    `Express is now listening for incoming connections on port ${process.env.PAYLOAD_PORT}.`,
+    `Express is now listening for incoming connections on port ${process.env.API_PORT}.`,
   )
 })
