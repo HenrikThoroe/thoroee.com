@@ -1,0 +1,11 @@
+@import "../../styles/breakpoints.module.scss";
+
+.content {
+  padding-top: 12.5rem;
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .content {
+    padding-top: 5rem;
+  }
+}
