@@ -6,7 +6,7 @@ import Text from "../components/Text/Text"
 
 export default function Page() {
   return (
-    <VStack alignment="leading">
+    <VStack alignment="leading" padding={[0, 40]}>
       <VStack padding={[150, 0]} spacing={12}>
         <HStack alignment="leading" spacing="s">
           <Icon name="logo" width="24" height="24" />
