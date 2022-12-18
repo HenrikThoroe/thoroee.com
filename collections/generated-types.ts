@@ -47,8 +47,56 @@ export interface Project {
   'name-long': string;
   description: string;
   github: string;
+  marketing?: string;
   dedicated?: boolean;
   priority?: number;
+  layout: (
+    | {
+        title: string;
+        interactions: {
+          user: string;
+          cmd: string;
+          body: string;
+          link?: string;
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'console-layout';
+      }
+    | {
+        title: string;
+        body: string;
+        store: string;
+        source: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'card-layout';
+      }
+    | {
+        title: string;
+        tech: string;
+        operator: string;
+        result: string;
+        source: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'browser-layout';
+      }
+    | {
+        title: string;
+        nodes: {
+          content?: string;
+          icon?: string;
+          link?: string;
+          'low-priority'?: boolean;
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'cluster-layout';
+      }
+  )[];
   createdAt: string;
   updatedAt: string;
 }

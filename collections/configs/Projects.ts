@@ -1,5 +1,9 @@
 import { CollectionConfig } from "payload/types"
 import readOnly from "../access/readOnly"
+import BrowserBlock from "./layouts/Browser"
+import CardBlock from "./layouts/Card"
+import ClusterBlock from "./layouts/Cluster"
+import ConsoleBlock from "./layouts/Console"
 
 const Projects: CollectionConfig = {
   slug: "projects",
@@ -33,7 +37,13 @@ const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: "marketing",
+      type: "text",
+      required: false,
+    },
+    {
       name: "dedicated",
+      label: "Dedicated Project Section",
       type: "checkbox",
       required: false,
     },
@@ -41,6 +51,12 @@ const Projects: CollectionConfig = {
       name: "priority",
       type: "number",
       required: false,
+    },
+    {
+      name: "layout",
+      type: "blocks",
+      required: false,
+      blocks: [ConsoleBlock, CardBlock, BrowserBlock, ClusterBlock],
     },
   ],
 }
