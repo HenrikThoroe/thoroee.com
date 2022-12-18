@@ -3,6 +3,8 @@
 .browser {
   width: max-content;
   max-width: 100%;
+  box-shadow: var(--shadow-e0);
+  border-radius: 16px;
 }
 
 .window-button {
