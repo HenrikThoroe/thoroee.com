@@ -1,14 +1,20 @@
+import qs from "qs"
 import ResponseException from "../exceptions/ResponseException"
 
-export type Environment = "client" | "server"
-
-export type Endpoint = "cv-entry" | "projects"
+export type Endpoint =
+  | "cv-entry"
+  | "projects"
+  | "users"
+  | "experience-reference"
+  | "reward-reference"
+  | "education-reference"
 
 export interface Options<T> {
   sort?: {
     key: keyof T
     order?: "ascending" | "descending"
   }
+  query?: any
 }
 
 /**
@@ -22,23 +28,33 @@ export default async function request<T>(
   endpoint: Endpoint,
   options?: Options<T>,
 ): Promise<T[]> {
-  let query: string[] = []
+  let query: any
 
   if (options?.sort) {
     const order = options.sort.order === "descending" ? "-" : ""
-    query.push(`sort=${order}${String(options.sort.key)}`)
+
+    query = {
+      ...query,
+      sort: `${order}${String(options.sort.key)}`,
+    }
   }
 
-  let queryString = query.join("&")
-
-  if (queryString.length > 0) {
-    queryString = `?${queryString}`
+  if (options?.query) {
+    query = {
+      ...query,
+      where: options.query,
+    }
   }
 
+  const queryString = qs.stringify(query, { addQueryPrefix: true })
   const serverSideURL = process.env.API_URL
   const clientSideURL = process.env.NEXT_PUBLIC_API_URL
   const url = serverSideURL ?? clientSideURL
-  const response = await fetch(`${url}/api/${endpoint}${queryString}`)
+  const response = await fetch(`${url}/api/${endpoint}${queryString}`, {
+    headers: {
+      Authorization: `User API-Key ${process.env.API_KEY}`,
+    },
+  })
 
   if (!response.ok) {
     throw new ResponseException(response.status)

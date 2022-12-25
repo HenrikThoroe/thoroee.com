@@ -1,5 +1,5 @@
 import { CvEntry } from "../../../collections/generated-types"
-import request, { Environment } from "./request"
+import request from "./request"
 
 /**
  * Loads all `CvEntry`s
