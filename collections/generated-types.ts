@@ -26,6 +26,21 @@ export interface CvEntry {
 export interface User {
   id: string;
   roles: ('admin' | 'public')[];
+  about?: string;
+  profilePicture?:
+    | '/flags/de.svg'
+    | '/flags/no.svg'
+    | '/logos/gym-ahz.png'
+    | '/logos/kit.png'
+    | '/logos/swc.png'
+    | '/logos/knowit.png'
+    | '/blueprint.svg'
+    | '/profile.png'
+    | '/rect.svg'
+    | '/share-your-wifi-bg.svg'
+    | '/wave-bottom.svg'
+    | '/wave-top.svg';
+  isAuthor?: boolean;
   enableAPIKey?: boolean;
   apiKey?: string;
   apiKeyIndex?: string;
@@ -97,6 +112,88 @@ export interface Project {
         blockType: 'cluster-layout';
       }
   )[];
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reward-reference".
+ */
+export interface RewardReference {
+  id: string;
+  title: string;
+  institution: string;
+  date: string;
+  link: string;
+  media:
+    | '/flags/de.svg'
+    | '/flags/no.svg'
+    | '/logos/gym-ahz.png'
+    | '/logos/kit.png'
+    | '/logos/swc.png'
+    | '/logos/knowit.png'
+    | '/blueprint.svg'
+    | '/profile.png'
+    | '/rect.svg'
+    | '/share-your-wifi-bg.svg'
+    | '/wave-bottom.svg'
+    | '/wave-top.svg';
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "education-reference".
+ */
+export interface EducationReference {
+  id: string;
+  institution: string;
+  degree: string;
+  start: string;
+  end?: string;
+  link: string;
+  media:
+    | '/flags/de.svg'
+    | '/flags/no.svg'
+    | '/logos/gym-ahz.png'
+    | '/logos/kit.png'
+    | '/logos/swc.png'
+    | '/logos/knowit.png'
+    | '/blueprint.svg'
+    | '/profile.png'
+    | '/rect.svg'
+    | '/share-your-wifi-bg.svg'
+    | '/wave-bottom.svg'
+    | '/wave-top.svg';
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experience-reference".
+ */
+export interface ExperienceReference {
+  id: string;
+  institution: string;
+  role: string;
+  start: string;
+  end?: string;
+  link: string;
+  media:
+    | '/flags/de.svg'
+    | '/flags/no.svg'
+    | '/logos/gym-ahz.png'
+    | '/logos/kit.png'
+    | '/logos/swc.png'
+    | '/logos/knowit.png'
+    | '/blueprint.svg'
+    | '/profile.png'
+    | '/rect.svg'
+    | '/share-your-wifi-bg.svg'
+    | '/wave-bottom.svg'
+    | '/wave-top.svg';
+  location: string;
+  country?: 'de' | 'no';
   createdAt: string;
   updatedAt: string;
 }
