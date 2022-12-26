@@ -1,6 +1,6 @@
 import { CollectionConfig } from "payload/types"
-import { isAdminFieldLevel } from "../access/admin"
-import readOnly from "../access/readOnly"
+import { resourceOptions } from "../../lib/utils/resources"
+import { isAdmin } from "../access/admin"
 
 export const Users: CollectionConfig = {
   slug: "users",
@@ -11,7 +11,12 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: "email",
   },
-  access: readOnly,
+  access: {
+    read: isAdmin,
+    update: isAdmin,
+    create: isAdmin,
+    delete: isAdmin,
+  },
   fields: [
     {
       name: "roles",
@@ -19,12 +24,21 @@ export const Users: CollectionConfig = {
       hasMany: true,
       defaultValue: ["public"],
       required: true,
-      access: {
-        read: isAdminFieldLevel,
-        create: isAdminFieldLevel,
-        update: isAdminFieldLevel,
-      },
       options: ["admin", "public"],
+    },
+    {
+      name: "about",
+      type: "textarea",
+      required: false,
+    },
+    {
+      name: "profilePicture",
+      type: "select",
+      options: resourceOptions,
+    },
+    {
+      name: "isAuthor",
+      type: "checkbox",
     },
   ],
 }
