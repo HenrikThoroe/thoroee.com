@@ -44,8 +44,8 @@ export default function HeaderMobile() {
             <Link href="/journey">
               <Text variant="nav-link">Journey</Text>
             </Link>
-            <Link href="/references">
-              <Text variant="nav-link">References</Text>
+            <Link href="/resume">
+              <Text variant="nav-link">Resumé</Text>
             </Link>
             <Link href="/contact">
               <Text variant="nav-link">Contact</Text>
