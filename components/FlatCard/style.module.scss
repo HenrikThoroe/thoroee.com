@@ -1,0 +1,23 @@
+.card {
+  padding: 1.25rem;
+  background: var(--bg-highlight);
+  border-radius: 8px;
+  width: 25rem;
+  min-height: 15rem;
+}
+
+.image {
+  border-radius: 10%;
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+}
+
+.image.contain {
+  object-fit: contain;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
