@@ -15,6 +15,7 @@ export interface Options<T> {
     order?: "ascending" | "descending"
   }
   query?: any
+  headers?: HeadersInit
 }
 
 /**
@@ -51,9 +52,7 @@ export default async function request<T>(
   const clientSideURL = process.env.NEXT_PUBLIC_API_URL
   const url = serverSideURL ?? clientSideURL
   const response = await fetch(`${url}/api/${endpoint}${queryString}`, {
-    headers: {
-      Authorization: `User API-Key ${process.env.API_KEY}`,
-    },
+    headers: options?.headers,
   })
 
   if (!response.ok) {

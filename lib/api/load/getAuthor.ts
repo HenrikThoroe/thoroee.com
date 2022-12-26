@@ -15,6 +15,9 @@ export default async function getAuthor(): Promise<User> {
         equals: true,
       },
     },
+    headers: {
+      Authorization: `User API-Key ${process.env.API_KEY}`,
+    },
   })
 
   if (data.length === 0) {
