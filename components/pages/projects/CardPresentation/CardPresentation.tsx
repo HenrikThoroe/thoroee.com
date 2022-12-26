@@ -9,6 +9,7 @@ import Text from "../../../Text/Text"
 import Image from "next/image"
 import useBreakpoint from "../../../../lib/hooks/useBreakpoint"
 import style from "./style.module.scss"
+import { resources } from "../../../../lib/utils/resources"
 
 interface Links {
   store: string
@@ -41,7 +42,7 @@ export default function CardPresentation(props: Props) {
         className={style.clip}
         background={
           <Image
-            src="/share-your-wifi-bg.svg"
+            src={resources.images.shareYourWifiBackground.url}
             alt="Share Your Wifi Card Background"
             width={1000}
             height={1000}
@@ -72,7 +73,7 @@ export default function CardPresentation(props: Props) {
       <ZStack
         background={
           <Image
-            src="/share-your-wifi-bg.svg"
+            src={resources.images.shareYourWifiBackground.url}
             alt="Share Your Wifi Card Background"
             width={1000}
             height={1000}
