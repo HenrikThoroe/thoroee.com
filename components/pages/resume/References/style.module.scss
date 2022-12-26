@@ -1,0 +1,95 @@
+@import "../../../../styles/breakpoints.module.scss";
+
+.references {
+  width: 100%;
+  padding: 0px;
+}
+
+.flag {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--bg-highlight-secondary);
+  object-fit: cover;
+}
+
+.card-set {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.label-box {
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5rem;
+}
+
+.card-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 53rem;
+  flex-wrap: wrap;
+
+  & > * {
+    margin-bottom: 3rem;
+  }
+
+  & > *:nth-child(odd) {
+    margin-right: 3rem;
+  }
+}
+
+@media screen and (max-width: 80rem) {
+  .card-box {
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 3rem;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0px;
+    }
+
+    & > *:nth-child(odd) {
+      margin-right: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .card-set {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .label-box {
+    margin: 3rem 0px;
+    margin-right: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .card-box {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    & > * {
+      width: 100%;
+      max-width: 25rem;
+    }
+  }
+}
