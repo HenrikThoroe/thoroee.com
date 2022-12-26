@@ -4,12 +4,24 @@ import path from "path"
 import { Users } from "./collections/configs/Users"
 import Projects from "./collections/configs/Projects"
 import loadenv from "./lib/utils/loadenv"
+import {
+  EducationReference,
+  ExperienceReference,
+  RewardReference,
+} from "./collections/configs/Reference"
 
 loadenv()
 
 export default buildConfig({
   serverURL: process.env.API_URL,
-  collections: [CVEntry, Users, Projects],
+  collections: [
+    CVEntry,
+    Users,
+    Projects,
+    RewardReference,
+    EducationReference,
+    ExperienceReference,
+  ],
   csrf: [process.env.API_URL!, process.env.NEXT_URL!],
   cors: "*",
   typescript: {
@@ -17,7 +29,12 @@ export default buildConfig({
   },
   admin: {
     webpack: (config) => {
-      config.resolve!.fallback = { os: false, fs: false }
+      config.resolve!.fallback = {
+        os: false,
+        fs: false,
+        path: require.resolve("path-browserify"),
+        crypto: false,
+      }
 
       return config
     },
