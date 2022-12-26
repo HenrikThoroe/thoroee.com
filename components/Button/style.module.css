@@ -31,3 +31,13 @@
 .contrast:active {
   box-shadow: var(--shadow-inset-e1-contrast);
 }
+
+.text {
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.text:active {
+  opacity: 0.6;
+}

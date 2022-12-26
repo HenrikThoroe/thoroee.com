@@ -13,7 +13,7 @@ interface Props {
    * component.
    * @default primary
    */
-  variant?: "contrast" | "primary"
+  variant?: "contrast" | "primary" | "text"
 
   /**
    * The callback invoked when the user clicked the button
@@ -45,7 +45,7 @@ export default function Button(props: Props) {
   const text = <Text variant={textVariant}>{name}</Text>
 
   const buttonVariant = (): IconVariant | undefined => {
-    if (variant === "primary") {
+    if (variant === "primary" || variant === "text") {
       return "monotone"
     }
 
@@ -57,14 +57,16 @@ export default function Button(props: Props) {
       return name
     }
 
+    const size = variant === "text" ? 16 : 19
+
     return (
       <HStack spacing={12}>
         {name}
         <Icon
           name={trailing}
           variant={buttonVariant()}
-          width={19}
-          height={19}
+          width={size}
+          height={size}
           className={style.icon}
         />
       </HStack>

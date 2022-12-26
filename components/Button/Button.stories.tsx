@@ -23,3 +23,11 @@ Contrast.args = {
   action: () => {},
   children: "Contrast",
 }
+
+export const Text = Template.bind({})
+Text.args = {
+  variant: "text",
+  trailing: "share",
+  action: () => {},
+  children: "Text",
+}
