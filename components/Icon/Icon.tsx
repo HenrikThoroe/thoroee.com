@@ -9,6 +9,10 @@ import SFShareIcon from "./icons/SFShareIcon"
 import SFChevronLeftIcon from "./icons/SFChevronLeftIcon"
 import SFChevronRightIcon from "./icons/SFChevronRightIcon"
 import SFLockIcon from "./icons/SFLockIcon"
+import DateIcon from "./icons/DateIcon"
+import PersonIcon from "./icons/PersonIcon"
+import SchoolIcon from "./icons/SchoolIcon"
+import CheckmarkIcon from "./icons/CheckmarkIcon"
 
 export type IconName =
   | "share"
@@ -20,6 +24,10 @@ export type IconName =
   | "sf-chevron-left"
   | "sf-chevron-right"
   | "sf-lock"
+  | "date"
+  | "person"
+  | "school"
+  | "checkmark"
 
 export type IconVariant = "monotone" | "contrast"
 
@@ -46,6 +54,10 @@ const requiresFill: IconName[] = [
   "sf-lock",
   "sf-add",
   "sf-share",
+  "date",
+  "person",
+  "school",
+  "checkmark",
 ]
 
 /**
@@ -80,6 +92,14 @@ export default function Icon(props: Props) {
         return <SFChevronRightIcon {...props} />
       case "sf-lock":
         return <SFLockIcon {...props} />
+      case "date":
+        return <DateIcon {...props} />
+      case "person":
+        return <PersonIcon {...props} />
+      case "school":
+        return <SchoolIcon {...props} />
+      case "checkmark":
+        return <CheckmarkIcon {...props} />
     }
   }
 
