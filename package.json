@@ -11,7 +11,9 @@
     "create:types": "payload generate:types",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "test:storybook": "test-storybook --browsers chromium webkit firefox"
+    "test:storybook": "test-storybook --browsers chromium webkit firefox",
+    "seed": "NODE_ENV=development ts-node --project='tsconfig.scripts.json' ./scripts/seed/index.ts",
+    "snapshot": "NODE_ENV=development ts-node --project='tsconfig.scripts.json' ./scripts/seed/createSnapshots.ts"
   },
   "dependencies": {
     "@next/font": "^13.0.2",
@@ -52,6 +54,7 @@
     "babel-loader": "^8.3.0",
     "css-loader": "^6.7.2",
     "eslint-plugin-storybook": "^0.6.7",
+    "mongodb": "^4.13.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
