@@ -1,0 +1,23 @@
+[
+  {
+    "id": "63aa1a666156d1abad26ab06",
+    "updatedAt": "2022-12-25T19:53:48.005Z",
+    "createdAt": "2022-12-25T19:53:48.005Z",
+    "institution": "Gymnasium Altenholz",
+    "degree": "Abitur, Physics",
+    "start": "2013-06-30T22:00:00.000Z",
+    "end": "2021-03-31T22:00:00.000Z",
+    "link": "https://gymnasium-altenholz.de",
+    "media": "/logos/gym-ahz.png"
+  },
+  {
+    "id": "63aa1a666156d1abad26ab08",
+    "updatedAt": "2022-12-25T19:51:36.741Z",
+    "createdAt": "2022-12-25T19:51:36.741Z",
+    "institution": "KIT",
+    "degree": "Bachelor of Computer Science",
+    "start": "2021-09-30T22:00:00.000Z",
+    "link": "kit.edu",
+    "media": "/logos/kit.png"
+  }
+]

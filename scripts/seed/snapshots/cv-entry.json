@@ -1,0 +1,47 @@
+[
+  {
+    "id": "63aa1a666156d1abad26aafb",
+    "updatedAt": "2022-11-25T19:41:08.269Z",
+    "createdAt": "2022-11-25T19:41:08.269Z",
+    "location": "Karlsruhe",
+    "date": "2022-11-06T23:00:00.000Z",
+    "title": "Something New",
+    "description": "eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra"
+  },
+  {
+    "id": "63aa1a666156d1abad26aafe",
+    "updatedAt": "2022-11-24T19:44:14.952Z",
+    "createdAt": "2022-11-24T19:44:14.952Z",
+    "location": "Kiel",
+    "date": "2022-11-23T23:00:00.000Z",
+    "title": "Something Happened",
+    "description": "And I tell you what happened. It was so marvelous that\nyou would not believe me. Just lemme tell yah, it was \nfantastic. You never saw something like that, so cool I\ntell you."
+  },
+  {
+    "id": "63aa1a666156d1abad26ab00",
+    "updatedAt": "2022-11-24T19:44:14.952Z",
+    "createdAt": "2022-11-24T19:44:14.952Z",
+    "location": "Kiel",
+    "date": "2021-07-03T22:00:00.000Z",
+    "title": "Something Happened Edited",
+    "description": "And I tell you what happened. It was so marvelous that\nyou would not believe me. Just lemme tell yah, it was \nfantastic. You never saw something like that, so cool I\ntell you."
+  },
+  {
+    "id": "63aa1a666156d1abad26ab02",
+    "updatedAt": "2022-11-24T19:44:14.952Z",
+    "createdAt": "2022-11-24T19:44:14.952Z",
+    "location": "Kiel",
+    "date": "2022-11-23T23:00:00.000Z",
+    "title": "Something Happened",
+    "description": "And I tell you what happened. It was so marvelous that\nyou would not believe me. Just lemme tell yah, it was \nfantastic. You never saw something like that, so cool I\ntell you."
+  },
+  {
+    "id": "63aa1a666156d1abad26ab04",
+    "updatedAt": "2022-11-24T19:44:14.952Z",
+    "createdAt": "2022-11-24T19:44:14.952Z",
+    "location": "Kiel",
+    "date": "2022-11-23T23:00:00.000Z",
+    "title": "Something Happened",
+    "description": "And I tell you what happened. It was so marvelous that\nyou would not believe me. Just lemme tell yah, it was \nfantastic. You never saw something like that, so cool I\ntell you."
+  }
+]

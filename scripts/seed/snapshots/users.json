@@ -1,0 +1,14 @@
+[
+  {
+    "id": "63aa1a676156d1abad26ab16",
+    "updatedAt": "2022-11-24T19:32:17.422Z",
+    "createdAt": "2022-11-24T19:32:17.422Z",
+    "roles": ["admin"],
+    "about": "This is some dummy text, you should and will not care about. Please do not waste your time reading this as it is only meant as a placeholder for future content. But if you read this, you should be aware that all of this text is just gibberish. Do not waste your time reading. Seriously, why are you still reading?",
+    "profilePicture": "/profile.png",
+    "isAuthor": true,
+    "enableAPIKey": true,
+    "apiKey": "331453c8-6a71-4857-aa26-8d79de959fc0",
+    "email": "{EMAIL}"
+  }
+]
