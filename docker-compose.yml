@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  mongo:
+    image: "mongo:latest"
+    container_name: "website-database"
+    ports:
+      - "27017:27017"
