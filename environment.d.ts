@@ -34,5 +34,17 @@ declare namespace NodeJS {
      * The URL of the website served by Next.js
      */
     readonly NEXT_URL: string
+
+    /**
+     * The email address used for the dev database.
+     * Only available in development mode.
+     */
+    readonly DEV_EMAIL?: string
+
+    /**
+     * The password used for the dev database.
+     * Only available in development mode.
+     */
+    readonly DEV_PASSWORD?: string
   }
 }
