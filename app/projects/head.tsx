@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Thorøe - Projects</title>
+      <title>Henrik Thorøe • Projects</title>
     </>
   )
 }
