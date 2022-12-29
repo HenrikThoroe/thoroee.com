@@ -4,7 +4,7 @@ import useBreakpoint from "../../../../lib/hooks/useBreakpoint"
 import HStack from "../../../Stack/HStack"
 import VStack from "../../../Stack/VStack"
 import CVCard from "../CVCard/CVCard"
-import ExperienceCard from "../ExperienceCard/ExperienceCard"
+import SkillsCard from "../SkillsCard/SkillsCard"
 import JourneyCard from "../JourneyCard/JourneyCard"
 import ProjectCard from "../ProjectCard/ProjectCard"
 
@@ -25,7 +25,7 @@ export default function OverviewCardSet() {
             <CVCard />
             <ProjectCard />
           </HStack>
-          <ExperienceCard />
+          <SkillsCard />
         </VStack>
       </HStack>
     )
@@ -41,7 +41,7 @@ export default function OverviewCardSet() {
             <ProjectCard />
           </VStack>
         </HStack>
-        <ExperienceCard />
+        <SkillsCard />
       </VStack>
     )
   }
@@ -51,7 +51,7 @@ export default function OverviewCardSet() {
       <JourneyCard />
       <CVCard />
       <ProjectCard />
-      <ExperienceCard />
+      <SkillsCard />
     </VStack>
   )
 }

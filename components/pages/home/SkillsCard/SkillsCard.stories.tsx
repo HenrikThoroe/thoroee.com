@@ -1,12 +1,12 @@
 import { ComponentStory } from "@storybook/react"
-import ExperienceCard from "./ExperienceCard"
+import SkillsCard from "./SkillsCard"
 
 export default {
-  title: "Website/Components/Pages/Home/ExperienceCard",
-  component: ExperienceCard,
+  title: "Website/Components/Pages/Home/SkillsCard",
+  component: SkillsCard,
 }
 
-const Template: ComponentStory<typeof ExperienceCard> = () => <ExperienceCard />
+const Template: ComponentStory<typeof SkillsCard> = () => <SkillsCard />
 
 export const Desktop = Template.bind({})
 Desktop.parameters = {

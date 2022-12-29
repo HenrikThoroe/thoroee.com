@@ -12,9 +12,9 @@ import style from "./style.module.css"
  * available experiences in languages,
  * tools, etc.
  */
-export default function ExperienceCard() {
+export default function SkillsCard() {
   return (
-    <Link href="/experience">
+    <Link href="/skills">
       <Card className={cardStyle["experience-card"]} hoverEffect>
         <div
           style={{
@@ -27,7 +27,7 @@ export default function ExperienceCard() {
               <CodeBackground />
             </div>
             <VStack grow spacing={20} padding={18}>
-              <Text variant="card-hero-title">Experiences</Text>
+              <Text variant="card-hero-title">Skills</Text>
               <Text variant="card-hero-body">
                 From Swift to Dart and C++ to JS.
               </Text>
