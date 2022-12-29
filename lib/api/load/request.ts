@@ -8,6 +8,7 @@ export type Endpoint =
   | "experience-reference"
   | "reward-reference"
   | "education-reference"
+  | "skills"
 
 export interface Options<T> {
   sort?: {
