@@ -1,8 +1,11 @@
 [
   {
-    "id": "63ad9880ea4b679311272281",
+    "id": "63ad9b508d6b1932077d2ce3",
+    "updatedAt": "2022-12-29T13:39:12.219Z",
+    "createdAt": "2022-12-29T13:39:12.219Z",
     "category": "Backend",
     "caption": "What I like most about backend development is its diversity. I am a big fan of optimizing to the last nanosecond in low level languages, but sometimes an express app is just what is needed. I enjoy doing both.",
+    "priority": 3,
     "language": "cpp",
     "code": [
       {
@@ -10,15 +13,15 @@
         "id": "63ad98665e6d83eb4022664f",
         "blockType": "cpp-code-layout"
       }
-    ],
-    "createdAt": "2022-12-29T13:39:12.219Z",
-    "updatedAt": "2022-12-29T13:42:57.116Z",
-    "priority": 3
+    ]
   },
   {
-    "id": "63ad97e6ea4b679311272260",
+    "id": "63ad9b508d6b1932077d2ce5",
+    "updatedAt": "2022-12-29T13:36:38.134Z",
+    "createdAt": "2022-12-29T13:36:38.134Z",
     "category": "Mobile",
     "caption": "Mobile development was one of the first things I got into. Objective-C/Swift and UIKit/Cocoa were the begin of my journey back in 2015.",
+    "priority": 2,
     "language": "swift",
     "code": [
       {
@@ -26,15 +29,15 @@
         "id": "63ad97dabb32424716412529",
         "blockType": "swift-code-layout"
       }
-    ],
-    "createdAt": "2022-12-29T13:36:38.134Z",
-    "updatedAt": "2022-12-29T13:43:02.202Z",
-    "priority": 2
+    ]
   },
   {
-    "id": "63ad7689551c084011371967",
+    "id": "63ad9b508d6b1932077d2ce7",
+    "updatedAt": "2022-12-29T11:14:17.668Z",
+    "createdAt": "2022-12-29T11:14:17.668Z",
     "category": "Web",
     "caption": "I work on the web since 2018 and I am very exited to see how it will evolve.",
+    "priority": 1,
     "language": "tsx",
     "code": [
       {
@@ -42,9 +45,6 @@
         "id": "63ad97b3bb32424716412528",
         "blockType": "tsx-code-layout"
       }
-    ],
-    "createdAt": "2022-12-29T11:14:17.668Z",
-    "updatedAt": "2022-12-29T13:43:05.913Z",
-    "priority": 1
+    ]
   }
 ]
