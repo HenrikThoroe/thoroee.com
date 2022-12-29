@@ -1,0 +1,19 @@
+@import "../../styles/breakpoints.module.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stack {
+  max-width: 80rem;
+  width: 100%;
+  padding: 5rem;
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .stack {
+    padding: 5rem 1rem;
+  }
+}
