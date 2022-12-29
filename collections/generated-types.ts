@@ -197,3 +197,36 @@ export interface ExperienceReference {
   createdAt: string;
   updatedAt: string;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
+export interface Skill {
+  id: string;
+  category: string;
+  caption: string;
+  priority?: number;
+  language: 'tsx' | 'cpp' | 'swift';
+  code: (
+    | {
+        code: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'swift-code-layout';
+      }
+    | {
+        code: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'cpp-code-layout';
+      }
+    | {
+        code: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'tsx-code-layout';
+      }
+  )[];
+  createdAt: string;
+  updatedAt: string;
+}

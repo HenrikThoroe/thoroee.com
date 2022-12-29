@@ -1,0 +1,50 @@
+[
+  {
+    "id": "63ad9880ea4b679311272281",
+    "category": "Backend",
+    "caption": "What I like most about backend development is its diversity. I am a big fan of optimizing to the last nanosecond in low level languages, but sometimes an express app is just what is needed. I enjoy doing both.",
+    "language": "cpp",
+    "code": [
+      {
+        "code": "#include \"model/Database.hpp\"\n#include \"model/Protocol.hpp\"\n#include \"model/Language.hpp\"\n\nusing namespace model;\n\n/**\n * A subset of technologies I used for backend development so far.\n */\nclass BackendDevelopment {\n\n    std::vector<Language*> getLanguages() {\n        std::vector<Language*> languages;\n\n        languages.push_back(new Language(\"C++\"))\n        languages.push_back(new Language(\"Dart\"))\n        languages.push_back(new Language(\"TypeScript\"))\n\n        return languages;\n    }\n\n    std::vector<Database*> getDatabases() {\n        std::vector<Database*> databases;\n\n        databases.push_back(new Database(\"MongoDB\"))\n        databases.push_back(new Database(\"Postgres\"))\n\n        return databases;\n    }\n\n    std::vector<Protocol*> getProtocols() {\n        std::vector<Protocol*> protocols;\n\n        protocols.push_back(new Protocol(\"WebSocket\"))\n        protocols.push_back(new Protocol(\"REST\"))\n        protocols.push_back(new Protocol(\"GraphQL\"))\n\n        return protocols;\n    }\n\n}",
+        "id": "63ad98665e6d83eb4022664f",
+        "blockType": "cpp-code-layout"
+      }
+    ],
+    "createdAt": "2022-12-29T13:39:12.219Z",
+    "updatedAt": "2022-12-29T13:42:57.116Z",
+    "priority": 3
+  },
+  {
+    "id": "63ad97e6ea4b679311272260",
+    "category": "Mobile",
+    "caption": "Mobile development was one of the first things I got into. Objective-C/Swift and UIKit/Cocoa were the begin of my journey back in 2015.",
+    "language": "swift",
+    "code": [
+      {
+        "code": "struct MobileDevelopment: View {\n\n    var body: some View {\n        VStack {\n            LanguageList {\n                LanguageItem(.swift)\n                LanguageItem(.dart)\n            }\n\n            FrameworkList {\n                FrameworkItem(.swiftUI)\n                FrameworkItem(.flutter)\n                FrameworkItem(.uiKit)\n                FrameworkItem(.cocoa)\n            }\n        }\n    }\n\n}",
+        "id": "63ad97dabb32424716412529",
+        "blockType": "swift-code-layout"
+      }
+    ],
+    "createdAt": "2022-12-29T13:36:38.134Z",
+    "updatedAt": "2022-12-29T13:43:02.202Z",
+    "priority": 2
+  },
+  {
+    "id": "63ad7689551c084011371967",
+    "category": "Web",
+    "caption": "I work on the web since 2018 and I am very exited to see how it will evolve.",
+    "language": "tsx",
+    "code": [
+      {
+        "code": "/**\n * A non comprehensive list of technologies I use for web development.\n */\nexport default function WebDevelopment() {\n    return (\n        <TechStack>\n            <Tech>TypeScript</Tech>\n            <Tech>Next.js</Tech>\n            <Tech>(S)CSS Modules</Tech>\n            <Tech>React</Tech>\n            <Tech>Storybook</Tech>\n        </TechStack>\n    )\n}",
+        "id": "63ad97b3bb32424716412528",
+        "blockType": "tsx-code-layout"
+      }
+    ],
+    "createdAt": "2022-12-29T11:14:17.668Z",
+    "updatedAt": "2022-12-29T13:43:05.913Z",
+    "priority": 1
+  }
+]
