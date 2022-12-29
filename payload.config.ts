@@ -9,6 +9,7 @@ import {
   ExperienceReference,
   RewardReference,
 } from "./collections/configs/Reference"
+import { Skill } from "./collections/configs/Skill"
 
 loadenv()
 
@@ -21,6 +22,7 @@ export default buildConfig({
     RewardReference,
     EducationReference,
     ExperienceReference,
+    Skill,
   ],
   csrf: [process.env.API_URL!, process.env.NEXT_URL!],
   cors: "*",
